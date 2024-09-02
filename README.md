@@ -7,7 +7,7 @@ La idea del proyecto es crear un dispositivo para ayudar en el manejo de señale
 Se plantea cumplir con las siguientes funciones como minimo producto viable  
 
 - Leer, almacenar y emitir.  
-  - [UART](UART.md) por puerto serial
+  - [UART](documentacion/UART.md) por puerto serial
   - I2C
   - SPI
   - Pulsos a travez de infrarrojo  
@@ -32,5 +32,5 @@ Se plantea cumplir con las siguientes funciones como minimo producto viable
 <sup style="display: inline-block;">[**README**](/README.md)</sup>
 
 
-[pic]: referencias/Datasheet%20PIC18F2X_45K50.pdf
-[display]: referencias/Datasheet%20ST7789.pdf
+[pic]: documentacion/referencias/Datasheet%20PIC18F2X_45K50.pdf
+[display]: documentacion/referencias/Datasheet%20ST7789.pdf
