@@ -1,25 +1,25 @@
 # Idea general  
 
-La idea del proyecto es crear un dispositivo para ayudar en el manejo de señales dentro de un laboratorio electronico.
+La idea del proyecto es diseñar un dispositivo compacto para estudiantes y profesionales técnicos e ingenieros de la electrónica con el fin recibir, almacenar y transmitir señales alámbricas e inalámbricas dentro de un laboratorio, con el fin de agilizar el proceso de diseño, pruebas y diagnóstico de errores.
 
 ## Funciones  
 
-Se plantea cumplir con las siguientes funciones como minimo producto viable  
+Se plantea cumplir con las siguientes funciones como minimo producto viable.  
 
 - Leer, almacenar y emitir.  
   - [UART](documentacion/UART.md) por puerto serial
   - I2C
   - SPI
-  - Pulsos a travez de infrarrojo  
+  - Pulsos infrarrojos  
 
-- Contar con una interfaz para cargar archivos desde PC  
+- Contar con una interfaz para carga y descarga de archivos desde PC por puerto c  
 
 ## Requisitos de hardware  
 
-- Utilizar bateria para no tener que estar conectado todo el tiempo
+- Utilizar bateria para facilitar su transporte y ampliar su verzatilidad.
 - Puerto USB C de carga y transmision de datos
-- Contar con un display para la interaccion del usuario
-- Diseñar una interfaz touch sencilla
+- Integrar un display TFT para la interacción del usuario
+- Diseñar una interfaz touch sencilla y dinámica
 - Interfaz Rx-Tx infrarojo
 
 ## Hardware y herramientas seleccionadas  

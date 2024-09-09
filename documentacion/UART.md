@@ -140,3 +140,32 @@ Como se ve, hasta el paso 6 es lo mismo para la transmision, asi que lo obviarem
     ***1 = Recepcion habilitada***  
     0 = Recepcion deshabilitada  
 
+#### 8 - Revisar bandera
+
+- PIR1:  
+  - RCIF: EUSART Receive Interrupt Flag bit  
+    1 = The EUSART receive buffer, RCREG1, is full (cleared when RCREG1 is read)  
+    0 = The EUSART receive buffer is empty
+bit 4 TXIF: EUSART Transmit Interrupt Flag bit
+
+Se va a leer el registro, cuando este tenga 1 significa que hay un dato esperando a ser leido.
+
+#### 9 - Leer errores
+
+- RCSTA:  
+  - FERR: Framing Error bit  
+  1 = Framing error (can be updated by reading   RCREGx register and receive next valid byte)  
+  0 = No framing error
+    - Este error es ocacionado cuando no se detecta correctamente el bit de parada, lo que significa un descordinamiento.
+  - OERR: Overrun Error bit  
+  1 = Overrun error (can be cleared by clearing bit CREN)  
+  0 = No overrun error
+    - Este error es ocacionado cuando se llena el buffer de datos y no se leyeron antes de llegar mas
+
+#### 10 - Leer dato
+
+Para obtener el dato siemplemente hay que leer el registro RCREG1
+
+#### 11 - Borrar error de desbordamiento
+
+Para borrar el registro de OERR hay que dehabilitar y volver a habilitar CREN
