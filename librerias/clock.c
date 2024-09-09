@@ -1,7 +1,7 @@
 #include "clock.h"
 
 CLK_ERROR_CODE Clock_Init(int16_t s16Timeout){
-    UART_ERROR_CODE returnCode = ERROR_CODE_OK;
+    CLK_ERROR_CODE returnCode = ERROR_CODE_OK;
     bool bItTimeEn = (0 >= s16Timeout) ? false : true;
     
     if(ERROR_CODE_OK == returnCode){

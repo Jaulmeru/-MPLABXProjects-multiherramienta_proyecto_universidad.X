@@ -3,7 +3,7 @@
 
 
 void UART_ErrorHandler(UART_ERROR_CODE errorCode){
-    if(errorCode == ERROR_CODE_OK) return;
+    if(errorCode == ERROR_CODE_UART_OK) return;
     printf("Error: ");
     switch(errorCode){
         case ERROR_CODE_UART_OVERFLOW:

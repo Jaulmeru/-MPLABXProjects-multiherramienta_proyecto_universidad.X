@@ -16,13 +16,13 @@ extern "C" {
 #endif
 
 void UART_config_show();
-void UART_init(uint32_t);
+void UART_Init(uint32_t);
 void UART_select_baud(uint32_t);
+UART_ERROR_CODE UART_Rx_FRAMING();
+UART_ERROR_CODE UART_Rx_OVERFLOW();
 void UART_Tx(char);
 char UART_Rx(void);    
 bool UART_Available(void);
-UART_ERROR_CODE UART_Rx_FRAMING();
-UART_ERROR_CODE UART_Rx_OVERFLOW();
     
 #ifdef	__cplusplus
 }

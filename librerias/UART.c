@@ -17,7 +17,7 @@ void UART_config_show(){
     (CREN) ? printf("Habilitado \r\n"):printf("Deshabilitado \r\n");
 }
 
-void UART_init(uint32_t baudrate){
+void UART_Init(uint32_t baudrate){
     TXSTA1bits.SYNC1 = 0;        // Modo asincrono
     TXSTA1bits.BRGH1 = 1;        // Modo de alta velocidad
     BAUDCON1bits.BRG161 = 1;     // Se habilitan 16bits en el generador de Baud Rate
@@ -82,7 +82,7 @@ UART_ERROR_CODE UART_Rx_OVERFLOW(){
         RCSTAbits.CREN = 1;
         return ERROR_CODE_UART_OVERFLOW;
     }
-    return ERROR_CODE_OK;
+    return ERROR_CODE_UART_OK;
 }
 
 UART_ERROR_CODE UART_Rx_FRAMING(){
@@ -90,7 +90,7 @@ UART_ERROR_CODE UART_Rx_FRAMING(){
         char dummy = RCREG;  // Leer RCREG para limpiar el error
         return ERROR_CODE_UART_FRAMING;
     }
-    return ERROR_CODE_OK;
+    return ERROR_CODE_UART_OK;
 }
 
 char UART_Rx(void){

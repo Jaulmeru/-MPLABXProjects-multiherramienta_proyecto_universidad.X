@@ -12,5 +12,8 @@
 #include "librerias/UART.h"
 
 void main(void) {
-    return;
+    Clock_Init(16000);
+    UART_Init(9600);
+    while(1){
+    }
 }

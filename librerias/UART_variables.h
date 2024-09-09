@@ -19,7 +19,7 @@ extern "C" {
 #endif
 
     typedef enum{
-        ERROR_CODE_OK,   
+        ERROR_CODE_UART_OK,   
         ERROR_CODE_UART_OVERFLOW,        
         ERROR_CODE_UART_FRAMING,        
         ERROR_CODE_UART_CONFIG,        
