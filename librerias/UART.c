@@ -1,6 +1,6 @@
 #include <xc.h>
 
-#include "UART_Tx.h"
+#include "UART.h"
 
 void UART_config_show(){
     printf("Modo: ");
@@ -76,16 +76,16 @@ void putch(char data){
     UART_Tx(data);
 }
 
-ERROR_CODE UART_Rx_OVERFLOW(){
+UART_ERROR_CODE UART_Rx_OVERFLOW(){
     if (RCSTAbits.OERR) {  // Error de sobrecarga
-        RCSTAbits.CREN = 0;  // Desactiva y vuelve a activar la recepción
+        RCSTAbits.CREN = 0;  // Desactiva y vuelve a activar la recepciï¿½n
         RCSTAbits.CREN = 1;
         return ERROR_CODE_UART_OVERFLOW;
     }
     return ERROR_CODE_OK;
 }
 
-ERROR_CODE UART_Rx_FRAMING(){
+UART_ERROR_CODE UART_Rx_FRAMING(){
     if (RCSTAbits.FERR) {  // Error de framing
         char dummy = RCREG;  // Leer RCREG para limpiar el error
         return ERROR_CODE_UART_FRAMING;

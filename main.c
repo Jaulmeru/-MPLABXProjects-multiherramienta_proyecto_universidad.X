@@ -7,6 +7,9 @@
 
 
 #include <xc.h>
+#include "config.h"             //Configuracion de fuses 
+#include "librerias/clock.h"    //Configuracion de reloj a 48MHz
+#include "librerias/UART.h"
 
 void main(void) {
     return;

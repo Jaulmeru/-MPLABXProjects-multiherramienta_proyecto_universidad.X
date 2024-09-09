@@ -8,7 +8,7 @@
 #ifndef CLOCK_H
 #define	CLOCK_H
 
-#include "variables.h"
+#include "clk_variables.h"
 
 #ifdef	__cplusplus
 extern "C" {
@@ -16,7 +16,7 @@ extern "C" {
 
 #define _XTAL_FREQ 48000000
     
-ERROR_CODE Clock_Init(int16_t s16Timeout);
+CLK_ERROR_CODE Clock_Init(int16_t s16Timeout);
 
 
 #ifdef	__cplusplus

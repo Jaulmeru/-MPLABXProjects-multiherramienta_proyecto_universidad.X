@@ -5,7 +5,7 @@
  * Created on 29 de agosto de 2024, 09:25 PM
  */
 
-#include "variables.h"
+#include "UART_variables.h"
 
 #ifndef UART_TX_H
 #define	UART_TX_H
@@ -21,8 +21,8 @@ void UART_select_baud(uint32_t);
 void UART_Tx(char);
 char UART_Rx(void);    
 bool UART_Available(void);
-ERROR_CODE UART_Rx_FRAMING();
-ERROR_CODE UART_Rx_OVERFLOW();
+UART_ERROR_CODE UART_Rx_FRAMING();
+UART_ERROR_CODE UART_Rx_OVERFLOW();
     
 #ifdef	__cplusplus
 }
