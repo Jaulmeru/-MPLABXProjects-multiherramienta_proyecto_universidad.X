@@ -199,14 +199,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _TXREG1 `Vuc ~T0 @X0 0 e@4013 ]
 "79 librerias/UART.c
 [; ;librerias/UART.c: 79: UART_ERROR_CODE UART_Rx_OVERFLOW(){
-[c E5188 0 1 2 3 .. ]
-[n E5188 . ERROR_CODE_UART_OK ERROR_CODE_UART_OVERFLOW ERROR_CODE_UART_FRAMING ERROR_CODE_UART_CONFIG  ]
+[c E5194 0 1 2 3 .. ]
+[n E5194 . ERROR_CODE_UART_OK ERROR_CODE_UART_OVERFLOW ERROR_CODE_UART_FRAMING ERROR_CODE_UART_CONFIG  ]
 "7594 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7594: extern volatile unsigned char RCREG __attribute__((address(0xFAE)));
 [v _RCREG `Vuc ~T0 @X0 0 e@4014 ]
-"97 librerias/UART.c
-[; ;librerias/UART.c: 97:     ErrorHandler(UART_Rx_OVERFLOW());
-[v _ErrorHandler `(i ~T0 @X0 0 e? ]
+"34 librerias/variables.h
+[; ;librerias/variables.h: 34: void UART_ErrorHandler(UART_ERROR_CODE);
+[v _UART_ErrorHandler `(v ~T0 @X0 0 ef1`E5194 ]
 "7589 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7589: extern volatile unsigned char RCREG1 __attribute__((address(0xFAE)));
 [v _RCREG1 `Vuc ~T0 @X0 0 e@4014 ]
@@ -1086,7 +1086,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "79
 [; ;librerias/UART.c: 79: UART_ERROR_CODE UART_Rx_OVERFLOW(){
-[v _UART_Rx_OVERFLOW `(E5188 ~T0 @X0 1 ef ]
+[v _UART_Rx_OVERFLOW `(E5194 ~T0 @X0 1 ef ]
 {
 [e :U _UART_Rx_OVERFLOW ]
 [f ]
@@ -1102,7 +1102,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
 "83
 [; ;librerias/UART.c: 83:         return ERROR_CODE_UART_OVERFLOW;
-[e ) . `E5188 1 ]
+[e ) . `E5194 1 ]
 [e $UE 656  ]
 "84
 [; ;librerias/UART.c: 84:     }
@@ -1110,7 +1110,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 657 ]
 "85
 [; ;librerias/UART.c: 85:     return ERROR_CODE_UART_OK;
-[e ) . `E5188 0 ]
+[e ) . `E5194 0 ]
 [e $UE 656  ]
 "86
 [; ;librerias/UART.c: 86: }
@@ -1118,7 +1118,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "88
 [; ;librerias/UART.c: 88: UART_ERROR_CODE UART_Rx_FRAMING(){
-[v _UART_Rx_FRAMING `(E5188 ~T0 @X0 1 ef ]
+[v _UART_Rx_FRAMING `(E5194 ~T0 @X0 1 ef ]
 {
 [e :U _UART_Rx_FRAMING ]
 [f ]
@@ -1132,7 +1132,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _dummy -> _RCREG `uc ]
 "91
 [; ;librerias/UART.c: 91:         return ERROR_CODE_UART_FRAMING;
-[e ) . `E5188 2 ]
+[e ) . `E5194 2 ]
 [e $UE 658  ]
 "92
 [; ;librerias/UART.c: 92:     }
@@ -1140,7 +1140,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 659 ]
 "93
 [; ;librerias/UART.c: 93:     return ERROR_CODE_UART_OK;
-[e ) . `E5188 0 ]
+[e ) . `E5194 0 ]
 [e $UE 658  ]
 "94
 [; ;librerias/UART.c: 94: }
@@ -1153,11 +1153,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _UART_Rx ]
 [f ]
 "97
-[; ;librerias/UART.c: 97:     ErrorHandler(UART_Rx_OVERFLOW());
-[e ( _ErrorHandler -> ( _UART_Rx_OVERFLOW ..  `ui ]
+[; ;librerias/UART.c: 97:     UART_ErrorHandler(UART_Rx_OVERFLOW());
+[e ( _UART_ErrorHandler (1 ( _UART_Rx_OVERFLOW ..  ]
 "98
-[; ;librerias/UART.c: 98:     ErrorHandler(UART_Rx_FRAMING());
-[e ( _ErrorHandler -> ( _UART_Rx_FRAMING ..  `ui ]
+[; ;librerias/UART.c: 98:     UART_ErrorHandler(UART_Rx_FRAMING());
+[e ( _UART_ErrorHandler (1 ( _UART_Rx_FRAMING ..  ]
 "99
 [; ;librerias/UART.c: 99:     return RCREG1;
 [e ) -> _RCREG1 `uc ]
@@ -1177,8 +1177,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! || ! != -> . . _RCSTAbits 0 7 `i -> 0 `i ! != -> . . _RCSTAbits 0 4 `i -> 0 `i 662  ]
 {
 "104
-[; ;librerias/UART.c: 104:         ErrorHandler(ERROR_CODE_UART_CONFIG);
-[e ( _ErrorHandler . `E5188 3 ]
+[; ;librerias/UART.c: 104:         UART_ErrorHandler(ERROR_CODE_UART_CONFIG);
+[e ( _UART_ErrorHandler (1 . `E5194 3 ]
 "105
 [; ;librerias/UART.c: 105:         return 0;
 [e ) -> -> 0 `i `a ]

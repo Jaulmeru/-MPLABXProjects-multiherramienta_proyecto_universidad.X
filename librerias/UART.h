@@ -5,7 +5,7 @@
  * Created on 29 de agosto de 2024, 09:25 PM
  */
 
-#include "UART_variables.h"
+#include "variables.h"
 
 #ifndef UART_TX_H
 #define	UART_TX_H

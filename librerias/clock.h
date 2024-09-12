@@ -10,6 +10,8 @@
 
 #include "clk_variables.h"
 
+#define FOSC 48000000
+
 #ifdef	__cplusplus
 extern "C" {
 #endif

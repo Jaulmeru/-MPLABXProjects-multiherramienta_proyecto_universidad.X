@@ -1,11 +1,18 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"5 librerias/UART_variables.c
-[; ;librerias/UART_variables.c: 5: void UART_ErrorHandler(UART_ERROR_CODE errorCode){
-[c E5188 0 1 2 3 .. ]
-[n E5188 . ERROR_CODE_UART_OK ERROR_CODE_UART_OVERFLOW ERROR_CODE_UART_FRAMING ERROR_CODE_UART_CONFIG  ]
-"117 C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\stdio.h
-[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\stdio.h: 117: int printf(const char *restrict, ...);
-[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
+[p mainexit ]
+"16 main.c
+[; ;main.c: 16:     Clock_Init(16000);
+[c E5188 0 1 .. ]
+[n E5188 . ERROR_CODE_OK ERROR_CODE_TIMEOUT  ]
+"21 ./librerias/clock.h
+[; ;./librerias/clock.h: 21: CLK_ERROR_CODE Clock_Init(int16_t s16Timeout);
+[v _Clock_Init `(E5188 ~T0 @X0 0 ef1`s ]
+"19 ./librerias/UART.h
+[; ;./librerias/UART.h: 19: void UART_Init(uint32_t);
+[v _UART_Init `(v ~T0 @X0 0 ef1`ul ]
+"17 ./librerias/SPI.h
+[; ;./librerias/SPI.h: 17: void SPI_BaudRateGen(int32_t);
+[v _SPI_BaudRateGen `(v ~T0 @X0 0 ef1`l ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 54: __asm("SRCON1 equ 0F57h");
 [; <" SRCON1 equ 0F57h ;# ">
@@ -630,68 +637,115 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13651
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 13651: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"5 librerias/UART_variables.c
-[; ;librerias/UART_variables.c: 5: void UART_ErrorHandler(UART_ERROR_CODE errorCode){
-[v _UART_ErrorHandler `(v ~T0 @X0 1 ef1`E5188 ]
+"21 ./config.h
+[p x PLLSEL  =  PLL3X    ]
+"22
+[p x CFGPLLEN  =  ON    ]
+"23
+[p x CPUDIV  =  NOCLKDIV ]
+"24
+[p x LS48MHZ  =  SYS48X8 ]
+"27
+[p x FOSC  =  INTOSCCLKO ]
+"28
+[p x PCLKEN  =  OFF      ]
+"29
+[p x FCMEN  =  OFF       ]
+"30
+[p x IESO  =  OFF        ]
+"33
+[p x nPWRTEN  =  OFF     ]
+"34
+[p x BOREN  =  SBORDIS   ]
+"35
+[p x BORV  =  190        ]
+"36
+[p x nLPBOR  =  OFF      ]
+"39
+[p x WDTEN  =  OFF        ]
+"40
+[p x WDTPS  =  32768     ]
+"43
+[p x CCP2MX  =  RC1      ]
+"44
+[p x PBADEN  =  ON       ]
+"45
+[p x T3CMX  =  RC0       ]
+"46
+[p x SDOMX  =  RB3       ]
+"47
+[p x MCLRE  =  ON        ]
+"50
+[p x STVREN  =  ON       ]
+"51
+[p x LVP  =  ON          ]
+"52
+[p x ICPRT  =  OFF       ]
+"53
+[p x XINST  =  OFF       ]
+"56
+[p x CP0  =  OFF         ]
+"57
+[p x CP1  =  OFF         ]
+"58
+[p x CP2  =  OFF         ]
+"59
+[p x CP3  =  OFF         ]
+"62
+[p x CPB  =  OFF         ]
+"63
+[p x CPD  =  OFF         ]
+"66
+[p x WRT0  =  OFF        ]
+"67
+[p x WRT1  =  OFF        ]
+"68
+[p x WRT2  =  OFF        ]
+"69
+[p x WRT3  =  OFF        ]
+"72
+[p x WRTC  =  OFF        ]
+"73
+[p x WRTB  =  OFF        ]
+"74
+[p x WRTD  =  OFF        ]
+"77
+[p x EBTR0  =  OFF       ]
+"78
+[p x EBTR1  =  OFF       ]
+"79
+[p x EBTR2  =  OFF       ]
+"80
+[p x EBTR3  =  OFF       ]
+"83
+[p x EBTRB  =  OFF       ]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"15 main.c
+[; ;main.c: 15: void main(void) {
+[v _main `(v ~T0 @X0 1 ef ]
 {
-[e :U _UART_ErrorHandler ]
-[v _errorCode `E5188 ~T0 @X0 1 r1 ]
+[e :U _main ]
 [f ]
-"6
-[; ;librerias/UART_variables.c: 6:     if(errorCode == ERROR_CODE_UART_OK) return;
-[e $ ! == -> _errorCode `ui -> . `E5188 0 `ui 639  ]
-[e $UE 638  ]
-[e :U 639 ]
-"7
-[; ;librerias/UART_variables.c: 7:     printf("Error: ");
-[e ( _printf :s 1C ]
-"8
-[; ;librerias/UART_variables.c: 8:     switch(errorCode){
-[e $U 641  ]
-{
-"9
-[; ;librerias/UART_variables.c: 9:         case ERROR_CODE_UART_OVERFLOW:
-[e :U 642 ]
-"10
-[; ;librerias/UART_variables.c: 10:             printf("ERROR_CODE_UART_OVERFLOW");
-[e ( _printf :s 2C ]
-"11
-[; ;librerias/UART_variables.c: 11:         break;
-[e $U 640  ]
-"12
-[; ;librerias/UART_variables.c: 12:         case ERROR_CODE_UART_FRAMING:
-[e :U 643 ]
-"13
-[; ;librerias/UART_variables.c: 13:             printf("ERROR_CODE_UART_FRAMING");
-[e ( _printf :s 3C ]
-"14
-[; ;librerias/UART_variables.c: 14:         break;
-[e $U 640  ]
-"15
-[; ;librerias/UART_variables.c: 15:         case ERROR_CODE_UART_CONFIG:
-[e :U 644 ]
 "16
-[; ;librerias/UART_variables.c: 16:             printf("ERROR_CODE_UART_CONFIG \r\n");
-[e ( _printf :s 4C ]
+[; ;main.c: 16:     Clock_Init(16000);
+[e ( _Clock_Init (1 -> -> 16000 `i `s ]
 "17
-[; ;librerias/UART_variables.c: 17:         break;
-[e $U 640  ]
+[; ;main.c: 17:     UART_Init(9600);
+[e ( _UART_Init (1 -> -> -> 9600 `i `l `ul ]
 "18
-[; ;librerias/UART_variables.c: 18:     }
+[; ;main.c: 18:     SPI_BaudRateGen(100000);
+[e ( _SPI_BaudRateGen (1 -> 100000 `l ]
+"19
+[; ;main.c: 19:     while(1){
+[e :U 640 ]
+{
+"20
+[; ;main.c: 20:     }
 }
+[e :U 639 ]
 [e $U 640  ]
 [e :U 641 ]
-[e [\ -> _errorCode `ui , $ -> . `E5188 1 `ui 642
- , $ -> . `E5188 2 `ui 643
- , $ -> . `E5188 3 `ui 644
- 640 ]
-[e :U 640 ]
-"19
-[; ;librerias/UART_variables.c: 19: }
+"21
+[; ;main.c: 21: }
 [e :UE 638 ]
 }
-[p f _printf 8388608 ]
-[a 2C 69 82 82 79 82 95 67 79 68 69 95 85 65 82 84 95 79 86 69 82 70 76 79 87 0 ]
-[a 3C 69 82 82 79 82 95 67 79 68 69 95 85 65 82 84 95 70 82 65 77 73 78 71 0 ]
-[a 1C 69 114 114 111 114 58 32 0 ]
-[a 4C 69 82 82 79 82 95 67 79 68 69 95 85 65 82 84 95 67 79 78 70 73 71 32 13 10 0 ]

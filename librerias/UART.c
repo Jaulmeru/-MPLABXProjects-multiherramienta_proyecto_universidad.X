@@ -94,14 +94,14 @@ UART_ERROR_CODE UART_Rx_FRAMING(){
 }
 
 char UART_Rx(void){
-    ErrorHandler(UART_Rx_OVERFLOW());
-    ErrorHandler(UART_Rx_FRAMING());
+    UART_ErrorHandler(UART_Rx_OVERFLOW());
+    UART_ErrorHandler(UART_Rx_FRAMING());
     return RCREG1;
 }
 
 bool UART_Available(){
     if (!RCSTAbits.SPEN || !RCSTAbits.CREN){
-        ErrorHandler(ERROR_CODE_UART_CONFIG);
+        UART_ErrorHandler(ERROR_CODE_UART_CONFIG);
         return 0;
     }    
     if (!RC1IF){

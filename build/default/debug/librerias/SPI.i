@@ -1,4 +1,4 @@
-# 1 "librerias/clock.c"
+# 1 "librerias/SPI.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,11 +6,17 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "librerias/clock.c" 2
-# 1 "librerias/clock.h" 1
-# 11 "librerias/clock.h"
-# 1 "librerias/clk_variables.h" 1
-# 11 "librerias/clk_variables.h"
+# 1 "librerias/SPI.c" 2
+# 1 "librerias/SPI.h" 1
+
+
+
+
+
+
+
+# 1 "librerias/variables.h" 1
+# 11 "librerias/variables.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdint.h" 1 3
 
 
@@ -116,16 +122,16 @@ typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 149 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdint.h" 2 3
-# 11 "librerias/clk_variables.h" 2
+# 11 "librerias/variables.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdbool.h" 1 3
-# 12 "librerias/clk_variables.h" 2
+# 12 "librerias/variables.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\float.h" 1 3
 # 45 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\float.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/float.h" 1 3
 # 46 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\float.h" 2 3
-# 13 "librerias/clk_variables.h" 2
+# 13 "librerias/variables.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 1 3
 # 10 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 3
@@ -284,7 +290,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 14 "librerias/clk_variables.h" 2
+# 14 "librerias/variables.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 3
@@ -8287,87 +8293,51 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
-# 15 "librerias/clk_variables.h" 2
+# 15 "librerias/variables.h" 2
 
-
-
-
-
-
+# 1 "librerias/clock.h" 1
+# 11 "librerias/clock.h"
+# 1 "librerias/clk_variables.h" 1
+# 21 "librerias/clk_variables.h"
 typedef enum{
         ERROR_CODE_OK,
         ERROR_CODE_TIMEOUT,
     }CLK_ERROR_CODE;
 # 11 "librerias/clock.h" 2
-
-
-
-
-
-
-
-
+# 21 "librerias/clock.h"
 CLK_ERROR_CODE Clock_Init(int16_t s16Timeout);
-# 1 "librerias/clock.c" 2
+# 16 "librerias/variables.h" 2
 
 
-CLK_ERROR_CODE Clock_Init(int16_t s16Timeout){
-    CLK_ERROR_CODE returnCode = ERROR_CODE_OK;
-    _Bool bItTimeEn = (0 >= s16Timeout) ? 0 : 1;
 
-    if(ERROR_CODE_OK == returnCode){
-        _Bool bStatus = 0;
-        do{
-            bStatus = OSCCON2bits.HFIOFR;
-            s16Timeout--;
-        }while((0 == bStatus) && ((0 < s16Timeout) || (0 == bItTimeEn)));
-        if (0 == bStatus){
-            returnCode = ERROR_CODE_TIMEOUT;
-        }
+
+
+
+    typedef enum{
+        ERROR_CODE_UART_OK,
+        ERROR_CODE_UART_OVERFLOW,
+        ERROR_CODE_UART_FRAMING,
+        ERROR_CODE_UART_CONFIG,
+    }UART_ERROR_CODE;
+
+    typedef enum{
+        ERROR_CODE_SPI_OK,
+        ERROR_CODE_SPI_BR_OVERRANGE,
+    }SPI_ERROR_CODE;
+
+void UART_ErrorHandler(UART_ERROR_CODE);
+void SPI_ErrorHandler(SPI_ERROR_CODE);
+# 8 "librerias/SPI.h" 2
+# 17 "librerias/SPI.h"
+void SPI_BaudRateGen(int32_t);
+# 1 "librerias/SPI.c" 2
+
+
+void SPI_BaudRateGen(int32_t FClock){
+    uint32_t baudReg = (48000000 / (FClock * 4)) - 1;
+    if(baudReg > 0xFF){
+        SPI_ErrorHandler(ERROR_CODE_SPI_BR_OVERRANGE);
+        return;
     }
-
-    if(ERROR_CODE_OK == returnCode){
-        OSCCON2bits.INTSRC = 1;
-        OSCCONbits.IRCF = 7;
-
-        _Bool bStatus = 0;
-        do{
-            bStatus = OSCCONbits.HFIOFS;
-            s16Timeout--;
-        }while((0 == bStatus) && ((0 < s16Timeout) || (0 == bItTimeEn)));
-        if (0 == bStatus){
-            returnCode = ERROR_CODE_TIMEOUT;
-        }
-    }
-
-    if(ERROR_CODE_OK == returnCode){
-        _Bool bStatus = 0;
-        do{
-            bStatus = OSCCONbits.OSTS;
-            s16Timeout--;
-        }while((0 == bStatus) && ((0 < s16Timeout) || (0 == bItTimeEn)));
-        if (0 == bStatus){
-            returnCode = ERROR_CODE_TIMEOUT;
-        }
-    }
-        if(ERROR_CODE_OK == returnCode){
-        OSCTUNEbits.SPLLMULT = 1;
-        OSCCON2bits.PLLEN = 1;
-        _Bool bStatus = 0;
-        do{
-            bStatus = OSCCON2bits.PLLRDY;
-            s16Timeout--;
-        }while((0 == bStatus) && ((0 < s16Timeout) || (0 == bItTimeEn)));
-        if (0 == bStatus){
-            returnCode = ERROR_CODE_TIMEOUT;
-        }
-    }
-
-
-    if(ERROR_CODE_OK == returnCode){
-        OSCCON2bits.PRISD = 0;
-        OSCCONbits.SCS = 0;
-    }
-
-    return (returnCode);
+    SSP1ADD = baudReg;
 }

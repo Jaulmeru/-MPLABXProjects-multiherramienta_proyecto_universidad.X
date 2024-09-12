@@ -1,4 +1,4 @@
-# 1 "librerias/UART.c"
+# 1 "main.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,15 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "librerias/UART.c" 2
+# 1 "main.c" 2
+
+
+
+
+
+
+
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -8111,27 +8119,87 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
-# 1 "librerias/UART.c" 2
+# 9 "main.c" 2
+
+# 1 "./config.h" 1
+# 21 "./config.h"
+#pragma config PLLSEL = PLL3X
+#pragma config CFGPLLEN = ON
+#pragma config CPUDIV = NOCLKDIV
+#pragma config LS48MHZ = SYS48X8
 
 
-# 1 "librerias/UART.h" 1
+#pragma config FOSC = INTOSCCLKO
+#pragma config PCLKEN = OFF
+#pragma config FCMEN = OFF
+#pragma config IESO = OFF
 
 
+#pragma config nPWRTEN = OFF
+#pragma config BOREN = SBORDIS
+#pragma config BORV = 190
+#pragma config nLPBOR = OFF
 
 
+#pragma config WDTEN = OFF
+#pragma config WDTPS = 32768
 
 
+#pragma config CCP2MX = RC1
+#pragma config PBADEN = ON
+#pragma config T3CMX = RC0
+#pragma config SDOMX = RB3
+#pragma config MCLRE = ON
 
-# 1 "librerias/UART_variables.h" 1
-# 12 "librerias/UART_variables.h"
+
+#pragma config STVREN = ON
+#pragma config LVP = ON
+#pragma config ICPRT = OFF
+#pragma config XINST = OFF
+
+
+#pragma config CP0 = OFF
+#pragma config CP1 = OFF
+#pragma config CP2 = OFF
+#pragma config CP3 = OFF
+
+
+#pragma config CPB = OFF
+#pragma config CPD = OFF
+
+
+#pragma config WRT0 = OFF
+#pragma config WRT1 = OFF
+#pragma config WRT2 = OFF
+#pragma config WRT3 = OFF
+
+
+#pragma config WRTC = OFF
+#pragma config WRTB = OFF
+#pragma config WRTD = OFF
+
+
+#pragma config EBTR0 = OFF
+#pragma config EBTR1 = OFF
+#pragma config EBTR2 = OFF
+#pragma config EBTR3 = OFF
+
+
+#pragma config EBTRB = OFF
+# 10 "main.c" 2
+
+# 1 "./librerias/clock.h" 1
+# 11 "./librerias/clock.h"
+# 1 "./librerias/clk_variables.h" 1
+# 12 "./librerias/clk_variables.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdbool.h" 1 3
-# 12 "librerias/UART_variables.h" 2
+# 12 "./librerias/clk_variables.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\float.h" 1 3
 # 45 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\float.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/float.h" 1 3
 # 46 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\float.h" 2 3
-# 13 "librerias/UART_variables.h" 2
+# 13 "./librerias/clk_variables.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 3
@@ -8285,7 +8353,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 14 "librerias/UART_variables.h" 2
+# 14 "./librerias/clk_variables.h" 2
 
 
 
@@ -8293,6 +8361,25 @@ char *tempnam(const char *, const char *);
 
 
 
+typedef enum{
+        ERROR_CODE_OK,
+        ERROR_CODE_TIMEOUT,
+    }CLK_ERROR_CODE;
+# 11 "./librerias/clock.h" 2
+# 21 "./librerias/clock.h"
+CLK_ERROR_CODE Clock_Init(int16_t s16Timeout);
+# 11 "main.c" 2
+
+# 1 "./librerias/UART.h" 1
+
+
+
+
+
+
+
+# 1 "./librerias/variables.h" 1
+# 22 "./librerias/variables.h"
     typedef enum{
         ERROR_CODE_UART_OK,
         ERROR_CODE_UART_OVERFLOW,
@@ -8300,9 +8387,15 @@ char *tempnam(const char *, const char *);
         ERROR_CODE_UART_CONFIG,
     }UART_ERROR_CODE;
 
+    typedef enum{
+        ERROR_CODE_SPI_OK,
+        ERROR_CODE_SPI_BR_OVERRANGE,
+    }SPI_ERROR_CODE;
+
 void UART_ErrorHandler(UART_ERROR_CODE);
-# 8 "librerias/UART.h" 2
-# 18 "librerias/UART.h"
+void SPI_ErrorHandler(SPI_ERROR_CODE);
+# 8 "./librerias/UART.h" 2
+# 18 "./librerias/UART.h"
 void UART_config_show();
 void UART_Init(uint32_t);
 void UART_select_baud(uint32_t);
@@ -8311,113 +8404,18 @@ UART_ERROR_CODE UART_Rx_OVERFLOW();
 void UART_Tx(char);
 char UART_Rx(void);
 _Bool UART_Available(void);
-# 3 "librerias/UART.c" 2
+# 12 "main.c" 2
+
+# 1 "./librerias/SPI.h" 1
+# 17 "./librerias/SPI.h"
+void SPI_BaudRateGen(int32_t);
+# 13 "main.c" 2
 
 
-void UART_config_show(){
-    printf("Modo: ");
-    (SYNC1) ? printf("Sincrono "):printf("Asincrono ");
-    (BRGH1) ? printf("alta velocidad \r\n"):printf("baja velocidad \r\n");
-    printf("Baudrate: ");
-    (BRG161) ? printf("16 bits "):printf("8 bits ");
-    printf("x baudios \r\n");
-    printf("Puerto: ");
-    (SPEN) ? printf("Habilitado \r\n"):printf("Deshabilitado \r\n");
-    printf("Transor: ");
-    (TXEN1) ? printf("Habilitado \r\n"):printf("Deshabilitado \r\n");
-    printf("Receptor: ");
-    (CREN) ? printf("Habilitado \r\n"):printf("Deshabilitado \r\n");
-}
-
-void UART_Init(uint32_t baudrate){
-    TXSTA1bits.SYNC1 = 0;
-    TXSTA1bits.BRGH1 = 1;
-    BAUDCON1bits.BRG161 = 1;
-    UART_select_baud(baudrate);
-    TRISC6 = 1;
-    TRISC7 = 1;
-    RCSTAbits.SPEN = 1;
-    TXSTAbits.TXEN1 = 1;
-    RCSTAbits.CREN = 1;
-    UART_config_show();
-};
-
-void UART_select_baud(uint32_t baudrate){
-    switch (baudrate){
-        case 300:
-            SPBRGH = 0x9C;
-            SPBRG = 0x3F;
-            break;
-        case 1200:
-            SPBRGH = 0x27;
-            SPBRG = 0x0F;
-            break;
-        case 2400:
-            SPBRGH = 0x13;
-            SPBRG = 0x87;
-            break;
-        case 10417:
-            SPBRGH = 0x04;
-            SPBRG = 0x7F;
-            break;
-        case 19200:
-            SPBRGH = 0x02;
-            SPBRG = 0x70;
-            break;
-        case 57600:
-            SPBRGH = 0x00;
-            SPBRG = 0xCF;
-            break;
-        case 115200:
-            SPBRGH = 0x00;
-            SPBRG = 0x67;
-            break;
-        default:
-            SPBRGH = 0x04;
-            SPBRG = 0xE1;
-            break;
+void main(void) {
+    Clock_Init(16000);
+    UART_Init(9600);
+    SPI_BaudRateGen(100000);
+    while(1){
     }
-}
-
-void UART_Tx(char dato){
-    while(TRMT == 0);
-    TXREG1 = dato;
-}
-
-void putch(char data){
-    UART_Tx(data);
-}
-
-UART_ERROR_CODE UART_Rx_OVERFLOW(){
-    if (RCSTAbits.OERR) {
-        RCSTAbits.CREN = 0;
-        RCSTAbits.CREN = 1;
-        return ERROR_CODE_UART_OVERFLOW;
-    }
-    return ERROR_CODE_UART_OK;
-}
-
-UART_ERROR_CODE UART_Rx_FRAMING(){
-    if (RCSTAbits.FERR) {
-        char dummy = RCREG;
-        return ERROR_CODE_UART_FRAMING;
-    }
-    return ERROR_CODE_UART_OK;
-}
-
-char UART_Rx(void){
-    ErrorHandler(UART_Rx_OVERFLOW());
-    ErrorHandler(UART_Rx_FRAMING());
-    return RCREG1;
-}
-
-_Bool UART_Available(){
-    if (!RCSTAbits.SPEN || !RCSTAbits.CREN){
-        ErrorHandler(ERROR_CODE_UART_CONFIG);
-        return 0;
-    }
-    if (!RC1IF){
-        return 0;
-    }
-    return 1;
 }
