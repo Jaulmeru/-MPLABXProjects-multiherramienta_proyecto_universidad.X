@@ -1,72 +1,27 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"26 librerias/SPI.h
-[; ;librerias/SPI.h: 26: void SPI_BaudRateGen(int32_t);
-[v _SPI_BaudRateGen `(v ~T0 @X0 0 ef1`l ]
-"4637 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 4637:     struct {
-[s S197 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S197 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 TRISA6 TRISA7 ]
-"4647
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 4647:     struct {
-[s S198 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S198 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
-"4636
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 4636: typedef union {
-[u S196 `S197 1 `S198 1 ]
-[n S196 . . . ]
-"4658
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 4658: extern volatile TRISAbits_t TRISAbits __attribute__((address(0xF92)));
-[v _TRISAbits `VS196 ~T0 @X0 0 e@3986 ]
-"4859
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 4859:     struct {
-[s S203 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S203 . TRISB0 TRISB1 TRISB2 TRISB3 TRISB4 TRISB5 TRISB6 TRISB7 ]
-"4869
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 4869:     struct {
-[s S204 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S204 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
-"4858
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 4858: typedef union {
-[u S202 `S203 1 `S204 1 ]
-[n S202 . . . ]
-"4880
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 4880: extern volatile TRISBbits_t TRISBbits __attribute__((address(0xF93)));
-[v _TRISBbits `VS202 ~T0 @X0 0 e@3987 ]
-"10478
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 10478:     struct {
-[s S464 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S464 . SSPM CKP SSPEN SSPOV WCOL ]
-"10485
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 10485:     struct {
-[s S465 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S465 . SSPM0 SSPM1 SSPM2 SSPM3 ]
-"10491
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 10491:     struct {
-[s S466 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S466 . SSPM01 SSPM11 SSPM21 SSPM31 CKP1 SSPEN1 SSPOV1 WCOL1 ]
-"10477
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 10477: typedef union {
-[u S463 `S464 1 `S465 1 `S466 1 ]
-[n S463 . . . . ]
-"10502
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 10502: extern volatile SSPCON1bits_t SSPCON1bits __attribute__((address(0xFC6)));
-[v _SSPCON1bits `VS463 ~T0 @X0 0 e@4038 ]
-"16039
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 16039: extern volatile __bit SSPEN __attribute__((address(0x7E35)));
-[v _SSPEN `Vb ~T0 @X0 0 e@32309 ]
-"18 librerias/SPI.c
-[; ;librerias/SPI.c: 18:         SPI_ErrorHandler(ERROR_CODE_SPI_BR_OVERRANGE);
-[c E5200 0 1 .. ]
-[n E5200 . ERROR_CODE_SPI_OK ERROR_CODE_SPI_BR_OVERRANGE  ]
-"35 librerias/variables.h
-[; ;librerias/variables.h: 35: void SPI_ErrorHandler(SPI_ERROR_CODE);
-[v _SPI_ErrorHandler `(v ~T0 @X0 0 ef1`E5200 ]
-"11190 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 11190: extern volatile unsigned char SSP1ADD __attribute__((address(0xFC8)));
-[v _SSP1ADD `Vuc ~T0 @X0 0 e@4040 ]
-"11533
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 11533: extern volatile unsigned char SSPBUF __attribute__((address(0xFC9)));
-[v _SSPBUF `Vuc ~T0 @X0 0 e@4041 ]
+[p mainexit ]
+"16 main.c
+[; ;main.c: 16:     Clock_Init(16000);
+[c E5188 0 1 .. ]
+[n E5188 . ERROR_CODE_OK ERROR_CODE_TIMEOUT  ]
+"21 ./librerias/clock.h
+[; ;./librerias/clock.h: 21: CLK_ERROR_CODE Clock_Init(int16_t s16Timeout);
+[v _Clock_Init `(E5188 ~T0 @X0 0 ef1`s ]
+"19 ./librerias/UART.h
+[; ;./librerias/UART.h: 19: void UART_Init(uint32_t);
+[v _UART_Init `(v ~T0 @X0 0 ef1`ul ]
+"25 ./librerias/SPI.h
+[; ;./librerias/SPI.h: 25: void SPI_master_init();
+[v _SPI_master_init `(v ~T0 @X0 0 e? ]
+"28
+[; ;./librerias/SPI.h: 28: void SPI_write(char);
+[v _SPI_write `(v ~T0 @X0 0 ef1`uc ]
+"117 C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\stdio.h
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\stdio.h: 117: int printf(const char *restrict, ...);
+[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
+"29 ./librerias/SPI.h
+[; ;./librerias/SPI.h: 29: char SPI_read();
+[v _SPI_read `(uc ~T0 @X0 0 e? ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 54: __asm("SRCON1 equ 0F57h");
 [; <" SRCON1 equ 0F57h ;# ">
@@ -691,118 +646,126 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13651
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 13651: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"3 librerias/SPI.c
-[; ;librerias/SPI.c: 3: void SPI_master_init(){
-[v _SPI_master_init `(v ~T0 @X0 1 ef ]
+"21 ./config.h
+[p x PLLSEL  =  PLL3X    ]
+"22
+[p x CFGPLLEN  =  ON    ]
+"23
+[p x CPUDIV  =  NOCLKDIV ]
+"24
+[p x LS48MHZ  =  SYS48X8 ]
+"27
+[p x FOSC  =  INTOSCCLKO ]
+"28
+[p x PCLKEN  =  OFF      ]
+"29
+[p x FCMEN  =  OFF       ]
+"30
+[p x IESO  =  OFF        ]
+"33
+[p x nPWRTEN  =  OFF     ]
+"34
+[p x BOREN  =  SBORDIS   ]
+"35
+[p x BORV  =  190        ]
+"36
+[p x nLPBOR  =  OFF      ]
+"39
+[p x WDTEN  =  OFF        ]
+"40
+[p x WDTPS  =  32768     ]
+"43
+[p x CCP2MX  =  RC1      ]
+"44
+[p x PBADEN  =  ON       ]
+"45
+[p x T3CMX  =  RC0       ]
+"46
+[p x SDOMX  =  RB3       ]
+"47
+[p x MCLRE  =  ON        ]
+"50
+[p x STVREN  =  ON       ]
+"51
+[p x LVP  =  ON          ]
+"52
+[p x ICPRT  =  OFF       ]
+"53
+[p x XINST  =  OFF       ]
+"56
+[p x CP0  =  OFF         ]
+"57
+[p x CP1  =  OFF         ]
+"58
+[p x CP2  =  OFF         ]
+"59
+[p x CP3  =  OFF         ]
+"62
+[p x CPB  =  OFF         ]
+"63
+[p x CPD  =  OFF         ]
+"66
+[p x WRT0  =  OFF        ]
+"67
+[p x WRT1  =  OFF        ]
+"68
+[p x WRT2  =  OFF        ]
+"69
+[p x WRT3  =  OFF        ]
+"72
+[p x WRTC  =  OFF        ]
+"73
+[p x WRTB  =  OFF        ]
+"74
+[p x WRTD  =  OFF        ]
+"77
+[p x EBTR0  =  OFF       ]
+"78
+[p x EBTR1  =  OFF       ]
+"79
+[p x EBTR2  =  OFF       ]
+"80
+[p x EBTR3  =  OFF       ]
+"83
+[p x EBTRB  =  OFF       ]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"15 main.c
+[; ;main.c: 15: void main(void) {
+[v _main `(v ~T0 @X0 1 ef ]
 {
-[e :U _SPI_master_init ]
-[f ]
-"4
-[; ;librerias/SPI.c: 4:     SPI_BaudRateGen(100000);
-[e ( _SPI_BaudRateGen (1 -> 100000 `l ]
-"5
-[; ;librerias/SPI.c: 5:     TRISAbits.RA5 = 1;
-[e = . . _TRISAbits 1 5 -> -> 1 `i `uc ]
-"6
-[; ;librerias/SPI.c: 6:     TRISBbits.RB0 = 1;
-[e = . . _TRISBbits 1 0 -> -> 1 `i `uc ]
-"7
-[; ;librerias/SPI.c: 7:     TRISBbits.RB1 = 0;
-[e = . . _TRISBbits 1 1 -> -> 0 `i `uc ]
-"8
-[; ;librerias/SPI.c: 8:     TRISBbits.RB3 = 0;
-[e = . . _TRISBbits 1 3 -> -> 0 `i `uc ]
-"9
-[; ;librerias/SPI.c: 9:     SSPCON1bits.SSPM = 10;
-[e = . . _SSPCON1bits 0 0 -> -> 10 `i `uc ]
-"10
-[; ;librerias/SPI.c: 10:     do{SSPEN = 1;}while(0);
-[e :U 641 ]
-{
-[e = _SSPEN -> -> 1 `i `b ]
-}
-[e :U 640 ]
-"11
-[; ;librerias/SPI.c: 11:     do{ SSPCON1bits.CKP = 0; }while(0);
-[e :U 644 ]
-{
-[e = . . _SSPCON1bits 0 1 -> -> 0 `i `uc ]
-}
-[e :U 643 ]
-"12
-[; ;librerias/SPI.c: 12:     do{ SSPCON1bits.CKP = 1; }while(0);
-[e :U 647 ]
-{
-[e = . . _SSPCON1bits 0 1 -> -> 1 `i `uc ]
-}
-[e :U 646 ]
-"13
-[; ;librerias/SPI.c: 13: }
-[e :UE 638 ]
-}
-"15
-[; ;librerias/SPI.c: 15: void SPI_BaudRateGen(int32_t FClock){
-[v _SPI_BaudRateGen `(v ~T0 @X0 1 ef1`l ]
-{
-[e :U _SPI_BaudRateGen ]
-[v _FClock `l ~T0 @X0 1 r1 ]
+[e :U _main ]
 [f ]
 "16
-[; ;librerias/SPI.c: 16:     uint32_t baudReg = (48000000 / (FClock * 4)) - 1;
-[v _baudReg `ul ~T0 @X0 1 a ]
-[e = _baudReg -> - / -> 48000000 `l * _FClock -> -> 4 `i `l -> -> 1 `i `l `ul ]
+[; ;main.c: 16:     Clock_Init(16000);
+[e ( _Clock_Init (1 -> -> 16000 `i `s ]
 "17
-[; ;librerias/SPI.c: 17:     if(baudReg > 0xFF){
-[e $ ! > _baudReg -> -> -> 255 `i `l `ul 649  ]
-{
+[; ;main.c: 17:     UART_Init(9600);
+[e ( _UART_Init (1 -> -> -> 9600 `i `l `ul ]
 "18
-[; ;librerias/SPI.c: 18:         SPI_ErrorHandler(ERROR_CODE_SPI_BR_OVERRANGE);
-[e ( _SPI_ErrorHandler (1 . `E5200 1 ]
-"19
-[; ;librerias/SPI.c: 19:         return;
-[e $UE 648  ]
-"20
-[; ;librerias/SPI.c: 20:     }
-}
-[e :U 649 ]
-"21
-[; ;librerias/SPI.c: 21:     SSP1ADD = baudReg;
-[e = _SSP1ADD -> _baudReg `uc ]
-"22
-[; ;librerias/SPI.c: 22: }
-[e :UE 648 ]
-}
-"24
-[; ;librerias/SPI.c: 24: void SPI_master_reset(){
-[v _SPI_master_reset `(v ~T0 @X0 1 ef ]
-{
-[e :U _SPI_master_reset ]
-[f ]
-"25
-[; ;librerias/SPI.c: 25:     do{SSPEN = 0;}while(0);
-[e :U 653 ]
-{
-[e = _SSPEN -> -> 0 `i `b ]
-}
-[e :U 652 ]
-"26
-[; ;librerias/SPI.c: 26:     SPI_master_init();
+[; ;main.c: 18:     SPI_master_init();
 [e ( _SPI_master_init ..  ]
-"27
-[; ;librerias/SPI.c: 27: }
-[e :UE 650 ]
-}
-"29
-[; ;librerias/SPI.c: 29: void SPI_write(char dato){
-[v _SPI_write `(v ~T0 @X0 1 ef1`uc ]
+"19
+[; ;main.c: 19:     SPI_write('b');
+[e ( _SPI_write (1 -> -> 98 `ui `uc ]
+"20
+[; ;main.c: 20:     printf("hola");
+[e ( _printf :s 1C ]
+"21
+[; ;main.c: 21:     printf(SPI_read());
+[e ( _printf -> ( _SPI_read ..  `*Cuc ]
+"22
+[; ;main.c: 22:     while(1){
+[e :U 640 ]
 {
-[e :U _SPI_write ]
-[v _dato `uc ~T0 @X0 1 r1 ]
-[f ]
-"30
-[; ;librerias/SPI.c: 30:     SSPBUF = dato;
-[e = _SSPBUF -> _dato `uc ]
-"31
-[; ;librerias/SPI.c: 31: }
-[e :UE 654 ]
+"23
+[; ;main.c: 23:     }
 }
+[e :U 639 ]
+[e $U 640  ]
+[e :U 641 ]
+"24
+[; ;main.c: 24: }
+[e :UE 638 ]
+}
+[p f _printf 9437696 ]
+[a 1C 104 111 108 97 0 ]

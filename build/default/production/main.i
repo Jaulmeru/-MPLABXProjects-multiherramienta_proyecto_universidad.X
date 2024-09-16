@@ -8412,6 +8412,7 @@ void SPI_master_init();
 void SPI_BaudRateGen(int32_t);
 void SPI_master_reset();
 void SPI_write(char);
+char SPI_read();
 # 13 "main.c" 2
 
 
@@ -8419,7 +8420,9 @@ void main(void) {
     Clock_Init(16000);
     UART_Init(9600);
     SPI_master_init();
-    SPI_write('a');
+    SPI_write('b');
+    printf("hola");
+    printf(SPI_read());
     while(1){
     }
 }
