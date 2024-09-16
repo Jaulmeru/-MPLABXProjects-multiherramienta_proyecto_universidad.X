@@ -1,7 +1,7 @@
 ### HEXMate logfile and output summary ###
 
 ### Command-line arguments ###
- C:\Users\admin\AppData\Local\Temp\xcBsjlk.1\driver_tmp_3.o
+ C:\Users\admin\AppData\Local\Temp\xcAs2p4.\driver_tmp_3.o
  -Odist/default/debug\multiherramienta_proyecto_universidad.X.debug.hex
  -logfile=dist/default/debug\multiherramienta_proyecto_universidad.X.debug.hxl
  -addressing=1
@@ -9,22 +9,27 @@
 
 ### Memory Usage ###
  Input file ranges:
-  0h - 3h		(C:\Users\admin\AppData\Local\Temp\xcBsjlk.1\driver_tmp_3.o)
-  75F0h - 7FFEh		(C:\Users\admin\AppData\Local\Temp\xcBsjlk.1\driver_tmp_3.o)
-  300000h - 30000Dh		(C:\Users\admin\AppData\Local\Temp\xcBsjlk.1\driver_tmp_3.o)
+  0h - 3h		(C:\Users\admin\AppData\Local\Temp\xcAs2p4.\driver_tmp_3.o)
+  75AAh - 7FFEh		(C:\Users\admin\AppData\Local\Temp\xcAs2p4.\driver_tmp_3.o)
+  300000h - 30000Dh		(C:\Users\admin\AppData\Local\Temp\xcAs2p4.\driver_tmp_3.o)
  Unused ranges:
-  4h - 75EFh
+  4h - 75A9h
   7FFFh - 2FFFFFh
 
 ### Hex Memory Map ###
  Legend:
   -- = Unused memory
-  H1 = Input file             (C:\Users\admin\AppData\Local\Temp\xcBsjlk.1\driver_tmp_3.o)
+  H1 = Input file             (C:\Users\admin\AppData\Local\Temp\xcAs2p4.\driver_tmp_3.o)
 ----------------------------------------------------------
          | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 ----------------------------------------------------------
 00000000 | H1 H1 H1 H1 -- -- -- -- -- -- -- -- -- -- -- --
 ----------------------------------------------------------
+000075A0 | -- -- -- -- -- -- -- -- -- -- H1 H1 H1 H1 H1 H1
+000075B0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000075C0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000075D0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000075E0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000075F0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00007600 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00007610 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1

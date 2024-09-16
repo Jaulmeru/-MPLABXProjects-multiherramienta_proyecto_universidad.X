@@ -8366,7 +8366,7 @@ typedef enum{
         ERROR_CODE_TIMEOUT,
     }CLK_ERROR_CODE;
 # 11 "./librerias/clock.h" 2
-# 21 "./librerias/clock.h"
+# 20 "./librerias/clock.h"
 CLK_ERROR_CODE Clock_Init(int16_t s16Timeout);
 # 11 "main.c" 2
 
@@ -8407,11 +8407,12 @@ _Bool UART_Available(void);
 # 12 "main.c" 2
 
 # 1 "./librerias/SPI.h" 1
-# 25 "./librerias/SPI.h"
+# 27 "./librerias/SPI.h"
 void SPI_master_init();
 void SPI_BaudRateGen(int32_t);
 void SPI_master_reset();
 void SPI_write(char);
+char SPI_read();
 # 13 "main.c" 2
 
 
@@ -8419,7 +8420,10 @@ void main(void) {
     Clock_Init(16000);
     UART_Init(9600);
     SPI_master_init();
-    SPI_write('a');
     while(1){
+        SPI_write('b');
+        _delay((unsigned long)((2)*(48000000/4000.0)));
+        UART_Tx(SPI_read());
+        _delay((unsigned long)((1000)*(48000000/4000.0)));
     }
 }

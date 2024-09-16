@@ -4,23 +4,27 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 16:     Clock_Init(16000);
 [c E5188 0 1 .. ]
 [n E5188 . ERROR_CODE_OK ERROR_CODE_TIMEOUT  ]
-"21 ./librerias/clock.h
-[; ;./librerias/clock.h: 21: CLK_ERROR_CODE Clock_Init(int16_t s16Timeout);
+"20 ./librerias/clock.h
+[; ;./librerias/clock.h: 20: CLK_ERROR_CODE Clock_Init(int16_t s16Timeout);
 [v _Clock_Init `(E5188 ~T0 @X0 0 ef1`s ]
 "19 ./librerias/UART.h
 [; ;./librerias/UART.h: 19: void UART_Init(uint32_t);
 [v _UART_Init `(v ~T0 @X0 0 ef1`ul ]
-"25 ./librerias/SPI.h
-[; ;./librerias/SPI.h: 25: void SPI_master_init();
+"27 ./librerias/SPI.h
+[; ;./librerias/SPI.h: 27: void SPI_master_init();
 [v _SPI_master_init `(v ~T0 @X0 0 e? ]
-"28
-[; ;./librerias/SPI.h: 28: void SPI_write(char);
+"30
+[; ;./librerias/SPI.h: 30: void SPI_write(char);
 [v _SPI_write `(v ~T0 @X0 0 ef1`uc ]
-"117 C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\stdio.h
-[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\stdio.h: 117: int printf(const char *restrict, ...);
-[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
-"29 ./librerias/SPI.h
-[; ;./librerias/SPI.h: 29: char SPI_read();
+[v F205 `(v ~T0 @X0 1 tf1`ul ]
+"20 C:\Program Files\Microchip\xc8\v2.46\pic\include\builtins.h
+[v __delay `JF205 ~T0 @X0 0 e ]
+[p i __delay ]
+"23 ./librerias/UART.h
+[; ;./librerias/UART.h: 23: void UART_Tx(char);
+[v _UART_Tx `(v ~T0 @X0 0 ef1`uc ]
+"31 ./librerias/SPI.h
+[; ;./librerias/SPI.h: 31: char SPI_read();
 [v _SPI_read `(uc ~T0 @X0 0 e? ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 54: __asm("SRCON1 equ 0F57h");
@@ -745,27 +749,28 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 18:     SPI_master_init();
 [e ( _SPI_master_init ..  ]
 "19
-[; ;main.c: 19:     SPI_write('b');
-[e ( _SPI_write (1 -> -> 98 `ui `uc ]
-"20
-[; ;main.c: 20:     printf("hola");
-[e ( _printf :s 1C ]
-"21
-[; ;main.c: 21:     printf(SPI_read());
-[e ( _printf -> ( _SPI_read ..  `*Cuc ]
-"22
-[; ;main.c: 22:     while(1){
+[; ;main.c: 19:     while(1){
 [e :U 640 ]
 {
+"20
+[; ;main.c: 20:         SPI_write('b');
+[e ( _SPI_write (1 -> -> 98 `ui `uc ]
+"21
+[; ;main.c: 21:         _delay((unsigned long)((2)*(48000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
+"22
+[; ;main.c: 22:         UART_Tx(SPI_read());
+[e ( _UART_Tx (1 ( _SPI_read ..  ]
 "23
-[; ;main.c: 23:     }
+[; ;main.c: 23:         _delay((unsigned long)((1000)*(48000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
+"24
+[; ;main.c: 24:     }
 }
 [e :U 639 ]
 [e $U 640  ]
 [e :U 641 ]
-"24
-[; ;main.c: 24: }
+"25
+[; ;main.c: 25: }
 [e :UE 638 ]
 }
-[p f _printf 9437696 ]
-[a 1C 104 111 108 97 0 ]

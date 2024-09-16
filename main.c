@@ -16,9 +16,10 @@ void main(void) {
     Clock_Init(16000);
     UART_Init(9600);
     SPI_master_init();
-    SPI_write('b');
-    printf("hola");
-    printf(SPI_read());
     while(1){
+        SPI_write('b');
+        __delay_ms(2);
+        UART_Tx(SPI_read());
+        __delay_ms(1000);
     }
 }

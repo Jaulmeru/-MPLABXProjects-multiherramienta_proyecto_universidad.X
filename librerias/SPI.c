@@ -10,10 +10,11 @@ void SPI_master_init(){
     SPI_enable();           // Serial Port -> Habilitado
     SPI_clk_idle_low();     // Polaridad reloj
     SPI_clk_rising();       // Se envian datos en flanco de subida
+    SPI_sample_end();       // Muestra de datos de entrada al final 
 }   
 
 void SPI_BaudRateGen(int32_t FClock){
-    uint32_t baudReg = (FOSC / (FClock * 4)) - 1;
+    uint32_t baudReg = (_XTAL_FREQ / (FClock * 4)) - 1;
     if(baudReg > 0xFF){
         SPI_ErrorHandler(ERROR_CODE_SPI_BR_OVERRANGE);
         return;
@@ -31,5 +32,9 @@ void SPI_write(char dato){
 }
 
 char SPI_read(){
-    return SSPBUF;
+    if(BF){
+        return SSPBUF;
+    }else{
+        return 33;
+    }
 }

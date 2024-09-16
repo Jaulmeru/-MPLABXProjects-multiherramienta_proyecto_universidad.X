@@ -13,6 +13,8 @@
 #define SPI_clk_falling() do{ SSPCON1bits.CKP = 0; }while(0)
 #define SPI_enable() do{SSPEN = 1;}while(0)
 #define SPI_disenable() do{SSPEN = 0;}while(0)
+#define SPI_sample_end() do{SSPSTATbits.SMP = 1;}while(0)
+#define SPI_sample_mid() do{SSPSTATbits.SMP = 0;}while(0)
 
 
 #ifndef SPI_H

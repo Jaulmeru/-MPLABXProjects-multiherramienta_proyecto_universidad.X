@@ -8299,7 +8299,7 @@ typedef enum{
         ERROR_CODE_TIMEOUT,
     }CLK_ERROR_CODE;
 # 11 "librerias/clock.h" 2
-# 21 "librerias/clock.h"
+# 20 "librerias/clock.h"
 CLK_ERROR_CODE Clock_Init(int16_t s16Timeout);
 # 1 "librerias/clock.c" 2
 
