@@ -22,14 +22,17 @@ void UART_ErrorHandler(UART_ERROR_CODE errorCode){
 }
 
 void SPI_ErrorHandler(SPI_ERROR_CODE errorCode){
-    if(errorCode != ERROR_CODE_SPI_OK) return;
+    if(errorCode != EC_SPI_OK) return;
     printf("Error: ");
     switch(errorCode){
-        case ERROR_CODE_SPI_OK:
+        case EC_SPI_OK:
             
         break;
-        case ERROR_CODE_SPI_BR_OVERRANGE:
+        case EC_SPI_BR_OVERRANGE:
             printf("ERROR_CODE_SPI_BR_OVERRANGE");
+        break;
+        case EC_SPI_COLLISION:
+            printf("ERROR_CODE_SPI_COLLISION");
         break;
     }
 }

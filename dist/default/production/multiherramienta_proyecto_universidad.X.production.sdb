@@ -22,8 +22,9 @@ ERROR_CODE_TIMEOUT 1
 ]
 "46 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\librerias/SPI.c
 [e E5225 . `uc
-ERROR_CODE_SPI_OK 0
-ERROR_CODE_SPI_BR_OVERRANGE 1
+EC_SPI_OK 0
+EC_SPI_BR_OVERRANGE 1
+EC_SPI_COLLISION 2
 ]
 "5 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\librerias/variables.c
 [e E5219 . `uc
@@ -34,8 +35,9 @@ ERROR_CODE_UART_CONFIG 3
 ]
 "24
 [e E5225 . `uc
-ERROR_CODE_SPI_OK 0
-ERROR_CODE_SPI_BR_OVERRANGE 1
+EC_SPI_OK 0
+EC_SPI_BR_OVERRANGE 1
+EC_SPI_COLLISION 2
 ]
 "1 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\abs.c
 [v _abs abs `(i  1 e 2 0 ]
@@ -86,10 +88,8 @@ ERROR_CODE_SPI_BR_OVERRANGE 1
 "43
 [v _SPI_BaudRateGen SPI_BaudRateGen `(v  1 e 1 0 ]
 "57
-[v _SPI_write SPI_write `(v  1 e 1 0 ]
-"61
-[v _SPI_read SPI_read `(uc  1 e 1 0 ]
-"69
+[v _SPI_write SPI_write `(uc  1 e 1 0 ]
+"64
 [v _SPI_actual_frec SPI_actual_frec `(l  1 e 4 0 ]
 "5 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\librerias/UART.c
 [v _UART_config_show UART_config_show `(v  1 e 1 0 ]
@@ -111,7 +111,7 @@ ERROR_CODE_SPI_BR_OVERRANGE 1
 [v _SPI_ErrorHandler SPI_ErrorHandler `(v  1 e 1 0 ]
 "15 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\main.c
 [v _main main `(v  1 e 1 0 ]
-[s S612 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S608 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -121,7 +121,7 @@ ERROR_CODE_SPI_BR_OVERRANGE 1
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "4658 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
-[s S621 . 1 `uc 1 RA0 1 0 :1:0 
+[s S617 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -130,9 +130,9 @@ ERROR_CODE_SPI_BR_OVERRANGE 1
 `uc 1 RA6 1 0 :1:6 
 `uc 1 RA7 1 0 :1:7 
 ]
-[u S630 . 1 `S612 1 . 1 0 `S621 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES630  1 e 1 @3986 ]
-[s S572 . 1 `uc 1 TRISB0 1 0 :1:0 
+[u S626 . 1 `S608 1 . 1 0 `S617 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES626  1 e 1 @3986 ]
+[s S568 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
 `uc 1 TRISB3 1 0 :1:3 
@@ -142,7 +142,7 @@ ERROR_CODE_SPI_BR_OVERRANGE 1
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "4880
-[s S581 . 1 `uc 1 RB0 1 0 :1:0 
+[s S577 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -151,13 +151,13 @@ ERROR_CODE_SPI_BR_OVERRANGE 1
 `uc 1 RB6 1 0 :1:6 
 `uc 1 RB7 1 0 :1:7 
 ]
-[u S590 . 1 `S572 1 . 1 0 `S581 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES590  1 e 1 @3987 ]
-[s S518 . 1 `uc 1 TUN 1 0 :7:0 
+[u S586 . 1 `S568 1 . 1 0 `S577 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES586  1 e 1 @3987 ]
+[s S514 . 1 `uc 1 TUN 1 0 :7:0 
 `uc 1 SPLLMULT 1 0 :1:7 
 ]
 "6070
-[s S521 . 1 `uc 1 TUN0 1 0 :1:0 
+[s S517 . 1 `uc 1 TUN0 1 0 :1:0 
 `uc 1 TUN1 1 0 :1:1 
 `uc 1 TUN2 1 0 :1:2 
 `uc 1 TUN3 1 0 :1:3 
@@ -165,9 +165,9 @@ ERROR_CODE_SPI_BR_OVERRANGE 1
 `uc 1 TUN5 1 0 :1:5 
 `uc 1 TUN6 1 0 :1:6 
 ]
-[u S529 . 1 `S518 1 . 1 0 `S521 1 . 1 0 ]
-[v _OSCTUNEbits OSCTUNEbits `VES529  1 e 1 @3995 ]
-[s S253 . 1 `uc 1 RX9D 1 0 :1:0 
+[u S525 . 1 `S514 1 . 1 0 `S517 1 . 1 0 ]
+[v _OSCTUNEbits OSCTUNEbits `VES525  1 e 1 @3995 ]
+[s S249 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -177,22 +177,22 @@ ERROR_CODE_SPI_BR_OVERRANGE 1
 `uc 1 SPEN 1 0 :1:7 
 ]
 "7187
-[s S262 . 1 `uc 1 . 1 0 :3:0 
+[s S258 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 ADEN 1 0 :1:3 
 ]
-[s S265 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S261 . 1 `uc 1 RCD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[s S269 . 1 `uc 1 . 1 0 :6:0 
+[s S265 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S272 . 1 `uc 1 . 1 0 :5:0 
+[s S268 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 SRENA 1 0 :1:5 
 ]
-[u S275 . 1 `S253 1 . 1 0 `S262 1 . 1 0 `S265 1 . 1 0 `S269 1 . 1 0 `S272 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES275  1 e 1 @4011 ]
-[s S77 . 1 `uc 1 TX9D 1 0 :1:0 
+[u S271 . 1 `S249 1 . 1 0 `S258 1 . 1 0 `S261 1 . 1 0 `S265 1 . 1 0 `S268 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES271  1 e 1 @4011 ]
+[s S73 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -202,37 +202,37 @@ ERROR_CODE_SPI_BR_OVERRANGE 1
 `uc 1 CSRC 1 0 :1:7 
 ]
 "7315
-[s S86 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S82 . 1 `uc 1 TXD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[s S90 . 1 `uc 1 . 1 0 :2:0 
+[s S86 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 BRGH1 1 0 :1:2 
 ]
-[s S93 . 1 `uc 1 . 1 0 :7:0 
+[s S89 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 CSRC1 1 0 :1:7 
 ]
-[s S96 . 1 `uc 1 . 1 0 :3:0 
+[s S92 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 SENDB1 1 0 :1:3 
 ]
-[s S99 . 1 `uc 1 . 1 0 :4:0 
+[s S95 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 SYNC1 1 0 :1:4 
 ]
-[s S102 . 1 `uc 1 . 1 0 :1:0 
+[s S98 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 TRMT1 1 0 :1:1 
 ]
-[s S105 . 1 `uc 1 . 1 0 :6:0 
+[s S101 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX91 1 0 :1:6 
 ]
-[s S108 . 1 `uc 1 TX9D1 1 0 :1:0 
+[s S104 . 1 `uc 1 TX9D1 1 0 :1:0 
 ]
-[s S110 . 1 `uc 1 . 1 0 :5:0 
+[s S106 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 TXEN1 1 0 :1:5 
 ]
-[u S113 . 1 `S77 1 . 1 0 `S86 1 . 1 0 `S90 1 . 1 0 `S93 1 . 1 0 `S96 1 . 1 0 `S99 1 . 1 0 `S102 1 . 1 0 `S105 1 . 1 0 `S108 1 . 1 0 `S110 1 . 1 0 ]
-[v _TXSTA1bits TXSTA1bits `VES113  1 e 1 @4012 ]
+[u S109 . 1 `S73 1 . 1 0 `S82 1 . 1 0 `S86 1 . 1 0 `S89 1 . 1 0 `S92 1 . 1 0 `S95 1 . 1 0 `S98 1 . 1 0 `S101 1 . 1 0 `S104 1 . 1 0 `S106 1 . 1 0 ]
+[v _TXSTA1bits TXSTA1bits `VES109  1 e 1 @4012 ]
 "7456
-[v _TXSTAbits TXSTAbits `VES113  1 e 1 @4012 ]
+[v _TXSTAbits TXSTAbits `VES109  1 e 1 @4012 ]
 "7551
 [v _TXREG1 TXREG1 `VEuc  1 e 1 @4013 ]
 "7589
@@ -243,7 +243,7 @@ ERROR_CODE_SPI_BR_OVERRANGE 1
 [v _SPBRG SPBRG `VEuc  1 e 1 @4015 ]
 "7770
 [v _SPBRGH SPBRGH `VEuc  1 e 1 @4016 ]
-[s S161 . 1 `uc 1 ABDEN 1 0 :1:0 
+[s S157 . 1 `uc 1 ABDEN 1 0 :1:0 
 `uc 1 WUE 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 BRG16 1 0 :1:3 
@@ -253,16 +253,16 @@ ERROR_CODE_SPI_BR_OVERRANGE 1
 `uc 1 ABDOVF 1 0 :1:7 
 ]
 "8761
-[s S170 . 1 `uc 1 . 1 0 :4:0 
+[s S166 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 CKTXP 1 0 :1:4 
 `uc 1 DTRXP 1 0 :1:5 
 ]
-[s S174 . 1 `uc 1 . 1 0 :4:0 
+[s S170 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 SCKP 1 0 :1:4 
 `uc 1 . 1 0 :1:5 
 `uc 1 RCMT 1 0 :1:6 
 ]
-[s S179 . 1 `uc 1 ABDEN1 1 0 :1:0 
+[s S175 . 1 `uc 1 ABDEN1 1 0 :1:0 
 `uc 1 WUE1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 BRG161 1 0 :1:3 
@@ -271,32 +271,32 @@ ERROR_CODE_SPI_BR_OVERRANGE 1
 `uc 1 RCIDL1 1 0 :1:6 
 `uc 1 ABDOVF1 1 0 :1:7 
 ]
-[s S188 . 1 `uc 1 . 1 0 :4:0 
+[s S184 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TXCKP1 1 0 :1:4 
 `uc 1 RXDTP1 1 0 :1:5 
 `uc 1 RCMT1 1 0 :1:6 
 ]
-[s S193 . 1 `uc 1 . 1 0 :5:0 
+[s S189 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 RXCKP 1 0 :1:5 
 ]
-[s S196 . 1 `uc 1 . 1 0 :1:0 
+[s S192 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 W4E 1 0 :1:1 
 ]
-[u S199 . 1 `S161 1 . 1 0 `S170 1 . 1 0 `S174 1 . 1 0 `S179 1 . 1 0 `S188 1 . 1 0 `S193 1 . 1 0 `S196 1 . 1 0 ]
-[v _BAUDCON1bits BAUDCON1bits `VES199  1 e 1 @4024 ]
-[s S653 . 1 `uc 1 SSPM 1 0 :4:0 
+[u S195 . 1 `S157 1 . 1 0 `S166 1 . 1 0 `S170 1 . 1 0 `S175 1 . 1 0 `S184 1 . 1 0 `S189 1 . 1 0 `S192 1 . 1 0 ]
+[v _BAUDCON1bits BAUDCON1bits `VES195  1 e 1 @4024 ]
+[s S649 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 CKP 1 0 :1:4 
 `uc 1 SSPEN 1 0 :1:5 
 `uc 1 SSPOV 1 0 :1:6 
 `uc 1 WCOL 1 0 :1:7 
 ]
 "10502
-[s S659 . 1 `uc 1 SSPM0 1 0 :1:0 
+[s S655 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
 `uc 1 SSPM3 1 0 :1:3 
 ]
-[s S664 . 1 `uc 1 SSPM01 1 0 :1:0 
+[s S660 . 1 `uc 1 SSPM01 1 0 :1:0 
 `uc 1 SSPM11 1 0 :1:1 
 `uc 1 SSPM21 1 0 :1:2 
 `uc 1 SSPM31 1 0 :1:3 
@@ -305,16 +305,16 @@ ERROR_CODE_SPI_BR_OVERRANGE 1
 `uc 1 SSPOV1 1 0 :1:6 
 `uc 1 WCOL1 1 0 :1:7 
 ]
-[u S673 . 1 `S653 1 . 1 0 `S659 1 . 1 0 `S664 1 . 1 0 ]
-[v _SSPCON1bits SSPCON1bits `VES673  1 e 1 @4038 ]
-[s S698 . 1 `uc 1 . 1 0 :2:0 
+[u S669 . 1 `S649 1 . 1 0 `S655 1 . 1 0 `S660 1 . 1 0 ]
+[v _SSPCON1bits SSPCON1bits `VES669  1 e 1 @4038 ]
+[s S694 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_NOT_W 1 0 :1:2 
 ]
 "10985
-[s S701 . 1 `uc 1 . 1 0 :5:0 
+[s S697 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 D_NOT_A 1 0 :1:5 
 ]
-[s S704 . 1 `uc 1 BF 1 0 :1:0 
+[s S700 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -323,7 +323,7 @@ ERROR_CODE_SPI_BR_OVERRANGE 1
 `uc 1 CKE 1 0 :1:6 
 `uc 1 SMP 1 0 :1:7 
 ]
-[s S713 . 1 `uc 1 BF1 1 0 :1:0 
+[s S709 . 1 `uc 1 BF1 1 0 :1:0 
 `uc 1 UA1 1 0 :1:1 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
@@ -332,62 +332,62 @@ ERROR_CODE_SPI_BR_OVERRANGE 1
 `uc 1 CKE1 1 0 :1:6 
 `uc 1 SMP1 1 0 :1:7 
 ]
-[s S722 . 1 `uc 1 . 1 0 :2:0 
+[s S718 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 START 1 0 :1:3 
 `uc 1 STOP 1 0 :1:4 
 `uc 1 DA 1 0 :1:5 
 ]
-[s S728 . 1 `uc 1 . 1 0 :2:0 
+[s S724 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 START1 1 0 :1:3 
 `uc 1 STOP1 1 0 :1:4 
 `uc 1 DA1 1 0 :1:5 
 ]
-[s S734 . 1 `uc 1 . 1 0 :2:0 
+[s S730 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 RW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[s S739 . 1 `uc 1 . 1 0 :2:0 
+[s S735 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 RW1 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S744 . 1 `uc 1 . 1 0 :2:0 
+[s S740 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 I2C_DAT 1 0 :1:5 
 ]
-[s S749 . 1 `uc 1 . 1 0 :2:0 
+[s S745 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S754 . 1 `uc 1 . 1 0 :2:0 
+[s S750 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_WRITE 1 0 :1:2 
 ]
-[s S757 . 1 `uc 1 . 1 0 :5:0 
+[s S753 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 NOT_ADDRESS 1 0 :1:5 
 ]
-[s S760 . 1 `uc 1 . 1 0 :2:0 
+[s S756 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S765 . 1 `uc 1 . 1 0 :2:0 
+[s S761 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_W 1 0 :1:2 
 ]
-[s S768 . 1 `uc 1 . 1 0 :5:0 
+[s S764 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 NOT_A 1 0 :1:5 
 ]
-[u S771 . 1 `S698 1 . 1 0 `S701 1 . 1 0 `S704 1 . 1 0 `S713 1 . 1 0 `S722 1 . 1 0 `S728 1 . 1 0 `S734 1 . 1 0 `S739 1 . 1 0 `S744 1 . 1 0 `S749 1 . 1 0 `S754 1 . 1 0 `S757 1 . 1 0 `S760 1 . 1 0 `S765 1 . 1 0 `S768 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES771  1 e 1 @4039 ]
+[u S767 . 1 `S694 1 . 1 0 `S697 1 . 1 0 `S700 1 . 1 0 `S709 1 . 1 0 `S718 1 . 1 0 `S724 1 . 1 0 `S730 1 . 1 0 `S735 1 . 1 0 `S740 1 . 1 0 `S745 1 . 1 0 `S750 1 . 1 0 `S753 1 . 1 0 `S756 1 . 1 0 `S761 1 . 1 0 `S764 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES767  1 e 1 @4039 ]
 "11190
 [v _SSP1ADD SSP1ADD `VEuc  1 e 1 @4040 ]
 "11533
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @4041 ]
-[s S465 . 1 `uc 1 LFIOFS 1 0 :1:0 
+[s S461 . 1 `uc 1 LFIOFS 1 0 :1:0 
 `uc 1 HFIOFR 1 0 :1:1 
 `uc 1 PRISD 1 0 :1:2 
 `uc 1 SOSCGO 1 0 :1:3 
@@ -397,16 +397,16 @@ ERROR_CODE_SPI_BR_OVERRANGE 1
 `uc 1 PLLRDY 1 0 :1:7 
 ]
 "12311
-[u S474 . 1 `S465 1 . 1 0 ]
-[v _OSCCON2bits OSCCON2bits `VES474  1 e 1 @4050 ]
-[s S486 . 1 `uc 1 SCS 1 0 :2:0 
+[u S470 . 1 `S461 1 . 1 0 ]
+[v _OSCCON2bits OSCCON2bits `VES470  1 e 1 @4050 ]
+[s S482 . 1 `uc 1 SCS 1 0 :2:0 
 `uc 1 HFIOFS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 `uc 1 IDLEN 1 0 :1:7 
 ]
 "12379
-[s S492 . 1 `uc 1 SCS0 1 0 :1:0 
+[s S488 . 1 `uc 1 SCS0 1 0 :1:0 
 `uc 1 SCS1 1 0 :1:1 
 `uc 1 FLTS 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -414,8 +414,8 @@ ERROR_CODE_SPI_BR_OVERRANGE 1
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S500 . 1 `S486 1 . 1 0 `S492 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES500  1 e 1 @4051 ]
+[u S496 . 1 `S482 1 . 1 0 `S488 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES496  1 e 1 @4051 ]
 "13945
 [v _BF BF `VEb  1 e 0 @32312 ]
 "13987
@@ -440,6 +440,8 @@ ERROR_CODE_SPI_BR_OVERRANGE 1
 [v _TRMT TRMT `VEb  1 e 0 @32097 ]
 "16639
 [v _TXEN1 TXEN1 `VEb  1 e 0 @32101 ]
+"16723
+[v _WCOL WCOL `VEb  1 e 0 @32311 ]
 "153 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
 [v _prec prec `i  1 s 2 prec ]
 [v _width width `i  1 s 2 width ]
@@ -450,7 +452,7 @@ ERROR_CODE_SPI_BR_OVERRANGE 1
 "15 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"25
+"23
 } 0
 "20 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\librerias/UART.c
 [v _UART_Init UART_Init `(v  1 e 1 0 ]
@@ -470,17 +472,12 @@ ERROR_CODE_SPI_BR_OVERRANGE 1
 "18
 } 0
 "57 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\librerias/SPI.c
-[v _SPI_write SPI_write `(v  1 e 1 0 ]
+[v _SPI_write SPI_write `(uc  1 e 1 0 ]
 {
 [v SPI_write@dato dato `uc  1 a 1 wreg ]
 [v SPI_write@dato dato `uc  1 a 1 wreg ]
-[v SPI_write@dato dato `uc  1 a 1 0 ]
-"59
-} 0
-"61
-[v _SPI_read SPI_read `(uc  1 e 1 0 ]
-{
-"67
+[v SPI_write@dato dato `uc  1 a 1 45 ]
+"62
 } 0
 "28
 [v _SPI_master_init SPI_master_init `(v  1 e 1 0 ]
@@ -492,12 +489,12 @@ ERROR_CODE_SPI_BR_OVERRANGE 1
 {
 "26
 } 0
-"69
+"64
 [v _SPI_actual_frec SPI_actual_frec `(l  1 e 4 0 ]
 {
-"70
+"65
 [v SPI_actual_frec@baud baud `l  1 a 4 20 ]
-"72
+"67
 } 0
 "43
 [v _SPI_BaudRateGen SPI_BaudRateGen `(v  1 e 1 0 ]
@@ -514,7 +511,7 @@ ERROR_CODE_SPI_BR_OVERRANGE 1
 [v SPI_ErrorHandler@errorCode errorCode `E5225  1 a 1 wreg ]
 [v SPI_ErrorHandler@errorCode errorCode `E5225  1 a 1 wreg ]
 [v SPI_ErrorHandler@errorCode errorCode `E5225  1 a 1 44 ]
-"35
+"38
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\printf.c
 [v _printf printf `(i  1 e 2 0 ]
@@ -530,9 +527,9 @@ ERROR_CODE_SPI_BR_OVERRANGE 1
 {
 "1820
 [v vfprintf@cfmt cfmt `*.32uc  1 a 2 33 ]
-[s S1427 _IO_FILE 0 ]
+[s S1426 _IO_FILE 0 ]
 "1817
-[v vfprintf@fp fp `*.39S1427  1 p 2 28 ]
+[v vfprintf@fp fp `*.39S1426  1 p 2 28 ]
 [v vfprintf@fmt fmt `*.32Cuc  1 p 2 30 ]
 [v vfprintf@ap ap `*.30*.30v  1 p 1 32 ]
 "1840
@@ -540,17 +537,17 @@ ERROR_CODE_SPI_BR_OVERRANGE 1
 "1177
 [v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
 {
-[u S1440 . 4 `l 1 sint 4 0 `ul 1 uint 4 0 `d 1 f 4 0 ]
+[u S1439 . 4 `l 1 sint 4 0 `ul 1 uint 4 0 `d 1 f 4 0 ]
 "1188
-[v vfpfcnvrt@convarg convarg `S1440  1 a 4 23 ]
+[v vfpfcnvrt@convarg convarg `S1439  1 a 4 23 ]
 "1179
 [v vfpfcnvrt@cp cp `*.32uc  1 a 2 21 ]
 [v vfpfcnvrt@c c `uc  1 a 1 27 ]
 "1180
 [v vfpfcnvrt@done done `a  1 a 1 20 ]
-[s S1427 _IO_FILE 0 ]
+[s S1426 _IO_FILE 0 ]
 "1177
-[v vfpfcnvrt@fp fp `*.39S1427  1 p 2 14 ]
+[v vfpfcnvrt@fp fp `*.39S1426  1 p 2 14 ]
 [v vfpfcnvrt@fmt fmt `*.30*.32uc  1 p 1 16 ]
 [v vfpfcnvrt@ap ap `*.30*.30v  1 p 1 17 ]
 "1814
@@ -559,9 +556,9 @@ ERROR_CODE_SPI_BR_OVERRANGE 1
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 2 ]
-[u S1405 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
-[s S1408 _IO_FILE 12 `S1405 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
-[v fputc@fp fp `*.39S1408  1 p 2 4 ]
+[u S1404 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[s S1407 _IO_FILE 12 `S1404 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
+[v fputc@fp fp `*.39S1407  1 p 2 4 ]
 "24
 } 0
 "75 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\librerias/UART.c
@@ -614,11 +611,11 @@ ERROR_CODE_SPI_BR_OVERRANGE 1
 [v _Clock_Init Clock_Init `(E5188  1 e 1 0 ]
 {
 "45
-[v Clock_Init@bStatus_566 bStatus `a  1 a 1 5 ]
+[v Clock_Init@bStatus_562 bStatus `a  1 a 1 5 ]
 "33
-[v Clock_Init@bStatus_563 bStatus `a  1 a 1 4 ]
+[v Clock_Init@bStatus_559 bStatus `a  1 a 1 4 ]
 "22
-[v Clock_Init@bStatus_562 bStatus `a  1 a 1 3 ]
+[v Clock_Init@bStatus_558 bStatus `a  1 a 1 3 ]
 "8
 [v Clock_Init@bStatus bStatus `a  1 a 1 2 ]
 "4

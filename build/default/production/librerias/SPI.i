@@ -8335,8 +8335,9 @@ uintmax_t strtoumax(const char *restrict, char **restrict, int);
     }UART_ERROR_CODE;
 
     typedef enum{
-        ERROR_CODE_SPI_OK,
-        ERROR_CODE_SPI_BR_OVERRANGE,
+        EC_SPI_OK,
+        EC_SPI_BR_OVERRANGE,
+        EC_SPI_COLLISION,
     }SPI_ERROR_CODE;
 
 void UART_ErrorHandler(UART_ERROR_CODE);
@@ -8347,7 +8348,7 @@ void SPI_config_show();
 void SPI_master_init();
 void SPI_BaudRateGen(int32_t);
 void SPI_master_reset();
-void SPI_write(char);
+char SPI_write(char);
 char SPI_read();
 int32_t SPI_actual_frec();
 # 1 "librerias/SPI.c" 2
@@ -8396,7 +8397,7 @@ void SPI_master_init(){
 void SPI_BaudRateGen(int32_t FClock){
     uint32_t baudReg = (48000000 / (FClock * 4)) - 1;
     if(baudReg > 0xFF){
-        SPI_ErrorHandler(ERROR_CODE_SPI_BR_OVERRANGE);
+        SPI_ErrorHandler(EC_SPI_BR_OVERRANGE);
         return;
     }
     SSP1ADD = baudReg;
@@ -8407,16 +8408,11 @@ void SPI_master_reset(){
     SPI_master_init();
 }
 
-void SPI_write(char dato){
+char SPI_write(char dato){
     SSPBUF = dato;
-}
-
-char SPI_read(){
-    if(BF){
-        return SSPBUF;
-    }else{
-        return 33;
-    }
+    if(WCOL) SPI_ErrorHandler(EC_SPI_COLLISION);
+    while(!BF);
+    return SSPBUF;
 }
 
 int32_t SPI_actual_frec(){

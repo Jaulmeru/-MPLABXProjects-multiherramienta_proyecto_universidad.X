@@ -8328,8 +8328,9 @@ uintmax_t strtoumax(const char *restrict, char **restrict, int);
     }UART_ERROR_CODE;
 
     typedef enum{
-        ERROR_CODE_SPI_OK,
-        ERROR_CODE_SPI_BR_OVERRANGE,
+        EC_SPI_OK,
+        EC_SPI_BR_OVERRANGE,
+        EC_SPI_COLLISION,
     }SPI_ERROR_CODE;
 
 void UART_ErrorHandler(UART_ERROR_CODE);

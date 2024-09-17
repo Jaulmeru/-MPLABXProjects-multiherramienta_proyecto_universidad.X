@@ -43,7 +43,7 @@ void SPI_master_init(){
 void SPI_BaudRateGen(int32_t FClock){
     uint32_t baudReg = (_XTAL_FREQ / (FClock * 4)) - 1;
     if(baudReg > 0xFF){
-        SPI_ErrorHandler(ERROR_CODE_SPI_BR_OVERRANGE);
+        SPI_ErrorHandler(EC_SPI_BR_OVERRANGE);
         return;
     }
     SSP1ADD = baudReg;
@@ -54,16 +54,11 @@ void SPI_master_reset(){
     SPI_master_init();  // Vuelve a iniciar puerto
 }
 
-void SPI_write(char dato){
+char SPI_write(char dato){
     SSPBUF = dato;
-}
-
-char SPI_read(){
-    if(BF){
-        return SSPBUF;
-    }else{
-        return 33;
-    }
+    if(WCOL) SPI_ErrorHandler(EC_SPI_COLLISION);
+    while(!BF);
+    return SSPBUF;
 }
 
 int32_t SPI_actual_frec(){

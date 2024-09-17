@@ -8407,8 +8407,9 @@ uintmax_t strtoumax(const char *restrict, char **restrict, int);
     }UART_ERROR_CODE;
 
     typedef enum{
-        ERROR_CODE_SPI_OK,
-        ERROR_CODE_SPI_BR_OVERRANGE,
+        EC_SPI_OK,
+        EC_SPI_BR_OVERRANGE,
+        EC_SPI_COLLISION,
     }SPI_ERROR_CODE;
 
 void UART_ErrorHandler(UART_ERROR_CODE);
@@ -8431,7 +8432,7 @@ void SPI_config_show();
 void SPI_master_init();
 void SPI_BaudRateGen(int32_t);
 void SPI_master_reset();
-void SPI_write(char);
+char SPI_write(char);
 char SPI_read();
 int32_t SPI_actual_frec();
 # 13 "main.c" 2
@@ -8442,9 +8443,7 @@ void main(void) {
     UART_Init(9600);
     SPI_master_init();
     while(1){
-        SPI_write('b');
-        _delay((unsigned long)((2)*(48000000/4000.0)));
-        UART_Tx(SPI_read());
+        UART_Tx(SPI_write('b'));
         _delay((unsigned long)((1000)*(48000000/4000.0)));
     }
 }

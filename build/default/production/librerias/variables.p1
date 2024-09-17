@@ -8,8 +8,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _printf `(i ~T0 @X0 0 ev`*Cuc ]
 "24 librerias/variables.c
 [; ;librerias/variables.c: 24: void SPI_ErrorHandler(SPI_ERROR_CODE errorCode){
-[c E5225 0 1 .. ]
-[n E5225 . ERROR_CODE_SPI_OK ERROR_CODE_SPI_BR_OVERRANGE  ]
+[c E5225 0 1 2 .. ]
+[n E5225 . EC_SPI_OK EC_SPI_BR_OVERRANGE EC_SPI_COLLISION  ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 54: __asm("SRCON1 equ 0F57h");
 [; <" SRCON1 equ 0F57h ;# ">
@@ -709,7 +709,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _errorCode `E5225 ~T0 @X0 1 r1 ]
 [f ]
 "25
-[; ;librerias/variables.c: 25:     if(errorCode != ERROR_CODE_SPI_OK) return;
+[; ;librerias/variables.c: 25:     if(errorCode != EC_SPI_OK) return;
 [e $ ! != -> _errorCode `ui -> . `E5225 0 `ui 648  ]
 [e $UE 647  ]
 [e :U 648 ]
@@ -721,13 +721,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 650  ]
 {
 "28
-[; ;librerias/variables.c: 28:         case ERROR_CODE_SPI_OK:
+[; ;librerias/variables.c: 28:         case EC_SPI_OK:
 [e :U 651 ]
 "30
 [; ;librerias/variables.c: 30:         break;
 [e $U 649  ]
 "31
-[; ;librerias/variables.c: 31:         case ERROR_CODE_SPI_BR_OVERRANGE:
+[; ;librerias/variables.c: 31:         case EC_SPI_BR_OVERRANGE:
 [e :U 652 ]
 "32
 [; ;librerias/variables.c: 32:             printf("ERROR_CODE_SPI_BR_OVERRANGE");
@@ -736,20 +736,31 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;librerias/variables.c: 33:         break;
 [e $U 649  ]
 "34
-[; ;librerias/variables.c: 34:     }
+[; ;librerias/variables.c: 34:         case EC_SPI_COLLISION:
+[e :U 653 ]
+"35
+[; ;librerias/variables.c: 35:             printf("ERROR_CODE_SPI_COLLISION");
+[e ( _printf :s 7C ]
+"36
+[; ;librerias/variables.c: 36:         break;
+[e $U 649  ]
+"37
+[; ;librerias/variables.c: 37:     }
 }
 [e $U 649  ]
 [e :U 650 ]
 [e [\ -> _errorCode `ui , $ -> . `E5225 0 `ui 651
  , $ -> . `E5225 1 `ui 652
+ , $ -> . `E5225 2 `ui 653
  649 ]
 [e :U 649 ]
-"35
-[; ;librerias/variables.c: 35: }
+"38
+[; ;librerias/variables.c: 38: }
 [e :UE 647 ]
 }
 [p f _printf 8388608 ]
 [a 2C 69 82 82 79 82 95 67 79 68 69 95 85 65 82 84 95 79 86 69 82 70 76 79 87 0 ]
+[a 7C 69 82 82 79 82 95 67 79 68 69 95 83 80 73 95 67 79 76 76 73 83 73 79 78 0 ]
 [a 3C 69 82 82 79 82 95 67 79 68 69 95 85 65 82 84 95 70 82 65 77 73 78 71 0 ]
 [a 6C 69 82 82 79 82 95 67 79 68 69 95 83 80 73 95 66 82 95 79 86 69 82 82 65 78 71 69 0 ]
 [a 1C 69 114 114 111 114 58 32 0 ]

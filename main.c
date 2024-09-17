@@ -17,9 +17,7 @@ void main(void) {
     UART_Init(9600);
     SPI_master_init();
     while(1){
-        SPI_write('b');
-        __delay_ms(2);
-        UART_Tx(SPI_read());
+        UART_Tx(SPI_write('b'));
         __delay_ms(1000);
     }
 }

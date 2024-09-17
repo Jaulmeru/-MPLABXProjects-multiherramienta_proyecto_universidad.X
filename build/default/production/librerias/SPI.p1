@@ -128,11 +128,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;librerias/SPI.h: 29: void SPI_BaudRateGen(int32_t);
 [v _SPI_BaudRateGen `(v ~T0 @X0 0 ef1`l ]
 "46 librerias/SPI.c
-[; ;librerias/SPI.c: 46:         SPI_ErrorHandler(ERROR_CODE_SPI_BR_OVERRANGE);
-[c E5225 0 1 .. ]
-[n E5225 . ERROR_CODE_SPI_OK ERROR_CODE_SPI_BR_OVERRANGE  ]
-"36 librerias/variables.h
-[; ;librerias/variables.h: 36: void SPI_ErrorHandler(SPI_ERROR_CODE);
+[; ;librerias/SPI.c: 46:         SPI_ErrorHandler(EC_SPI_BR_OVERRANGE);
+[c E5225 0 1 2 .. ]
+[n E5225 . EC_SPI_OK EC_SPI_BR_OVERRANGE EC_SPI_COLLISION  ]
+"37 librerias/variables.h
+[; ;librerias/variables.h: 37: void SPI_ErrorHandler(SPI_ERROR_CODE);
 [v _SPI_ErrorHandler `(v ~T0 @X0 0 ef1`E5225 ]
 "11190 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 11190: extern volatile unsigned char SSP1ADD __attribute__((address(0xFC8)));
@@ -140,6 +140,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "11533
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 11533: extern volatile unsigned char SSPBUF __attribute__((address(0xFC9)));
 [v _SSPBUF `Vuc ~T0 @X0 0 e@4041 ]
+"16723
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 16723: extern volatile __bit WCOL __attribute__((address(0x7E37)));
+[v _WCOL `Vb ~T0 @X0 0 e@32311 ]
 "13945
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 13945: extern volatile __bit BF __attribute__((address(0x7E38)));
 [v _BF `Vb ~T0 @X0 0 e@32312 ]
@@ -909,7 +912,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! > _baudReg -> -> -> 255 `i `l `ul 654  ]
 {
 "46
-[; ;librerias/SPI.c: 46:         SPI_ErrorHandler(ERROR_CODE_SPI_BR_OVERRANGE);
+[; ;librerias/SPI.c: 46:         SPI_ErrorHandler(EC_SPI_BR_OVERRANGE);
 [e ( _SPI_ErrorHandler (1 . `E5225 1 ]
 "47
 [; ;librerias/SPI.c: 47:         return;
@@ -946,8 +949,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 655 ]
 }
 "57
-[; ;librerias/SPI.c: 57: void SPI_write(char dato){
-[v _SPI_write `(v ~T0 @X0 1 ef1`uc ]
+[; ;librerias/SPI.c: 57: char SPI_write(char dato){
+[v _SPI_write `(uc ~T0 @X0 1 ef1`uc ]
 {
 [e :U _SPI_write ]
 [v _dato `uc ~T0 @X0 1 r1 ]
@@ -956,58 +959,42 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;librerias/SPI.c: 58:     SSPBUF = dato;
 [e = _SSPBUF -> _dato `uc ]
 "59
-[; ;librerias/SPI.c: 59: }
+[; ;librerias/SPI.c: 59:     if(WCOL) SPI_ErrorHandler(EC_SPI_COLLISION);
+[e $ ! _WCOL 660  ]
+[e ( _SPI_ErrorHandler (1 . `E5225 2 ]
+[e :U 660 ]
+"60
+[; ;librerias/SPI.c: 60:     while(!BF);
+[e $U 661  ]
+[e :U 662 ]
+[e :U 661 ]
+[e $ ! _BF 662  ]
+[e :U 663 ]
+"61
+[; ;librerias/SPI.c: 61:     return SSPBUF;
+[e ) -> _SSPBUF `uc ]
+[e $UE 659  ]
+"62
+[; ;librerias/SPI.c: 62: }
 [e :UE 659 ]
 }
-"61
-[; ;librerias/SPI.c: 61: char SPI_read(){
-[v _SPI_read `(uc ~T0 @X0 1 ef ]
-{
-[e :U _SPI_read ]
-[f ]
-"62
-[; ;librerias/SPI.c: 62:     if(BF){
-[e $ ! _BF 661  ]
-{
-"63
-[; ;librerias/SPI.c: 63:         return SSPBUF;
-[e ) -> _SSPBUF `uc ]
-[e $UE 660  ]
 "64
-[; ;librerias/SPI.c: 64:     }else{
-}
-[e $U 662  ]
-[e :U 661 ]
-{
-"65
-[; ;librerias/SPI.c: 65:         return 33;
-[e ) -> -> 33 `i `uc ]
-[e $UE 660  ]
-"66
-[; ;librerias/SPI.c: 66:     }
-}
-[e :U 662 ]
-"67
-[; ;librerias/SPI.c: 67: }
-[e :UE 660 ]
-}
-"69
-[; ;librerias/SPI.c: 69: int32_t SPI_actual_frec(){
+[; ;librerias/SPI.c: 64: int32_t SPI_actual_frec(){
 [v _SPI_actual_frec `(l ~T0 @X0 1 ef ]
 {
 [e :U _SPI_actual_frec ]
 [f ]
-"70
-[; ;librerias/SPI.c: 70:     int32_t baud = 48000000/((SSP1ADD+1)*4);
+"65
+[; ;librerias/SPI.c: 65:     int32_t baud = 48000000/((SSP1ADD+1)*4);
 [v _baud `l ~T0 @X0 1 a ]
 [e = _baud / -> 48000000 `l -> * + -> _SSP1ADD `i -> 1 `i -> 4 `i `l ]
-"71
-[; ;librerias/SPI.c: 71:     return baud;
+"66
+[; ;librerias/SPI.c: 66:     return baud;
 [e ) _baud ]
-[e $UE 663  ]
-"72
-[; ;librerias/SPI.c: 72: }
-[e :UE 663 ]
+[e $UE 664  ]
+"67
+[; ;librerias/SPI.c: 67: }
+[e :UE 664 ]
 }
 [p f _printf 8388752 ]
 [a 22C 84 114 97 110 115 109 105 115 105 111 110 32 101 110 32 0 ]
