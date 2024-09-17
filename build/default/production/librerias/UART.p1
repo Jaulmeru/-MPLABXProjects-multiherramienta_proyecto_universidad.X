@@ -199,14 +199,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _TXREG1 `Vuc ~T0 @X0 0 e@4013 ]
 "79 librerias/UART.c
 [; ;librerias/UART.c: 79: UART_ERROR_CODE UART_Rx_OVERFLOW(){
-[c E5194 0 1 2 3 .. ]
-[n E5194 . ERROR_CODE_UART_OK ERROR_CODE_UART_OVERFLOW ERROR_CODE_UART_FRAMING ERROR_CODE_UART_CONFIG  ]
+[c E5219 0 1 2 3 .. ]
+[n E5219 . ERROR_CODE_UART_OK ERROR_CODE_UART_OVERFLOW ERROR_CODE_UART_FRAMING ERROR_CODE_UART_CONFIG  ]
 "7594 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7594: extern volatile unsigned char RCREG __attribute__((address(0xFAE)));
 [v _RCREG `Vuc ~T0 @X0 0 e@4014 ]
-"34 librerias/variables.h
-[; ;librerias/variables.h: 34: void UART_ErrorHandler(UART_ERROR_CODE);
-[v _UART_ErrorHandler `(v ~T0 @X0 0 ef1`E5194 ]
+"35 librerias/variables.h
+[; ;librerias/variables.h: 35: void UART_ErrorHandler(UART_ERROR_CODE);
+[v _UART_ErrorHandler `(v ~T0 @X0 0 ef1`E5219 ]
 "7589 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7589: extern volatile unsigned char RCREG1 __attribute__((address(0xFAE)));
 [v _RCREG1 `Vuc ~T0 @X0 0 e@4014 ]
@@ -881,7 +881,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ? _CREN : ( _printf :s 17C ( _printf :s 18C ]
 "18
 [; ;librerias/UART.c: 18: }
-[e :UE 638 ]
+[e :UE 639 ]
 }
 "20
 [; ;librerias/UART.c: 20: void UART_Init(uint32_t baudrate){
@@ -922,7 +922,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _UART_config_show ..  ]
 "31
 [; ;librerias/UART.c: 31: };
-[e :UE 639 ]
+[e :UE 640 ]
 }
 "33
 [; ;librerias/UART.c: 33: void UART_select_baud(uint32_t baudrate){
@@ -933,11 +933,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "34
 [; ;librerias/UART.c: 34:     switch (baudrate){
-[e $U 642  ]
+[e $U 643  ]
 {
 "35
 [; ;librerias/UART.c: 35:         case 300:
-[e :U 643 ]
+[e :U 644 ]
 "36
 [; ;librerias/UART.c: 36:             SPBRGH = 0x9C;
 [e = _SPBRGH -> -> 156 `i `uc ]
@@ -946,10 +946,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _SPBRG -> -> 63 `i `uc ]
 "38
 [; ;librerias/UART.c: 38:             break;
-[e $U 641  ]
+[e $U 642  ]
 "39
 [; ;librerias/UART.c: 39:         case 1200:
-[e :U 644 ]
+[e :U 645 ]
 "40
 [; ;librerias/UART.c: 40:             SPBRGH = 0x27;
 [e = _SPBRGH -> -> 39 `i `uc ]
@@ -958,10 +958,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _SPBRG -> -> 15 `i `uc ]
 "42
 [; ;librerias/UART.c: 42:             break;
-[e $U 641  ]
+[e $U 642  ]
 "43
 [; ;librerias/UART.c: 43:         case 2400:
-[e :U 645 ]
+[e :U 646 ]
 "44
 [; ;librerias/UART.c: 44:             SPBRGH = 0x13;
 [e = _SPBRGH -> -> 19 `i `uc ]
@@ -970,10 +970,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _SPBRG -> -> 135 `i `uc ]
 "46
 [; ;librerias/UART.c: 46:             break;
-[e $U 641  ]
+[e $U 642  ]
 "47
 [; ;librerias/UART.c: 47:         case 10417:
-[e :U 646 ]
+[e :U 647 ]
 "48
 [; ;librerias/UART.c: 48:             SPBRGH = 0x04;
 [e = _SPBRGH -> -> 4 `i `uc ]
@@ -982,10 +982,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _SPBRG -> -> 127 `i `uc ]
 "50
 [; ;librerias/UART.c: 50:             break;
-[e $U 641  ]
+[e $U 642  ]
 "51
 [; ;librerias/UART.c: 51:         case 19200:
-[e :U 647 ]
+[e :U 648 ]
 "52
 [; ;librerias/UART.c: 52:             SPBRGH = 0x02;
 [e = _SPBRGH -> -> 2 `i `uc ]
@@ -994,10 +994,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _SPBRG -> -> 112 `i `uc ]
 "54
 [; ;librerias/UART.c: 54:             break;
-[e $U 641  ]
+[e $U 642  ]
 "55
 [; ;librerias/UART.c: 55:         case 57600:
-[e :U 648 ]
+[e :U 649 ]
 "56
 [; ;librerias/UART.c: 56:             SPBRGH = 0x00;
 [e = _SPBRGH -> -> 0 `i `uc ]
@@ -1006,10 +1006,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _SPBRG -> -> 207 `i `uc ]
 "58
 [; ;librerias/UART.c: 58:             break;
-[e $U 641  ]
+[e $U 642  ]
 "59
 [; ;librerias/UART.c: 59:         case 115200:
-[e :U 649 ]
+[e :U 650 ]
 "60
 [; ;librerias/UART.c: 60:             SPBRGH = 0x00;
 [e = _SPBRGH -> -> 0 `i `uc ]
@@ -1018,10 +1018,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _SPBRG -> -> 103 `i `uc ]
 "62
 [; ;librerias/UART.c: 62:             break;
-[e $U 641  ]
+[e $U 642  ]
 "63
 [; ;librerias/UART.c: 63:         default:
-[e :U 650 ]
+[e :U 651 ]
 "64
 [; ;librerias/UART.c: 64:             SPBRGH = 0x04;
 [e = _SPBRGH -> -> 4 `i `uc ]
@@ -1030,24 +1030,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _SPBRG -> -> 225 `i `uc ]
 "66
 [; ;librerias/UART.c: 66:             break;
-[e $U 641  ]
+[e $U 642  ]
 "67
 [; ;librerias/UART.c: 67:     }
 }
-[e $U 641  ]
+[e $U 642  ]
+[e :U 643 ]
+[e [\ _baudrate , $ -> -> -> 300 `i `l `ul 644
+ , $ -> -> -> 1200 `i `l `ul 645
+ , $ -> -> -> 2400 `i `l `ul 646
+ , $ -> -> -> 10417 `i `l `ul 647
+ , $ -> -> -> 19200 `i `l `ul 648
+ , $ -> -> 57600 `l `ul 649
+ , $ -> -> 115200 `l `ul 650
+ 651 ]
 [e :U 642 ]
-[e [\ _baudrate , $ -> -> -> 300 `i `l `ul 643
- , $ -> -> -> 1200 `i `l `ul 644
- , $ -> -> -> 2400 `i `l `ul 645
- , $ -> -> -> 10417 `i `l `ul 646
- , $ -> -> -> 19200 `i `l `ul 647
- , $ -> -> 57600 `l `ul 648
- , $ -> -> 115200 `l `ul 649
- 650 ]
-[e :U 641 ]
 "68
 [; ;librerias/UART.c: 68: }
-[e :UE 640 ]
+[e :UE 641 ]
 }
 "70
 [; ;librerias/UART.c: 70: void UART_Tx(char dato){
@@ -1058,17 +1058,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "71
 [; ;librerias/UART.c: 71:     while(TRMT == 0);
-[e $U 652  ]
-[e :U 653 ]
-[e :U 652 ]
-[e $ == -> _TRMT `i -> 0 `i 653  ]
+[e $U 653  ]
 [e :U 654 ]
+[e :U 653 ]
+[e $ == -> _TRMT `i -> 0 `i 654  ]
+[e :U 655 ]
 "72
 [; ;librerias/UART.c: 72:     TXREG1 = dato;
 [e = _TXREG1 -> _dato `uc ]
 "73
 [; ;librerias/UART.c: 73: }
-[e :UE 651 ]
+[e :UE 652 ]
 }
 "75
 [; ;librerias/UART.c: 75: void putch(char data){
@@ -1082,17 +1082,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _UART_Tx (1 _data ]
 "77
 [; ;librerias/UART.c: 77: }
-[e :UE 655 ]
+[e :UE 656 ]
 }
 "79
 [; ;librerias/UART.c: 79: UART_ERROR_CODE UART_Rx_OVERFLOW(){
-[v _UART_Rx_OVERFLOW `(E5194 ~T0 @X0 1 ef ]
+[v _UART_Rx_OVERFLOW `(E5219 ~T0 @X0 1 ef ]
 {
 [e :U _UART_Rx_OVERFLOW ]
 [f ]
 "80
 [; ;librerias/UART.c: 80:     if (RCSTAbits.OERR) {
-[e $ ! != -> . . _RCSTAbits 0 1 `i -> 0 `i 657  ]
+[e $ ! != -> . . _RCSTAbits 0 1 `i -> 0 `i 658  ]
 {
 "81
 [; ;librerias/UART.c: 81:         RCSTAbits.CREN = 0;
@@ -1102,29 +1102,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
 "83
 [; ;librerias/UART.c: 83:         return ERROR_CODE_UART_OVERFLOW;
-[e ) . `E5194 1 ]
-[e $UE 656  ]
+[e ) . `E5219 1 ]
+[e $UE 657  ]
 "84
 [; ;librerias/UART.c: 84:     }
 }
-[e :U 657 ]
+[e :U 658 ]
 "85
 [; ;librerias/UART.c: 85:     return ERROR_CODE_UART_OK;
-[e ) . `E5194 0 ]
-[e $UE 656  ]
+[e ) . `E5219 0 ]
+[e $UE 657  ]
 "86
 [; ;librerias/UART.c: 86: }
-[e :UE 656 ]
+[e :UE 657 ]
 }
 "88
 [; ;librerias/UART.c: 88: UART_ERROR_CODE UART_Rx_FRAMING(){
-[v _UART_Rx_FRAMING `(E5194 ~T0 @X0 1 ef ]
+[v _UART_Rx_FRAMING `(E5219 ~T0 @X0 1 ef ]
 {
 [e :U _UART_Rx_FRAMING ]
 [f ]
 "89
 [; ;librerias/UART.c: 89:     if (RCSTAbits.FERR) {
-[e $ ! != -> . . _RCSTAbits 0 2 `i -> 0 `i 659  ]
+[e $ ! != -> . . _RCSTAbits 0 2 `i -> 0 `i 660  ]
 {
 "90
 [; ;librerias/UART.c: 90:         char dummy = RCREG;
@@ -1132,19 +1132,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _dummy -> _RCREG `uc ]
 "91
 [; ;librerias/UART.c: 91:         return ERROR_CODE_UART_FRAMING;
-[e ) . `E5194 2 ]
-[e $UE 658  ]
+[e ) . `E5219 2 ]
+[e $UE 659  ]
 "92
 [; ;librerias/UART.c: 92:     }
 }
-[e :U 659 ]
+[e :U 660 ]
 "93
 [; ;librerias/UART.c: 93:     return ERROR_CODE_UART_OK;
-[e ) . `E5194 0 ]
-[e $UE 658  ]
+[e ) . `E5219 0 ]
+[e $UE 659  ]
 "94
 [; ;librerias/UART.c: 94: }
-[e :UE 658 ]
+[e :UE 659 ]
 }
 "96
 [; ;librerias/UART.c: 96: char UART_Rx(void){
@@ -1161,10 +1161,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "99
 [; ;librerias/UART.c: 99:     return RCREG1;
 [e ) -> _RCREG1 `uc ]
-[e $UE 660  ]
+[e $UE 661  ]
 "100
 [; ;librerias/UART.c: 100: }
-[e :UE 660 ]
+[e :UE 661 ]
 }
 "102
 [; ;librerias/UART.c: 102: _Bool UART_Available(){
@@ -1174,38 +1174,38 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "103
 [; ;librerias/UART.c: 103:     if (!RCSTAbits.SPEN || !RCSTAbits.CREN){
-[e $ ! || ! != -> . . _RCSTAbits 0 7 `i -> 0 `i ! != -> . . _RCSTAbits 0 4 `i -> 0 `i 662  ]
+[e $ ! || ! != -> . . _RCSTAbits 0 7 `i -> 0 `i ! != -> . . _RCSTAbits 0 4 `i -> 0 `i 663  ]
 {
 "104
 [; ;librerias/UART.c: 104:         UART_ErrorHandler(ERROR_CODE_UART_CONFIG);
-[e ( _UART_ErrorHandler (1 . `E5194 3 ]
+[e ( _UART_ErrorHandler (1 . `E5219 3 ]
 "105
 [; ;librerias/UART.c: 105:         return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 661  ]
+[e $UE 662  ]
 "106
 [; ;librerias/UART.c: 106:     }
 }
-[e :U 662 ]
+[e :U 663 ]
 "107
 [; ;librerias/UART.c: 107:     if (!RC1IF){
-[e $ ! ! _RC1IF 663  ]
+[e $ ! ! _RC1IF 664  ]
 {
 "108
 [; ;librerias/UART.c: 108:         return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 661  ]
+[e $UE 662  ]
 "109
 [; ;librerias/UART.c: 109:     }
 }
-[e :U 663 ]
+[e :U 664 ]
 "110
 [; ;librerias/UART.c: 110:     return 1;
 [e ) -> -> 1 `i `a ]
-[e $UE 661  ]
+[e $UE 662  ]
 "111
 [; ;librerias/UART.c: 111: }
-[e :UE 661 ]
+[e :UE 662 ]
 }
 [p f _printf 8388608 ]
 [a 8C 56 32 98 105 116 115 32 0 ]

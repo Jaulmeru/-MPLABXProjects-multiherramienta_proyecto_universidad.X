@@ -1,5 +1,30 @@
 #include "SPI.h"
 
+void SPI_config_show(){
+    printf("\r\nConfiguracion SPI:\r\n");
+    
+    printf("Frecuencia SPI: ");
+    printf("%"PRId32 "\r\n",SPI_actual_frec());
+    
+    printf("SDI: ");
+    (TRISBbits.RB0) ? printf("Input \r\t"):printf("Output\r\t");
+    printf("SDO: ");
+    (TRISBbits.RB3) ? printf("Input \r\t"):printf("Output\r\t");
+    printf("SCK: ");
+    (TRISBbits.RB1) ? printf("Input \r\t"):printf("Output\r\t");
+    printf("SS: ");
+    (TRISAbits.RA5) ? printf("Input \r\t"):printf("Output\r\t");
+  
+    printf("Puerto serial: ");
+    (SSPEN) ? printf("habilitado\r\n"):printf("deshabilitado\r\n");
+    printf("Polaridad: Idle ");
+    (SSPCON1bits.CKP) ? printf("high\r\n"):printf("low\r\n");
+    printf("Transmision en ");
+    (SSPSTATbits.CKE) ? printf("active a idle\r\n"):printf("idle a active\r\n");
+    printf("Muestra de dato entrante: ");
+    (SSPSTATbits.SMP) ? printf("al final\r\n"):printf("en medio\r\n");
+}
+
 void SPI_master_init(){
     SPI_BaudRateGen(100000);
     TRISAbits.RA5 = 1;      // SS -> Input
@@ -9,8 +34,10 @@ void SPI_master_init(){
     SSPCON1bits.SSPM = 10;  // Modo -> SPI con (FOSC / (FClock * 4)) - 1
     SPI_enable();           // Serial Port -> Habilitado
     SPI_clk_idle_low();     // Polaridad reloj
-    SPI_clk_rising();       // Se envian datos en flanco de subida
+    SPI_clk_idle_active();  // Se envian datos en flanco de subida
     SPI_sample_end();       // Muestra de datos de entrada al final 
+    
+    SPI_config_show();
 }   
 
 void SPI_BaudRateGen(int32_t FClock){
@@ -37,4 +64,9 @@ char SPI_read(){
     }else{
         return 33;
     }
+}
+
+int32_t SPI_actual_frec(){
+    int32_t baud = _XTAL_FREQ/((SSP1ADD+1)*4);
+    return baud;
 }

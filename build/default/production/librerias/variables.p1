@@ -1,15 +1,15 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "5 librerias/variables.c
 [; ;librerias/variables.c: 5: void UART_ErrorHandler(UART_ERROR_CODE errorCode){
-[c E5194 0 1 2 3 .. ]
-[n E5194 . ERROR_CODE_UART_OK ERROR_CODE_UART_OVERFLOW ERROR_CODE_UART_FRAMING ERROR_CODE_UART_CONFIG  ]
+[c E5219 0 1 2 3 .. ]
+[n E5219 . ERROR_CODE_UART_OK ERROR_CODE_UART_OVERFLOW ERROR_CODE_UART_FRAMING ERROR_CODE_UART_CONFIG  ]
 "117 C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\stdio.h
 [; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\stdio.h: 117: int printf(const char *restrict, ...);
 [v _printf `(i ~T0 @X0 0 ev`*Cuc ]
 "24 librerias/variables.c
 [; ;librerias/variables.c: 24: void SPI_ErrorHandler(SPI_ERROR_CODE errorCode){
-[c E5200 0 1 .. ]
-[n E5200 . ERROR_CODE_SPI_OK ERROR_CODE_SPI_BR_OVERRANGE  ]
+[c E5225 0 1 .. ]
+[n E5225 . ERROR_CODE_SPI_OK ERROR_CODE_SPI_BR_OVERRANGE  ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 54: __asm("SRCON1 equ 0F57h");
 [; <" SRCON1 equ 0F57h ;# ">
@@ -636,117 +636,117 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSU equ 0FFFh ;# ">
 "5 librerias/variables.c
 [; ;librerias/variables.c: 5: void UART_ErrorHandler(UART_ERROR_CODE errorCode){
-[v _UART_ErrorHandler `(v ~T0 @X0 1 ef1`E5194 ]
+[v _UART_ErrorHandler `(v ~T0 @X0 1 ef1`E5219 ]
 {
 [e :U _UART_ErrorHandler ]
-[v _errorCode `E5194 ~T0 @X0 1 r1 ]
+[v _errorCode `E5219 ~T0 @X0 1 r1 ]
 [f ]
 "6
 [; ;librerias/variables.c: 6:     if(errorCode != ERROR_CODE_UART_OK) return;
-[e $ ! != -> _errorCode `ui -> . `E5194 0 `ui 639  ]
-[e $UE 638  ]
-[e :U 639 ]
+[e $ ! != -> _errorCode `ui -> . `E5219 0 `ui 640  ]
+[e $UE 639  ]
+[e :U 640 ]
 "7
 [; ;librerias/variables.c: 7:     printf("Error: ");
 [e ( _printf :s 1C ]
 "8
 [; ;librerias/variables.c: 8:     switch(errorCode){
-[e $U 641  ]
+[e $U 642  ]
 {
 "9
 [; ;librerias/variables.c: 9:         case ERROR_CODE_UART_OK:
-[e :U 642 ]
+[e :U 643 ]
 "11
 [; ;librerias/variables.c: 11:         break;
-[e $U 640  ]
+[e $U 641  ]
 "12
 [; ;librerias/variables.c: 12:         case ERROR_CODE_UART_OVERFLOW:
-[e :U 643 ]
+[e :U 644 ]
 "13
 [; ;librerias/variables.c: 13:             printf("ERROR_CODE_UART_OVERFLOW");
 [e ( _printf :s 2C ]
 "14
 [; ;librerias/variables.c: 14:         break;
-[e $U 640  ]
+[e $U 641  ]
 "15
 [; ;librerias/variables.c: 15:         case ERROR_CODE_UART_FRAMING:
-[e :U 644 ]
+[e :U 645 ]
 "16
 [; ;librerias/variables.c: 16:             printf("ERROR_CODE_UART_FRAMING");
 [e ( _printf :s 3C ]
 "17
 [; ;librerias/variables.c: 17:         break;
-[e $U 640  ]
+[e $U 641  ]
 "18
 [; ;librerias/variables.c: 18:         case ERROR_CODE_UART_CONFIG:
-[e :U 645 ]
+[e :U 646 ]
 "19
 [; ;librerias/variables.c: 19:             printf("ERROR_CODE_UART_CONFIG \r\n");
 [e ( _printf :s 4C ]
 "20
 [; ;librerias/variables.c: 20:         break;
-[e $U 640  ]
+[e $U 641  ]
 "21
 [; ;librerias/variables.c: 21:     }
 }
-[e $U 640  ]
+[e $U 641  ]
+[e :U 642 ]
+[e [\ -> _errorCode `ui , $ -> . `E5219 0 `ui 643
+ , $ -> . `E5219 1 `ui 644
+ , $ -> . `E5219 2 `ui 645
+ , $ -> . `E5219 3 `ui 646
+ 641 ]
 [e :U 641 ]
-[e [\ -> _errorCode `ui , $ -> . `E5194 0 `ui 642
- , $ -> . `E5194 1 `ui 643
- , $ -> . `E5194 2 `ui 644
- , $ -> . `E5194 3 `ui 645
- 640 ]
-[e :U 640 ]
 "22
 [; ;librerias/variables.c: 22: }
-[e :UE 638 ]
+[e :UE 639 ]
 }
 "24
 [; ;librerias/variables.c: 24: void SPI_ErrorHandler(SPI_ERROR_CODE errorCode){
-[v _SPI_ErrorHandler `(v ~T0 @X0 1 ef1`E5200 ]
+[v _SPI_ErrorHandler `(v ~T0 @X0 1 ef1`E5225 ]
 {
 [e :U _SPI_ErrorHandler ]
-[v _errorCode `E5200 ~T0 @X0 1 r1 ]
+[v _errorCode `E5225 ~T0 @X0 1 r1 ]
 [f ]
 "25
 [; ;librerias/variables.c: 25:     if(errorCode != ERROR_CODE_SPI_OK) return;
-[e $ ! != -> _errorCode `ui -> . `E5200 0 `ui 647  ]
-[e $UE 646  ]
-[e :U 647 ]
+[e $ ! != -> _errorCode `ui -> . `E5225 0 `ui 648  ]
+[e $UE 647  ]
+[e :U 648 ]
 "26
 [; ;librerias/variables.c: 26:     printf("Error: ");
 [e ( _printf :s 5C ]
 "27
 [; ;librerias/variables.c: 27:     switch(errorCode){
-[e $U 649  ]
+[e $U 650  ]
 {
 "28
 [; ;librerias/variables.c: 28:         case ERROR_CODE_SPI_OK:
-[e :U 650 ]
+[e :U 651 ]
 "30
 [; ;librerias/variables.c: 30:         break;
-[e $U 648  ]
+[e $U 649  ]
 "31
 [; ;librerias/variables.c: 31:         case ERROR_CODE_SPI_BR_OVERRANGE:
-[e :U 651 ]
+[e :U 652 ]
 "32
 [; ;librerias/variables.c: 32:             printf("ERROR_CODE_SPI_BR_OVERRANGE");
 [e ( _printf :s 6C ]
 "33
 [; ;librerias/variables.c: 33:         break;
-[e $U 648  ]
+[e $U 649  ]
 "34
 [; ;librerias/variables.c: 34:     }
 }
-[e $U 648  ]
+[e $U 649  ]
+[e :U 650 ]
+[e [\ -> _errorCode `ui , $ -> . `E5225 0 `ui 651
+ , $ -> . `E5225 1 `ui 652
+ 649 ]
 [e :U 649 ]
-[e [\ -> _errorCode `ui , $ -> . `E5200 0 `ui 650
- , $ -> . `E5200 1 `ui 651
- 648 ]
-[e :U 648 ]
 "35
 [; ;librerias/variables.c: 35: }
-[e :UE 646 ]
+[e :UE 647 ]
 }
 [p f _printf 8388608 ]
 [a 2C 69 82 82 79 82 95 67 79 68 69 95 85 65 82 84 95 79 86 69 82 70 76 79 87 0 ]

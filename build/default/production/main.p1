@@ -10,11 +10,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "19 ./librerias/UART.h
 [; ;./librerias/UART.h: 19: void UART_Init(uint32_t);
 [v _UART_Init `(v ~T0 @X0 0 ef1`ul ]
-"27 ./librerias/SPI.h
-[; ;./librerias/SPI.h: 27: void SPI_master_init();
+"28 ./librerias/SPI.h
+[; ;./librerias/SPI.h: 28: void SPI_master_init();
 [v _SPI_master_init `(v ~T0 @X0 0 e? ]
-"30
-[; ;./librerias/SPI.h: 30: void SPI_write(char);
+"31
+[; ;./librerias/SPI.h: 31: void SPI_write(char);
 [v _SPI_write `(v ~T0 @X0 0 ef1`uc ]
 [v F205 `(v ~T0 @X0 1 tf1`ul ]
 "20 C:\Program Files\Microchip\xc8\v2.46\pic\include\builtins.h
@@ -23,8 +23,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "23 ./librerias/UART.h
 [; ;./librerias/UART.h: 23: void UART_Tx(char);
 [v _UART_Tx `(v ~T0 @X0 0 ef1`uc ]
-"31 ./librerias/SPI.h
-[; ;./librerias/SPI.h: 31: char SPI_read();
+"32 ./librerias/SPI.h
+[; ;./librerias/SPI.h: 32: char SPI_read();
 [v _SPI_read `(uc ~T0 @X0 0 e? ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 54: __asm("SRCON1 equ 0F57h");
@@ -750,7 +750,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _SPI_master_init ..  ]
 "19
 [; ;main.c: 19:     while(1){
-[e :U 640 ]
+[e :U 641 ]
 {
 "20
 [; ;main.c: 20:         SPI_write('b');
@@ -767,10 +767,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "24
 [; ;main.c: 24:     }
 }
-[e :U 639 ]
-[e $U 640  ]
-[e :U 641 ]
+[e :U 640 ]
+[e $U 641  ]
+[e :U 642 ]
 "25
 [; ;main.c: 25: }
-[e :UE 638 ]
+[e :UE 639 ]
 }

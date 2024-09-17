@@ -8329,13 +8329,41 @@ void UART_ErrorHandler(UART_ERROR_CODE);
 void SPI_ErrorHandler(SPI_ERROR_CODE);
 # 8 "librerias/SPI.h" 2
 # 27 "librerias/SPI.h"
+void SPI_config_show();
 void SPI_master_init();
 void SPI_BaudRateGen(int32_t);
 void SPI_master_reset();
 void SPI_write(char);
 char SPI_read();
+int32_t SPI_actual_frec();
 # 1 "librerias/SPI.c" 2
 
+
+void SPI_config_show(){
+    printf("\r\nConfiguracion SPI:\r\n");
+
+    printf("Frecuencia SPI: ");
+    printf(SPI_actual_frec());
+    printf("\r\n");
+
+    printf("SDI: ");
+    (TRISBbits.RB0) ? printf("Input \r\t"):printf("Output\r\t");
+    printf("SDO: ");
+    (TRISBbits.RB3) ? printf("Input \r\t"):printf("Output\r\t");
+    printf("SCK: ");
+    (TRISBbits.RB1) ? printf("Input \r\t"):printf("Output\r\t");
+    printf("SS: ");
+    (TRISAbits.RA5) ? printf("Input \r\t"):printf("Output\r\t");
+
+    printf("Puerto serial: ");
+    (SSPEN) ? printf("habilitado\r\n"):printf("deshabilitado\r\n");
+    printf("Polaridad: Idle ");
+    (SSPCON1bits.CKP) ? printf("high\r\n"):printf("low\r\n");
+    printf("Transmision en ");
+    (SSPSTATbits.CKE) ? printf("active a idle\r\n"):printf("idle a active\r\n");
+    printf("Muestra de dato entrante: ");
+    (SSPSTATbits.SMP) ? printf("al final\r\n"):printf("en medio\r\n");
+}
 
 void SPI_master_init(){
     SPI_BaudRateGen(100000);
@@ -8346,8 +8374,10 @@ void SPI_master_init(){
     SSPCON1bits.SSPM = 10;
     do{SSPEN = 1;}while(0);
     do{ SSPCON1bits.CKP = 0; }while(0);
-    do{ SSPCON1bits.CKP = 1; }while(0);
+    do{ SSPSTATbits.CKE = 0; }while(0);
     do{SSPSTATbits.SMP = 1;}while(0);
+
+    SPI_config_show();
 }
 
 void SPI_BaudRateGen(int32_t FClock){
@@ -8372,6 +8402,11 @@ char SPI_read(){
     if(BF){
         return SSPBUF;
     }else{
-        return 0;
+        return 33;
     }
+}
+
+int32_t SPI_actual_frec(){
+    int32_t baud = 48000000/((SSP1ADD+1)*4);
+    return baud;
 }

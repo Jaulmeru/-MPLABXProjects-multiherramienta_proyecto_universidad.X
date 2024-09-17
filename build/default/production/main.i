@@ -8379,7 +8379,26 @@ CLK_ERROR_CODE Clock_Init(int16_t s16Timeout);
 
 
 # 1 "./librerias/variables.h" 1
-# 22 "./librerias/variables.h"
+# 17 "./librerias/variables.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\inttypes.h" 1 3
+# 13 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\inttypes.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 14 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\inttypes.h" 2 3
+
+typedef struct { intmax_t quot, rem; } imaxdiv_t;
+
+intmax_t imaxabs(intmax_t);
+imaxdiv_t imaxdiv(intmax_t, intmax_t);
+
+intmax_t strtoimax(const char *restrict, char **restrict, int);
+uintmax_t strtoumax(const char *restrict, char **restrict, int);
+# 17 "./librerias/variables.h" 2
+
+
+
+
+
+
     typedef enum{
         ERROR_CODE_UART_OK,
         ERROR_CODE_UART_OVERFLOW,
@@ -8408,11 +8427,13 @@ _Bool UART_Available(void);
 
 # 1 "./librerias/SPI.h" 1
 # 27 "./librerias/SPI.h"
+void SPI_config_show();
 void SPI_master_init();
 void SPI_BaudRateGen(int32_t);
 void SPI_master_reset();
 void SPI_write(char);
 char SPI_read();
+int32_t SPI_actual_frec();
 # 13 "main.c" 2
 
 

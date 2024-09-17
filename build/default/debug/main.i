@@ -8408,11 +8408,13 @@ _Bool UART_Available(void);
 
 # 1 "./librerias/SPI.h" 1
 # 27 "./librerias/SPI.h"
+void SPI_config_show();
 void SPI_master_init();
 void SPI_BaudRateGen(int32_t);
 void SPI_master_reset();
 void SPI_write(char);
 char SPI_read();
+int32_t SPI_actual_frec();
 # 13 "main.c" 2
 
 

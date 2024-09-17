@@ -9,8 +9,8 @@
 
 #define SPI_clk_idle_high() do{ SSPCON1bits.CKP = 1; }while(0)
 #define SPI_clk_idle_low() do{ SSPCON1bits.CKP = 0; }while(0)
-#define SPI_clk_rising() do{ SSPCON1bits.CKP = 1; }while(0)
-#define SPI_clk_falling() do{ SSPCON1bits.CKP = 0; }while(0)
+#define SPI_clk_idle_active() do{ SSPSTATbits.CKE = 0; }while(0)
+#define SPI_clk_active_idle() do{ SSPSTATbits.CKE = 1; }while(0)
 #define SPI_enable() do{SSPEN = 1;}while(0)
 #define SPI_disenable() do{SSPEN = 0;}while(0)
 #define SPI_sample_end() do{SSPSTATbits.SMP = 1;}while(0)
@@ -24,11 +24,13 @@
 extern "C" {
 #endif
     
+void SPI_config_show();
 void SPI_master_init();
 void SPI_BaudRateGen(int32_t);
 void SPI_master_reset();
 void SPI_write(char);
 char SPI_read();
+int32_t SPI_actual_frec();
 
 #ifdef	__cplusplus
 }

@@ -14,6 +14,7 @@
 #include <stdio.h>
 #include <xc.h>
 #include "clock.h"
+#include <inttypes.h>
 
 #ifdef	__cplusplus
 extern "C" {
