@@ -8340,17 +8340,27 @@ uintmax_t strtoumax(const char *restrict, char **restrict, int);
         EC_SPI_COLLISION,
     }SPI_ERROR_CODE;
 
+    typedef enum{
+        SLAVE1,
+        SLAVE2,
+        SLAVE3,
+    }SPI_SLAVE;
+
 void UART_ErrorHandler(UART_ERROR_CODE);
 void SPI_ErrorHandler(SPI_ERROR_CODE);
+void SPI_select_Slave(SPI_SLAVE);
 # 8 "librerias/SPI.h" 2
-# 27 "librerias/SPI.h"
+# 28 "librerias/SPI.h"
 void SPI_config_show();
 void SPI_master_init();
 void SPI_BaudRateGen(int32_t);
 void SPI_master_reset();
-char SPI_write(char);
-char SPI_read();
+void SPI_write(uint8_t);
+uint8_t SPI_read();
+const char* SPI_print(const char*);
 int32_t SPI_actual_frec();
+
+uint8_t SPI1_ByteExchange(uint8_t);
 # 1 "librerias/SPI.c" 2
 
 
@@ -8380,17 +8390,19 @@ void SPI_config_show(){
 }
 
 void SPI_master_init(){
-    SPI_BaudRateGen(100000);
-    TRISAbits.RA5 = 1;
+    SPI_BaudRateGen(60000);
+    TRISAbits.RA5 = 0;
     TRISBbits.RB0 = 1;
     TRISBbits.RB1 = 0;
     TRISBbits.RB3 = 0;
-    SSPCON1bits.SSPM = 10;
+    SSPCON1bits.SSPM = 0xA;
+    BOEN = 1;
     do{SSPEN = 1;}while(0);
     do{ SSPCON1bits.CKP = 0; }while(0);
     do{ SSPSTATbits.CKE = 0; }while(0);
     do{SSPSTATbits.SMP = 1;}while(0);
 
+    LATAbits.LA5 = 1;
     SPI_config_show();
 }
 
@@ -8408,14 +8420,34 @@ void SPI_master_reset(){
     SPI_master_init();
 }
 
-char SPI_write(char dato){
+void SPI_write(uint8_t dato){
+    LATAbits.LA5 = 0;
     SSPBUF = dato;
-    if(WCOL) SPI_ErrorHandler(EC_SPI_COLLISION);
     while(!BF);
-    return SSPBUF;
+    while(!SSPIF);
+    SSPIF = 0;
+    if(WCOL) SPI_ErrorHandler(EC_SPI_COLLISION);
+    LATAbits.LA5 = 1;
 }
-
+uint8_t SPI_read(){
+    if(BF) LATAbits.LATA1 = 1;
+    return SSP1BUF;
+}
+# 87 "librerias/SPI.c"
 int32_t SPI_actual_frec(){
     int32_t baud = 48000000/((SSP1ADD+1)*4);
     return baud;
+}
+
+
+
+uint8_t SPI1_ByteExchange(uint8_t byteData)
+{
+    SSP1BUF = byteData;
+    while (!PIR1bits.SSP1IF)
+    {
+
+    }
+    PIR1bits.SSP1IF = 0;
+    return SSP1BUF;
 }

@@ -3,7 +3,7 @@
 
 
 void UART_ErrorHandler(UART_ERROR_CODE errorCode){
-    if(errorCode != ERROR_CODE_UART_OK) return;
+    if(errorCode == ERROR_CODE_UART_OK) return;
     printf("Error: ");
     switch(errorCode){
         case ERROR_CODE_UART_OK:
@@ -34,5 +34,19 @@ void SPI_ErrorHandler(SPI_ERROR_CODE errorCode){
         case EC_SPI_COLLISION:
             printf("ERROR_CODE_SPI_COLLISION");
         break;
+    }
+}
+
+void SPI_select_Slave(SPI_SLAVE slave){
+    switch(slave){
+        case SLAVE1:
+            
+            break;
+        case SLAVE2:
+            
+            break;
+        case SLAVE3:
+            
+            break;
     }
 }

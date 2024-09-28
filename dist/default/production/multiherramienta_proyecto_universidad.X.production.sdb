@@ -20,7 +20,7 @@ ERROR_CODE_UART_CONFIG 3
 ERROR_CODE_OK 0
 ERROR_CODE_TIMEOUT 1
 ]
-"46 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\librerias/SPI.c
+"48 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\librerias/SPI.c
 [e E5225 . `uc
 EC_SPI_OK 0
 EC_SPI_BR_OVERRANGE 1
@@ -38,6 +38,12 @@ ERROR_CODE_UART_CONFIG 3
 EC_SPI_OK 0
 EC_SPI_BR_OVERRANGE 1
 EC_SPI_COLLISION 2
+]
+"40
+[e E5230 . `uc
+SLAVE1 0
+SLAVE2 1
+SLAVE3 2
 ]
 "1 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\abs.c
 [v _abs abs `(i  1 e 2 0 ]
@@ -85,12 +91,12 @@ EC_SPI_COLLISION 2
 [v _SPI_config_show SPI_config_show `(v  1 e 1 0 ]
 "28
 [v _SPI_master_init SPI_master_init `(v  1 e 1 0 ]
-"43
+"45
 [v _SPI_BaudRateGen SPI_BaudRateGen `(v  1 e 1 0 ]
-"57
-[v _SPI_write SPI_write `(uc  1 e 1 0 ]
-"64
+"87
 [v _SPI_actual_frec SPI_actual_frec `(l  1 e 4 0 ]
+"94
+[v _SPI1_ByteExchange SPI1_ByteExchange `(uc  1 e 1 0 ]
 "5 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\librerias/UART.c
 [v _UART_config_show UART_config_show `(v  1 e 1 0 ]
 "20
@@ -111,7 +117,28 @@ EC_SPI_COLLISION 2
 [v _SPI_ErrorHandler SPI_ErrorHandler `(v  1 e 1 0 ]
 "15 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\main.c
 [v _main main `(v  1 e 1 0 ]
-[s S608 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S42 . 1 `uc 1 LATA0 1 0 :1:0 
+`uc 1 LATA1 1 0 :1:1 
+`uc 1 LATA2 1 0 :1:2 
+`uc 1 LATA3 1 0 :1:3 
+`uc 1 LATA4 1 0 :1:4 
+`uc 1 LATA5 1 0 :1:5 
+`uc 1 LATA6 1 0 :1:6 
+`uc 1 LATA7 1 0 :1:7 
+]
+"3806 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
+[s S51 . 1 `uc 1 LA0 1 0 :1:0 
+`uc 1 LA1 1 0 :1:1 
+`uc 1 LA2 1 0 :1:2 
+`uc 1 LA3 1 0 :1:3 
+`uc 1 LA4 1 0 :1:4 
+`uc 1 LA5 1 0 :1:5 
+`uc 1 LA6 1 0 :1:6 
+`uc 1 LA7 1 0 :1:7 
+]
+[u S60 . 1 `S42 1 . 1 0 `S51 1 . 1 0 ]
+[v _LATAbits LATAbits `VES60  1 e 1 @3977 ]
+[s S655 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -120,8 +147,8 @@ EC_SPI_COLLISION 2
 `uc 1 TRISA6 1 0 :1:6 
 `uc 1 TRISA7 1 0 :1:7 
 ]
-"4658 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
-[s S617 . 1 `uc 1 RA0 1 0 :1:0 
+"4658
+[s S664 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -130,9 +157,9 @@ EC_SPI_COLLISION 2
 `uc 1 RA6 1 0 :1:6 
 `uc 1 RA7 1 0 :1:7 
 ]
-[u S626 . 1 `S608 1 . 1 0 `S617 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES626  1 e 1 @3986 ]
-[s S568 . 1 `uc 1 TRISB0 1 0 :1:0 
+[u S673 . 1 `S655 1 . 1 0 `S664 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES673  1 e 1 @3986 ]
+[s S615 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
 `uc 1 TRISB3 1 0 :1:3 
@@ -142,7 +169,7 @@ EC_SPI_COLLISION 2
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "4880
-[s S577 . 1 `uc 1 RB0 1 0 :1:0 
+[s S624 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -151,13 +178,13 @@ EC_SPI_COLLISION 2
 `uc 1 RB6 1 0 :1:6 
 `uc 1 RB7 1 0 :1:7 
 ]
-[u S586 . 1 `S568 1 . 1 0 `S577 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES586  1 e 1 @3987 ]
-[s S514 . 1 `uc 1 TUN 1 0 :7:0 
+[u S633 . 1 `S615 1 . 1 0 `S624 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES633  1 e 1 @3987 ]
+[s S561 . 1 `uc 1 TUN 1 0 :7:0 
 `uc 1 SPLLMULT 1 0 :1:7 
 ]
 "6070
-[s S517 . 1 `uc 1 TUN0 1 0 :1:0 
+[s S564 . 1 `uc 1 TUN0 1 0 :1:0 
 `uc 1 TUN1 1 0 :1:1 
 `uc 1 TUN2 1 0 :1:2 
 `uc 1 TUN3 1 0 :1:3 
@@ -165,9 +192,31 @@ EC_SPI_COLLISION 2
 `uc 1 TUN5 1 0 :1:5 
 `uc 1 TUN6 1 0 :1:6 
 ]
-[u S525 . 1 `S514 1 . 1 0 `S517 1 . 1 0 ]
-[v _OSCTUNEbits OSCTUNEbits `VES525  1 e 1 @3995 ]
-[s S249 . 1 `uc 1 RX9D 1 0 :1:0 
+[u S572 . 1 `S561 1 . 1 0 `S564 1 . 1 0 ]
+[v _OSCTUNEbits OSCTUNEbits `VES572  1 e 1 @3995 ]
+[s S947 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 ACTIF 1 0 :1:7 
+]
+"6318
+[s S956 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 SSP1IF 1 0 :1:3 
+`uc 1 TX1IF 1 0 :1:4 
+`uc 1 RC1IF 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 STIF 1 0 :1:7 
+]
+[s S963 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 PSPIF 1 0 :1:7 
+]
+[u S966 . 1 `S947 1 . 1 0 `S956 1 . 1 0 `S963 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES966  1 e 1 @3998 ]
+[s S295 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -177,22 +226,22 @@ EC_SPI_COLLISION 2
 `uc 1 SPEN 1 0 :1:7 
 ]
 "7187
-[s S258 . 1 `uc 1 . 1 0 :3:0 
+[s S304 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 ADEN 1 0 :1:3 
 ]
-[s S261 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S307 . 1 `uc 1 RCD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[s S265 . 1 `uc 1 . 1 0 :6:0 
+[s S311 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S268 . 1 `uc 1 . 1 0 :5:0 
+[s S314 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 SRENA 1 0 :1:5 
 ]
-[u S271 . 1 `S249 1 . 1 0 `S258 1 . 1 0 `S261 1 . 1 0 `S265 1 . 1 0 `S268 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES271  1 e 1 @4011 ]
-[s S73 . 1 `uc 1 TX9D 1 0 :1:0 
+[u S317 . 1 `S295 1 . 1 0 `S304 1 . 1 0 `S307 1 . 1 0 `S311 1 . 1 0 `S314 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES317  1 e 1 @4011 ]
+[s S119 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -202,37 +251,37 @@ EC_SPI_COLLISION 2
 `uc 1 CSRC 1 0 :1:7 
 ]
 "7315
-[s S82 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S128 . 1 `uc 1 TXD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[s S86 . 1 `uc 1 . 1 0 :2:0 
+[s S132 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 BRGH1 1 0 :1:2 
 ]
-[s S89 . 1 `uc 1 . 1 0 :7:0 
+[s S135 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 CSRC1 1 0 :1:7 
 ]
-[s S92 . 1 `uc 1 . 1 0 :3:0 
+[s S138 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 SENDB1 1 0 :1:3 
 ]
-[s S95 . 1 `uc 1 . 1 0 :4:0 
+[s S141 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 SYNC1 1 0 :1:4 
 ]
-[s S98 . 1 `uc 1 . 1 0 :1:0 
+[s S144 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 TRMT1 1 0 :1:1 
 ]
-[s S101 . 1 `uc 1 . 1 0 :6:0 
+[s S147 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX91 1 0 :1:6 
 ]
-[s S104 . 1 `uc 1 TX9D1 1 0 :1:0 
+[s S150 . 1 `uc 1 TX9D1 1 0 :1:0 
 ]
-[s S106 . 1 `uc 1 . 1 0 :5:0 
+[s S152 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 TXEN1 1 0 :1:5 
 ]
-[u S109 . 1 `S73 1 . 1 0 `S82 1 . 1 0 `S86 1 . 1 0 `S89 1 . 1 0 `S92 1 . 1 0 `S95 1 . 1 0 `S98 1 . 1 0 `S101 1 . 1 0 `S104 1 . 1 0 `S106 1 . 1 0 ]
-[v _TXSTA1bits TXSTA1bits `VES109  1 e 1 @4012 ]
+[u S155 . 1 `S119 1 . 1 0 `S128 1 . 1 0 `S132 1 . 1 0 `S135 1 . 1 0 `S138 1 . 1 0 `S141 1 . 1 0 `S144 1 . 1 0 `S147 1 . 1 0 `S150 1 . 1 0 `S152 1 . 1 0 ]
+[v _TXSTA1bits TXSTA1bits `VES155  1 e 1 @4012 ]
 "7456
-[v _TXSTAbits TXSTAbits `VES109  1 e 1 @4012 ]
+[v _TXSTAbits TXSTAbits `VES155  1 e 1 @4012 ]
 "7551
 [v _TXREG1 TXREG1 `VEuc  1 e 1 @4013 ]
 "7589
@@ -243,7 +292,7 @@ EC_SPI_COLLISION 2
 [v _SPBRG SPBRG `VEuc  1 e 1 @4015 ]
 "7770
 [v _SPBRGH SPBRGH `VEuc  1 e 1 @4016 ]
-[s S157 . 1 `uc 1 ABDEN 1 0 :1:0 
+[s S203 . 1 `uc 1 ABDEN 1 0 :1:0 
 `uc 1 WUE 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 BRG16 1 0 :1:3 
@@ -253,16 +302,16 @@ EC_SPI_COLLISION 2
 `uc 1 ABDOVF 1 0 :1:7 
 ]
 "8761
-[s S166 . 1 `uc 1 . 1 0 :4:0 
+[s S212 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 CKTXP 1 0 :1:4 
 `uc 1 DTRXP 1 0 :1:5 
 ]
-[s S170 . 1 `uc 1 . 1 0 :4:0 
+[s S216 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 SCKP 1 0 :1:4 
 `uc 1 . 1 0 :1:5 
 `uc 1 RCMT 1 0 :1:6 
 ]
-[s S175 . 1 `uc 1 ABDEN1 1 0 :1:0 
+[s S221 . 1 `uc 1 ABDEN1 1 0 :1:0 
 `uc 1 WUE1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 BRG161 1 0 :1:3 
@@ -271,32 +320,32 @@ EC_SPI_COLLISION 2
 `uc 1 RCIDL1 1 0 :1:6 
 `uc 1 ABDOVF1 1 0 :1:7 
 ]
-[s S184 . 1 `uc 1 . 1 0 :4:0 
+[s S230 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TXCKP1 1 0 :1:4 
 `uc 1 RXDTP1 1 0 :1:5 
 `uc 1 RCMT1 1 0 :1:6 
 ]
-[s S189 . 1 `uc 1 . 1 0 :5:0 
+[s S235 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 RXCKP 1 0 :1:5 
 ]
-[s S192 . 1 `uc 1 . 1 0 :1:0 
+[s S238 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 W4E 1 0 :1:1 
 ]
-[u S195 . 1 `S157 1 . 1 0 `S166 1 . 1 0 `S170 1 . 1 0 `S175 1 . 1 0 `S184 1 . 1 0 `S189 1 . 1 0 `S192 1 . 1 0 ]
-[v _BAUDCON1bits BAUDCON1bits `VES195  1 e 1 @4024 ]
-[s S649 . 1 `uc 1 SSPM 1 0 :4:0 
+[u S241 . 1 `S203 1 . 1 0 `S212 1 . 1 0 `S216 1 . 1 0 `S221 1 . 1 0 `S230 1 . 1 0 `S235 1 . 1 0 `S238 1 . 1 0 ]
+[v _BAUDCON1bits BAUDCON1bits `VES241  1 e 1 @4024 ]
+[s S696 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 CKP 1 0 :1:4 
 `uc 1 SSPEN 1 0 :1:5 
 `uc 1 SSPOV 1 0 :1:6 
 `uc 1 WCOL 1 0 :1:7 
 ]
 "10502
-[s S655 . 1 `uc 1 SSPM0 1 0 :1:0 
+[s S702 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
 `uc 1 SSPM3 1 0 :1:3 
 ]
-[s S660 . 1 `uc 1 SSPM01 1 0 :1:0 
+[s S707 . 1 `uc 1 SSPM01 1 0 :1:0 
 `uc 1 SSPM11 1 0 :1:1 
 `uc 1 SSPM21 1 0 :1:2 
 `uc 1 SSPM31 1 0 :1:3 
@@ -305,16 +354,16 @@ EC_SPI_COLLISION 2
 `uc 1 SSPOV1 1 0 :1:6 
 `uc 1 WCOL1 1 0 :1:7 
 ]
-[u S669 . 1 `S649 1 . 1 0 `S655 1 . 1 0 `S660 1 . 1 0 ]
-[v _SSPCON1bits SSPCON1bits `VES669  1 e 1 @4038 ]
-[s S694 . 1 `uc 1 . 1 0 :2:0 
+[u S716 . 1 `S696 1 . 1 0 `S702 1 . 1 0 `S707 1 . 1 0 ]
+[v _SSPCON1bits SSPCON1bits `VES716  1 e 1 @4038 ]
+[s S741 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_NOT_W 1 0 :1:2 
 ]
 "10985
-[s S697 . 1 `uc 1 . 1 0 :5:0 
+[s S744 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 D_NOT_A 1 0 :1:5 
 ]
-[s S700 . 1 `uc 1 BF 1 0 :1:0 
+[s S747 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -323,7 +372,7 @@ EC_SPI_COLLISION 2
 `uc 1 CKE 1 0 :1:6 
 `uc 1 SMP 1 0 :1:7 
 ]
-[s S709 . 1 `uc 1 BF1 1 0 :1:0 
+[s S756 . 1 `uc 1 BF1 1 0 :1:0 
 `uc 1 UA1 1 0 :1:1 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
@@ -332,62 +381,64 @@ EC_SPI_COLLISION 2
 `uc 1 CKE1 1 0 :1:6 
 `uc 1 SMP1 1 0 :1:7 
 ]
-[s S718 . 1 `uc 1 . 1 0 :2:0 
+[s S765 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 START 1 0 :1:3 
 `uc 1 STOP 1 0 :1:4 
 `uc 1 DA 1 0 :1:5 
 ]
-[s S724 . 1 `uc 1 . 1 0 :2:0 
+[s S771 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 START1 1 0 :1:3 
 `uc 1 STOP1 1 0 :1:4 
 `uc 1 DA1 1 0 :1:5 
 ]
-[s S730 . 1 `uc 1 . 1 0 :2:0 
+[s S777 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 RW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[s S735 . 1 `uc 1 . 1 0 :2:0 
+[s S782 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 RW1 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S740 . 1 `uc 1 . 1 0 :2:0 
+[s S787 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 I2C_DAT 1 0 :1:5 
 ]
-[s S745 . 1 `uc 1 . 1 0 :2:0 
+[s S792 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S750 . 1 `uc 1 . 1 0 :2:0 
+[s S797 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_WRITE 1 0 :1:2 
 ]
-[s S753 . 1 `uc 1 . 1 0 :5:0 
+[s S800 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 NOT_ADDRESS 1 0 :1:5 
 ]
-[s S756 . 1 `uc 1 . 1 0 :2:0 
+[s S803 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S761 . 1 `uc 1 . 1 0 :2:0 
+[s S808 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_W 1 0 :1:2 
 ]
-[s S764 . 1 `uc 1 . 1 0 :5:0 
+[s S811 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 NOT_A 1 0 :1:5 
 ]
-[u S767 . 1 `S694 1 . 1 0 `S697 1 . 1 0 `S700 1 . 1 0 `S709 1 . 1 0 `S718 1 . 1 0 `S724 1 . 1 0 `S730 1 . 1 0 `S735 1 . 1 0 `S740 1 . 1 0 `S745 1 . 1 0 `S750 1 . 1 0 `S753 1 . 1 0 `S756 1 . 1 0 `S761 1 . 1 0 `S764 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES767  1 e 1 @4039 ]
+[u S814 . 1 `S741 1 . 1 0 `S744 1 . 1 0 `S747 1 . 1 0 `S756 1 . 1 0 `S765 1 . 1 0 `S771 1 . 1 0 `S777 1 . 1 0 `S782 1 . 1 0 `S787 1 . 1 0 `S792 1 . 1 0 `S797 1 . 1 0 `S800 1 . 1 0 `S803 1 . 1 0 `S808 1 . 1 0 `S811 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES814  1 e 1 @4039 ]
 "11190
 [v _SSP1ADD SSP1ADD `VEuc  1 e 1 @4040 ]
+"11528
+[v _SSP1BUF SSP1BUF `VEuc  1 e 1 @4041 ]
 "11533
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @4041 ]
-[s S461 . 1 `uc 1 LFIOFS 1 0 :1:0 
+[s S508 . 1 `uc 1 LFIOFS 1 0 :1:0 
 `uc 1 HFIOFR 1 0 :1:1 
 `uc 1 PRISD 1 0 :1:2 
 `uc 1 SOSCGO 1 0 :1:3 
@@ -397,16 +448,16 @@ EC_SPI_COLLISION 2
 `uc 1 PLLRDY 1 0 :1:7 
 ]
 "12311
-[u S470 . 1 `S461 1 . 1 0 ]
-[v _OSCCON2bits OSCCON2bits `VES470  1 e 1 @4050 ]
-[s S482 . 1 `uc 1 SCS 1 0 :2:0 
+[u S517 . 1 `S508 1 . 1 0 ]
+[v _OSCCON2bits OSCCON2bits `VES517  1 e 1 @4050 ]
+[s S529 . 1 `uc 1 SCS 1 0 :2:0 
 `uc 1 HFIOFS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 `uc 1 IDLEN 1 0 :1:7 
 ]
 "12379
-[s S488 . 1 `uc 1 SCS0 1 0 :1:0 
+[s S535 . 1 `uc 1 SCS0 1 0 :1:0 
 `uc 1 SCS1 1 0 :1:1 
 `uc 1 FLTS 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -414,10 +465,12 @@ EC_SPI_COLLISION 2
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S496 . 1 `S482 1 . 1 0 `S488 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES496  1 e 1 @4051 ]
+[u S543 . 1 `S529 1 . 1 0 `S535 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES543  1 e 1 @4051 ]
 "13945
 [v _BF BF `VEb  1 e 0 @32312 ]
+"13954
+[v _BOEN BOEN `VEb  1 e 0 @32348 ]
 "13987
 [v _BRG161 BRG161 `VEb  1 e 0 @32195 ]
 "14017
@@ -430,8 +483,12 @@ EC_SPI_COLLISION 2
 [v _SPEN SPEN `VEb  1 e 0 @32095 ]
 "16039
 [v _SSPEN SSPEN `VEb  1 e 0 @32309 ]
+"16048
+[v _SSPIF SSPIF `VEb  1 e 0 @31987 ]
 "16180
 [v _SYNC1 SYNC1 `VEb  1 e 0 @32100 ]
+"16456
+[v _TRISA1 TRISA1 `VEb  1 e 0 @31889 ]
 "16516
 [v _TRISC6 TRISC6 `VEb  1 e 0 @31910 ]
 "16519
@@ -452,7 +509,11 @@ EC_SPI_COLLISION 2
 "15 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"23
+"32
+[v main@c2 c2 `uc  1 a 1 60 ]
+"31
+[v main@c1 c1 `uc  1 a 1 59 ]
+"42
 } 0
 "20 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\librerias/UART.c
 [v _UART_Init UART_Init `(v  1 e 1 0 ]
@@ -471,39 +532,31 @@ EC_SPI_COLLISION 2
 {
 "18
 } 0
-"57 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\librerias/SPI.c
-[v _SPI_write SPI_write `(uc  1 e 1 0 ]
-{
-[v SPI_write@dato dato `uc  1 a 1 wreg ]
-[v SPI_write@dato dato `uc  1 a 1 wreg ]
-[v SPI_write@dato dato `uc  1 a 1 45 ]
-"62
-} 0
-"28
+"28 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\librerias/SPI.c
 [v _SPI_master_init SPI_master_init `(v  1 e 1 0 ]
 {
-"41
+"43
 } 0
 "3
 [v _SPI_config_show SPI_config_show `(v  1 e 1 0 ]
 {
 "26
 } 0
-"64
+"87
 [v _SPI_actual_frec SPI_actual_frec `(l  1 e 4 0 ]
 {
-"65
+"88
 [v SPI_actual_frec@baud baud `l  1 a 4 20 ]
-"67
+"90
 } 0
-"43
+"45
 [v _SPI_BaudRateGen SPI_BaudRateGen `(v  1 e 1 0 ]
 {
-"44
+"46
 [v SPI_BaudRateGen@baudReg baudReg `ul  1 a 4 53 ]
-"43
+"45
 [v SPI_BaudRateGen@FClock FClock `l  1 p 4 45 ]
-"50
+"52
 } 0
 "24 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\librerias/variables.c
 [v _SPI_ErrorHandler SPI_ErrorHandler `(v  1 e 1 0 ]
@@ -527,9 +580,9 @@ EC_SPI_COLLISION 2
 {
 "1820
 [v vfprintf@cfmt cfmt `*.32uc  1 a 2 33 ]
-[s S1426 _IO_FILE 0 ]
+[s S1564 _IO_FILE 0 ]
 "1817
-[v vfprintf@fp fp `*.39S1426  1 p 2 28 ]
+[v vfprintf@fp fp `*.39S1564  1 p 2 28 ]
 [v vfprintf@fmt fmt `*.32Cuc  1 p 2 30 ]
 [v vfprintf@ap ap `*.30*.30v  1 p 1 32 ]
 "1840
@@ -537,17 +590,17 @@ EC_SPI_COLLISION 2
 "1177
 [v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
 {
-[u S1439 . 4 `l 1 sint 4 0 `ul 1 uint 4 0 `d 1 f 4 0 ]
+[u S1577 . 4 `l 1 sint 4 0 `ul 1 uint 4 0 `d 1 f 4 0 ]
 "1188
-[v vfpfcnvrt@convarg convarg `S1439  1 a 4 23 ]
+[v vfpfcnvrt@convarg convarg `S1577  1 a 4 23 ]
 "1179
 [v vfpfcnvrt@cp cp `*.32uc  1 a 2 21 ]
 [v vfpfcnvrt@c c `uc  1 a 1 27 ]
 "1180
 [v vfpfcnvrt@done done `a  1 a 1 20 ]
-[s S1426 _IO_FILE 0 ]
+[s S1564 _IO_FILE 0 ]
 "1177
-[v vfpfcnvrt@fp fp `*.39S1426  1 p 2 14 ]
+[v vfpfcnvrt@fp fp `*.39S1564  1 p 2 14 ]
 [v vfpfcnvrt@fmt fmt `*.30*.32uc  1 p 1 16 ]
 [v vfpfcnvrt@ap ap `*.30*.30v  1 p 1 17 ]
 "1814
@@ -556,9 +609,9 @@ EC_SPI_COLLISION 2
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 2 ]
-[u S1404 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
-[s S1407 _IO_FILE 12 `S1404 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
-[v fputc@fp fp `*.39S1407  1 p 2 4 ]
+[u S1542 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[s S1545 _IO_FILE 12 `S1542 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
+[v fputc@fp fp `*.39S1545  1 p 2 4 ]
 "24
 } 0
 "75 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\librerias/UART.c
@@ -607,15 +660,24 @@ EC_SPI_COLLISION 2
 [v ___aldiv@divisor divisor `l  1 p 4 4 ]
 "41
 } 0
+"94 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\librerias/SPI.c
+[v _SPI1_ByteExchange SPI1_ByteExchange `(uc  1 e 1 0 ]
+{
+[v SPI1_ByteExchange@byteData byteData `uc  1 a 1 wreg ]
+[v SPI1_ByteExchange@byteData byteData `uc  1 a 1 wreg ]
+"96
+[v SPI1_ByteExchange@byteData byteData `uc  1 a 1 0 ]
+"103
+} 0
 "3 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\librerias/clock.c
 [v _Clock_Init Clock_Init `(E5188  1 e 1 0 ]
 {
 "45
-[v Clock_Init@bStatus_562 bStatus `a  1 a 1 5 ]
+[v Clock_Init@bStatus_609 bStatus `a  1 a 1 5 ]
 "33
-[v Clock_Init@bStatus_559 bStatus `a  1 a 1 4 ]
+[v Clock_Init@bStatus_606 bStatus `a  1 a 1 4 ]
 "22
-[v Clock_Init@bStatus_558 bStatus `a  1 a 1 3 ]
+[v Clock_Init@bStatus_605 bStatus `a  1 a 1 3 ]
 "8
 [v Clock_Init@bStatus bStatus `a  1 a 1 2 ]
 "4

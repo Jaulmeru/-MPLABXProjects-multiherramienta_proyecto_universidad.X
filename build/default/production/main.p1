@@ -10,19 +10,34 @@ Version 4.0 HI-TECH Software Intermediate Code
 "19 ./librerias/UART.h
 [; ;./librerias/UART.h: 19: void UART_Init(uint32_t);
 [v _UART_Init `(v ~T0 @X0 0 ef1`ul ]
-"28 ./librerias/SPI.h
-[; ;./librerias/SPI.h: 28: void SPI_master_init();
+"29 ./librerias/SPI.h
+[; ;./librerias/SPI.h: 29: void SPI_master_init();
 [v _SPI_master_init `(v ~T0 @X0 0 e? ]
-"23 ./librerias/UART.h
-[; ;./librerias/UART.h: 23: void UART_Tx(char);
-[v _UART_Tx `(v ~T0 @X0 0 ef1`uc ]
-"31 ./librerias/SPI.h
-[; ;./librerias/SPI.h: 31: char SPI_write(char);
-[v _SPI_write `(uc ~T0 @X0 0 ef1`uc ]
+"16456 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 16456: extern volatile __bit TRISA1 __attribute__((address(0x7C91)));
+[v _TRISA1 `Vb ~T0 @X0 0 e@31889 ]
+"3785
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 3785:     struct {
+[s S164 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S164 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 LATA6 LATA7 ]
+"3795
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 3795:     struct {
+[s S165 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S165 . LA0 LA1 LA2 LA3 LA4 LA5 LA6 LA7 ]
+"3784
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 3784: typedef union {
+[u S163 `S164 1 `S165 1 ]
+[n S163 . . . ]
+"3806
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 3806: extern volatile LATAbits_t LATAbits __attribute__((address(0xF89)));
+[v _LATAbits `VS163 ~T0 @X0 0 e@3977 ]
 [v F205 `(v ~T0 @X0 1 tf1`ul ]
 "20 C:\Program Files\Microchip\xc8\v2.46\pic\include\builtins.h
 [v __delay `JF205 ~T0 @X0 0 e ]
 [p i __delay ]
+"37 ./librerias/SPI.h
+[; ;./librerias/SPI.h: 37: uint8_t SPI1_ByteExchange(uint8_t);
+[v _SPI1_ByteExchange `(uc ~T0 @X0 0 ef1`uc ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 54: __asm("SRCON1 equ 0F57h");
 [; <" SRCON1 equ 0F57h ;# ">
@@ -745,23 +760,67 @@ Version 4.0 HI-TECH Software Intermediate Code
 "18
 [; ;main.c: 18:     SPI_master_init();
 [e ( _SPI_master_init ..  ]
-"19
-[; ;main.c: 19:     while(1){
+"21
+[; ;main.c: 21:     TRISA1 = 0;
+[e = _TRISA1 -> -> 0 `i `b ]
+"22
+[; ;main.c: 22:     LATAbits.LATA1 = 1;
+[e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
+"23
+[; ;main.c: 23:     _delay((unsigned long)((500)*(48000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
+"24
+[; ;main.c: 24:     LATAbits.LATA1 = 0;
+[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
+"25
+[; ;main.c: 25:     _delay((unsigned long)((500)*(48000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
+"26
+[; ;main.c: 26:     LATAbits.LATA1 = 1;
+[e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
+"27
+[; ;main.c: 27:     _delay((unsigned long)((500)*(48000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
+"28
+[; ;main.c: 28:     LATAbits.LATA1 = 0;
+[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
+"29
+[; ;main.c: 29:     _delay((unsigned long)((500)*(48000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
+"31
+[; ;main.c: 31:     uint8_t c1 = 0;
+[v _c1 `uc ~T0 @X0 1 a ]
+[e = _c1 -> -> 0 `i `uc ]
+"32
+[; ;main.c: 32:     uint8_t c2 = 0;
+[v _c2 `uc ~T0 @X0 1 a ]
+[e = _c2 -> -> 0 `i `uc ]
+"34
+[; ;main.c: 34:     while(1){
 [e :U 641 ]
 {
-"20
-[; ;main.c: 20:         UART_Tx(SPI_write('b'));
-[e ( _UART_Tx (1 ( _SPI_write (1 -> -> 98 `ui `uc ]
-"21
-[; ;main.c: 21:         _delay((unsigned long)((1000)*(48000000/4000.0)));
+"35
+[; ;main.c: 35:         LATAbits.LATA1 = 0;
+[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
+"36
+[; ;main.c: 36:         c1 = SPI1_ByteExchange(c2);
+[e = _c1 ( _SPI1_ByteExchange (1 _c2 ]
+"37
+[; ;main.c: 37:         LATAbits.LATA1 = 1;
+[e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
+"39
+[; ;main.c: 39:         c2 = c1 + 1;
+[e = _c2 -> + -> _c1 `i -> 1 `i `uc ]
+"40
+[; ;main.c: 40:         _delay((unsigned long)((1000)*(48000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-"22
-[; ;main.c: 22:     }
+"41
+[; ;main.c: 41:     }
 }
 [e :U 640 ]
 [e $U 641  ]
 [e :U 642 ]
-"23
-[; ;main.c: 23: }
+"42
+[; ;main.c: 42: }
 [e :UE 639 ]
 }

@@ -26,21 +26,23 @@ void SPI_config_show(){
 }
 
 void SPI_master_init(){
-    SPI_BaudRateGen(100000);
-    TRISAbits.RA5 = 1;      // SS -> Input
+    SPI_BaudRateGen(60000);
+    TRISAbits.RA5 = 0;      // SS -> Ouput
     TRISBbits.RB0 = 1;      // SDI -> Input
     TRISBbits.RB1 = 0;      // SCK -> Output
     TRISBbits.RB3 = 0;      // SDO -> Output
-    SSPCON1bits.SSPM = 10;  // Modo -> SPI con (FOSC / (FClock * 4)) - 1
+    SSPCON1bits.SSPM = 0xA;  // Modo -> SPI con (FOSC / (FClock * 4)) - 1
+    BOEN = 1; //-----------------------------------
     SPI_enable();           // Serial Port -> Habilitado
     SPI_clk_idle_low();     // Polaridad reloj
     SPI_clk_idle_active();  // Se envian datos en flanco de subida
     SPI_sample_end();       // Muestra de datos de entrada al final 
     
+    LATAbits.LA5 = 1;
     SPI_config_show();
 }   
 
-void SPI_BaudRateGen(int32_t FClock){
+void SPI_BaudRateGen(int32_t FClock){ // Recibe un valor de frecuencia esperada y configura 
     uint32_t baudReg = (_XTAL_FREQ / (FClock * 4)) - 1;
     if(baudReg > 0xFF){
         SPI_ErrorHandler(EC_SPI_BR_OVERRANGE);
@@ -54,14 +56,48 @@ void SPI_master_reset(){
     SPI_master_init();  // Vuelve a iniciar puerto
 }
 
-char SPI_write(char dato){
-    SSPBUF = dato;
-    if(WCOL) SPI_ErrorHandler(EC_SPI_COLLISION);
-    while(!BF);
-    return SSPBUF;
+void SPI_write(uint8_t dato){
+    LATAbits.LA5 = 0;
+    SSPBUF = dato;      // Escribe para iniciar la transmision
+    while(!BF);         // Espera a que se haya completado la recepccion
+    while(!SSPIF);         // Espera a que se haya completado la recepccion
+    SSPIF = 0;
+    if(WCOL) SPI_ErrorHandler(EC_SPI_COLLISION); // Valida si habia un dato anterior en SSPBUF
+    LATAbits.LA5 = 1;
 }
+uint8_t SPI_read(){
+    if(BF) LATAbits.LATA1 = 1; 
+    return SSP1BUF;
+}
+
+
+/*const char* SPI_print(const char *dataT){
+    static char dataR[];
+    int i = 0;
+    LATAbits.LA5 = 0;
+    while(*dataT){
+        dataR[i] = SPI_write(*dataT);
+        *dataT++;
+        i++;
+    }
+    LATAbits.LA5 = 1;
+    return dataR;
+}*/
 
 int32_t SPI_actual_frec(){
     int32_t baud = _XTAL_FREQ/((SSP1ADD+1)*4);
     return baud;
+}
+
+
+
+uint8_t SPI1_ByteExchange(uint8_t byteData)
+{
+    SSP1BUF = byteData;
+    while (!PIR1bits.SSP1IF)
+    {
+        // Wait for flag to get set
+    }
+    PIR1bits.SSP1IF = 0;
+    return SSP1BUF;
 }

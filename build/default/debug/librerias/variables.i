@@ -8300,6 +8300,20 @@ typedef enum{
 CLK_ERROR_CODE Clock_Init(int16_t s16Timeout);
 # 16 "librerias/variables.h" 2
 
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\inttypes.h" 1 3
+# 13 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\inttypes.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 14 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\inttypes.h" 2 3
+
+typedef struct { intmax_t quot, rem; } imaxdiv_t;
+
+intmax_t imaxabs(intmax_t);
+imaxdiv_t imaxdiv(intmax_t, intmax_t);
+
+intmax_t strtoimax(const char *restrict, char **restrict, int);
+uintmax_t strtoumax(const char *restrict, char **restrict, int);
+# 17 "librerias/variables.h" 2
+
 
 
 
@@ -8313,12 +8327,20 @@ CLK_ERROR_CODE Clock_Init(int16_t s16Timeout);
     }UART_ERROR_CODE;
 
     typedef enum{
-        ERROR_CODE_SPI_OK,
-        ERROR_CODE_SPI_BR_OVERRANGE,
+        EC_SPI_OK,
+        EC_SPI_BR_OVERRANGE,
+        EC_SPI_COLLISION,
     }SPI_ERROR_CODE;
+
+    typedef enum{
+        SLAVE1,
+        SLAVE2,
+        SLAVE3,
+    }SPI_SLAVE;
 
 void UART_ErrorHandler(UART_ERROR_CODE);
 void SPI_ErrorHandler(SPI_ERROR_CODE);
+void SPI_select_Slave(SPI_SLAVE);
 # 1 "librerias/variables.c" 2
 
 # 1 "librerias/UART.h" 1
@@ -8336,7 +8358,7 @@ _Bool UART_Available(void);
 
 
 void UART_ErrorHandler(UART_ERROR_CODE errorCode){
-    if(errorCode != ERROR_CODE_UART_OK) return;
+    if(errorCode == ERROR_CODE_UART_OK) return;
     printf("Error: ");
     switch(errorCode){
         case ERROR_CODE_UART_OK:
@@ -8355,14 +8377,31 @@ void UART_ErrorHandler(UART_ERROR_CODE errorCode){
 }
 
 void SPI_ErrorHandler(SPI_ERROR_CODE errorCode){
-    if(errorCode != ERROR_CODE_SPI_OK) return;
+    if(errorCode != EC_SPI_OK) return;
     printf("Error: ");
     switch(errorCode){
-        case ERROR_CODE_SPI_OK:
+        case EC_SPI_OK:
 
         break;
-        case ERROR_CODE_SPI_BR_OVERRANGE:
+        case EC_SPI_BR_OVERRANGE:
             printf("ERROR_CODE_SPI_BR_OVERRANGE");
         break;
+        case EC_SPI_COLLISION:
+            printf("ERROR_CODE_SPI_COLLISION");
+        break;
+    }
+}
+
+void SPI_select_Slave(SPI_SLAVE slave){
+    switch(slave){
+        case SLAVE1:
+
+            break;
+        case SLAVE2:
+
+            break;
+        case SLAVE3:
+
+            break;
     }
 }

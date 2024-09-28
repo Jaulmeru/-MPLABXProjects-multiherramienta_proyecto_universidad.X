@@ -8333,8 +8333,15 @@ uintmax_t strtoumax(const char *restrict, char **restrict, int);
         EC_SPI_COLLISION,
     }SPI_ERROR_CODE;
 
+    typedef enum{
+        SLAVE1,
+        SLAVE2,
+        SLAVE3,
+    }SPI_SLAVE;
+
 void UART_ErrorHandler(UART_ERROR_CODE);
 void SPI_ErrorHandler(SPI_ERROR_CODE);
+void SPI_select_Slave(SPI_SLAVE);
 # 8 "librerias/UART.h" 2
 # 18 "librerias/UART.h"
 void UART_config_show();

@@ -8301,6 +8301,20 @@ typedef enum{
 CLK_ERROR_CODE Clock_Init(int16_t s16Timeout);
 # 16 "librerias/variables.h" 2
 
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\inttypes.h" 1 3
+# 13 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\inttypes.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 14 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\inttypes.h" 2 3
+
+typedef struct { intmax_t quot, rem; } imaxdiv_t;
+
+intmax_t imaxabs(intmax_t);
+imaxdiv_t imaxdiv(intmax_t, intmax_t);
+
+intmax_t strtoimax(const char *restrict, char **restrict, int);
+uintmax_t strtoumax(const char *restrict, char **restrict, int);
+# 17 "librerias/variables.h" 2
+
 
 
 
@@ -8314,12 +8328,20 @@ CLK_ERROR_CODE Clock_Init(int16_t s16Timeout);
     }UART_ERROR_CODE;
 
     typedef enum{
-        ERROR_CODE_SPI_OK,
-        ERROR_CODE_SPI_BR_OVERRANGE,
+        EC_SPI_OK,
+        EC_SPI_BR_OVERRANGE,
+        EC_SPI_COLLISION,
     }SPI_ERROR_CODE;
+
+    typedef enum{
+        SLAVE1,
+        SLAVE2,
+        SLAVE3,
+    }SPI_SLAVE;
 
 void UART_ErrorHandler(UART_ERROR_CODE);
 void SPI_ErrorHandler(SPI_ERROR_CODE);
+void SPI_select_Slave(SPI_SLAVE);
 # 8 "librerias/UART.h" 2
 # 18 "librerias/UART.h"
 void UART_config_show();

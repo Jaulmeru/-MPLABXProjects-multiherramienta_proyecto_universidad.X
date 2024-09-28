@@ -17,6 +17,7 @@
 #define SPI_sample_mid() do{SSPSTATbits.SMP = 0;}while(0)
 
 
+
 #ifndef SPI_H
 #define	SPI_H
 
@@ -28,9 +29,12 @@ void SPI_config_show();
 void SPI_master_init();
 void SPI_BaudRateGen(int32_t);
 void SPI_master_reset();
-char SPI_write(char);
-char SPI_read();
+void SPI_write(uint8_t);
+uint8_t SPI_read();
+const char* SPI_print(const char*);
 int32_t SPI_actual_frec();
+
+uint8_t SPI1_ByteExchange(uint8_t);
 
 #ifdef	__cplusplus
 }

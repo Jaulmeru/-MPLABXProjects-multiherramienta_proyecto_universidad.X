@@ -8332,8 +8332,15 @@ uintmax_t strtoumax(const char *restrict, char **restrict, int);
         EC_SPI_COLLISION,
     }SPI_ERROR_CODE;
 
+    typedef enum{
+        SLAVE1,
+        SLAVE2,
+        SLAVE3,
+    }SPI_SLAVE;
+
 void UART_ErrorHandler(UART_ERROR_CODE);
 void SPI_ErrorHandler(SPI_ERROR_CODE);
+void SPI_select_Slave(SPI_SLAVE);
 # 1 "librerias/variables.c" 2
 
 # 1 "librerias/UART.h" 1
@@ -8382,5 +8389,19 @@ void SPI_ErrorHandler(SPI_ERROR_CODE errorCode){
         case EC_SPI_COLLISION:
             printf("ERROR_CODE_SPI_COLLISION");
         break;
+    }
+}
+
+void SPI_select_Slave(SPI_SLAVE slave){
+    switch(slave){
+        case SLAVE1:
+
+            break;
+        case SLAVE2:
+
+            break;
+        case SLAVE3:
+
+            break;
     }
 }
