@@ -18,15 +18,23 @@ void UART_config_show(){
 }
 
 void UART_Init(uint32_t baudrate){
-    TXSTA1bits.SYNC1 = 0;        // Modo asincrono
-    TXSTA1bits.BRGH1 = 1;        // Modo de alta velocidad
-    BAUDCON1bits.BRG161 = 1;     // Se habilitan 16bits en el generador de Baud Rate
+//    TXSTA1bits.SYNC1 = 0;        // Modo asincrono
+//    TXSTA1bits.BRGH1 = 1;        // Modo de alta velocidad
+//    BAUDCON1bits.BRG161 = 1;     // Se habilitan 16bits en el generador de Baud Rate
     UART_select_baud(baudrate);     // Se configura por defecto a 9600
-    TRISC6 = 1;                 // Pin Tx -> Tri estado (Input)
-    TRISC7 = 1;                 // Pin Rx -> Tri estado (Input)
-    RCSTAbits.SPEN = 1;         // Serial Port -> Habilitado
-    TXSTAbits.TXEN1 = 1;         // Transmision -> Habilitada
-    RCSTAbits.CREN = 1;         // Recepcion -> Habiltada
+//    TRISC6 = 1;                 // Pin Tx -> Tri estado (Input)
+//    TRISC7 = 1;                 // Pin Rx -> Tri estado (Input)
+//    RCSTAbits.SPEN = 1;         // Serial Port -> Habilitado
+//    TXSTAbits.TXEN1 = 1;         // Transmision -> Habilitada
+//    RCSTAbits.CREN = 1;         // Recepcion -> Habiltada
+    
+        //ABDEN disabled; WUE enabled; BRG16 16bit_generator; ABDOVF no_overflow; CKTXP async_noninverted_sync_fallingedge; RXDTP not_inverted; 
+    BAUDCON1 = 0x4A; 
+    //ADDEN disabled; CREN enabled; SREN disabled; RX9 8-bit; SPEN enabled; 
+    RCSTA1 = 0x90; 
+    //TX9D 0x0; BRGH hi_speed; SENDB sync_break_complete; SYNC asynchronous; TXEN enabled; TX9 8-bit; CSRC client_mode; 
+    TXSTA1 = 0x26; 
+    
     UART_config_show();
 };
 
@@ -94,14 +102,14 @@ UART_ERROR_CODE UART_Rx_FRAMING(){
 }
 
 char UART_Rx(void){
-    ErrorHandler(UART_Rx_OVERFLOW());
-    ErrorHandler(UART_Rx_FRAMING());
+    UART_ErrorHandler(UART_Rx_OVERFLOW());
+    UART_ErrorHandler(UART_Rx_FRAMING());
     return RCREG1;
 }
 
 bool UART_Available(){
     if (!RCSTAbits.SPEN || !RCSTAbits.CREN){
-        ErrorHandler(ERROR_CODE_UART_CONFIG);
+        UART_ErrorHandler(ERROR_CODE_UART_CONFIG);
         return 0;
     }    
     if (!RC1IF){

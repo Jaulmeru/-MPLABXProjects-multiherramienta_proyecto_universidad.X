@@ -8330,23 +8330,15 @@ void UART_config_show(){
 }
 
 void UART_Init(uint32_t baudrate){
-
-
-
+    TXSTA1bits.SYNC1 = 0;
+    TXSTA1bits.BRGH1 = 1;
+    BAUDCON1bits.BRG161 = 1;
     UART_select_baud(baudrate);
-
-
-
-
-
-
-
-    BAUDCON1 = 0x4A;
-
-    RCSTA1 = 0x90;
-
-    TXSTA1 = 0x26;
-
+    TRISC6 = 1;
+    TRISC7 = 1;
+    RCSTAbits.SPEN = 1;
+    TXSTAbits.TXEN1 = 1;
+    RCSTAbits.CREN = 1;
     UART_config_show();
 };
 

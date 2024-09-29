@@ -15,5 +15,10 @@ void main(void) {
     Clock_Init(16000);
     UART_Init(9600);
     while(1){
+        char x = UART_Rx();
+        if(x){
+            UART_Tx(x);
+            x = 0;
+        }
     }
 }
