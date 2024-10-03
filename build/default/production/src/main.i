@@ -7,14 +7,7 @@
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "src/main.c" 2
-
-
-
-
-
-
-
-
+# 10 "src/main.c"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -8119,7 +8112,7 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
-# 9 "src/main.c" 2
+# 10 "src/main.c" 2
 
 # 1 "src/config.h" 1
 # 21 "src/config.h"
@@ -8186,7 +8179,7 @@ unsigned char __t3rd16on(void);
 
 
 #pragma config EBTRB = OFF
-# 10 "src/main.c" 2
+# 11 "src/main.c" 2
 
 # 1 "src/librerias/clock.h" 1
 # 11 "src/librerias/clock.h"
@@ -8375,7 +8368,7 @@ typedef enum{
 
 
 CLK_ERROR_CODE Clock_Init(int16_t s16Timeout);
-# 11 "src/main.c" 2
+# 12 "src/main.c" 2
 
 # 1 "src/librerias/UART.h" 1
 
@@ -8405,19 +8398,26 @@ UART_ERROR_CODE UART_Rx_OVERFLOW();
 void UART_Tx(char);
 char UART_Rx(void);
 _Bool UART_Available(void);
-# 12 "src/main.c" 2
+# 13 "src/main.c" 2
 
 
-void main(void)
+
+
+
+static uint8_t readMessage;
+
+int main(void)
 {
     Clock_Init(16000);
     UART_Init(9600);
-    uint8_t data = 33;
+    TRISAbits.RA1 = 0;
+
     while(1)
     {
-        if(data > 126){
-            data = 33;
-        }else UART_Tx(data++);
-        _delay((unsigned long)((500)*(48000000/4000.0)));
+        if(PIR1bits.RC1IF){
+            readMessage = UART_Rx();
+            if(readMessage == '1') do { LATAbits.LATA1 = 1; } while(0);
+            if(readMessage == '0') do { LATAbits.LATA1 = 0; } while(0);
+        }
     }
 }

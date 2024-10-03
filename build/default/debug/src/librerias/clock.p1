@@ -1,67 +1,49 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"22 src/main.c
-[; ;src/main.c: 22:     Clock_Init(16000);
+"3 src/librerias/clock.c
+[; ;src/librerias/clock.c: 3: CLK_ERROR_CODE Clock_Init(int16_t s16Timeout){
 [c E5188 0 1 .. ]
 [n E5188 . ERROR_CODE_OK ERROR_CODE_TIMEOUT  ]
-"19 src/librerias/clock.h
-[; ;src/librerias/clock.h: 19: CLK_ERROR_CODE Clock_Init(int16_t s16Timeout);
-[v _Clock_Init `(E5188 ~T0 @X0 0 ef1`s ]
-"19 src/librerias/UART.h
-[; ;src/librerias/UART.h: 19: void UART_Init(uint32_t);
-[v _UART_Init `(v ~T0 @X0 0 ef1`ul ]
-"4637 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 4637:     struct {
-[s S195 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S195 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 TRISA6 TRISA7 ]
-"4647
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 4647:     struct {
-[s S196 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S196 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
-"4636
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 4636: typedef union {
-[u S194 `S195 1 `S196 1 ]
-[n S194 . . . ]
-"4658
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 4658: extern volatile TRISAbits_t TRISAbits __attribute__((address(0xF92)));
-[v _TRISAbits `VS194 ~T0 @X0 0 e@3986 ]
-"6295
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 6295:     struct {
-[s S255 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S255 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF ACTIF ]
-"6305
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 6305:     struct {
-[s S256 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S256 . . SSP1IF TX1IF RC1IF . STIF ]
-"6313
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 6313:     struct {
-[s S257 :7 `uc 1 :1 `uc 1 ]
-[n S257 . . PSPIF ]
-"6294
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 6294: typedef union {
-[u S254 `S255 1 `S256 1 `S257 1 ]
-[n S254 . . . . ]
-"6318
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 6318: extern volatile PIR1bits_t PIR1bits __attribute__((address(0xF9E)));
-[v _PIR1bits `VS254 ~T0 @X0 0 e@3998 ]
-"24 src/librerias/UART.h
-[; ;src/librerias/UART.h: 24: char UART_Rx(void);
-[v _UART_Rx `(uc ~T0 @X0 0 ef ]
-"3785 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 3785:     struct {
-[s S164 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S164 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 LATA6 LATA7 ]
-"3795
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 3795:     struct {
-[s S165 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S165 . LA0 LA1 LA2 LA3 LA4 LA5 LA6 LA7 ]
-"3784
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 3784: typedef union {
-[u S163 `S164 1 `S165 1 ]
-[n S163 . . . ]
-"3806
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 3806: extern volatile LATAbits_t LATAbits __attribute__((address(0xF89)));
-[v _LATAbits `VS163 ~T0 @X0 0 e@3977 ]
+"12300 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 12300:     struct {
+[s S554 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S554 . LFIOFS HFIOFR PRISD SOSCGO PLLEN INTSRC SOSCRUN PLLRDY ]
+"12299
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 12299: typedef union {
+[u S553 `S554 1 ]
+[n S553 . . ]
+"12311
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 12311: extern volatile OSCCON2bits_t OSCCON2bits __attribute__((address(0xFD2)));
+[v _OSCCON2bits `VS553 ~T0 @X0 0 e@4050 ]
+"12362
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 12362:     struct {
+[s S556 :2 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S556 . SCS HFIOFS OSTS IRCF IDLEN ]
+"12369
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 12369:     struct {
+[s S557 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S557 . SCS0 SCS1 FLTS . IRCF0 IRCF1 IRCF2 ]
+"12361
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 12361: typedef union {
+[u S555 `S556 1 `S557 1 ]
+[n S555 . . . ]
+"12379
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 12379: extern volatile OSCCONbits_t OSCCONbits __attribute__((address(0xFD3)));
+[v _OSCCONbits `VS555 ~T0 @X0 0 e@4051 ]
+"6056
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 6056:     struct {
+[s S247 :7 `uc 1 :1 `uc 1 ]
+[n S247 . TUN SPLLMULT ]
+"6060
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 6060:     struct {
+[s S248 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S248 . TUN0 TUN1 TUN2 TUN3 TUN4 TUN5 TUN6 ]
+"6055
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 6055: typedef union {
+[u S246 `S247 1 `S248 1 ]
+[n S246 . . . ]
+"6070
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 6070: extern volatile OSCTUNEbits_t OSCTUNEbits __attribute__((address(0xF9B)));
+[v _OSCTUNEbits `VS246 ~T0 @X0 0 e@3995 ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 54: __asm("SRCON1 equ 0F57h");
 [; <" SRCON1 equ 0F57h ;# ">
@@ -686,151 +668,204 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13651
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 13651: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"21 src/config.h
-[p x PLLSEL  =  PLL3X    ]
-"22
-[p x CFGPLLEN  =  ON    ]
-"23
-[p x CPUDIV  =  NOCLKDIV ]
-"24
-[p x LS48MHZ  =  SYS48X8 ]
-"27
-[p x FOSC  =  INTOSCCLKO ]
-"28
-[p x PCLKEN  =  OFF      ]
-"29
-[p x FCMEN  =  OFF       ]
-"30
-[p x IESO  =  OFF        ]
-"33
-[p x nPWRTEN  =  OFF     ]
-"34
-[p x BOREN  =  SBORDIS   ]
-"35
-[p x BORV  =  190        ]
-"36
-[p x nLPBOR  =  OFF      ]
-"39
-[p x WDTEN  =  OFF        ]
-"40
-[p x WDTPS  =  32768     ]
-"43
-[p x CCP2MX  =  RC1      ]
-"44
-[p x PBADEN  =  ON       ]
-"45
-[p x T3CMX  =  RC0       ]
-"46
-[p x SDOMX  =  RB3       ]
-"47
-[p x MCLRE  =  ON        ]
-"50
-[p x STVREN  =  ON       ]
-"51
-[p x LVP  =  ON          ]
-"52
-[p x ICPRT  =  OFF       ]
-"53
-[p x XINST  =  OFF       ]
-"56
-[p x CP0  =  OFF         ]
-"57
-[p x CP1  =  OFF         ]
-"58
-[p x CP2  =  OFF         ]
-"59
-[p x CP3  =  OFF         ]
-"62
-[p x CPB  =  OFF         ]
-"63
-[p x CPD  =  OFF         ]
-"66
-[p x WRT0  =  OFF        ]
-"67
-[p x WRT1  =  OFF        ]
-"68
-[p x WRT2  =  OFF        ]
-"69
-[p x WRT3  =  OFF        ]
-"72
-[p x WRTC  =  OFF        ]
-"73
-[p x WRTB  =  OFF        ]
-"74
-[p x WRTD  =  OFF        ]
-"77
-[p x EBTR0  =  OFF       ]
-"78
-[p x EBTR1  =  OFF       ]
-"79
-[p x EBTR2  =  OFF       ]
-"80
-[p x EBTR3  =  OFF       ]
-"83
-[p x EBTRB  =  OFF       ]
-"18 src/main.c
-[; ;src/main.c: 18: static uint8_t readMessage;
-[v _readMessage `uc ~T0 @X0 1 s ]
-[v $root$_main `(v ~T0 @X0 0 e ]
-"20
-[; ;src/main.c: 20: int main(void)
-[v _main `(i ~T0 @X0 1 ef ]
-"21
-[; ;src/main.c: 21: {
+"3 src/librerias/clock.c
+[; ;src/librerias/clock.c: 3: CLK_ERROR_CODE Clock_Init(int16_t s16Timeout){
+[v _Clock_Init `(E5188 ~T0 @X0 1 ef1`s ]
 {
-[e :U _main ]
+[e :U _Clock_Init ]
+[v _s16Timeout `s ~T0 @X0 1 r1 ]
 [f ]
-"22
-[; ;src/main.c: 22:     Clock_Init(16000);
-[e ( _Clock_Init (1 -> -> 16000 `i `s ]
-"23
-[; ;src/main.c: 23:     UART_Init(9600);
-[e ( _UART_Init (1 -> -> -> 9600 `i `l `ul ]
-"24
-[; ;src/main.c: 24:     TRISAbits.RA1 = 0;
-[e = . . _TRISAbits 1 1 -> -> 0 `i `uc ]
-"26
-[; ;src/main.c: 26:     while(1)
-[e :U 640 ]
-"27
-[; ;src/main.c: 27:     {
+"4
+[; ;src/librerias/clock.c: 4:     CLK_ERROR_CODE returnCode = ERROR_CODE_OK;
+[v _returnCode `E5188 ~T0 @X0 1 a ]
+[e = _returnCode . `E5188 0 ]
+"5
+[; ;src/librerias/clock.c: 5:     _Bool bItTimeEn = (0 >= s16Timeout) ? 0 : 1;
+[v _bItTimeEn `a ~T0 @X0 1 a ]
+[e = _bItTimeEn -> ? >= -> 0 `i -> _s16Timeout `i : -> 0 `i -> 1 `i `a ]
+"7
+[; ;src/librerias/clock.c: 7:     if(ERROR_CODE_OK == returnCode){
+[e $ ! == -> . `E5188 0 `ui -> _returnCode `ui 639  ]
 {
-"28
-[; ;src/main.c: 28:         if(PIR1bits.RC1IF){
-[e $ ! != -> . . _PIR1bits 1 3 `i -> 0 `i 642  ]
-{
-"29
-[; ;src/main.c: 29:             readMessage = UART_Rx();
-[e = _readMessage -> ( _UART_Rx ..  `uc ]
-"30
-[; ;src/main.c: 30:             if(readMessage == '1') do { LATAbits.LATA1 = 1; } while(0);
-[e $ ! == -> _readMessage `ui -> 49 `ui 643  ]
-[e :U 646 ]
-{
-[e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
-}
-[e :U 645 ]
-[e :U 643 ]
-"31
-[; ;src/main.c: 31:             if(readMessage == '0') do { LATAbits.LATA1 = 0; } while(0);
-[e $ ! == -> _readMessage `ui -> 48 `ui 647  ]
-[e :U 650 ]
-{
-[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
-}
-[e :U 649 ]
-[e :U 647 ]
-"32
-[; ;src/main.c: 32:         }
-}
+"8
+[; ;src/librerias/clock.c: 8:         _Bool bStatus = 0;
+[v _bStatus `a ~T0 @X0 1 a ]
+[e = _bStatus -> -> 0 `i `a ]
+"9
+[; ;src/librerias/clock.c: 9:         do{
 [e :U 642 ]
-"33
-[; ;src/main.c: 33:     }
+{
+"10
+[; ;src/librerias/clock.c: 10:             bStatus = OSCCON2bits.HFIOFR;
+[e = _bStatus -> . . _OSCCON2bits 0 1 `a ]
+"11
+[; ;src/librerias/clock.c: 11:             s16Timeout--;
+[e -- _s16Timeout -> -> 1 `i `s ]
+"12
+[; ;src/librerias/clock.c: 12:         }while((0 == bStatus) && ((0 < s16Timeout) || (0 == bItTimeEn)));
+}
+[e $ && == -> 0 `i -> _bStatus `i || < -> 0 `i -> _s16Timeout `i == -> 0 `i -> _bItTimeEn `i 642  ]
+[e :U 641 ]
+"13
+[; ;src/librerias/clock.c: 13:         if (0 == bStatus){
+[e $ ! == -> 0 `i -> _bStatus `i 643  ]
+{
+"14
+[; ;src/librerias/clock.c: 14:             returnCode = ERROR_CODE_TIMEOUT;
+[e = _returnCode . `E5188 1 ]
+"15
+[; ;src/librerias/clock.c: 15:         }
+}
+[e :U 643 ]
+"16
+[; ;src/librerias/clock.c: 16:     }
 }
 [e :U 639 ]
-[e $U 640  ]
-[e :U 641 ]
+"18
+[; ;src/librerias/clock.c: 18:     if(ERROR_CODE_OK == returnCode){
+[e $ ! == -> . `E5188 0 `ui -> _returnCode `ui 644  ]
+{
+"19
+[; ;src/librerias/clock.c: 19:         OSCCON2bits.INTSRC = 1;
+[e = . . _OSCCON2bits 0 5 -> -> 1 `i `uc ]
+"20
+[; ;src/librerias/clock.c: 20:         OSCCONbits.IRCF = 7;
+[e = . . _OSCCONbits 0 3 -> -> 7 `i `uc ]
+"22
+[; ;src/librerias/clock.c: 22:         _Bool bStatus = 0;
+[v _bStatus `a ~T0 @X0 1 a ]
+[e = _bStatus -> -> 0 `i `a ]
+"23
+[; ;src/librerias/clock.c: 23:         do{
+[e :U 647 ]
+{
+"24
+[; ;src/librerias/clock.c: 24:             bStatus = OSCCONbits.HFIOFS;
+[e = _bStatus -> . . _OSCCONbits 0 1 `a ]
+"25
+[; ;src/librerias/clock.c: 25:             s16Timeout--;
+[e -- _s16Timeout -> -> 1 `i `s ]
+"26
+[; ;src/librerias/clock.c: 26:         }while((0 == bStatus) && ((0 < s16Timeout) || (0 == bItTimeEn)));
+}
+[e $ && == -> 0 `i -> _bStatus `i || < -> 0 `i -> _s16Timeout `i == -> 0 `i -> _bItTimeEn `i 647  ]
+[e :U 646 ]
+"27
+[; ;src/librerias/clock.c: 27:         if (0 == bStatus){
+[e $ ! == -> 0 `i -> _bStatus `i 648  ]
+{
+"28
+[; ;src/librerias/clock.c: 28:             returnCode = ERROR_CODE_TIMEOUT;
+[e = _returnCode . `E5188 1 ]
+"29
+[; ;src/librerias/clock.c: 29:         }
+}
+[e :U 648 ]
+"30
+[; ;src/librerias/clock.c: 30:     }
+}
+[e :U 644 ]
+"32
+[; ;src/librerias/clock.c: 32:     if(ERROR_CODE_OK == returnCode){
+[e $ ! == -> . `E5188 0 `ui -> _returnCode `ui 649  ]
+{
+"33
+[; ;src/librerias/clock.c: 33:         _Bool bStatus = 0;
+[v _bStatus `a ~T0 @X0 1 a ]
+[e = _bStatus -> -> 0 `i `a ]
 "34
-[; ;src/main.c: 34: }
+[; ;src/librerias/clock.c: 34:         do{
+[e :U 652 ]
+{
+"35
+[; ;src/librerias/clock.c: 35:             bStatus = OSCCONbits.OSTS;
+[e = _bStatus -> . . _OSCCONbits 0 2 `a ]
+"36
+[; ;src/librerias/clock.c: 36:             s16Timeout--;
+[e -- _s16Timeout -> -> 1 `i `s ]
+"37
+[; ;src/librerias/clock.c: 37:         }while((0 == bStatus) && ((0 < s16Timeout) || (0 == bItTimeEn)));
+}
+[e $ && == -> 0 `i -> _bStatus `i || < -> 0 `i -> _s16Timeout `i == -> 0 `i -> _bItTimeEn `i 652  ]
+[e :U 651 ]
+"38
+[; ;src/librerias/clock.c: 38:         if (0 == bStatus){
+[e $ ! == -> 0 `i -> _bStatus `i 653  ]
+{
+"39
+[; ;src/librerias/clock.c: 39:             returnCode = ERROR_CODE_TIMEOUT;
+[e = _returnCode . `E5188 1 ]
+"40
+[; ;src/librerias/clock.c: 40:         }
+}
+[e :U 653 ]
+"41
+[; ;src/librerias/clock.c: 41:     }
+}
+[e :U 649 ]
+"42
+[; ;src/librerias/clock.c: 42:         if(ERROR_CODE_OK == returnCode){
+[e $ ! == -> . `E5188 0 `ui -> _returnCode `ui 654  ]
+{
+"43
+[; ;src/librerias/clock.c: 43:         OSCTUNEbits.SPLLMULT = 1;
+[e = . . _OSCTUNEbits 0 1 -> -> 1 `i `uc ]
+"44
+[; ;src/librerias/clock.c: 44:         OSCCON2bits.PLLEN = 1;
+[e = . . _OSCCON2bits 0 4 -> -> 1 `i `uc ]
+"45
+[; ;src/librerias/clock.c: 45:         _Bool bStatus = 0;
+[v _bStatus `a ~T0 @X0 1 a ]
+[e = _bStatus -> -> 0 `i `a ]
+"46
+[; ;src/librerias/clock.c: 46:         do{
+[e :U 657 ]
+{
+"47
+[; ;src/librerias/clock.c: 47:             bStatus = OSCCON2bits.PLLRDY;
+[e = _bStatus -> . . _OSCCON2bits 0 7 `a ]
+"48
+[; ;src/librerias/clock.c: 48:             s16Timeout--;
+[e -- _s16Timeout -> -> 1 `i `s ]
+"49
+[; ;src/librerias/clock.c: 49:         }while((0 == bStatus) && ((0 < s16Timeout) || (0 == bItTimeEn)));
+}
+[e $ && == -> 0 `i -> _bStatus `i || < -> 0 `i -> _s16Timeout `i == -> 0 `i -> _bItTimeEn `i 657  ]
+[e :U 656 ]
+"50
+[; ;src/librerias/clock.c: 50:         if (0 == bStatus){
+[e $ ! == -> 0 `i -> _bStatus `i 658  ]
+{
+"51
+[; ;src/librerias/clock.c: 51:             returnCode = ERROR_CODE_TIMEOUT;
+[e = _returnCode . `E5188 1 ]
+"52
+[; ;src/librerias/clock.c: 52:         }
+}
+[e :U 658 ]
+"53
+[; ;src/librerias/clock.c: 53:     }
+}
+[e :U 654 ]
+"56
+[; ;src/librerias/clock.c: 56:     if(ERROR_CODE_OK == returnCode){
+[e $ ! == -> . `E5188 0 `ui -> _returnCode `ui 659  ]
+{
+"57
+[; ;src/librerias/clock.c: 57:         OSCCON2bits.PRISD = 0;
+[e = . . _OSCCON2bits 0 2 -> -> 0 `i `uc ]
+"58
+[; ;src/librerias/clock.c: 58:         OSCCONbits.SCS = 0;
+[e = . . _OSCCONbits 0 0 -> -> 0 `i `uc ]
+"59
+[; ;src/librerias/clock.c: 59:     }
+}
+[e :U 659 ]
+"61
+[; ;src/librerias/clock.c: 61:     return (returnCode);
+[e ) _returnCode ]
+[e $UE 638  ]
+"62
+[; ;src/librerias/clock.c: 62: }
 [e :UE 638 ]
 }

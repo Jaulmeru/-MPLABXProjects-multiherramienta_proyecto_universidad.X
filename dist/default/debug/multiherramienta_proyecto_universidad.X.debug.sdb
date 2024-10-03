@@ -3,34 +3,23 @@
 [d edition pro ]
 [d chip 18F45K50 ]
 [d frameptr 4065 ]
-"15 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\main.c
+"22 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\src/main.c
 [e E5188 . `uc
 ERROR_CODE_OK 0
 ERROR_CODE_TIMEOUT 1
 ]
-"79 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\librerias/UART.c
+"81 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\src/librerias/UART.c
 [e E5188 . `uc
 ERROR_CODE_UART_OK 0
 ERROR_CODE_UART_OVERFLOW 1
 ERROR_CODE_UART_FRAMING 2
 ERROR_CODE_UART_CONFIG 3
 ]
-"3 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\librerias/clock.c
+"3 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\src/librerias/clock.c
 [e E5188 . `uc
 ERROR_CODE_OK 0
 ERROR_CODE_TIMEOUT 1
 ]
-"5 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\librerias/UART_variables.c
-[e E5188 . `uc
-ERROR_CODE_UART_OK 0
-ERROR_CODE_UART_OVERFLOW 1
-ERROR_CODE_UART_FRAMING 2
-ERROR_CODE_UART_CONFIG 3
-]
-"1177 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-[v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
-"1817
-[v _vfprintf vfprintf `(i  1 e 2 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
 "62 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\float.c
@@ -43,10 +32,6 @@ ERROR_CODE_UART_CONFIG 3
 [v ___ftmul __ftmul `(f  1 e 4 0 ]
 "19 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\ftsub.c
 [v ___ftsub __ftsub `(f  1 e 4 0 ]
-"8 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_fputc.c
-[v _fputc fputc `(i  1 e 2 0 ]
-"8 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_fputs.c
-[v _fputs fputs `(i  1 e 2 0 ]
 "5 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\printf.c
 [v _printf printf `(i  1 e 2 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\sprcadd.c
@@ -61,33 +46,67 @@ ERROR_CODE_UART_CONFIG 3
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"3 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\librerias/clock.c
+"3 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\src/librerias/clock.c
 [v _Clock_Init Clock_Init `(E5188  1 e 1 0 ]
-"5 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\librerias/UART.c
-[v _UART_config_show UART_config_show `(v  1 e 1 0 ]
-"20
+"20 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\src/librerias/UART.c
 [v _UART_Init UART_Init `(v  1 e 1 0 ]
-"33
+"35
 [v _UART_select_baud UART_select_baud `(v  1 e 1 0 ]
-"70
+"72
 [v _UART_Tx UART_Tx `(v  1 e 1 0 ]
-"75
-[v _putch putch `(v  1 e 1 0 ]
-"79
-[v _UART_Rx_OVERFLOW UART_Rx_OVERFLOW `(E5188  1 e 1 0 ]
-"88
-[v _UART_Rx_FRAMING UART_Rx_FRAMING `(E5188  1 e 1 0 ]
-"96
+"98
 [v _UART_Rx UART_Rx `(uc  1 e 1 0 ]
-"5 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\librerias/UART_variables.c
-[v _UART_ErrorHandler UART_ErrorHandler `(v  1 e 1 0 ]
-"14 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\main.c
-[v _main main `(v  1 e 1 0 ]
-[s S504 . 1 `uc 1 TUN 1 0 :7:0 
+"20 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\src/main.c
+[v _main main `(i  1 e 2 0 ]
+"327 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
+[v _ANSELC ANSELC `VEuc  1 e 1 @3933 ]
+[s S124 . 1 `uc 1 LATA0 1 0 :1:0 
+`uc 1 LATA1 1 0 :1:1 
+`uc 1 LATA2 1 0 :1:2 
+`uc 1 LATA3 1 0 :1:3 
+`uc 1 LATA4 1 0 :1:4 
+`uc 1 LATA5 1 0 :1:5 
+`uc 1 LATA6 1 0 :1:6 
+`uc 1 LATA7 1 0 :1:7 
+]
+"3806
+[s S133 . 1 `uc 1 LA0 1 0 :1:0 
+`uc 1 LA1 1 0 :1:1 
+`uc 1 LA2 1 0 :1:2 
+`uc 1 LA3 1 0 :1:3 
+`uc 1 LA4 1 0 :1:4 
+`uc 1 LA5 1 0 :1:5 
+`uc 1 LA6 1 0 :1:6 
+`uc 1 LA7 1 0 :1:7 
+]
+[u S142 . 1 `S124 1 . 1 0 `S133 1 . 1 0 ]
+[v _LATAbits LATAbits `VES142  1 e 1 @3977 ]
+[s S37 . 1 `uc 1 TRISA0 1 0 :1:0 
+`uc 1 TRISA1 1 0 :1:1 
+`uc 1 TRISA2 1 0 :1:2 
+`uc 1 TRISA3 1 0 :1:3 
+`uc 1 TRISA4 1 0 :1:4 
+`uc 1 TRISA5 1 0 :1:5 
+`uc 1 TRISA6 1 0 :1:6 
+`uc 1 TRISA7 1 0 :1:7 
+]
+"4658
+[s S46 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+[u S55 . 1 `S37 1 . 1 0 `S46 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES55  1 e 1 @3986 ]
+[s S544 . 1 `uc 1 TUN 1 0 :7:0 
 `uc 1 SPLLMULT 1 0 :1:7 
 ]
-"6070 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
-[s S507 . 1 `uc 1 TUN0 1 0 :1:0 
+"6070
+[s S547 . 1 `uc 1 TUN0 1 0 :1:0 
 `uc 1 TUN1 1 0 :1:1 
 `uc 1 TUN2 1 0 :1:2 
 `uc 1 TUN3 1 0 :1:3 
@@ -95,9 +114,31 @@ ERROR_CODE_UART_CONFIG 3
 `uc 1 TUN5 1 0 :1:5 
 `uc 1 TUN6 1 0 :1:6 
 ]
-[u S515 . 1 `S504 1 . 1 0 `S507 1 . 1 0 ]
-[v _OSCTUNEbits OSCTUNEbits `VES515  1 e 1 @3995 ]
-[s S239 . 1 `uc 1 RX9D 1 0 :1:0 
+[u S555 . 1 `S544 1 . 1 0 `S547 1 . 1 0 ]
+[v _OSCTUNEbits OSCTUNEbits `VES555  1 e 1 @3995 ]
+[s S77 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 ACTIF 1 0 :1:7 
+]
+"6318
+[s S86 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 SSP1IF 1 0 :1:3 
+`uc 1 TX1IF 1 0 :1:4 
+`uc 1 RC1IF 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 STIF 1 0 :1:7 
+]
+[s S93 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 PSPIF 1 0 :1:7 
+]
+[u S96 . 1 `S77 1 . 1 0 `S86 1 . 1 0 `S93 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES96  1 e 1 @3998 ]
+[s S295 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -107,22 +148,22 @@ ERROR_CODE_UART_CONFIG 3
 `uc 1 SPEN 1 0 :1:7 
 ]
 "7187
-[s S248 . 1 `uc 1 . 1 0 :3:0 
+[s S304 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 ADEN 1 0 :1:3 
 ]
-[s S251 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S307 . 1 `uc 1 RCD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[s S255 . 1 `uc 1 . 1 0 :6:0 
+[s S311 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S258 . 1 `uc 1 . 1 0 :5:0 
+[s S314 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 SRENA 1 0 :1:5 
 ]
-[u S261 . 1 `S239 1 . 1 0 `S248 1 . 1 0 `S251 1 . 1 0 `S255 1 . 1 0 `S258 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES261  1 e 1 @4011 ]
-[s S63 . 1 `uc 1 TX9D 1 0 :1:0 
+[u S317 . 1 `S295 1 . 1 0 `S304 1 . 1 0 `S307 1 . 1 0 `S311 1 . 1 0 `S314 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES317  1 e 1 @4011 ]
+[s S203 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -132,37 +173,37 @@ ERROR_CODE_UART_CONFIG 3
 `uc 1 CSRC 1 0 :1:7 
 ]
 "7315
-[s S72 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S212 . 1 `uc 1 TXD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[s S76 . 1 `uc 1 . 1 0 :2:0 
+[s S216 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 BRGH1 1 0 :1:2 
 ]
-[s S79 . 1 `uc 1 . 1 0 :7:0 
+[s S219 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 CSRC1 1 0 :1:7 
 ]
-[s S82 . 1 `uc 1 . 1 0 :3:0 
+[s S222 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 SENDB1 1 0 :1:3 
 ]
-[s S85 . 1 `uc 1 . 1 0 :4:0 
+[s S225 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 SYNC1 1 0 :1:4 
 ]
-[s S88 . 1 `uc 1 . 1 0 :1:0 
+[s S228 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 TRMT1 1 0 :1:1 
 ]
-[s S91 . 1 `uc 1 . 1 0 :6:0 
+[s S231 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX91 1 0 :1:6 
 ]
-[s S94 . 1 `uc 1 TX9D1 1 0 :1:0 
+[s S234 . 1 `uc 1 TX9D1 1 0 :1:0 
 ]
-[s S96 . 1 `uc 1 . 1 0 :5:0 
+[s S236 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 TXEN1 1 0 :1:5 
 ]
-[u S99 . 1 `S63 1 . 1 0 `S72 1 . 1 0 `S76 1 . 1 0 `S79 1 . 1 0 `S82 1 . 1 0 `S85 1 . 1 0 `S88 1 . 1 0 `S91 1 . 1 0 `S94 1 . 1 0 `S96 1 . 1 0 ]
-[v _TXSTA1bits TXSTA1bits `VES99  1 e 1 @4012 ]
+[u S239 . 1 `S203 1 . 1 0 `S212 1 . 1 0 `S216 1 . 1 0 `S219 1 . 1 0 `S222 1 . 1 0 `S225 1 . 1 0 `S228 1 . 1 0 `S231 1 . 1 0 `S234 1 . 1 0 `S236 1 . 1 0 ]
+[v _TXSTA1bits TXSTA1bits `VES239  1 e 1 @4012 ]
 "7456
-[v _TXSTAbits TXSTAbits `VES99  1 e 1 @4012 ]
+[v _TXSTAbits TXSTAbits `VES239  1 e 1 @4012 ]
 "7551
 [v _TXREG1 TXREG1 `VEuc  1 e 1 @4013 ]
 "7589
@@ -173,48 +214,9 @@ ERROR_CODE_UART_CONFIG 3
 [v _SPBRG SPBRG `VEuc  1 e 1 @4015 ]
 "7770
 [v _SPBRGH SPBRGH `VEuc  1 e 1 @4016 ]
-[s S147 . 1 `uc 1 ABDEN 1 0 :1:0 
-`uc 1 WUE 1 0 :1:1 
-`uc 1 . 1 0 :1:2 
-`uc 1 BRG16 1 0 :1:3 
-`uc 1 TXCKP 1 0 :1:4 
-`uc 1 RXDTP 1 0 :1:5 
-`uc 1 RCIDL 1 0 :1:6 
-`uc 1 ABDOVF 1 0 :1:7 
-]
-"8761
-[s S156 . 1 `uc 1 . 1 0 :4:0 
-`uc 1 CKTXP 1 0 :1:4 
-`uc 1 DTRXP 1 0 :1:5 
-]
-[s S160 . 1 `uc 1 . 1 0 :4:0 
-`uc 1 SCKP 1 0 :1:4 
-`uc 1 . 1 0 :1:5 
-`uc 1 RCMT 1 0 :1:6 
-]
-[s S165 . 1 `uc 1 ABDEN1 1 0 :1:0 
-`uc 1 WUE1 1 0 :1:1 
-`uc 1 . 1 0 :1:2 
-`uc 1 BRG161 1 0 :1:3 
-`uc 1 SCKP1 1 0 :1:4 
-`uc 1 DTRXP1 1 0 :1:5 
-`uc 1 RCIDL1 1 0 :1:6 
-`uc 1 ABDOVF1 1 0 :1:7 
-]
-[s S174 . 1 `uc 1 . 1 0 :4:0 
-`uc 1 TXCKP1 1 0 :1:4 
-`uc 1 RXDTP1 1 0 :1:5 
-`uc 1 RCMT1 1 0 :1:6 
-]
-[s S179 . 1 `uc 1 . 1 0 :5:0 
-`uc 1 RXCKP 1 0 :1:5 
-]
-[s S182 . 1 `uc 1 . 1 0 :1:0 
-`uc 1 W4E 1 0 :1:1 
-]
-[u S185 . 1 `S147 1 . 1 0 `S156 1 . 1 0 `S160 1 . 1 0 `S165 1 . 1 0 `S174 1 . 1 0 `S179 1 . 1 0 `S182 1 . 1 0 ]
-[v _BAUDCON1bits BAUDCON1bits `VES185  1 e 1 @4024 ]
-[s S451 . 1 `uc 1 LFIOFS 1 0 :1:0 
+"8700
+[v _BAUDCON1 BAUDCON1 `VEuc  1 e 1 @4024 ]
+[s S491 . 1 `uc 1 LFIOFS 1 0 :1:0 
 `uc 1 HFIOFR 1 0 :1:1 
 `uc 1 PRISD 1 0 :1:2 
 `uc 1 SOSCGO 1 0 :1:3 
@@ -224,16 +226,16 @@ ERROR_CODE_UART_CONFIG 3
 `uc 1 PLLRDY 1 0 :1:7 
 ]
 "12311
-[u S460 . 1 `S451 1 . 1 0 ]
-[v _OSCCON2bits OSCCON2bits `VES460  1 e 1 @4050 ]
-[s S472 . 1 `uc 1 SCS 1 0 :2:0 
+[u S500 . 1 `S491 1 . 1 0 ]
+[v _OSCCON2bits OSCCON2bits `VES500  1 e 1 @4050 ]
+[s S512 . 1 `uc 1 SCS 1 0 :2:0 
 `uc 1 HFIOFS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 `uc 1 IDLEN 1 0 :1:7 
 ]
 "12379
-[s S478 . 1 `uc 1 SCS0 1 0 :1:0 
+[s S518 . 1 `uc 1 SCS0 1 0 :1:0 
 `uc 1 SCS1 1 0 :1:1 
 `uc 1 FLTS 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -241,16 +243,14 @@ ERROR_CODE_UART_CONFIG 3
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S486 . 1 `S472 1 . 1 0 `S478 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES486  1 e 1 @4051 ]
+[u S526 . 1 `S512 1 . 1 0 `S518 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES526  1 e 1 @4051 ]
 "13987
 [v _BRG161 BRG161 `VEb  1 e 0 @32195 ]
 "14017
 [v _BRGH1 BRGH1 `VEb  1 e 0 @32098 ]
 "14284
 [v _CREN CREN `VEb  1 e 0 @32092 ]
-"15661
-[v _RC1IF RC1IF `VEb  1 e 0 @31989 ]
 "15886
 [v _SPEN SPEN `VEb  1 e 0 @32095 ]
 "16180
@@ -263,122 +263,39 @@ ERROR_CODE_UART_CONFIG 3
 [v _TRMT TRMT `VEb  1 e 0 @32097 ]
 "16639
 [v _TXEN1 TXEN1 `VEb  1 e 0 @32101 ]
-"153 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-[v _prec prec `i  1 s 2 prec ]
-[v _width width `i  1 s 2 width ]
-"154
-[v _flags flags `uc  1 s 1 flags ]
-"14 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\main.c
-[v _main main `(v  1 e 1 0 ]
+"18 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\src/main.c
+[v _readMessage readMessage `uc  1 s 1 readMessage ]
+"20
+[v _main main `(i  1 e 2 0 ]
 {
-"18
-[v main@x x `uc  1 a 1 26 ]
-"24
+"35
 } 0
-"96 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\librerias/UART.c
+"98 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\src/librerias/UART.c
 [v _UART_Rx UART_Rx `(uc  1 e 1 0 ]
 {
-"100
+"102
 } 0
-"79
-[v _UART_Rx_OVERFLOW UART_Rx_OVERFLOW `(E5188  1 e 1 0 ]
-{
-"86
-} 0
-"88
-[v _UART_Rx_FRAMING UART_Rx_FRAMING `(E5188  1 e 1 0 ]
-{
-"94
-} 0
-"5 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\librerias/UART_variables.c
-[v _UART_ErrorHandler UART_ErrorHandler `(v  1 e 1 0 ]
-{
-[v UART_ErrorHandler@errorCode errorCode `E5188  1 a 1 wreg ]
-[v UART_ErrorHandler@errorCode errorCode `E5188  1 a 1 wreg ]
-[v UART_ErrorHandler@errorCode errorCode `E5188  1 a 1 24 ]
-"19
-} 0
-"20 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\librerias/UART.c
+"20
 [v _UART_Init UART_Init `(v  1 e 1 0 ]
 {
-[v UART_Init@baudrate baudrate `ul  1 p 4 22 ]
-"31
-} 0
+[v UART_Init@baudrate baudrate `ul  1 p 4 8 ]
 "33
+} 0
+"35
 [v _UART_select_baud UART_select_baud `(v  1 e 1 0 ]
 {
 [v UART_select_baud@baudrate baudrate `ul  1 p 4 0 ]
-"68
-} 0
-"5
-[v _UART_config_show UART_config_show `(v  1 e 1 0 ]
-{
-"18
-} 0
-"5 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\printf.c
-[v _printf printf `(i  1 e 2 0 ]
-{
-"8
-[v printf@ap ap `[1]*.30v  1 a 1 21 ]
-"5
-[v printf@fmt fmt `*.31Cuc  1 p 1 20 ]
-"13
-} 0
-"1817 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
-[v _vfprintf vfprintf `(i  1 e 2 0 ]
-{
-"1820
-[v vfprintf@cfmt cfmt `*.31uc  1 a 1 19 ]
-[s S1028 _IO_FILE 0 ]
-"1817
-[v vfprintf@fp fp `*.39S1028  1 p 2 15 ]
-[v vfprintf@fmt fmt `*.31Cuc  1 p 1 17 ]
-[v vfprintf@ap ap `*.30*.30v  1 p 1 18 ]
-"1840
-} 0
-"1177
-[v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
-{
-[s S1028 _IO_FILE 0 ]
-[v vfpfcnvrt@fp fp `*.39S1028  1 p 2 11 ]
-[v vfpfcnvrt@fmt fmt `*.30*.31uc  1 p 1 13 ]
-[v vfpfcnvrt@ap ap `*.30*.30v  1 p 1 14 ]
-"1814
-} 0
-"8 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_fputc.c
-[v _fputc fputc `(i  1 e 2 0 ]
-{
-[v fputc@c c `i  1 p 2 2 ]
-[u S1006 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
-[s S1009 _IO_FILE 12 `S1006 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
-[v fputc@fp fp `*.39S1009  1 p 2 4 ]
-"24
-} 0
-"75 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\librerias/UART.c
-[v _putch putch `(v  1 e 1 0 ]
-{
-[v putch@data data `uc  1 a 1 wreg ]
-[v putch@data data `uc  1 a 1 wreg ]
-[v putch@data data `uc  1 a 1 1 ]
-"77
-} 0
 "70
-[v _UART_Tx UART_Tx `(v  1 e 1 0 ]
-{
-[v UART_Tx@dato dato `uc  1 a 1 wreg ]
-[v UART_Tx@dato dato `uc  1 a 1 wreg ]
-[v UART_Tx@dato dato `uc  1 a 1 0 ]
-"73
 } 0
-"3 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\librerias/clock.c
+"3 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\src/librerias/clock.c
 [v _Clock_Init Clock_Init `(E5188  1 e 1 0 ]
 {
 "45
-[v Clock_Init@bStatus_552 bStatus `a  1 a 1 5 ]
+[v Clock_Init@bStatus_592 bStatus `a  1 a 1 5 ]
 "33
-[v Clock_Init@bStatus_549 bStatus `a  1 a 1 4 ]
+[v Clock_Init@bStatus_589 bStatus `a  1 a 1 4 ]
 "22
-[v Clock_Init@bStatus_548 bStatus `a  1 a 1 3 ]
+[v Clock_Init@bStatus_588 bStatus `a  1 a 1 3 ]
 "8
 [v Clock_Init@bStatus bStatus `a  1 a 1 2 ]
 "4

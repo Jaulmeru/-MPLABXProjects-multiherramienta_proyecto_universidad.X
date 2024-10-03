@@ -8339,8 +8339,9 @@ void UART_Init(uint32_t baudrate){
     RCSTAbits.SPEN = 1;
     TXSTAbits.TXEN1 = 1;
     RCSTAbits.CREN = 1;
-    UART_config_show();
     ANSELC = 0x0;
+
+
 };
 
 void UART_select_baud(uint32_t baudrate){

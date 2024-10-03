@@ -20,35 +20,66 @@ Version 4.0 HI-TECH Software Intermediate Code
 "14284
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 14284: extern volatile __bit CREN __attribute__((address(0x7D5C)));
 [v _CREN `Vb ~T0 @X0 0 e@32092 ]
+"7268
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7268:     struct {
+[s S302 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S302 . TX9D TRMT BRGH SENDB SYNC TXEN TX9 CSRC ]
+"7278
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7278:     struct {
+[s S303 :1 `uc 1 :5 `uc 1 :1 `uc 1 ]
+[n S303 . TXD8 . TX8_9 ]
+"7283
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7283:     struct {
+[s S304 :2 `uc 1 :1 `uc 1 ]
+[n S304 . . BRGH1 ]
+"7287
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7287:     struct {
+[s S305 :7 `uc 1 :1 `uc 1 ]
+[n S305 . . CSRC1 ]
+"7291
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7291:     struct {
+[s S306 :3 `uc 1 :1 `uc 1 ]
+[n S306 . . SENDB1 ]
+"7295
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7295:     struct {
+[s S307 :4 `uc 1 :1 `uc 1 ]
+[n S307 . . SYNC1 ]
+"7299
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7299:     struct {
+[s S308 :1 `uc 1 :1 `uc 1 ]
+[n S308 . . TRMT1 ]
+"7303
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7303:     struct {
+[s S309 :6 `uc 1 :1 `uc 1 ]
+[n S309 . . TX91 ]
+"7307
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7307:     struct {
+[s S310 :1 `uc 1 ]
+[n S310 . TX9D1 ]
+"7310
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7310:     struct {
+[s S311 :5 `uc 1 :1 `uc 1 ]
+[n S311 . . TXEN1 ]
+"7267
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7267: typedef union {
+[u S301 `S302 1 `S303 1 `S304 1 `S305 1 `S306 1 `S307 1 `S308 1 `S309 1 `S310 1 `S311 1 ]
+[n S301 . . . . . . . . . . . ]
+"7315
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7315: extern volatile TXSTA1bits_t TXSTA1bits __attribute__((address(0xFAC)));
+[v _TXSTA1bits `VS301 ~T0 @X0 0 e@4012 ]
+"8700
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 8700: extern volatile unsigned char BAUDCON1 __attribute__((address(0xFB8)));
+[v _BAUDCON1 `Vuc ~T0 @X0 0 e@4024 ]
 "20 src/librerias/UART.h
 [; ;src/librerias/UART.h: 20: void UART_select_baud(uint32_t);
 [v _UART_select_baud `(v ~T0 @X0 0 ef1`ul ]
-"8700 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 8700: extern volatile unsigned char BAUDCON1 __attribute__((address(0xFB8)));
-[v _BAUDCON1 `Vuc ~T0 @X0 0 e@4024 ]
-"7051
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7051: extern volatile unsigned char RCSTA1 __attribute__((address(0xFAB)));
-[v _RCSTA1 `Vuc ~T0 @X0 0 e@4011 ]
-"7257
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7257: extern volatile unsigned char TXSTA1 __attribute__((address(0xFAC)));
-[v _TXSTA1 `Vuc ~T0 @X0 0 e@4012 ]
-"7770
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7770: extern volatile unsigned char SPBRGH __attribute__((address(0xFB0)));
-[v _SPBRGH `Vuc ~T0 @X0 0 e@4016 ]
-"7632
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7632: extern volatile unsigned char SPBRG __attribute__((address(0xFAF)));
-[v _SPBRG `Vuc ~T0 @X0 0 e@4015 ]
-"16555
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 16555: extern volatile __bit TRMT __attribute__((address(0x7D61)));
-[v _TRMT `Vb ~T0 @X0 0 e@32097 ]
-"7551
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7551: extern volatile unsigned char TXREG1 __attribute__((address(0xFAD)));
-[v _TXREG1 `Vuc ~T0 @X0 0 e@4013 ]
-"87 src/librerias/UART.c
-[; ;src/librerias/UART.c: 87: UART_ERROR_CODE UART_Rx_OVERFLOW(){
-[c E5188 0 1 2 3 .. ]
-[n E5188 . ERROR_CODE_UART_OK ERROR_CODE_UART_OVERFLOW ERROR_CODE_UART_FRAMING ERROR_CODE_UART_CONFIG  ]
-"7159 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
+"16516 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 16516: extern volatile __bit TRISC6 __attribute__((address(0x7CA6)));
+[v _TRISC6 `Vb ~T0 @X0 0 e@31910 ]
+"16519
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 16519: extern volatile __bit TRISC7 __attribute__((address(0x7CA7)));
+[v _TRISC7 `Vb ~T0 @X0 0 e@31911 ]
+"7159
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7159:     struct {
 [s S296 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S296 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
@@ -75,18 +106,78 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7187
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7187: extern volatile RCSTAbits_t RCSTAbits __attribute__((address(0xFAB)));
 [v _RCSTAbits `VS295 ~T0 @X0 0 e@4011 ]
-"7594
+"7409
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7409:     struct {
+[s S313 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S313 . TX9D TRMT BRGH SENDB SYNC TXEN TX9 CSRC ]
+"7419
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7419:     struct {
+[s S314 :1 `uc 1 :5 `uc 1 :1 `uc 1 ]
+[n S314 . TXD8 . TX8_9 ]
+"7424
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7424:     struct {
+[s S315 :2 `uc 1 :1 `uc 1 ]
+[n S315 . . BRGH1 ]
+"7428
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7428:     struct {
+[s S316 :7 `uc 1 :1 `uc 1 ]
+[n S316 . . CSRC1 ]
+"7432
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7432:     struct {
+[s S317 :3 `uc 1 :1 `uc 1 ]
+[n S317 . . SENDB1 ]
+"7436
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7436:     struct {
+[s S318 :4 `uc 1 :1 `uc 1 ]
+[n S318 . . SYNC1 ]
+"7440
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7440:     struct {
+[s S319 :1 `uc 1 :1 `uc 1 ]
+[n S319 . . TRMT1 ]
+"7444
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7444:     struct {
+[s S320 :6 `uc 1 :1 `uc 1 ]
+[n S320 . . TX91 ]
+"7448
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7448:     struct {
+[s S321 :1 `uc 1 ]
+[n S321 . TX9D1 ]
+"7451
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7451:     struct {
+[s S322 :5 `uc 1 :1 `uc 1 ]
+[n S322 . . TXEN1 ]
+"7408
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7408: typedef union {
+[u S312 `S313 1 `S314 1 `S315 1 `S316 1 `S317 1 `S318 1 `S319 1 `S320 1 `S321 1 `S322 1 ]
+[n S312 . . . . . . . . . . . ]
+"7456
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7456: extern volatile TXSTAbits_t TXSTAbits __attribute__((address(0xFAC)));
+[v _TXSTAbits `VS312 ~T0 @X0 0 e@4012 ]
+"327
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 327: extern volatile unsigned char ANSELC __attribute__((address(0xF5D)));
+[v _ANSELC `Vuc ~T0 @X0 0 e@3933 ]
+"7770
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7770: extern volatile unsigned char SPBRGH __attribute__((address(0xFB0)));
+[v _SPBRGH `Vuc ~T0 @X0 0 e@4016 ]
+"7632
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7632: extern volatile unsigned char SPBRG __attribute__((address(0xFAF)));
+[v _SPBRG `Vuc ~T0 @X0 0 e@4015 ]
+"16555
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 16555: extern volatile __bit TRMT __attribute__((address(0x7D61)));
+[v _TRMT `Vb ~T0 @X0 0 e@32097 ]
+"7551
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7551: extern volatile unsigned char TXREG1 __attribute__((address(0xFAD)));
+[v _TXREG1 `Vuc ~T0 @X0 0 e@4013 ]
+"80 src/librerias/UART.c
+[; ;src/librerias/UART.c: 80: UART_ERROR_CODE UART_Rx_OVERFLOW(){
+[c E5188 0 1 2 3 .. ]
+[n E5188 . ERROR_CODE_UART_OK ERROR_CODE_UART_OVERFLOW ERROR_CODE_UART_FRAMING ERROR_CODE_UART_CONFIG  ]
+"7594 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7594: extern volatile unsigned char RCREG __attribute__((address(0xFAE)));
 [v _RCREG `Vuc ~T0 @X0 0 e@4014 ]
-"28 src/librerias/UART_variables.h
-[; ;src/librerias/UART_variables.h: 28: void UART_ErrorHandler(UART_ERROR_CODE);
-[v _UART_ErrorHandler `(v ~T0 @X0 0 ef1`E5188 ]
-"7589 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
+"7589
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7589: extern volatile unsigned char RCREG1 __attribute__((address(0xFAE)));
 [v _RCREG1 `Vuc ~T0 @X0 0 e@4014 ]
-"15661
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 15661: extern volatile __bit RC1IF __attribute__((address(0x7CF5)));
-[v _RC1IF `Vb ~T0 @X0 0 e@31989 ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 54: __asm("SRCON1 equ 0F57h");
 [; <" SRCON1 equ 0F57h ;# ">
@@ -764,134 +855,152 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _UART_Init ]
 [v _baudrate `ul ~T0 @X0 1 r1 ]
 [f ]
+"21
+[; ;src/librerias/UART.c: 21:     TXSTA1bits.SYNC1 = 0;
+[e = . . _TXSTA1bits 5 1 -> -> 0 `i `uc ]
+"22
+[; ;src/librerias/UART.c: 22:     TXSTA1bits.BRGH1 = 1;
+[e = . . _TXSTA1bits 2 1 -> -> 1 `i `uc ]
+"23
+[; ;src/librerias/UART.c: 23:     BAUDCON1 = 0x4A;
+[e = _BAUDCON1 -> -> 74 `i `uc ]
 "24
 [; ;src/librerias/UART.c: 24:     UART_select_baud(baudrate);
 [e ( _UART_select_baud (1 _baudrate ]
-"32
-[; ;src/librerias/UART.c: 32:     BAUDCON1 = 0x4A;
-[e = _BAUDCON1 -> -> 74 `i `uc ]
-"34
-[; ;src/librerias/UART.c: 34:     RCSTA1 = 0x90;
-[e = _RCSTA1 -> -> 144 `i `uc ]
-"36
-[; ;src/librerias/UART.c: 36:     TXSTA1 = 0x26;
-[e = _TXSTA1 -> -> 38 `i `uc ]
-"38
-[; ;src/librerias/UART.c: 38:     UART_config_show();
+"25
+[; ;src/librerias/UART.c: 25:     TRISC6 = 1;
+[e = _TRISC6 -> -> 1 `i `b ]
+"26
+[; ;src/librerias/UART.c: 26:     TRISC7 = 1;
+[e = _TRISC7 -> -> 1 `i `b ]
+"27
+[; ;src/librerias/UART.c: 27:     RCSTAbits.SPEN = 1;
+[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
+"28
+[; ;src/librerias/UART.c: 28:     TXSTAbits.TXEN1 = 1;
+[e = . . _TXSTAbits 9 1 -> -> 1 `i `uc ]
+"29
+[; ;src/librerias/UART.c: 29:     RCSTAbits.CREN = 1;
+[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+"30
+[; ;src/librerias/UART.c: 30:     UART_config_show();
 [e ( _UART_config_show ..  ]
-"39
-[; ;src/librerias/UART.c: 39: };
+"31
+[; ;src/librerias/UART.c: 31:     ANSELC = 0x0;
+[e = _ANSELC -> -> 0 `i `uc ]
+"32
+[; ;src/librerias/UART.c: 32: };
 [e :UE 639 ]
 }
-"41
-[; ;src/librerias/UART.c: 41: void UART_select_baud(uint32_t baudrate){
+"34
+[; ;src/librerias/UART.c: 34: void UART_select_baud(uint32_t baudrate){
 [v _UART_select_baud `(v ~T0 @X0 1 ef1`ul ]
 {
 [e :U _UART_select_baud ]
 [v _baudrate `ul ~T0 @X0 1 r1 ]
 [f ]
-"42
-[; ;src/librerias/UART.c: 42:     switch (baudrate){
+"35
+[; ;src/librerias/UART.c: 35:     switch (baudrate){
 [e $U 642  ]
 {
-"43
-[; ;src/librerias/UART.c: 43:         case 300:
+"36
+[; ;src/librerias/UART.c: 36:         case 300:
 [e :U 643 ]
-"44
-[; ;src/librerias/UART.c: 44:             SPBRGH = 0x9C;
+"37
+[; ;src/librerias/UART.c: 37:             SPBRGH = 0x9C;
 [e = _SPBRGH -> -> 156 `i `uc ]
-"45
-[; ;src/librerias/UART.c: 45:             SPBRG = 0x3F;
+"38
+[; ;src/librerias/UART.c: 38:             SPBRG = 0x3F;
 [e = _SPBRG -> -> 63 `i `uc ]
-"46
-[; ;src/librerias/UART.c: 46:             break;
+"39
+[; ;src/librerias/UART.c: 39:             break;
 [e $U 641  ]
-"47
-[; ;src/librerias/UART.c: 47:         case 1200:
+"40
+[; ;src/librerias/UART.c: 40:         case 1200:
 [e :U 644 ]
-"48
-[; ;src/librerias/UART.c: 48:             SPBRGH = 0x27;
+"41
+[; ;src/librerias/UART.c: 41:             SPBRGH = 0x27;
 [e = _SPBRGH -> -> 39 `i `uc ]
-"49
-[; ;src/librerias/UART.c: 49:             SPBRG = 0x0F;
+"42
+[; ;src/librerias/UART.c: 42:             SPBRG = 0x0F;
 [e = _SPBRG -> -> 15 `i `uc ]
-"50
-[; ;src/librerias/UART.c: 50:             break;
+"43
+[; ;src/librerias/UART.c: 43:             break;
 [e $U 641  ]
-"51
-[; ;src/librerias/UART.c: 51:         case 2400:
+"44
+[; ;src/librerias/UART.c: 44:         case 2400:
 [e :U 645 ]
-"52
-[; ;src/librerias/UART.c: 52:             SPBRGH = 0x13;
+"45
+[; ;src/librerias/UART.c: 45:             SPBRGH = 0x13;
 [e = _SPBRGH -> -> 19 `i `uc ]
-"53
-[; ;src/librerias/UART.c: 53:             SPBRG = 0x87;
+"46
+[; ;src/librerias/UART.c: 46:             SPBRG = 0x87;
 [e = _SPBRG -> -> 135 `i `uc ]
-"54
-[; ;src/librerias/UART.c: 54:             break;
+"47
+[; ;src/librerias/UART.c: 47:             break;
 [e $U 641  ]
-"55
-[; ;src/librerias/UART.c: 55:         case 10417:
+"48
+[; ;src/librerias/UART.c: 48:         case 10417:
 [e :U 646 ]
-"56
-[; ;src/librerias/UART.c: 56:             SPBRGH = 0x04;
+"49
+[; ;src/librerias/UART.c: 49:             SPBRGH = 0x04;
 [e = _SPBRGH -> -> 4 `i `uc ]
-"57
-[; ;src/librerias/UART.c: 57:             SPBRG = 0x7F;
+"50
+[; ;src/librerias/UART.c: 50:             SPBRG = 0x7F;
 [e = _SPBRG -> -> 127 `i `uc ]
-"58
-[; ;src/librerias/UART.c: 58:             break;
+"51
+[; ;src/librerias/UART.c: 51:             break;
 [e $U 641  ]
-"59
-[; ;src/librerias/UART.c: 59:         case 19200:
+"52
+[; ;src/librerias/UART.c: 52:         case 19200:
 [e :U 647 ]
-"60
-[; ;src/librerias/UART.c: 60:             SPBRGH = 0x02;
+"53
+[; ;src/librerias/UART.c: 53:             SPBRGH = 0x02;
 [e = _SPBRGH -> -> 2 `i `uc ]
-"61
-[; ;src/librerias/UART.c: 61:             SPBRG = 0x70;
+"54
+[; ;src/librerias/UART.c: 54:             SPBRG = 0x70;
 [e = _SPBRG -> -> 112 `i `uc ]
-"62
-[; ;src/librerias/UART.c: 62:             break;
+"55
+[; ;src/librerias/UART.c: 55:             break;
 [e $U 641  ]
-"63
-[; ;src/librerias/UART.c: 63:         case 57600:
+"56
+[; ;src/librerias/UART.c: 56:         case 57600:
 [e :U 648 ]
-"64
-[; ;src/librerias/UART.c: 64:             SPBRGH = 0x00;
+"57
+[; ;src/librerias/UART.c: 57:             SPBRGH = 0x00;
 [e = _SPBRGH -> -> 0 `i `uc ]
-"65
-[; ;src/librerias/UART.c: 65:             SPBRG = 0xCF;
+"58
+[; ;src/librerias/UART.c: 58:             SPBRG = 0xCF;
 [e = _SPBRG -> -> 207 `i `uc ]
-"66
-[; ;src/librerias/UART.c: 66:             break;
+"59
+[; ;src/librerias/UART.c: 59:             break;
 [e $U 641  ]
-"67
-[; ;src/librerias/UART.c: 67:         case 115200:
+"60
+[; ;src/librerias/UART.c: 60:         case 115200:
 [e :U 649 ]
-"68
-[; ;src/librerias/UART.c: 68:             SPBRGH = 0x00;
+"61
+[; ;src/librerias/UART.c: 61:             SPBRGH = 0x00;
 [e = _SPBRGH -> -> 0 `i `uc ]
-"69
-[; ;src/librerias/UART.c: 69:             SPBRG = 0x67;
+"62
+[; ;src/librerias/UART.c: 62:             SPBRG = 0x67;
 [e = _SPBRG -> -> 103 `i `uc ]
-"70
-[; ;src/librerias/UART.c: 70:             break;
+"63
+[; ;src/librerias/UART.c: 63:             break;
 [e $U 641  ]
-"71
-[; ;src/librerias/UART.c: 71:         default:
+"64
+[; ;src/librerias/UART.c: 64:         default:
 [e :U 650 ]
-"72
-[; ;src/librerias/UART.c: 72:             SPBRGH = 0x04;
+"65
+[; ;src/librerias/UART.c: 65:             SPBRGH = 0x04;
 [e = _SPBRGH -> -> 4 `i `uc ]
-"73
-[; ;src/librerias/UART.c: 73:             SPBRG = 0xE1;
+"66
+[; ;src/librerias/UART.c: 66:             SPBRG = 0xE1;
 [e = _SPBRG -> -> 225 `i `uc ]
-"74
-[; ;src/librerias/UART.c: 74:             break;
+"67
+[; ;src/librerias/UART.c: 67:             break;
 [e $U 641  ]
-"75
-[; ;src/librerias/UART.c: 75:     }
+"68
+[; ;src/librerias/UART.c: 68:     }
 }
 [e $U 641  ]
 [e :U 642 ]
@@ -904,167 +1013,120 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> -> 115200 `l `ul 649
  650 ]
 [e :U 641 ]
-"76
-[; ;src/librerias/UART.c: 76: }
+"69
+[; ;src/librerias/UART.c: 69: }
 [e :UE 640 ]
 }
-"78
-[; ;src/librerias/UART.c: 78: void UART_Tx(char dato){
+"71
+[; ;src/librerias/UART.c: 71: void UART_Tx(char dato){
 [v _UART_Tx `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _UART_Tx ]
 [v _dato `uc ~T0 @X0 1 r1 ]
 [f ]
-"79
-[; ;src/librerias/UART.c: 79:     while(TRMT == 0);
+"72
+[; ;src/librerias/UART.c: 72:     while(TRMT == 0);
 [e $U 652  ]
 [e :U 653 ]
 [e :U 652 ]
 [e $ == -> _TRMT `i -> 0 `i 653  ]
 [e :U 654 ]
-"80
-[; ;src/librerias/UART.c: 80:     TXREG1 = dato;
+"73
+[; ;src/librerias/UART.c: 73:     TXREG1 = dato;
 [e = _TXREG1 -> _dato `uc ]
-"81
-[; ;src/librerias/UART.c: 81: }
+"74
+[; ;src/librerias/UART.c: 74: }
 [e :UE 651 ]
 }
-"83
-[; ;src/librerias/UART.c: 83: void putch(char data){
+"76
+[; ;src/librerias/UART.c: 76: void putch(char data){
 [v _putch `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _putch ]
 [v _data `uc ~T0 @X0 1 r1 ]
 [f ]
-"84
-[; ;src/librerias/UART.c: 84:     UART_Tx(data);
+"77
+[; ;src/librerias/UART.c: 77:     UART_Tx(data);
 [e ( _UART_Tx (1 _data ]
-"85
-[; ;src/librerias/UART.c: 85: }
+"78
+[; ;src/librerias/UART.c: 78: }
 [e :UE 655 ]
 }
-"87
-[; ;src/librerias/UART.c: 87: UART_ERROR_CODE UART_Rx_OVERFLOW(){
+"80
+[; ;src/librerias/UART.c: 80: UART_ERROR_CODE UART_Rx_OVERFLOW(){
 [v _UART_Rx_OVERFLOW `(E5188 ~T0 @X0 1 ef ]
 {
 [e :U _UART_Rx_OVERFLOW ]
 [f ]
-"88
-[; ;src/librerias/UART.c: 88:     if (RCSTAbits.OERR) {
+"81
+[; ;src/librerias/UART.c: 81:     if (RCSTAbits.OERR) {
 [e $ ! != -> . . _RCSTAbits 0 1 `i -> 0 `i 657  ]
 {
-"89
-[; ;src/librerias/UART.c: 89:         RCSTAbits.CREN = 0;
+"82
+[; ;src/librerias/UART.c: 82:         RCSTAbits.CREN = 0;
 [e = . . _RCSTAbits 0 4 -> -> 0 `i `uc ]
-"90
-[; ;src/librerias/UART.c: 90:         RCSTAbits.CREN = 1;
+"83
+[; ;src/librerias/UART.c: 83:         RCSTAbits.CREN = 1;
 [e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
-"91
-[; ;src/librerias/UART.c: 91:         return ERROR_CODE_UART_OVERFLOW;
+"84
+[; ;src/librerias/UART.c: 84:         return ERROR_CODE_UART_OVERFLOW;
 [e ) . `E5188 1 ]
 [e $UE 656  ]
-"92
-[; ;src/librerias/UART.c: 92:     }
+"85
+[; ;src/librerias/UART.c: 85:     }
 }
 [e :U 657 ]
-"93
-[; ;src/librerias/UART.c: 93:     return ERROR_CODE_UART_OK;
+"86
+[; ;src/librerias/UART.c: 86:     return ERROR_CODE_UART_OK;
 [e ) . `E5188 0 ]
 [e $UE 656  ]
-"94
-[; ;src/librerias/UART.c: 94: }
+"87
+[; ;src/librerias/UART.c: 87: }
 [e :UE 656 ]
 }
-"96
-[; ;src/librerias/UART.c: 96: UART_ERROR_CODE UART_Rx_FRAMING(){
+"89
+[; ;src/librerias/UART.c: 89: UART_ERROR_CODE UART_Rx_FRAMING(){
 [v _UART_Rx_FRAMING `(E5188 ~T0 @X0 1 ef ]
 {
 [e :U _UART_Rx_FRAMING ]
 [f ]
-"97
-[; ;src/librerias/UART.c: 97:     if (RCSTAbits.FERR) {
+"90
+[; ;src/librerias/UART.c: 90:     if (RCSTAbits.FERR) {
 [e $ ! != -> . . _RCSTAbits 0 2 `i -> 0 `i 659  ]
 {
-"98
-[; ;src/librerias/UART.c: 98:         char dummy = RCREG;
+"91
+[; ;src/librerias/UART.c: 91:         char dummy = RCREG;
 [v _dummy `uc ~T0 @X0 1 a ]
 [e = _dummy -> _RCREG `uc ]
-"99
-[; ;src/librerias/UART.c: 99:         return ERROR_CODE_UART_FRAMING;
+"92
+[; ;src/librerias/UART.c: 92:         return ERROR_CODE_UART_FRAMING;
 [e ) . `E5188 2 ]
 [e $UE 658  ]
-"100
-[; ;src/librerias/UART.c: 100:     }
+"93
+[; ;src/librerias/UART.c: 93:     }
 }
 [e :U 659 ]
-"101
-[; ;src/librerias/UART.c: 101:     return ERROR_CODE_UART_OK;
+"94
+[; ;src/librerias/UART.c: 94:     return ERROR_CODE_UART_OK;
 [e ) . `E5188 0 ]
 [e $UE 658  ]
-"102
-[; ;src/librerias/UART.c: 102: }
+"95
+[; ;src/librerias/UART.c: 95: }
 [e :UE 658 ]
 }
-"104
-[; ;src/librerias/UART.c: 104: char UART_Rx(void){
+"97
+[; ;src/librerias/UART.c: 97: char UART_Rx(void){
 [v _UART_Rx `(uc ~T0 @X0 1 ef ]
 {
 [e :U _UART_Rx ]
 [f ]
-"105
-[; ;src/librerias/UART.c: 105:     UART_ErrorHandler(UART_Rx_OVERFLOW());
-[e ( _UART_ErrorHandler (1 ( _UART_Rx_OVERFLOW ..  ]
-"106
-[; ;src/librerias/UART.c: 106:     UART_ErrorHandler(UART_Rx_FRAMING());
-[e ( _UART_ErrorHandler (1 ( _UART_Rx_FRAMING ..  ]
-"107
-[; ;src/librerias/UART.c: 107:     return RCREG1;
+"100
+[; ;src/librerias/UART.c: 100:     return RCREG1;
 [e ) -> _RCREG1 `uc ]
 [e $UE 660  ]
-"108
-[; ;src/librerias/UART.c: 108: }
+"101
+[; ;src/librerias/UART.c: 101: }
 [e :UE 660 ]
-}
-"110
-[; ;src/librerias/UART.c: 110: _Bool UART_Available(){
-[v _UART_Available `(a ~T0 @X0 1 ef ]
-{
-[e :U _UART_Available ]
-[f ]
-"111
-[; ;src/librerias/UART.c: 111:     if (!RCSTAbits.SPEN || !RCSTAbits.CREN){
-[e $ ! || ! != -> . . _RCSTAbits 0 7 `i -> 0 `i ! != -> . . _RCSTAbits 0 4 `i -> 0 `i 662  ]
-{
-"112
-[; ;src/librerias/UART.c: 112:         UART_ErrorHandler(ERROR_CODE_UART_CONFIG);
-[e ( _UART_ErrorHandler (1 . `E5188 3 ]
-"113
-[; ;src/librerias/UART.c: 113:         return 0;
-[e ) -> -> 0 `i `a ]
-[e $UE 661  ]
-"114
-[; ;src/librerias/UART.c: 114:     }
-}
-[e :U 662 ]
-"115
-[; ;src/librerias/UART.c: 115:     if (!RC1IF){
-[e $ ! ! _RC1IF 663  ]
-{
-"116
-[; ;src/librerias/UART.c: 116:         return 0;
-[e ) -> -> 0 `i `a ]
-[e $UE 661  ]
-"117
-[; ;src/librerias/UART.c: 117:     }
-}
-[e :U 663 ]
-"118
-[; ;src/librerias/UART.c: 118:     return 1;
-[e ) -> -> 1 `i `a ]
-[e $UE 661  ]
-"119
-[; ;src/librerias/UART.c: 119: }
-[e :UE 661 ]
 }
 [p f _printf 8388608 ]
 [a 8C 56 32 98 105 116 115 32 0 ]

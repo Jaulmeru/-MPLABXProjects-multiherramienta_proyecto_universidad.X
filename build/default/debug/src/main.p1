@@ -786,24 +786,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 "23
 [; ;src/main.c: 23:     UART_Init(9600);
 [e ( _UART_Init (1 -> -> -> 9600 `i `l `ul ]
-"24
-[; ;src/main.c: 24:     TRISAbits.RA1 = 0;
+"25
+[; ;src/main.c: 25:     TRISAbits.RA1 = 0;
 [e = . . _TRISAbits 1 1 -> -> 0 `i `uc ]
-"26
-[; ;src/main.c: 26:     while(1)
-[e :U 640 ]
 "27
-[; ;src/main.c: 27:     {
-{
+[; ;src/main.c: 27:     while(1)
+[e :U 640 ]
 "28
-[; ;src/main.c: 28:         if(PIR1bits.RC1IF){
-[e $ ! != -> . . _PIR1bits 1 3 `i -> 0 `i 642  ]
+[; ;src/main.c: 28:     {
 {
 "29
-[; ;src/main.c: 29:             readMessage = UART_Rx();
-[e = _readMessage -> ( _UART_Rx ..  `uc ]
+[; ;src/main.c: 29:         if(PIR1bits.RC1IF){
+[e $ ! != -> . . _PIR1bits 1 3 `i -> 0 `i 642  ]
+{
 "30
-[; ;src/main.c: 30:             if(readMessage == '1') do { LATAbits.LATA1 = 1; } while(0);
+[; ;src/main.c: 30:             readMessage = UART_Rx();
+[e = _readMessage -> ( _UART_Rx ..  `uc ]
+"31
+[; ;src/main.c: 31:             if(readMessage == '1') do { LATAbits.LATA1 = 1; } while(0);
 [e $ ! == -> _readMessage `ui -> 49 `ui 643  ]
 [e :U 646 ]
 {
@@ -811,8 +811,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 645 ]
 [e :U 643 ]
-"31
-[; ;src/main.c: 31:             if(readMessage == '0') do { LATAbits.LATA1 = 0; } while(0);
+"32
+[; ;src/main.c: 32:             if(readMessage == '0') do { LATAbits.LATA1 = 0; } while(0);
 [e $ ! == -> _readMessage `ui -> 48 `ui 647  ]
 [e :U 650 ]
 {
@@ -820,17 +820,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 649 ]
 [e :U 647 ]
-"32
-[; ;src/main.c: 32:         }
+"33
+[; ;src/main.c: 33:         }
 }
 [e :U 642 ]
-"33
-[; ;src/main.c: 33:     }
+"34
+[; ;src/main.c: 34:     }
 }
 [e :U 639 ]
 [e $U 640  ]
 [e :U 641 ]
-"34
-[; ;src/main.c: 34: }
+"35
+[; ;src/main.c: 35: }
 [e :UE 638 ]
 }
