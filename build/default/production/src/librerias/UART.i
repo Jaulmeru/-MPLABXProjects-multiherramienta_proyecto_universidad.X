@@ -7,6 +7,7 @@
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "src/librerias/UART.c" 2
+# 10 "src/librerias/UART.c"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -8111,8 +8112,7 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
-# 1 "src/librerias/UART.c" 2
-
+# 10 "src/librerias/UART.c" 2
 
 # 1 "src/librerias/UART.h" 1
 
@@ -8302,16 +8302,27 @@ char *tempnam(const char *, const char *);
 
 void UART_ErrorHandler(UART_ERROR_CODE);
 # 8 "src/librerias/UART.h" 2
-# 18 "src/librerias/UART.h"
+# 21 "src/librerias/UART.h"
 void UART_config_show();
+
+
+
+
+
 void UART_Init(uint32_t);
+# 36 "src/librerias/UART.h"
 void UART_select_baud(uint32_t);
+
+
+
+
+
 UART_ERROR_CODE UART_Rx_FRAMING();
 UART_ERROR_CODE UART_Rx_OVERFLOW();
 void UART_Tx(char);
 char UART_Rx(void);
 _Bool UART_Available(void);
-# 3 "src/librerias/UART.c" 2
+# 11 "src/librerias/UART.c" 2
 
 
 void UART_config_show(){
@@ -8407,7 +8418,7 @@ UART_ERROR_CODE UART_Rx_FRAMING(){
 }
 
 char UART_Rx(void){
-
-
+    UART_ErrorHandler(UART_Rx_OVERFLOW());
+    UART_ErrorHandler(UART_Rx_FRAMING());
     return RCREG1;
 }

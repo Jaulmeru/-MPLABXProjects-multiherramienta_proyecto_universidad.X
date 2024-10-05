@@ -1,0 +1,45 @@
+\doxysection{UART.\+h}
+\label{_u_a_r_t_8h_source}\index{src/librerias/UART.h@{src/librerias/UART.h}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ }}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ File:\ \ \ UART\_Tx.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Author:\ Javier\ Mendoza}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Created\ on\ 29\ de\ agosto\ de\ 2024,\ 09:25\ PM}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}UART\_variables.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ UART\_TX\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ UART\_TX\_H}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00021\ \textcolor{keywordtype}{void}\ UART\_config\_show();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00027\ \textcolor{keywordtype}{void}\ UART\_Init(uint32\_t);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00036\ \textcolor{keywordtype}{void}\ UART\_select\_baud(uint32\_t);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00043\ UART\_ERROR\_CODE\ UART\_Rx\_FRAMING();}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00050\ UART\_ERROR\_CODE\ UART\_Rx\_OVERFLOW();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00056\ \textcolor{keywordtype}{void}\ UART\_Tx(uint8\_t);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00063\ uint8\_t\ UART\_Rx(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00070\ \textcolor{keywordtype}{bool}\ UART\_RxAvailable(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00071\ \ \ \ \ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00073\ \}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{/*\ NEWFILE\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00077\ }
+
+\end{DoxyCode}

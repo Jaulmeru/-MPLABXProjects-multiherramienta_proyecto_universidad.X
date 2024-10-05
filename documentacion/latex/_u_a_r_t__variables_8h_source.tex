@@ -1,0 +1,41 @@
+\doxysection{UART\+\_\+variables.\+h}
+\label{_u_a_r_t__variables_8h_source}\index{src/librerias/UART\_variables.h@{src/librerias/UART\_variables.h}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ }}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ File:\ \ \ variables.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Author:\ admin}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Created\ on\ 1\ de\ septiembre\ de\ 2024,\ 07:31\ PM}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ UART\_VARIABLES\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ UART\_VARIABLES\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <float.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <xc.h>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00018\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ ERROR\_CODE\_UART\_OK,\ \ \ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ ERROR\_CODE\_UART\_OVERFLOW,\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ ERROR\_CODE\_UART\_FRAMING,\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ ERROR\_CODE\_UART\_CONFIG,\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \}UART\_ERROR\_CODE;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keywordtype}{void}\ UART\_ErrorHandler(UART\_ERROR\_CODE);}
+\DoxyCodeLine{00029\ \ \ \ \ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00031\ \}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{/*\ VARIABLES\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00035\ }
+
+\end{DoxyCode}

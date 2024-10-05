@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_clk__variables_8h_source" xml:lang="en-US">
+<title>clk_variables.h</title>
+<indexterm><primary>src/librerias/clk_variables.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*&#32;</emphasis>
+2 <emphasis role="comment">&#32;*&#32;File:&#32;&#32;&#32;clk_variables.h</emphasis>
+3 <emphasis role="comment">&#32;*&#32;Author:&#32;admin</emphasis>
+4 <emphasis role="comment">&#32;*</emphasis>
+5 <emphasis role="comment">&#32;*&#32;Created&#32;on&#32;September&#32;9,&#32;2024,&#32;12:24&#32;PM</emphasis>
+6 <emphasis role="comment">&#32;*/</emphasis>
+7 
+8 <emphasis role="preprocessor">#ifndef&#32;CLK_VARIABLES_H</emphasis>
+9 <emphasis role="preprocessor">#define&#32;CLK_VARIABLES_H</emphasis>
+10 
+11 <emphasis role="preprocessor">#include&#32;&lt;stdint.h&gt;</emphasis>
+12 <emphasis role="preprocessor">#include&#32;&lt;stdbool.h&gt;</emphasis>
+13 <emphasis role="preprocessor">#include&#32;&lt;float.h&gt;</emphasis>
+14 <emphasis role="preprocessor">#include&#32;&lt;stdio.h&gt;</emphasis>
+15 <emphasis role="preprocessor">#include&#32;&lt;xc.h&gt;</emphasis>
+16 
+17 <emphasis role="preprocessor">#ifdef&#32;&#32;__cplusplus</emphasis>
+18 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+19 <emphasis role="preprocessor">#endif</emphasis>
+20 
+21 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>{
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_clk__variables_8h_1a7b794d701f534bfb8b48dfe9274b6d08a554857e7cac631358eeb8300193c763e">ERROR_CODE_OK</link>,
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_clk__variables_8h_1a7b794d701f534bfb8b48dfe9274b6d08a2cb2ed082113e4407863a3d65d95ff3f">ERROR_CODE_TIMEOUT</link>,
+24 &#32;&#32;&#32;&#32;}<link linkend="_clk__variables_8h_1a7b794d701f534bfb8b48dfe9274b6d08">CLK_ERROR_CODE</link>;
+25 
+26 
+27 <emphasis role="preprocessor">#ifdef&#32;&#32;__cplusplus</emphasis>
+28 }
+29 <emphasis role="preprocessor">#endif</emphasis>
+30 
+31 <emphasis role="preprocessor">#endif&#32;&#32;</emphasis><emphasis role="comment">/*&#32;CLK_VARIABLES_H&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+32 
+</programlisting></section>

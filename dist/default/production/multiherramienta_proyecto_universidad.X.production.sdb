@@ -8,7 +8,7 @@
 ERROR_CODE_OK 0
 ERROR_CODE_TIMEOUT 1
 ]
-"80 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\src/librerias/UART.c
+"88 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\src/librerias/UART.c
 [e E5188 . `uc
 ERROR_CODE_UART_OK 0
 ERROR_CODE_UART_OVERFLOW 1
@@ -56,17 +56,21 @@ ERROR_CODE_TIMEOUT 1
 [v ___omul __omul `(uo  1 e 8 0 ]
 "3 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\src/librerias/clock.c
 [v _Clock_Init Clock_Init `(E5188  1 e 1 0 ]
-"5 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\src/librerias/UART.c
+"13 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\src/librerias/UART.c
 [v _UART_config_show UART_config_show `(v  1 e 1 0 ]
-"20
+"28
 [v _UART_Init UART_Init `(v  1 e 1 0 ]
-"34
+"42
 [v _UART_select_baud UART_select_baud `(v  1 e 1 0 ]
-"71
+"79
 [v _UART_Tx UART_Tx `(v  1 e 1 0 ]
-"76
+"84
 [v _putch putch `(v  1 e 1 0 ]
+"88
+[v _UART_Rx_OVERFLOW UART_Rx_OVERFLOW `(E5188  1 e 1 0 ]
 "97
+[v _UART_Rx_FRAMING UART_Rx_FRAMING `(E5188  1 e 1 0 ]
+"105
 [v _UART_Rx UART_Rx `(uc  1 e 1 0 ]
 "20 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\src/main.c
 [v _main main `(i  1 e 2 0 ]
@@ -114,11 +118,11 @@ ERROR_CODE_TIMEOUT 1
 ]
 [u S55 . 1 `S37 1 . 1 0 `S46 1 . 1 0 ]
 [v _TRISAbits TRISAbits `VES55  1 e 1 @3986 ]
-[s S545 . 1 `uc 1 TUN 1 0 :7:0 
+[s S552 . 1 `uc 1 TUN 1 0 :7:0 
 `uc 1 SPLLMULT 1 0 :1:7 
 ]
 "6070
-[s S548 . 1 `uc 1 TUN0 1 0 :1:0 
+[s S555 . 1 `uc 1 TUN0 1 0 :1:0 
 `uc 1 TUN1 1 0 :1:1 
 `uc 1 TUN2 1 0 :1:2 
 `uc 1 TUN3 1 0 :1:3 
@@ -126,8 +130,8 @@ ERROR_CODE_TIMEOUT 1
 `uc 1 TUN5 1 0 :1:5 
 `uc 1 TUN6 1 0 :1:6 
 ]
-[u S556 . 1 `S545 1 . 1 0 `S548 1 . 1 0 ]
-[v _OSCTUNEbits OSCTUNEbits `VES556  1 e 1 @3995 ]
+[u S563 . 1 `S552 1 . 1 0 `S555 1 . 1 0 ]
+[v _OSCTUNEbits OSCTUNEbits `VES563  1 e 1 @3995 ]
 [s S77 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -228,7 +232,7 @@ ERROR_CODE_TIMEOUT 1
 [v _SPBRGH SPBRGH `VEuc  1 e 1 @4016 ]
 "8700
 [v _BAUDCON1 BAUDCON1 `VEuc  1 e 1 @4024 ]
-[s S492 . 1 `uc 1 LFIOFS 1 0 :1:0 
+[s S499 . 1 `uc 1 LFIOFS 1 0 :1:0 
 `uc 1 HFIOFR 1 0 :1:1 
 `uc 1 PRISD 1 0 :1:2 
 `uc 1 SOSCGO 1 0 :1:3 
@@ -238,16 +242,16 @@ ERROR_CODE_TIMEOUT 1
 `uc 1 PLLRDY 1 0 :1:7 
 ]
 "12311
-[u S501 . 1 `S492 1 . 1 0 ]
-[v _OSCCON2bits OSCCON2bits `VES501  1 e 1 @4050 ]
-[s S513 . 1 `uc 1 SCS 1 0 :2:0 
+[u S508 . 1 `S499 1 . 1 0 ]
+[v _OSCCON2bits OSCCON2bits `VES508  1 e 1 @4050 ]
+[s S520 . 1 `uc 1 SCS 1 0 :2:0 
 `uc 1 HFIOFS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 `uc 1 IDLEN 1 0 :1:7 
 ]
 "12379
-[s S519 . 1 `uc 1 SCS0 1 0 :1:0 
+[s S526 . 1 `uc 1 SCS0 1 0 :1:0 
 `uc 1 SCS1 1 0 :1:1 
 `uc 1 FLTS 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -255,8 +259,8 @@ ERROR_CODE_TIMEOUT 1
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S527 . 1 `S513 1 . 1 0 `S519 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES527  1 e 1 @4051 ]
+[u S534 . 1 `S520 1 . 1 0 `S526 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES534  1 e 1 @4051 ]
 "13987
 [v _BRG161 BRG161 `VEb  1 e 0 @32195 ]
 "14017
@@ -287,27 +291,37 @@ ERROR_CODE_TIMEOUT 1
 {
 "34
 } 0
-"97 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\src/librerias/UART.c
+"105 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\src/librerias/UART.c
 [v _UART_Rx UART_Rx `(uc  1 e 1 0 ]
 {
-"101
+"109
 } 0
-"20
+"88
+[v _UART_Rx_OVERFLOW UART_Rx_OVERFLOW `(E5188  1 e 1 0 ]
+{
+"95
+} 0
+"97
+[v _UART_Rx_FRAMING UART_Rx_FRAMING `(E5188  1 e 1 0 ]
+{
+"103
+} 0
+"28
 [v _UART_Init UART_Init `(v  1 e 1 0 ]
 {
 [v UART_Init@baudrate baudrate `ul  1 p 4 22 ]
-"32
+"40
 } 0
-"34
+"42
 [v _UART_select_baud UART_select_baud `(v  1 e 1 0 ]
 {
 [v UART_select_baud@baudrate baudrate `ul  1 p 4 0 ]
-"69
+"77
 } 0
-"5
+"13
 [v _UART_config_show UART_config_show `(v  1 e 1 0 ]
 {
-"18
+"26
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\printf.c
 [v _printf printf `(i  1 e 2 0 ]
@@ -323,9 +337,9 @@ ERROR_CODE_TIMEOUT 1
 {
 "1820
 [v vfprintf@cfmt cfmt `*.31uc  1 a 1 19 ]
-[s S1057 _IO_FILE 0 ]
+[s S1064 _IO_FILE 0 ]
 "1817
-[v vfprintf@fp fp `*.39S1057  1 p 2 15 ]
+[v vfprintf@fp fp `*.39S1064  1 p 2 15 ]
 [v vfprintf@fmt fmt `*.31Cuc  1 p 1 17 ]
 [v vfprintf@ap ap `*.30*.30v  1 p 1 18 ]
 "1840
@@ -333,8 +347,8 @@ ERROR_CODE_TIMEOUT 1
 "1177
 [v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
 {
-[s S1057 _IO_FILE 0 ]
-[v vfpfcnvrt@fp fp `*.39S1057  1 p 2 11 ]
+[s S1064 _IO_FILE 0 ]
+[v vfpfcnvrt@fp fp `*.39S1064  1 p 2 11 ]
 [v vfpfcnvrt@fmt fmt `*.30*.31uc  1 p 1 13 ]
 [v vfpfcnvrt@ap ap `*.30*.30v  1 p 1 14 ]
 "1814
@@ -343,36 +357,36 @@ ERROR_CODE_TIMEOUT 1
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 2 ]
-[u S1035 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
-[s S1038 _IO_FILE 12 `S1035 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
-[v fputc@fp fp `*.39S1038  1 p 2 4 ]
+[u S1042 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[s S1045 _IO_FILE 12 `S1042 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
+[v fputc@fp fp `*.39S1045  1 p 2 4 ]
 "24
 } 0
-"76 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\src/librerias/UART.c
+"84 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\src/librerias/UART.c
 [v _putch putch `(v  1 e 1 0 ]
 {
 [v putch@data data `uc  1 a 1 wreg ]
 [v putch@data data `uc  1 a 1 wreg ]
 [v putch@data data `uc  1 a 1 1 ]
-"78
+"86
 } 0
-"71
+"79
 [v _UART_Tx UART_Tx `(v  1 e 1 0 ]
 {
 [v UART_Tx@dato dato `uc  1 a 1 wreg ]
 [v UART_Tx@dato dato `uc  1 a 1 wreg ]
 [v UART_Tx@dato dato `uc  1 a 1 0 ]
-"74
+"82
 } 0
 "3 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\src/librerias/clock.c
 [v _Clock_Init Clock_Init `(E5188  1 e 1 0 ]
 {
 "45
-[v Clock_Init@bStatus_593 bStatus `a  1 a 1 5 ]
+[v Clock_Init@bStatus_600 bStatus `a  1 a 1 5 ]
 "33
-[v Clock_Init@bStatus_590 bStatus `a  1 a 1 4 ]
+[v Clock_Init@bStatus_597 bStatus `a  1 a 1 4 ]
 "22
-[v Clock_Init@bStatus_589 bStatus `a  1 a 1 3 ]
+[v Clock_Init@bStatus_596 bStatus `a  1 a 1 3 ]
 "8
 [v Clock_Init@bStatus bStatus `a  1 a 1 2 ]
 "4

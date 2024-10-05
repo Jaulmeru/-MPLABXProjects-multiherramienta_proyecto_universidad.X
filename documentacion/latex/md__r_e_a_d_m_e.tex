@@ -1,0 +1,41 @@
+\chapter{Idea general}
+\label{md__r_e_a_d_m_e}\index{Idea general@{Idea general}}
+\label{md__r_e_a_d_m_e_autotoc_md20}%
+
+
+La idea del proyecto es diseñar un dispositivo compacto para estudiantes y profesionales técnicos e ingenieros de la electrónica con el fin recibir, almacenar y transmitir señales alámbricas e inalámbricas dentro de un laboratorio, con el fin de agilizar el proceso de diseño, pruebas y diagnóstico de errores.\doxysection{Funciones}\label{md__r_e_a_d_m_e_autotoc_md21}
+Se plantea cumplir con las siguientes funciones como minimo producto viable. ~\newline
+
+
+
+\begin{DoxyItemize}
+\item Leer, almacenar y emitir. ~\newline
+
+\begin{DoxyItemize}
+\item \doxysectref{UART}{p.}{md_documentacion_2_u_a_r_t}{0} por puerto serial
+\item I2C
+\item SPI
+\item Pulsos infrarrojos ~\newline
+
+\end{DoxyItemize}
+\item Contar con una interfaz para carga y descarga de archivos desde PC por puerto c ~\newline
+
+\end{DoxyItemize}\doxysection{Requisitos de hardware}\label{md__r_e_a_d_m_e_autotoc_md22}
+
+\begin{DoxyItemize}
+\item Utilizar bateria para facilitar su transporte y ampliar su verzatilidad.
+\item Puerto USB C de carga y transmision de datos
+\item Integrar un display TFT para la interacción del usuario
+\item Diseñar una interfaz touch sencilla y dinámica
+\item Interfaz Rx-\/\+Tx infrarojo
+\end{DoxyItemize}\doxysection{Hardware y herramientas seleccionadas}\label{md__r_e_a_d_m_e_autotoc_md23}
+
+\begin{DoxyItemize}
+\item PIC18\+F45\+K50 ({\texttt{ datasheet}})
+\begin{DoxyItemize}
+\item MPLAB X IDE ~\newline
+
+\item XC8
+\end{DoxyItemize}
+\item Display 2.\+4"{} TFT 240x320 St7789 ($<$a href="{}documentacion/referencias/\+Datasheet\%20\+ST7789.\+pdf"{} $>$datasheet$<$/a$>$)  $<$sup style="{}display\+: inline-\/block;"{}$>$@ref "{}/\+README.md"{} "{}{\bfseries{README}}"{}
+\end{DoxyItemize}

@@ -8389,10 +8389,21 @@ CLK_ERROR_CODE Clock_Init(int16_t s16Timeout);
 
 void UART_ErrorHandler(UART_ERROR_CODE);
 # 8 "src/librerias/UART.h" 2
-# 18 "src/librerias/UART.h"
+# 21 "src/librerias/UART.h"
 void UART_config_show();
+
+
+
+
+
 void UART_Init(uint32_t);
+# 36 "src/librerias/UART.h"
 void UART_select_baud(uint32_t);
+
+
+
+
+
 UART_ERROR_CODE UART_Rx_FRAMING();
 UART_ERROR_CODE UART_Rx_OVERFLOW();
 void UART_Tx(char);

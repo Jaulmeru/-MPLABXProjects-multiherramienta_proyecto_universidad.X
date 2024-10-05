@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_clk__variables_8h" xml:lang="en-US">
+<title>src/librerias/clk_variables.h File Reference</title>
+<indexterm><primary>src/librerias/clk_variables.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;stdint.h&gt;<?linebreak?>#include &lt;stdbool.h&gt;<?linebreak?>#include &lt;float.h&gt;<?linebreak?>#include &lt;stdio.h&gt;<?linebreak?>#include &lt;xc.h&gt;<?linebreak?></programlisting><simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="_clk__variables_8h_1a7b794d701f534bfb8b48dfe9274b6d08">CLK_ERROR_CODE</link> { <link linkend="_clk__variables_8h_1a7b794d701f534bfb8b48dfe9274b6d08a554857e7cac631358eeb8300193c763e">ERROR_CODE_OK</link>
+, <link linkend="_clk__variables_8h_1a7b794d701f534bfb8b48dfe9274b6d08a2cb2ed082113e4407863a3d65d95ff3f">ERROR_CODE_TIMEOUT</link>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Enumeration Type Documentation</title>
+<anchor xml:id="_clk__variables_8h_1a7b794d701f534bfb8b48dfe9274b6d08"/><section>
+    <title>CLK_ERROR_CODE</title>
+<indexterm><primary>CLK_ERROR_CODE</primary><secondary>clk_variables.h</secondary></indexterm>
+<indexterm><primary>clk_variables.h</primary><secondary>CLK_ERROR_CODE</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_clk__variables_8h_1a7b794d701f534bfb8b48dfe9274b6d08">CLK_ERROR_CODE</link></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>ERROR_CODE_OK</primary><secondary>clk_variables.h</secondary></indexterm>
+<indexterm><primary>clk_variables.h</primary><secondary>ERROR_CODE_OK</secondary></indexterm>
+<anchor xml:id="_clk__variables_8h_1a7b794d701f534bfb8b48dfe9274b6d08a554857e7cac631358eeb8300193c763e"/>ERROR_CODE_OK</entry><entry></entry></row><row><entry><indexterm><primary>ERROR_CODE_TIMEOUT</primary><secondary>clk_variables.h</secondary></indexterm>
+<indexterm><primary>clk_variables.h</primary><secondary>ERROR_CODE_TIMEOUT</secondary></indexterm>
+<anchor xml:id="_clk__variables_8h_1a7b794d701f534bfb8b48dfe9274b6d08a2cb2ed082113e4407863a3d65d95ff3f"/>ERROR_CODE_TIMEOUT</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+</section>
+</section>

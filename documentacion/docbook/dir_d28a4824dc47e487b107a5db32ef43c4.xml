@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_d28a4824dc47e487b107a5db32ef43c4" xml:lang="en-US">
+<title>examples Directory Reference</title>
+<indexterm><primary>examples Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Directories    </title>
+        <itemizedlist>
+            <listitem><para>directory <link linkend="_dir_28b863deeac1fd1a8f522bab657f0a93">UART</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_4d141c26c78ae74da1f187be159c79df" xml:lang="en-US">
+<title>src/librerias Directory Reference</title>
+<indexterm><primary>src/librerias Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="_clk__variables_8h">clk_variables.h</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_clock_8c">clock.c</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_clock_8h">clock.h</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__u_a_r_t_8c">UART.c</link></para>
+
+<para>Funciones para manejo de modulo EUSART del PIC18F45K50. </para>
+</listitem>
+            <listitem><para>file <link linkend="__u_a_r_t_8h">UART.h</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__u_a_r_t__variables_8c">UART_variables.c</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__u_a_r_t__variables_8h">UART_variables.h</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

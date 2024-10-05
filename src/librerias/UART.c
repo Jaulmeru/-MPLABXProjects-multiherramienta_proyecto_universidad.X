@@ -1,5 +1,13 @@
-#include <xc.h>
+/**
+ * @file UART.c
+ * @brief Funciones para manejo de modulo EUSART del PIC18F45K50
+ *  
+ * @author Javier Mendoza (javierulisesmruiz@gmail.com)
+ * @date 03/10/2024
+ * @version 0.1
+ */
 
+#include <xc.h>
 #include "UART.h"
 
 void UART_config_show(){
@@ -68,7 +76,7 @@ void UART_select_baud(uint32_t baudrate){
     }
 }
 
-void UART_Tx(char dato){
+void UART_Tx(uint8_t dato){
     while(TRMT == 0);
     TXREG1 = dato;
 }
@@ -78,8 +86,8 @@ void putch(char data){
 }
 
 UART_ERROR_CODE UART_Rx_OVERFLOW(){
-    if (RCSTAbits.OERR) {  // Error de sobrecarga
-        RCSTAbits.CREN = 0;  // Desactiva y vuelve a activar la recepci�n
+    if (RCSTAbits.OERR) {  
+        RCSTAbits.CREN = 0;  
         RCSTAbits.CREN = 1;
         return ERROR_CODE_UART_OVERFLOW;
     }
@@ -94,13 +102,13 @@ UART_ERROR_CODE UART_Rx_FRAMING(){
     return ERROR_CODE_UART_OK;
 }
 
-char UART_Rx(void){
+uint8_t UART_Rx(void){
     //UART_ErrorHandler(UART_Rx_OVERFLOW());
     //UART_ErrorHandler(UART_Rx_FRAMING());
     return RCREG1;
 }
-/*
-bool UART_Available(){
+
+bool UART_RxAvailable(){
     if (!RCSTAbits.SPEN || !RCSTAbits.CREN){
         UART_ErrorHandler(ERROR_CODE_UART_CONFIG);
         return 0;
@@ -109,4 +117,4 @@ bool UART_Available(){
         return 0;
     }
     return 1;
-}*/
+}

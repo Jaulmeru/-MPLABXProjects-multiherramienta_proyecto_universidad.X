@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_28b863deeac1fd1a8f522bab657f0a93" xml:lang="en-US">
+<title>examples/UART Directory Reference</title>
+<indexterm><primary>examples/UART Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="_command__led_8c">command_led.c</link></para>
+
+<para>Codigo de ejemplo Valida la recepcion de un caracter por UART. </para>
+</listitem>
+            <listitem><para>file <link linkend="_print__ascii_8c">print_ascii.c</link></para>
+
+<para>Codigo de ejemplo Valida el envio de caracteres uno a uno por UART. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>
