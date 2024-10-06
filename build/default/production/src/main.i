@@ -8371,25 +8371,17 @@ CLK_ERROR_CODE Clock_Init(int16_t s16Timeout);
 # 12 "src/main.c" 2
 
 # 1 "src/librerias/UART.h" 1
+# 19 "src/librerias/UART.h"
+typedef enum{
+    ERROR_CODE_UART_OK,
+    ERROR_CODE_UART_OVERFLOW,
+    ERROR_CODE_UART_FRAMING,
+    ERROR_CODE_UART_CONFIG,
+}UART_ERROR_CODE;
 
 
 
 
-
-
-
-# 1 "src/librerias/UART_variables.h" 1
-# 21 "src/librerias/UART_variables.h"
-    typedef enum{
-        ERROR_CODE_UART_OK,
-        ERROR_CODE_UART_OVERFLOW,
-        ERROR_CODE_UART_FRAMING,
-        ERROR_CODE_UART_CONFIG,
-    }UART_ERROR_CODE;
-
-void UART_ErrorHandler(UART_ERROR_CODE);
-# 8 "src/librerias/UART.h" 2
-# 21 "src/librerias/UART.h"
 void UART_config_show();
 
 
@@ -8397,18 +8389,48 @@ void UART_config_show();
 
 
 void UART_Init(uint32_t);
-# 36 "src/librerias/UART.h"
+# 44 "src/librerias/UART.h"
 void UART_select_baud(uint32_t);
 
 
 
 
 
+
 UART_ERROR_CODE UART_Rx_FRAMING();
+
+
+
+
+
+
 UART_ERROR_CODE UART_Rx_OVERFLOW();
-void UART_Tx(char);
-char UART_Rx(void);
-_Bool UART_Available(void);
+
+
+
+
+
+void UART_Tx(uint8_t);
+
+
+
+
+
+
+uint8_t UART_Rx(void);
+
+
+
+
+
+
+_Bool UART_RxAvailable(void);
+
+
+
+
+
+void UART_ErrorHandler(UART_ERROR_CODE);
 # 13 "src/main.c" 2
 
 
@@ -8425,7 +8447,7 @@ int main(void)
 
     while(1)
     {
-        if(PIR1bits.RC1IF){
+        if(UART_RxAvailable()){
             readMessage = UART_Rx();
             if(readMessage == '1') do { LATAbits.LATA1 = 1; } while(0);
             if(readMessage == '0') do { LATAbits.LATA1 = 0; } while(0);

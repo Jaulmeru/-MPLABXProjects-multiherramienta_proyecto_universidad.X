@@ -28,11 +28,11 @@
 </listitem>
             <listitem><para>void <link linkend="__u_a_r_t_8c_1af8157a81370f484948711155494bce72">putch</link> (char data)</para>
 </listitem>
-            <listitem><para><link linkend="__u_a_r_t__variables_8h_1aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</link> <link linkend="__u_a_r_t_8c_1ae9defbf2097bafc184289367f362245e">UART_Rx_OVERFLOW</link> ()</para>
+            <listitem><para><link linkend="__u_a_r_t_8h_1aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</link> <link linkend="__u_a_r_t_8c_1ae9defbf2097bafc184289367f362245e">UART_Rx_OVERFLOW</link> ()</para>
 
 <para>Revisa el registro OERR y limpia el error. </para>
 </listitem>
-            <listitem><para><link linkend="__u_a_r_t__variables_8h_1aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</link> <link linkend="__u_a_r_t_8c_1afc34c227cd3b9153f8a1dd4c7da43f79">UART_Rx_FRAMING</link> ()</para>
+            <listitem><para><link linkend="__u_a_r_t_8h_1aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</link> <link linkend="__u_a_r_t_8c_1afc34c227cd3b9153f8a1dd4c7da43f79">UART_Rx_FRAMING</link> ()</para>
 
 <para>Revisa el registro FERR y limpia el error. </para>
 </listitem>
@@ -43,6 +43,10 @@
             <listitem><para>bool <link linkend="__u_a_r_t_8c_1a8b7a4292ea3e53e551f90b0ae7a58721">UART_RxAvailable</link> ()</para>
 
 <para>Valida si esta habilitada la recepcion y si el buffer esta lleno. </para>
+</listitem>
+            <listitem><para>void <link linkend="__u_a_r_t_8c_1abe97fac8437bf26d1b1c3087083f768f">UART_ErrorHandler</link> (<link linkend="__u_a_r_t_8h_1aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</link> errorCode)</para>
+
+<para>Manejador de errores UART. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
@@ -80,6 +84,37 @@
 
 <para>Muestra por puerto serial la configuracion actual del modulo EUSART. </para>
 </para>
+</section>
+<anchor xml:id="__u_a_r_t_8c_1abe97fac8437bf26d1b1c3087083f768f"/><section>
+    <title>UART_ErrorHandler()</title>
+<indexterm><primary>UART_ErrorHandler</primary><secondary>UART.c</secondary></indexterm>
+<indexterm><primary>UART.c</primary><secondary>UART_ErrorHandler</secondary></indexterm>
+<para><computeroutput>void UART_ErrorHandler (<link linkend="__u_a_r_t_8h_1aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</link> errorCode)</computeroutput></para><para>
+
+<para>Manejador de errores UART. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>errorCode</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
 </section>
 <anchor xml:id="__u_a_r_t_8c_1ad6f6f2234554d7faf55db52b66f45bc5"/><section>
     <title>UART_Init()</title>
@@ -131,7 +166,7 @@ Parameters</title>
     <title>UART_Rx_FRAMING()</title>
 <indexterm><primary>UART_Rx_FRAMING</primary><secondary>UART.c</secondary></indexterm>
 <indexterm><primary>UART.c</primary><secondary>UART_Rx_FRAMING</secondary></indexterm>
-<para><computeroutput><link linkend="__u_a_r_t__variables_8h_1aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</link> UART_Rx_FRAMING ( )</computeroutput></para><para>
+<para><computeroutput><link linkend="__u_a_r_t_8h_1aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</link> UART_Rx_FRAMING ( )</computeroutput></para><para>
 
 <para>Revisa el registro FERR y limpia el error. </para>
 </para>
@@ -148,7 +183,7 @@ Parameters</title>
     <title>UART_Rx_OVERFLOW()</title>
 <indexterm><primary>UART_Rx_OVERFLOW</primary><secondary>UART.c</secondary></indexterm>
 <indexterm><primary>UART.c</primary><secondary>UART_Rx_OVERFLOW</secondary></indexterm>
-<para><computeroutput><link linkend="__u_a_r_t__variables_8h_1aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</link> UART_Rx_OVERFLOW ( )</computeroutput></para><para>
+<para><computeroutput><link linkend="__u_a_r_t_8h_1aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</link> UART_Rx_OVERFLOW ( )</computeroutput></para><para>
 
 <para>Revisa el registro OERR y limpia el error. </para>
 </para>

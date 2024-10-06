@@ -7,8 +7,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "19 src/librerias/clock.h
 [; ;src/librerias/clock.h: 19: CLK_ERROR_CODE Clock_Init(int16_t s16Timeout);
 [v _Clock_Init `(E5188 ~T0 @X0 0 ef1`s ]
-"27 src/librerias/UART.h
-[; ;src/librerias/UART.h: 27: void UART_Init(uint32_t);
+"35 src/librerias/UART.h
+[; ;src/librerias/UART.h: 35: void UART_Init(uint32_t);
 [v _UART_Init `(v ~T0 @X0 0 ef1`ul ]
 "4637 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 4637:     struct {
@@ -25,27 +25,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4658
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 4658: extern volatile TRISAbits_t TRISAbits __attribute__((address(0xF92)));
 [v _TRISAbits `VS194 ~T0 @X0 0 e@3986 ]
-"6295
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 6295:     struct {
-[s S255 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S255 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF ACTIF ]
-"6305
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 6305:     struct {
-[s S256 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S256 . . SSP1IF TX1IF RC1IF . STIF ]
-"6313
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 6313:     struct {
-[s S257 :7 `uc 1 :1 `uc 1 ]
-[n S257 . . PSPIF ]
-"6294
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 6294: typedef union {
-[u S254 `S255 1 `S256 1 `S257 1 ]
-[n S254 . . . . ]
-"6318
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 6318: extern volatile PIR1bits_t PIR1bits __attribute__((address(0xF9E)));
-[v _PIR1bits `VS254 ~T0 @X0 0 e@3998 ]
-"45 src/librerias/UART.h
-[; ;src/librerias/UART.h: 45: char UART_Rx(void);
+"78 src/librerias/UART.h
+[; ;src/librerias/UART.h: 78: _Bool UART_RxAvailable(void);
+[v _UART_RxAvailable `(a ~T0 @X0 0 ef ]
+"71
+[; ;src/librerias/UART.h: 71: uint8_t UART_Rx(void);
 [v _UART_Rx `(uc ~T0 @X0 0 ef ]
 "3785 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 3785:     struct {
@@ -796,12 +780,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;src/main.c: 27:     {
 {
 "28
-[; ;src/main.c: 28:         if(PIR1bits.RC1IF){
-[e $ ! != -> . . _PIR1bits 1 3 `i -> 0 `i 642  ]
+[; ;src/main.c: 28:         if(UART_RxAvailable()){
+[e $ ! != -> ( _UART_RxAvailable ..  `i -> 0 `i 642  ]
 {
 "29
 [; ;src/main.c: 29:             readMessage = UART_Rx();
-[e = _readMessage -> ( _UART_Rx ..  `uc ]
+[e = _readMessage ( _UART_Rx ..  ]
 "30
 [; ;src/main.c: 30:             if(readMessage == '1') do { LATAbits.LATA1 = 1; } while(0);
 [e $ ! == -> _readMessage `ui -> 49 `ui 643  ]

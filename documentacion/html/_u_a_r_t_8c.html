@@ -123,10 +123,10 @@ Functions</h2></td></tr>
 <tr class="separator:a6016908c0a23b070c8908df8af932fe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8157a81370f484948711155494bce72" id="r_af8157a81370f484948711155494bce72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af8157a81370f484948711155494bce72">putch</a> (char data)</td></tr>
 <tr class="separator:af8157a81370f484948711155494bce72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9defbf2097bafc184289367f362245e" id="r_ae9defbf2097bafc184289367f362245e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_u_a_r_t__variables_8h.html#aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9defbf2097bafc184289367f362245e">UART_Rx_OVERFLOW</a> ()</td></tr>
+<tr class="memitem:ae9defbf2097bafc184289367f362245e" id="r_ae9defbf2097bafc184289367f362245e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_u_a_r_t_8h.html#aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9defbf2097bafc184289367f362245e">UART_Rx_OVERFLOW</a> ()</td></tr>
 <tr class="memdesc:ae9defbf2097bafc184289367f362245e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Revisa el registro OERR y limpia el error.  <br /></td></tr>
 <tr class="separator:ae9defbf2097bafc184289367f362245e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc34c227cd3b9153f8a1dd4c7da43f79" id="r_afc34c227cd3b9153f8a1dd4c7da43f79"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_u_a_r_t__variables_8h.html#aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc34c227cd3b9153f8a1dd4c7da43f79">UART_Rx_FRAMING</a> ()</td></tr>
+<tr class="memitem:afc34c227cd3b9153f8a1dd4c7da43f79" id="r_afc34c227cd3b9153f8a1dd4c7da43f79"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_u_a_r_t_8h.html#aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc34c227cd3b9153f8a1dd4c7da43f79">UART_Rx_FRAMING</a> ()</td></tr>
 <tr class="memdesc:afc34c227cd3b9153f8a1dd4c7da43f79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Revisa el registro FERR y limpia el error.  <br /></td></tr>
 <tr class="separator:afc34c227cd3b9153f8a1dd4c7da43f79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a104e40e6d18cf161ca4ee7ebdc0e62b8" id="r_a104e40e6d18cf161ca4ee7ebdc0e62b8"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a104e40e6d18cf161ca4ee7ebdc0e62b8">UART_Rx</a> (void)</td></tr>
@@ -135,6 +135,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a8b7a4292ea3e53e551f90b0ae7a58721" id="r_a8b7a4292ea3e53e551f90b0ae7a58721"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b7a4292ea3e53e551f90b0ae7a58721">UART_RxAvailable</a> ()</td></tr>
 <tr class="memdesc:a8b7a4292ea3e53e551f90b0ae7a58721"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida si esta habilitada la recepcion y si el buffer esta lleno.  <br /></td></tr>
 <tr class="separator:a8b7a4292ea3e53e551f90b0ae7a58721"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe97fac8437bf26d1b1c3087083f768f" id="r_abe97fac8437bf26d1b1c3087083f768f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe97fac8437bf26d1b1c3087083f768f">UART_ErrorHandler</a> (<a class="el" href="_u_a_r_t_8h.html#aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</a> errorCode)</td></tr>
+<tr class="memdesc:abe97fac8437bf26d1b1c3087083f768f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manejador de errores UART.  <br /></td></tr>
+<tr class="separator:abe97fac8437bf26d1b1c3087083f768f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Funciones para manejo de modulo EUSART del PIC18F45K50. </p>
@@ -175,6 +178,31 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Muestra por puerto serial la configuracion actual del modulo EUSART. </p>
+
+</div>
+</div>
+<a id="abe97fac8437bf26d1b1c3087083f768f" name="abe97fac8437bf26d1b1c3087083f768f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe97fac8437bf26d1b1c3087083f768f">&#9670;&#160;</a></span>UART_ErrorHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UART_ErrorHandler </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_u_a_r_t_8h.html#aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</a></td>          <td class="paramname"><span class="paramname"><em>errorCode</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Manejador de errores UART. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">errorCode</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -230,7 +258,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_u_a_r_t__variables_8h.html#aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</a> UART_Rx_FRAMING </td>
+          <td class="memname"><a class="el" href="_u_a_r_t_8h.html#aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</a> UART_Rx_FRAMING </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -252,7 +280,7 @@ ERROR_CODE_UART_OK </dd></dl>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_u_a_r_t__variables_8h.html#aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</a> UART_Rx_OVERFLOW </td>
+          <td class="memname"><a class="el" href="_u_a_r_t_8h.html#aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</a> UART_Rx_OVERFLOW </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>

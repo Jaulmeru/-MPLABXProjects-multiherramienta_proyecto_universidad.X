@@ -1,20 +1,28 @@
-/* 
- * File:   UART_Tx.h
- * Author: Javier Mendoza
- *
- * Created on 29 de agosto de 2024, 09:25 PM
+/**
+ * @file UART.h
+ * @brief Libreria para manejo de modulo EUSART del PIC18F45K50
+ *  
+ * @author Javier Mendoza (javierulisesmruiz@gmail.com)
+ * @date 03/10/2024
+ * @version 0.1
  */
-
-#include "UART_variables.h"
 
 #ifndef UART_TX_H
 #define	UART_TX_H
 
+#include <stdint.h>
+#include <stdbool.h>
+#include <float.h>
+#include <stdio.h>
+#include <xc.h>
 
-#ifdef	__cplusplus
-extern "C" {
-#endif
-
+typedef enum{
+    ERROR_CODE_UART_OK,   
+    ERROR_CODE_UART_OVERFLOW,        
+    ERROR_CODE_UART_FRAMING,        
+    ERROR_CODE_UART_CONFIG,        
+}UART_ERROR_CODE;
+    
 /**
  * @brief Muestra por puerto serial la configuracion actual del modulo EUSART
  */
@@ -68,10 +76,12 @@ uint8_t UART_Rx(void);
  * @return 1 Listo para leer
  */
 bool UART_RxAvailable(void);
-    
-#ifdef	__cplusplus
-}
-#endif
 
-#endif	/* NEWFILE_H */
+/**
+ * @brief Manejador de errores UART
+ * @param errorCode
+ */
+void UART_ErrorHandler(UART_ERROR_CODE);
+    
+#endif	/* UART_TX_H */
 

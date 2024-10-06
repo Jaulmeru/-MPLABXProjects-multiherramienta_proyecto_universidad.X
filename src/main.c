@@ -25,10 +25,10 @@ int main(void)
     
     while(1)
     {
-        if(PIR1bits.RC1IF){
+        if(UART_RxAvailable()){
             readMessage = UART_Rx();
             if(readMessage == '1') LED_ON();
-            if(readMessage == '0') LED_OFF();        
+            if(readMessage == '0') LED_OFF();
         }
     }
 }

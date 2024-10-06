@@ -29,7 +29,7 @@ Go to the documentation of this file.<programlisting linenumbering="unnumbered">
 25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__u_a_r_t__variables_8h_1aca500773c32b84185c333e06093935f9a39999153cc782e1aa417e141117f4432">ERROR_CODE_UART_CONFIG</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
 26 &#32;&#32;&#32;&#32;}<link linkend="__u_a_r_t__variables_8h_1aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</link>;
 27 
-28 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__u_a_r_t__variables_8h_1add06d286319043f8df9aa9766cfd5c08">UART_ErrorHandler</link>(<link linkend="__u_a_r_t__variables_8h_1aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</link>);
+28 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__u_a_r_t__variables_8h_1add06d286319043f8df9aa9766cfd5c08">UART_ErrorHandler</link>(<link linkend="__u_a_r_t_8h_1aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</link>);
 29 &#32;&#32;&#32;&#32;
 30 <emphasis role="preprocessor">#ifdef&#32;&#32;__cplusplus</emphasis>
 31 }

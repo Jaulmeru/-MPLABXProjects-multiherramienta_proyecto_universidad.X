@@ -27,7 +27,9 @@ void \textbf{ putch} (char data)
 uint8\+\_\+t \textbf{ UART\+\_\+\+Rx} (void)
 \begin{DoxyCompactList}\small\item\em Lee el ultimo dato recibido. \end{DoxyCompactList}\item 
 bool \textbf{ UART\+\_\+\+Rx\+Available} ()
-\begin{DoxyCompactList}\small\item\em Valida si esta habilitada la recepcion y si el buffer esta lleno. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Valida si esta habilitada la recepcion y si el buffer esta lleno. \end{DoxyCompactList}\item 
+void \textbf{ UART\+\_\+\+Error\+Handler} (\textbf{ UART\+\_\+\+ERROR\+\_\+\+CODE} error\+Code)
+\begin{DoxyCompactList}\small\item\em Manejador de errores UART. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -61,6 +63,21 @@ void UART\+\_\+config\+\_\+show (\begin{DoxyParamCaption}{}{}\end{DoxyParamCapti
 
 Muestra por puerto serial la configuracion actual del modulo EUSART. 
 
+\index{UART.c@{UART.c}!UART\_ErrorHandler@{UART\_ErrorHandler}}
+\index{UART\_ErrorHandler@{UART\_ErrorHandler}!UART.c@{UART.c}}
+\doxysubsubsection{UART\_ErrorHandler()}
+{\footnotesize\ttfamily \label{_u_a_r_t_8c_abe97fac8437bf26d1b1c3087083f768f} 
+void UART\+\_\+\+Error\+Handler (\begin{DoxyParamCaption}\item[{\textbf{ UART\+\_\+\+ERROR\+\_\+\+CODE}}]{error\+Code}{}\end{DoxyParamCaption})}
+
+
+
+Manejador de errores UART. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error\+Code} & \\
+\hline
+\end{DoxyParams}
 \index{UART.c@{UART.c}!UART\_Init@{UART\_Init}}
 \index{UART\_Init@{UART\_Init}!UART.c@{UART.c}}
 \doxysubsubsection{UART\_Init()}

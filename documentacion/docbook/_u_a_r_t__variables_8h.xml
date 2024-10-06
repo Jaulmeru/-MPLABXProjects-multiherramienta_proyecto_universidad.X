@@ -16,7 +16,9 @@
 <simplesect>
     <title>Functions    </title>
         <itemizedlist>
-            <listitem><para>void <link linkend="__u_a_r_t__variables_8h_1add06d286319043f8df9aa9766cfd5c08">UART_ErrorHandler</link> (<link linkend="__u_a_r_t__variables_8h_1aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</link>)</para>
+            <listitem><para>void <link linkend="__u_a_r_t__variables_8h_1add06d286319043f8df9aa9766cfd5c08">UART_ErrorHandler</link> (<link linkend="__u_a_r_t_8h_1aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</link>)</para>
+
+<para>Manejador de errores UART. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
@@ -26,7 +28,7 @@
     <title>UART_ERROR_CODE</title>
 <indexterm><primary>UART_ERROR_CODE</primary><secondary>UART_variables.h</secondary></indexterm>
 <indexterm><primary>UART_variables.h</primary><secondary>UART_ERROR_CODE</secondary></indexterm>
-<para><computeroutput>enum <link linkend="__u_a_r_t__variables_8h_1aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</link></computeroutput></para><informaltable frame="all">
+<para><computeroutput>enum <link linkend="__u_a_r_t_8h_1aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</link></computeroutput></para><informaltable frame="all">
 <title>Enumerator</title>
     <tgroup cols="2" align="left" colsep="1" rowsep="1">
       <colspec colname='c1'/>
@@ -51,6 +53,32 @@
     <title>UART_ErrorHandler()</title>
 <indexterm><primary>UART_ErrorHandler</primary><secondary>UART_variables.h</secondary></indexterm>
 <indexterm><primary>UART_variables.h</primary><secondary>UART_ErrorHandler</secondary></indexterm>
-<para><computeroutput>void UART_ErrorHandler (<link linkend="__u_a_r_t__variables_8h_1aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</link> errorCode)</computeroutput></para></section>
+<para><computeroutput>void UART_ErrorHandler (<link linkend="__u_a_r_t_8h_1aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</link> errorCode)</computeroutput></para><para>
+
+<para>Manejador de errores UART. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>errorCode</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
 </section>
 </section>

@@ -70,8 +70,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8700
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 8700: extern volatile unsigned char BAUDCON1 __attribute__((address(0xFB8)));
 [v _BAUDCON1 `Vuc ~T0 @X0 0 e@4024 ]
-"36 src/librerias/UART.h
-[; ;src/librerias/UART.h: 36: void UART_select_baud(uint32_t);
+"44 src/librerias/UART.h
+[; ;src/librerias/UART.h: 44: void UART_select_baud(uint32_t);
 [v _UART_select_baud `(v ~T0 @X0 0 ef1`ul ]
 "16516 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 16516: extern volatile __bit TRISC6 __attribute__((address(0x7CA6)));
@@ -175,12 +175,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7594 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7594: extern volatile unsigned char RCREG __attribute__((address(0xFAE)));
 [v _RCREG `Vuc ~T0 @X0 0 e@4014 ]
-"28 src/librerias/UART_variables.h
-[; ;src/librerias/UART_variables.h: 28: void UART_ErrorHandler(UART_ERROR_CODE);
+"84 src/librerias/UART.h
+[; ;src/librerias/UART.h: 84: void UART_ErrorHandler(UART_ERROR_CODE);
 [v _UART_ErrorHandler `(v ~T0 @X0 0 ef1`E5188 ]
 "7589 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7589: extern volatile unsigned char RCREG1 __attribute__((address(0xFAE)));
 [v _RCREG1 `Vuc ~T0 @X0 0 e@4014 ]
+"15661
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 15661: extern volatile __bit RC1IF __attribute__((address(0x7CF5)));
+[v _RC1IF `Vb ~T0 @X0 0 e@31989 ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 54: __asm("SRCON1 equ 0F57h");
 [; <" SRCON1 equ 0F57h ;# ">
@@ -1021,7 +1024,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 640 ]
 }
 "79
-[; ;src/librerias/UART.c: 79: void UART_Tx(char dato){
+[; ;src/librerias/UART.c: 79: void UART_Tx(uint8_t dato){
 [v _UART_Tx `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _UART_Tx ]
@@ -1036,7 +1039,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 654 ]
 "81
 [; ;src/librerias/UART.c: 81:     TXREG1 = dato;
-[e = _TXREG1 -> _dato `uc ]
+[e = _TXREG1 _dato ]
 "82
 [; ;src/librerias/UART.c: 82: }
 [e :UE 651 ]
@@ -1050,7 +1053,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "85
 [; ;src/librerias/UART.c: 85:     UART_Tx(data);
-[e ( _UART_Tx (1 _data ]
+[e ( _UART_Tx (1 -> _data `uc ]
 "86
 [; ;src/librerias/UART.c: 86: }
 [e :UE 655 ]
@@ -1118,7 +1121,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 658 ]
 }
 "105
-[; ;src/librerias/UART.c: 105: char UART_Rx(void){
+[; ;src/librerias/UART.c: 105: uint8_t UART_Rx(void){
 [v _UART_Rx `(uc ~T0 @X0 1 ef ]
 {
 [e :U _UART_Rx ]
@@ -1131,19 +1134,123 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _UART_ErrorHandler (1 ( _UART_Rx_FRAMING ..  ]
 "108
 [; ;src/librerias/UART.c: 108:     return RCREG1;
-[e ) -> _RCREG1 `uc ]
+[e ) _RCREG1 ]
 [e $UE 660  ]
 "109
 [; ;src/librerias/UART.c: 109: }
 [e :UE 660 ]
 }
+"111
+[; ;src/librerias/UART.c: 111: _Bool UART_RxAvailable(){
+[v _UART_RxAvailable `(a ~T0 @X0 1 ef ]
+{
+[e :U _UART_RxAvailable ]
+[f ]
+"112
+[; ;src/librerias/UART.c: 112:     if (!RCSTAbits.SPEN || !RCSTAbits.CREN){
+[e $ ! || ! != -> . . _RCSTAbits 0 7 `i -> 0 `i ! != -> . . _RCSTAbits 0 4 `i -> 0 `i 662  ]
+{
+"113
+[; ;src/librerias/UART.c: 113:         UART_ErrorHandler(ERROR_CODE_UART_CONFIG);
+[e ( _UART_ErrorHandler (1 . `E5188 3 ]
+"114
+[; ;src/librerias/UART.c: 114:         return 0;
+[e ) -> -> 0 `i `a ]
+[e $UE 661  ]
+"115
+[; ;src/librerias/UART.c: 115:     }
+}
+[e :U 662 ]
+"116
+[; ;src/librerias/UART.c: 116:     if (!RC1IF){
+[e $ ! ! _RC1IF 663  ]
+{
+"117
+[; ;src/librerias/UART.c: 117:         return 0;
+[e ) -> -> 0 `i `a ]
+[e $UE 661  ]
+"118
+[; ;src/librerias/UART.c: 118:     }
+}
+[e :U 663 ]
+"119
+[; ;src/librerias/UART.c: 119:     return 1;
+[e ) -> -> 1 `i `a ]
+[e $UE 661  ]
+"120
+[; ;src/librerias/UART.c: 120: }
+[e :UE 661 ]
+}
+"122
+[; ;src/librerias/UART.c: 122: void UART_ErrorHandler(UART_ERROR_CODE errorCode){
+[v _UART_ErrorHandler `(v ~T0 @X0 1 ef1`E5188 ]
+{
+[e :U _UART_ErrorHandler ]
+[v _errorCode `E5188 ~T0 @X0 1 r1 ]
+[f ]
+"123
+[; ;src/librerias/UART.c: 123:     if(errorCode == ERROR_CODE_UART_OK) return;
+[e $ ! == -> _errorCode `ui -> . `E5188 0 `ui 665  ]
+[e $UE 664  ]
+[e :U 665 ]
+"124
+[; ;src/librerias/UART.c: 124:     printf("Error: ");
+[e ( _printf :s 19C ]
+"125
+[; ;src/librerias/UART.c: 125:     switch(errorCode){
+[e $U 667  ]
+{
+"126
+[; ;src/librerias/UART.c: 126:         case ERROR_CODE_UART_OVERFLOW:
+[e :U 668 ]
+"127
+[; ;src/librerias/UART.c: 127:             printf("ERROR_CODE_UART_OVERFLOW");
+[e ( _printf :s 20C ]
+"128
+[; ;src/librerias/UART.c: 128:         break;
+[e $U 666  ]
+"129
+[; ;src/librerias/UART.c: 129:         case ERROR_CODE_UART_FRAMING:
+[e :U 669 ]
+"130
+[; ;src/librerias/UART.c: 130:             printf("ERROR_CODE_UART_FRAMING");
+[e ( _printf :s 21C ]
+"131
+[; ;src/librerias/UART.c: 131:         break;
+[e $U 666  ]
+"132
+[; ;src/librerias/UART.c: 132:         case ERROR_CODE_UART_CONFIG:
+[e :U 670 ]
+"133
+[; ;src/librerias/UART.c: 133:             printf("ERROR_CODE_UART_CONFIG \r\n");
+[e ( _printf :s 22C ]
+"134
+[; ;src/librerias/UART.c: 134:         break;
+[e $U 666  ]
+"135
+[; ;src/librerias/UART.c: 135:     }
+}
+[e $U 666  ]
+[e :U 667 ]
+[e [\ -> _errorCode `ui , $ -> . `E5188 1 `ui 668
+ , $ -> . `E5188 2 `ui 669
+ , $ -> . `E5188 3 `ui 670
+ 666 ]
+[e :U 666 ]
+"136
+[; ;src/librerias/UART.c: 136: }
+[e :UE 664 ]
+}
 [p f _printf 8388608 ]
+[a 20C 69 82 82 79 82 95 67 79 68 69 95 85 65 82 84 95 79 86 69 82 70 76 79 87 0 ]
+[a 21C 69 82 82 79 82 95 67 79 68 69 95 85 65 82 84 95 70 82 65 77 73 78 71 0 ]
 [a 8C 56 32 98 105 116 115 32 0 ]
 [a 7C 49 54 32 98 105 116 115 32 0 ]
 [a 3C 65 115 105 110 99 114 111 110 111 32 0 ]
 [a 2C 83 105 110 99 114 111 110 111 32 0 ]
 [a 16C 82 101 99 101 112 116 111 114 58 32 0 ]
 [a 13C 84 114 97 110 115 111 114 58 32 0 ]
+[a 19C 69 114 114 111 114 58 32 0 ]
 [a 10C 80 117 101 114 116 111 58 32 0 ]
 [a 1C 77 111 100 111 58 32 0 ]
 [a 6C 66 97 117 100 114 97 116 101 58 32 0 ]
@@ -1156,3 +1263,4 @@ Version 4.0 HI-TECH Software Intermediate Code
 [a 17C 72 97 98 105 108 105 116 97 100 111 32 13 10 0 ]
 [a 4C 97 108 116 97 32 118 101 108 111 99 105 100 97 100 32 13 10 0 ]
 [a 5C 98 97 106 97 32 118 101 108 111 99 105 100 97 100 32 13 10 0 ]
+[a 22C 69 82 82 79 82 95 67 79 68 69 95 85 65 82 84 95 67 79 78 70 73 71 32 13 10 0 ]

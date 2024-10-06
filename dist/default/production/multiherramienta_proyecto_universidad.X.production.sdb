@@ -72,11 +72,15 @@ ERROR_CODE_TIMEOUT 1
 [v _UART_Rx_FRAMING UART_Rx_FRAMING `(E5188  1 e 1 0 ]
 "105
 [v _UART_Rx UART_Rx `(uc  1 e 1 0 ]
+"111
+[v _UART_RxAvailable UART_RxAvailable `(a  1 e 1 0 ]
+"122
+[v _UART_ErrorHandler UART_ErrorHandler `(v  1 e 1 0 ]
 "20 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\src/main.c
 [v _main main `(i  1 e 2 0 ]
 "327 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
 [v _ANSELC ANSELC `VEuc  1 e 1 @3933 ]
-[s S124 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S85 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -86,7 +90,7 @@ ERROR_CODE_TIMEOUT 1
 `uc 1 LATA7 1 0 :1:7 
 ]
 "3806
-[s S133 . 1 `uc 1 LA0 1 0 :1:0 
+[s S94 . 1 `uc 1 LA0 1 0 :1:0 
 `uc 1 LA1 1 0 :1:1 
 `uc 1 LA2 1 0 :1:2 
 `uc 1 LA3 1 0 :1:3 
@@ -95,8 +99,8 @@ ERROR_CODE_TIMEOUT 1
 `uc 1 LA6 1 0 :1:6 
 `uc 1 LA7 1 0 :1:7 
 ]
-[u S142 . 1 `S124 1 . 1 0 `S133 1 . 1 0 ]
-[v _LATAbits LATAbits `VES142  1 e 1 @3977 ]
+[u S103 . 1 `S85 1 . 1 0 `S94 1 . 1 0 ]
+[v _LATAbits LATAbits `VES103  1 e 1 @3977 ]
 [s S37 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
@@ -118,11 +122,11 @@ ERROR_CODE_TIMEOUT 1
 ]
 [u S55 . 1 `S37 1 . 1 0 `S46 1 . 1 0 ]
 [v _TRISAbits TRISAbits `VES55  1 e 1 @3986 ]
-[s S552 . 1 `uc 1 TUN 1 0 :7:0 
+[s S515 . 1 `uc 1 TUN 1 0 :7:0 
 `uc 1 SPLLMULT 1 0 :1:7 
 ]
 "6070
-[s S555 . 1 `uc 1 TUN0 1 0 :1:0 
+[s S518 . 1 `uc 1 TUN0 1 0 :1:0 
 `uc 1 TUN1 1 0 :1:1 
 `uc 1 TUN2 1 0 :1:2 
 `uc 1 TUN3 1 0 :1:3 
@@ -130,31 +134,9 @@ ERROR_CODE_TIMEOUT 1
 `uc 1 TUN5 1 0 :1:5 
 `uc 1 TUN6 1 0 :1:6 
 ]
-[u S563 . 1 `S552 1 . 1 0 `S555 1 . 1 0 ]
-[v _OSCTUNEbits OSCTUNEbits `VES563  1 e 1 @3995 ]
-[s S77 . 1 `uc 1 TMR1IF 1 0 :1:0 
-`uc 1 TMR2IF 1 0 :1:1 
-`uc 1 CCP1IF 1 0 :1:2 
-`uc 1 SSPIF 1 0 :1:3 
-`uc 1 TXIF 1 0 :1:4 
-`uc 1 RCIF 1 0 :1:5 
-`uc 1 ADIF 1 0 :1:6 
-`uc 1 ACTIF 1 0 :1:7 
-]
-"6318
-[s S86 . 1 `uc 1 . 1 0 :3:0 
-`uc 1 SSP1IF 1 0 :1:3 
-`uc 1 TX1IF 1 0 :1:4 
-`uc 1 RC1IF 1 0 :1:5 
-`uc 1 . 1 0 :1:6 
-`uc 1 STIF 1 0 :1:7 
-]
-[s S93 . 1 `uc 1 . 1 0 :7:0 
-`uc 1 PSPIF 1 0 :1:7 
-]
-[u S96 . 1 `S77 1 . 1 0 `S86 1 . 1 0 `S93 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES96  1 e 1 @3998 ]
-[s S295 . 1 `uc 1 RX9D 1 0 :1:0 
+[u S526 . 1 `S515 1 . 1 0 `S518 1 . 1 0 ]
+[v _OSCTUNEbits OSCTUNEbits `VES526  1 e 1 @3995 ]
+[s S250 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -164,22 +146,22 @@ ERROR_CODE_TIMEOUT 1
 `uc 1 SPEN 1 0 :1:7 
 ]
 "7187
-[s S304 . 1 `uc 1 . 1 0 :3:0 
+[s S259 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 ADEN 1 0 :1:3 
 ]
-[s S307 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S262 . 1 `uc 1 RCD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[s S311 . 1 `uc 1 . 1 0 :6:0 
+[s S266 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S314 . 1 `uc 1 . 1 0 :5:0 
+[s S269 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 SRENA 1 0 :1:5 
 ]
-[u S317 . 1 `S295 1 . 1 0 `S304 1 . 1 0 `S307 1 . 1 0 `S311 1 . 1 0 `S314 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES317  1 e 1 @4011 ]
-[s S203 . 1 `uc 1 TX9D 1 0 :1:0 
+[u S272 . 1 `S250 1 . 1 0 `S259 1 . 1 0 `S262 1 . 1 0 `S266 1 . 1 0 `S269 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES272  1 e 1 @4011 ]
+[s S158 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -189,37 +171,37 @@ ERROR_CODE_TIMEOUT 1
 `uc 1 CSRC 1 0 :1:7 
 ]
 "7315
-[s S212 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S167 . 1 `uc 1 TXD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[s S216 . 1 `uc 1 . 1 0 :2:0 
+[s S171 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 BRGH1 1 0 :1:2 
 ]
-[s S219 . 1 `uc 1 . 1 0 :7:0 
+[s S174 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 CSRC1 1 0 :1:7 
 ]
-[s S222 . 1 `uc 1 . 1 0 :3:0 
+[s S177 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 SENDB1 1 0 :1:3 
 ]
-[s S225 . 1 `uc 1 . 1 0 :4:0 
+[s S180 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 SYNC1 1 0 :1:4 
 ]
-[s S228 . 1 `uc 1 . 1 0 :1:0 
+[s S183 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 TRMT1 1 0 :1:1 
 ]
-[s S231 . 1 `uc 1 . 1 0 :6:0 
+[s S186 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX91 1 0 :1:6 
 ]
-[s S234 . 1 `uc 1 TX9D1 1 0 :1:0 
+[s S189 . 1 `uc 1 TX9D1 1 0 :1:0 
 ]
-[s S236 . 1 `uc 1 . 1 0 :5:0 
+[s S191 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 TXEN1 1 0 :1:5 
 ]
-[u S239 . 1 `S203 1 . 1 0 `S212 1 . 1 0 `S216 1 . 1 0 `S219 1 . 1 0 `S222 1 . 1 0 `S225 1 . 1 0 `S228 1 . 1 0 `S231 1 . 1 0 `S234 1 . 1 0 `S236 1 . 1 0 ]
-[v _TXSTA1bits TXSTA1bits `VES239  1 e 1 @4012 ]
+[u S194 . 1 `S158 1 . 1 0 `S167 1 . 1 0 `S171 1 . 1 0 `S174 1 . 1 0 `S177 1 . 1 0 `S180 1 . 1 0 `S183 1 . 1 0 `S186 1 . 1 0 `S189 1 . 1 0 `S191 1 . 1 0 ]
+[v _TXSTA1bits TXSTA1bits `VES194  1 e 1 @4012 ]
 "7456
-[v _TXSTAbits TXSTAbits `VES239  1 e 1 @4012 ]
+[v _TXSTAbits TXSTAbits `VES194  1 e 1 @4012 ]
 "7551
 [v _TXREG1 TXREG1 `VEuc  1 e 1 @4013 ]
 "7589
@@ -232,7 +214,7 @@ ERROR_CODE_TIMEOUT 1
 [v _SPBRGH SPBRGH `VEuc  1 e 1 @4016 ]
 "8700
 [v _BAUDCON1 BAUDCON1 `VEuc  1 e 1 @4024 ]
-[s S499 . 1 `uc 1 LFIOFS 1 0 :1:0 
+[s S462 . 1 `uc 1 LFIOFS 1 0 :1:0 
 `uc 1 HFIOFR 1 0 :1:1 
 `uc 1 PRISD 1 0 :1:2 
 `uc 1 SOSCGO 1 0 :1:3 
@@ -242,16 +224,16 @@ ERROR_CODE_TIMEOUT 1
 `uc 1 PLLRDY 1 0 :1:7 
 ]
 "12311
-[u S508 . 1 `S499 1 . 1 0 ]
-[v _OSCCON2bits OSCCON2bits `VES508  1 e 1 @4050 ]
-[s S520 . 1 `uc 1 SCS 1 0 :2:0 
+[u S471 . 1 `S462 1 . 1 0 ]
+[v _OSCCON2bits OSCCON2bits `VES471  1 e 1 @4050 ]
+[s S483 . 1 `uc 1 SCS 1 0 :2:0 
 `uc 1 HFIOFS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 `uc 1 IDLEN 1 0 :1:7 
 ]
 "12379
-[s S526 . 1 `uc 1 SCS0 1 0 :1:0 
+[s S489 . 1 `uc 1 SCS0 1 0 :1:0 
 `uc 1 SCS1 1 0 :1:1 
 `uc 1 FLTS 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -259,14 +241,16 @@ ERROR_CODE_TIMEOUT 1
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S534 . 1 `S520 1 . 1 0 `S526 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES534  1 e 1 @4051 ]
+[u S497 . 1 `S483 1 . 1 0 `S489 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES497  1 e 1 @4051 ]
 "13987
 [v _BRG161 BRG161 `VEb  1 e 0 @32195 ]
 "14017
 [v _BRGH1 BRGH1 `VEb  1 e 0 @32098 ]
 "14284
 [v _CREN CREN `VEb  1 e 0 @32092 ]
+"15661
+[v _RC1IF RC1IF `VEb  1 e 0 @31989 ]
 "15886
 [v _SPEN SPEN `VEb  1 e 0 @32095 ]
 "16180
@@ -291,7 +275,12 @@ ERROR_CODE_TIMEOUT 1
 {
 "34
 } 0
-"105 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\src/librerias/UART.c
+"111 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\src/librerias/UART.c
+[v _UART_RxAvailable UART_RxAvailable `(a  1 e 1 0 ]
+{
+"120
+} 0
+"105
 [v _UART_Rx UART_Rx `(uc  1 e 1 0 ]
 {
 "109
@@ -305,6 +294,14 @@ ERROR_CODE_TIMEOUT 1
 [v _UART_Rx_FRAMING UART_Rx_FRAMING `(E5188  1 e 1 0 ]
 {
 "103
+} 0
+"122
+[v _UART_ErrorHandler UART_ErrorHandler `(v  1 e 1 0 ]
+{
+[v UART_ErrorHandler@errorCode errorCode `E5188  1 a 1 wreg ]
+[v UART_ErrorHandler@errorCode errorCode `E5188  1 a 1 wreg ]
+[v UART_ErrorHandler@errorCode errorCode `E5188  1 a 1 24 ]
+"136
 } 0
 "28
 [v _UART_Init UART_Init `(v  1 e 1 0 ]
@@ -337,9 +334,9 @@ ERROR_CODE_TIMEOUT 1
 {
 "1820
 [v vfprintf@cfmt cfmt `*.31uc  1 a 1 19 ]
-[s S1064 _IO_FILE 0 ]
+[s S1027 _IO_FILE 0 ]
 "1817
-[v vfprintf@fp fp `*.39S1064  1 p 2 15 ]
+[v vfprintf@fp fp `*.39S1027  1 p 2 15 ]
 [v vfprintf@fmt fmt `*.31Cuc  1 p 1 17 ]
 [v vfprintf@ap ap `*.30*.30v  1 p 1 18 ]
 "1840
@@ -347,8 +344,8 @@ ERROR_CODE_TIMEOUT 1
 "1177
 [v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
 {
-[s S1064 _IO_FILE 0 ]
-[v vfpfcnvrt@fp fp `*.39S1064  1 p 2 11 ]
+[s S1027 _IO_FILE 0 ]
+[v vfpfcnvrt@fp fp `*.39S1027  1 p 2 11 ]
 [v vfpfcnvrt@fmt fmt `*.30*.31uc  1 p 1 13 ]
 [v vfpfcnvrt@ap ap `*.30*.30v  1 p 1 14 ]
 "1814
@@ -357,9 +354,9 @@ ERROR_CODE_TIMEOUT 1
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 2 ]
-[u S1042 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
-[s S1045 _IO_FILE 12 `S1042 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
-[v fputc@fp fp `*.39S1045  1 p 2 4 ]
+[u S1005 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[s S1008 _IO_FILE 12 `S1005 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
+[v fputc@fp fp `*.39S1008  1 p 2 4 ]
 "24
 } 0
 "84 C:\Users\admin\MPLABXProjects\multiherramienta_proyecto_universidad.X\src/librerias/UART.c
@@ -382,11 +379,11 @@ ERROR_CODE_TIMEOUT 1
 [v _Clock_Init Clock_Init `(E5188  1 e 1 0 ]
 {
 "45
-[v Clock_Init@bStatus_600 bStatus `a  1 a 1 5 ]
+[v Clock_Init@bStatus_563 bStatus `a  1 a 1 5 ]
 "33
-[v Clock_Init@bStatus_597 bStatus `a  1 a 1 4 ]
+[v Clock_Init@bStatus_560 bStatus `a  1 a 1 4 ]
 "22
-[v Clock_Init@bStatus_596 bStatus `a  1 a 1 3 ]
+[v Clock_Init@bStatus_559 bStatus `a  1 a 1 3 ]
 "8
 [v Clock_Init@bStatus bStatus `a  1 a 1 2 ]
 "4
