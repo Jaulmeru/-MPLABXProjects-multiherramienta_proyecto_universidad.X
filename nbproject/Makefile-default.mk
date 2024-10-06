@@ -51,7 +51,7 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED= src/main.c src/librerias/UART.c src/librerias/clock.c
+SOURCEFILES_QUOTED_IF_SPACED=src/main.c src/librerias/UART.c src/librerias/clock.c
 
 # Object Files Quoted if spaced
 OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/src/main.p1 ${OBJECTDIR}/src/librerias/UART.p1 ${OBJECTDIR}/src/librerias/clock.p1
@@ -88,10 +88,6 @@ MP_PROCESSOR_OPTION=18F45K50
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-
-	
-
-	
 ${OBJECTDIR}/src/main.p1: src/main.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/src" 
 	@${RM} ${OBJECTDIR}/src/main.p1.d 
@@ -117,10 +113,6 @@ ${OBJECTDIR}/src/librerias/clock.p1: src/librerias/clock.c  nbproject/Makefile-$
 	@${FIXDEPS} ${OBJECTDIR}/src/librerias/clock.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
-
-	
- 
-	
 ${OBJECTDIR}/src/main.p1: src/main.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/src" 
 	@${RM} ${OBJECTDIR}/src/main.p1.d 

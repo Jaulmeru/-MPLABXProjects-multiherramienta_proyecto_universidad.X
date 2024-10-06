@@ -1,6 +1,15 @@
 \doxysection{src/librerias/\+UART.h File Reference}
 \label{_u_a_r_t_8h}\index{src/librerias/UART.h@{src/librerias/UART.h}}
-{\ttfamily \#include "{}UART\+\_\+variables.\+h"{}}\newline
+
+
+Libreria para manejo de modulo EUSART del PIC18\+F45\+K50.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$float.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$xc.\+h$>$}\newline
 \doxysubsubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
@@ -31,6 +40,20 @@ bool \textbf{ UART\+\_\+\+Rx\+Available} (void)
 \begin{DoxyCompactList}\small\item\em Valida si esta habilitada la recepcion y si el buffer esta lleno. \end{DoxyCompactList}\item 
 void \textbf{ UART\+\_\+\+Error\+Handler} (\textbf{ UART\+\_\+\+ERROR\+\_\+\+CODE})
 \begin{DoxyCompactList}\small\item\em Manejador de errores UART. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Libreria para manejo de modulo EUSART del PIC18\+F45\+K50. 
+
+\begin{DoxyAuthor}{Author}
+Javier Mendoza ({\texttt{ javierulisesmruiz@gmail.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+03/10/2024 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
 
 
 \doxysubsection{Enumeration Type Documentation}

@@ -124,10 +124,10 @@ void UART_ErrorHandler(UART_ERROR_CODE errorCode){
     printf("Error: ");
     switch(errorCode){
         case ERROR_CODE_UART_OVERFLOW:
-            printf("ERROR_CODE_UART_OVERFLOW");
+            printf("ERROR_CODE_UART_OVERFLOW\r\n");
         break;
         case ERROR_CODE_UART_FRAMING:
-            printf("ERROR_CODE_UART_FRAMING");
+            printf("ERROR_CODE_UART_FRAMING\r\n");
         break;
         case ERROR_CODE_UART_CONFIG:
             printf("ERROR_CODE_UART_CONFIG \r\n");

@@ -9,6 +9,10 @@
 
 <para>Codigo de ejemplo Valida la recepcion de un caracter por UART. </para>
 </listitem>
+            <listitem><para>file <link linkend="_echo__char_8c">echo_char.c</link></para>
+
+<para>Codigo de ejemplo Lee un caracter por UART y lo envia de vuelta. </para>
+</listitem>
             <listitem><para>file <link linkend="_print__ascii_8c">print_ascii.c</link></para>
 
 <para>Codigo de ejemplo Valida el envio de caracteres uno a uno por UART. </para>

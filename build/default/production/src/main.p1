@@ -1,7 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"22 src/main.c
-[; ;src/main.c: 22:     Clock_Init(16000);
+"17 src/main.c
+[; ;src/main.c: 17:     Clock_Init(16000);
 [c E5188 0 1 .. ]
 [n E5188 . ERROR_CODE_OK ERROR_CODE_TIMEOUT  ]
 "19 src/librerias/clock.h
@@ -10,42 +10,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "35 src/librerias/UART.h
 [; ;src/librerias/UART.h: 35: void UART_Init(uint32_t);
 [v _UART_Init `(v ~T0 @X0 0 ef1`ul ]
-"4637 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 4637:     struct {
-[s S195 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S195 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 TRISA6 TRISA7 ]
-"4647
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 4647:     struct {
-[s S196 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S196 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
-"4636
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 4636: typedef union {
-[u S194 `S195 1 `S196 1 ]
-[n S194 . . . ]
-"4658
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 4658: extern volatile TRISAbits_t TRISAbits __attribute__((address(0xF92)));
-[v _TRISAbits `VS194 ~T0 @X0 0 e@3986 ]
-"78 src/librerias/UART.h
+"78
 [; ;src/librerias/UART.h: 78: _Bool UART_RxAvailable(void);
 [v _UART_RxAvailable `(a ~T0 @X0 0 ef ]
 "71
 [; ;src/librerias/UART.h: 71: uint8_t UART_Rx(void);
 [v _UART_Rx `(uc ~T0 @X0 0 ef ]
-"3785 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 3785:     struct {
-[s S164 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S164 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 LATA6 LATA7 ]
-"3795
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 3795:     struct {
-[s S165 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S165 . LA0 LA1 LA2 LA3 LA4 LA5 LA6 LA7 ]
-"3784
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 3784: typedef union {
-[u S163 `S164 1 `S165 1 ]
-[n S163 . . . ]
-"3806
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 3806: extern volatile LATAbits_t LATAbits __attribute__((address(0xF89)));
-[v _LATAbits `VS163 ~T0 @X0 0 e@3977 ]
+"64
+[; ;src/librerias/UART.h: 64: void UART_Tx(uint8_t);
+[v _UART_Tx `(v ~T0 @X0 0 ef1`uc ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 54: __asm("SRCON1 equ 0F57h");
 [; <" SRCON1 equ 0F57h ;# ">
@@ -752,69 +725,49 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x EBTR3  =  OFF       ]
 "83
 [p x EBTRB  =  OFF       ]
-"18 src/main.c
-[; ;src/main.c: 18: static uint8_t readMessage;
-[v _readMessage `uc ~T0 @X0 1 s ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"20
-[; ;src/main.c: 20: int main(void)
+"15 src/main.c
+[; ;src/main.c: 15: int main(void)
 [v _main `(i ~T0 @X0 1 ef ]
-"21
-[; ;src/main.c: 21: {
+"16
+[; ;src/main.c: 16: {
 {
 [e :U _main ]
 [f ]
-"22
-[; ;src/main.c: 22:     Clock_Init(16000);
+"17
+[; ;src/main.c: 17:     Clock_Init(16000);
 [e ( _Clock_Init (1 -> -> 16000 `i `s ]
-"23
-[; ;src/main.c: 23:     UART_Init(9600);
+"18
+[; ;src/main.c: 18:     UART_Init(9600);
 [e ( _UART_Init (1 -> -> -> 9600 `i `l `ul ]
-"24
-[; ;src/main.c: 24:     TRISAbits.RA1 = 0;
-[e = . . _TRISAbits 1 1 -> -> 0 `i `uc ]
-"26
-[; ;src/main.c: 26:     while(1)
+"20
+[; ;src/main.c: 20:     while(1)
 [e :U 640 ]
-"27
-[; ;src/main.c: 27:     {
+"21
+[; ;src/main.c: 21:     {
 {
-"28
-[; ;src/main.c: 28:         if(UART_RxAvailable()){
+"22
+[; ;src/main.c: 22:         if(UART_RxAvailable()){
 [e $ ! != -> ( _UART_RxAvailable ..  `i -> 0 `i 642  ]
 {
-"29
-[; ;src/main.c: 29:             readMessage = UART_Rx();
-[e = _readMessage ( _UART_Rx ..  ]
-"30
-[; ;src/main.c: 30:             if(readMessage == '1') do { LATAbits.LATA1 = 1; } while(0);
-[e $ ! == -> _readMessage `ui -> 49 `ui 643  ]
-[e :U 646 ]
-{
-[e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
-}
-[e :U 645 ]
-[e :U 643 ]
-"31
-[; ;src/main.c: 31:             if(readMessage == '0') do { LATAbits.LATA1 = 0; } while(0);
-[e $ ! == -> _readMessage `ui -> 48 `ui 647  ]
-[e :U 650 ]
-{
-[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
-}
-[e :U 649 ]
-[e :U 647 ]
-"32
-[; ;src/main.c: 32:         }
+"23
+[; ;src/main.c: 23:             uint8_t x = UART_Rx();
+[v _x `uc ~T0 @X0 1 a ]
+[e = _x ( _UART_Rx ..  ]
+"24
+[; ;src/main.c: 24:             UART_Tx(x);
+[e ( _UART_Tx (1 _x ]
+"25
+[; ;src/main.c: 25:         }
 }
 [e :U 642 ]
-"33
-[; ;src/main.c: 33:     }
+"26
+[; ;src/main.c: 26:     }
 }
 [e :U 639 ]
 [e $U 640  ]
 [e :U 641 ]
-"34
-[; ;src/main.c: 34: }
+"27
+[; ;src/main.c: 27: }
 [e :UE 638 ]
 }

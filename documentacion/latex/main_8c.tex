@@ -4,43 +4,11 @@
 {\ttfamily \#include "{}config.\+h"{}}\newline
 {\ttfamily \#include "{}librerias/clock.\+h"{}}\newline
 {\ttfamily \#include "{}librerias/\+UART.\+h"{}}\newline
-\doxysubsubsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\#define \textbf{ LED\+\_\+\+ON}()
-\item 
-\#define \textbf{ LED\+\_\+\+OFF}()
-\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 int \textbf{ main} (void)
 \end{DoxyCompactItemize}
-
-
-\doxysubsection{Macro Definition Documentation}
-\index{main.c@{main.c}!LED\_OFF@{LED\_OFF}}
-\index{LED\_OFF@{LED\_OFF}!main.c@{main.c}}
-\doxysubsubsection{LED\_OFF}
-{\footnotesize\ttfamily \label{main_8c_abbeb6a9eaae16d9de86df5a82bbf81b5} 
-\#define LED\+\_\+\+OFF(\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
-
-{\bfseries Value\+:}
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keywordflow}{do}\ \{\ LATAbits.LATA1\ =\ 0;\ \}\ \textcolor{keywordflow}{while}(0)}
-
-\end{DoxyCode}
-\index{main.c@{main.c}!LED\_ON@{LED\_ON}}
-\index{LED\_ON@{LED\_ON}!main.c@{main.c}}
-\doxysubsubsection{LED\_ON}
-{\footnotesize\ttfamily \label{main_8c_afc74da9605d4f56e0664f5f872018ac3} 
-\#define LED\+\_\+\+ON(\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
-
-{\bfseries Value\+:}
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keywordflow}{do}\ \{\ LATAbits.LATA1\ =\ 1;\ \}\ \textcolor{keywordflow}{while}(0)}
-
-\end{DoxyCode}
 
 
 \doxysubsection{Function Documentation}

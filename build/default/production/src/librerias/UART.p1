@@ -1204,7 +1204,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;src/librerias/UART.c: 126:         case ERROR_CODE_UART_OVERFLOW:
 [e :U 668 ]
 "127
-[; ;src/librerias/UART.c: 127:             printf("ERROR_CODE_UART_OVERFLOW");
+[; ;src/librerias/UART.c: 127:             printf("ERROR_CODE_UART_OVERFLOW\r\n");
 [e ( _printf :s 20C ]
 "128
 [; ;src/librerias/UART.c: 128:         break;
@@ -1213,7 +1213,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;src/librerias/UART.c: 129:         case ERROR_CODE_UART_FRAMING:
 [e :U 669 ]
 "130
-[; ;src/librerias/UART.c: 130:             printf("ERROR_CODE_UART_FRAMING");
+[; ;src/librerias/UART.c: 130:             printf("ERROR_CODE_UART_FRAMING\r\n");
 [e ( _printf :s 21C ]
 "131
 [; ;src/librerias/UART.c: 131:         break;
@@ -1242,8 +1242,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 664 ]
 }
 [p f _printf 8388608 ]
-[a 20C 69 82 82 79 82 95 67 79 68 69 95 85 65 82 84 95 79 86 69 82 70 76 79 87 0 ]
-[a 21C 69 82 82 79 82 95 67 79 68 69 95 85 65 82 84 95 70 82 65 77 73 78 71 0 ]
 [a 8C 56 32 98 105 116 115 32 0 ]
 [a 7C 49 54 32 98 105 116 115 32 0 ]
 [a 3C 65 115 105 110 99 114 111 110 111 32 0 ]
@@ -1254,6 +1252,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [a 10C 80 117 101 114 116 111 58 32 0 ]
 [a 1C 77 111 100 111 58 32 0 ]
 [a 6C 66 97 117 100 114 97 116 101 58 32 0 ]
+[a 20C 69 82 82 79 82 95 67 79 68 69 95 85 65 82 84 95 79 86 69 82 70 76 79 87 13 10 0 ]
+[a 21C 69 82 82 79 82 95 67 79 68 69 95 85 65 82 84 95 70 82 65 77 73 78 71 13 10 0 ]
 [a 9C 120 32 98 97 117 100 105 111 115 32 13 10 0 ]
 [a 12C 68 101 115 104 97 98 105 108 105 116 97 100 111 32 13 10 0 ]
 [a 15C 68 101 115 104 97 98 105 108 105 116 97 100 111 32 13 10 0 ]

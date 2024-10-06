@@ -20,7 +20,8 @@ int main(void)
     while(1)
     {
         if(UART_RxAvailable()){
-            UART_Tx(UART_Rx());
+            uint8_t x = UART_Rx();
+            UART_Tx(x);
         }
     }
 }

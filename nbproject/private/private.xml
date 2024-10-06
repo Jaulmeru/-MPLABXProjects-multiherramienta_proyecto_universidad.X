@@ -3,13 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/admin/MPLABXProjects/multiherramienta_proyecto_universidad.X/src/librerias/UART_variables.h</file>
+            <file>file:/C:/Users/admin/MPLABXProjects/multiherramienta_proyecto_universidad.X/Examples/UART/echo_char.c</file>
+            <file>file:/C:/Users/admin/MPLABXProjects/multiherramienta_proyecto_universidad.X/README.md</file>
             <file>file:/C:/Users/admin/MPLABXProjects/multiherramienta_proyecto_universidad.X/src/librerias/UART.h</file>
             <file>file:/C:/Users/admin/MPLABXProjects/multiherramienta_proyecto_universidad.X/Examples/UART/print_ascii.c</file>
             <file>file:/C:/Users/admin/MPLABXProjects/multiherramienta_proyecto_universidad.X/src/librerias/UART.c</file>
             <file>file:/C:/Users/admin/MPLABXProjects/multiherramienta_proyecto_universidad.X/Examples/UART/command_led.c</file>
+            <file>file:/C:/Users/admin/MPLABXProjects/multiherramienta_proyecto_universidad.X/Makefile</file>
             <file>file:/C:/Users/admin/MPLABXProjects/multiherramienta_proyecto_universidad.X/src/main.c</file>
-            <file>file:/C:/Users/admin/MPLABXProjects/multiherramienta_proyecto_universidad.X/src/librerias/UART_variables.c</file>
+            <file>file:/C:/Users/admin/MPLABXProjects/multiherramienta_proyecto_universidad.X/defmplabxtrace.log</file>
         </group>
     </open-files>
 </project-private>

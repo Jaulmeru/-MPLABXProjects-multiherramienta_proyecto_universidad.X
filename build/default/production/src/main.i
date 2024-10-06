@@ -8434,23 +8434,16 @@ void UART_ErrorHandler(UART_ERROR_CODE);
 # 13 "src/main.c" 2
 
 
-
-
-
-static uint8_t readMessage;
-
 int main(void)
 {
     Clock_Init(16000);
     UART_Init(9600);
-    TRISAbits.RA1 = 0;
 
     while(1)
     {
         if(UART_RxAvailable()){
-            readMessage = UART_Rx();
-            if(readMessage == '1') do { LATAbits.LATA1 = 1; } while(0);
-            if(readMessage == '0') do { LATAbits.LATA1 = 0; } while(0);
+            uint8_t x = UART_Rx();
+            UART_Tx(x);
         }
     }
 }

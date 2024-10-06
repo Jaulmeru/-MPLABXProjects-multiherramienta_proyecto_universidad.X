@@ -16,10 +16,8 @@
 <para>Funciones para manejo de modulo EUSART del PIC18F45K50. </para>
 </listitem>
             <listitem><para>file <link linkend="__u_a_r_t_8h">UART.h</link></para>
-</listitem>
-            <listitem><para>file <link linkend="__u_a_r_t__variables_8c">UART_variables.c</link></para>
-</listitem>
-            <listitem><para>file <link linkend="__u_a_r_t__variables_8h">UART_variables.h</link></para>
+
+<para>Libreria para manejo de modulo EUSART del PIC18F45K50. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
