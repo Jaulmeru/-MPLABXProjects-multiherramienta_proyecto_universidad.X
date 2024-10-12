@@ -1,8 +1,9 @@
 \chapter{UART}
-\label{md_documentacion_2_u_a_r_t}\index{UART@{UART}}
+\hypertarget{md_documentacion_2_u_a_r_t}{}\label{md_documentacion_2_u_a_r_t}\index{UART@{UART}}
 \label{md_documentacion_2_u_a_r_t_autotoc_md0}%
-\doxysection{Que es y como funciona}\label{md_documentacion_2_u_a_r_t_autotoc_md1}
-[WIP] Explicacion y base teorica sobre UART\doxysection{Impliementación en PIC18\+F45\+K50}\label{md_documentacion_2_u_a_r_t_autotoc_md2}
+\Hypertarget{md_documentacion_2_u_a_r_t_autotoc_md0}%
+\hypertarget{md_documentacion_2_u_a_r_t_autotoc_md1}{}\doxysection{\texorpdfstring{Que es y como funciona}{Que es y como funciona}}\label{md_documentacion_2_u_a_r_t_autotoc_md1}
+\mbox{[}WIP\mbox{]} Explicacion y base teorica sobre UART\hypertarget{md_documentacion_2_u_a_r_t_autotoc_md2}{}\doxysection{\texorpdfstring{Impliementación en PIC18\+F45\+K50}{Impliementación en PIC18\+F45\+K50}}\label{md_documentacion_2_u_a_r_t_autotoc_md2}
 El PIC seleccionado cuenta con un modulo EUSART (Enhanced Universal Synchronous Asynchronous Receiver Transmitter) por lo que se podra trabajar en modo asincrono o sincrono.
 
 La operacion del modulo EUSART es controlada por 3 registros ~\newline
@@ -17,7 +18,7 @@ La operacion del modulo EUSART es controlada por 3 registros ~\newline
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\doxysubsection{Configuracion de transmision Asincrona}\label{md_documentacion_2_u_a_r_t_autotoc_md4}
+\hypertarget{md_documentacion_2_u_a_r_t_autotoc_md4}{}\doxysubsection{\texorpdfstring{Configuracion de transmision Asincrona}{Configuracion de transmision Asincrona}}\label{md_documentacion_2_u_a_r_t_autotoc_md4}
 Segun el propio datasheet. Estos son los pasos para realizar una transmision asincrona\+:
 
 \begin{quote}
@@ -33,7 +34,7 @@ Segun el propio datasheet. Estos son los pasos para realizar una transmision asi
 \item Cargue datos de 8 bits en el registro TXREGx. Esto iniciará la transmisión. ~\newline
  
 \end{DoxyEnumerate}\end{quote}
-\doxysubsubsection{1 -\/ Configurar los baudios}\label{md_documentacion_2_u_a_r_t_autotoc_md5}
+\hypertarget{md_documentacion_2_u_a_r_t_autotoc_md5}{}\doxysubsubsection{\texorpdfstring{1 -\/ Configurar los baudios}{1 -\/ Configurar los baudios}}\label{md_documentacion_2_u_a_r_t_autotoc_md5}
 Los registros que se usaran son\+:
 
 
@@ -90,7 +91,7 @@ Con esta configuracion podemos configurar los baudios entre los mas utilizados c
 57.\+6k   &57.\+69k   &0.\+16   &207    \\\cline{1-4}
 115.\+2k   &115.\+39k   &0.\+16   &103   \\\cline{1-4}
 \end{longtabu}
-\doxysubsubsection{2 -\/ Configurar pines como tri-\/estado}\label{md_documentacion_2_u_a_r_t_autotoc_md6}
+\hypertarget{md_documentacion_2_u_a_r_t_autotoc_md6}{}\doxysubsubsection{\texorpdfstring{2 -\/ Configurar pines como tri-\/estado}{2 -\/ Configurar pines como tri-\/estado}}\label{md_documentacion_2_u_a_r_t_autotoc_md6}
 Simplemente se aplican a los correspondientes registros TRIS un 1 ~\newline
 
 
@@ -112,7 +113,7 @@ Simplemente se aplican a los correspondientes registros TRIS un 1 ~\newline
 \item Se coloca como tri estado para el pin Rx
 \end{DoxyItemize}
 \end{DoxyItemize}
-\end{DoxyItemize}\doxysubsubsection{3 -\/ Habilitacion del puerto serie}\label{md_documentacion_2_u_a_r_t_autotoc_md7}
+\end{DoxyItemize}\hypertarget{md_documentacion_2_u_a_r_t_autotoc_md7}{}\doxysubsubsection{\texorpdfstring{3 -\/ Habilitacion del puerto serie}{3 -\/ Habilitacion del puerto serie}}\label{md_documentacion_2_u_a_r_t_autotoc_md7}
 El registro SYNC ya fue ajustado en el paso 1. ~\newline
 
 
@@ -129,10 +130,10 @@ El registro SYNC ya fue ajustado en el paso 1. ~\newline
 
 \end{DoxyItemize}
 \end{DoxyItemize}
-\end{DoxyItemize}\doxysubsubsection{4 -\/ 9bits}\label{md_documentacion_2_u_a_r_t_autotoc_md8}
-Estas funcion si bien podemos agregarla en un futuro. Por el momento no sera inplementada.\doxysubsubsection{5 -\/ Inversion de polaridad}\label{md_documentacion_2_u_a_r_t_autotoc_md9}
+\end{DoxyItemize}\hypertarget{md_documentacion_2_u_a_r_t_autotoc_md8}{}\doxysubsubsection{\texorpdfstring{4 -\/ 9bits}{4 -\/ 9bits}}\label{md_documentacion_2_u_a_r_t_autotoc_md8}
+Estas funcion si bien podemos agregarla en un futuro. Por el momento no sera inplementada.\hypertarget{md_documentacion_2_u_a_r_t_autotoc_md9}{}\doxysubsubsection{\texorpdfstring{5 -\/ Inversion de polaridad}{5 -\/ Inversion de polaridad}}\label{md_documentacion_2_u_a_r_t_autotoc_md9}
 No implementada ~\newline
-\doxysubsubsection{6 -\/ Habilitar transmision}\label{md_documentacion_2_u_a_r_t_autotoc_md10}
+\hypertarget{md_documentacion_2_u_a_r_t_autotoc_md10}{}\doxysubsubsection{\texorpdfstring{6 -\/ Habilitar transmision}{6 -\/ Habilitar transmision}}\label{md_documentacion_2_u_a_r_t_autotoc_md10}
 
 \begin{DoxyItemize}
 \item TXSTA\+: ~\newline
@@ -142,11 +143,11 @@ No implementada ~\newline
  {\itshape {\bfseries{1 = Transmision habilitada}}} ~\newline
  0 = Transmision deshabilitada
 \end{DoxyItemize}
-\end{DoxyItemize}\doxysubsubsection{7 -\/ Interrupcciones}\label{md_documentacion_2_u_a_r_t_autotoc_md11}
-No implementado\doxysubsubsection{8 -\/ Carga bit 9}\label{md_documentacion_2_u_a_r_t_autotoc_md12}
-No implementado\doxysubsubsection{9 -\/ Carga de dato}\label{md_documentacion_2_u_a_r_t_autotoc_md13}
+\end{DoxyItemize}\hypertarget{md_documentacion_2_u_a_r_t_autotoc_md11}{}\doxysubsubsection{\texorpdfstring{7 -\/ Interrupcciones}{7 -\/ Interrupcciones}}\label{md_documentacion_2_u_a_r_t_autotoc_md11}
+No implementado\hypertarget{md_documentacion_2_u_a_r_t_autotoc_md12}{}\doxysubsubsection{\texorpdfstring{8 -\/ Carga bit 9}{8 -\/ Carga bit 9}}\label{md_documentacion_2_u_a_r_t_autotoc_md12}
+No implementado\hypertarget{md_documentacion_2_u_a_r_t_autotoc_md13}{}\doxysubsubsection{\texorpdfstring{9 -\/ Carga de dato}{9 -\/ Carga de dato}}\label{md_documentacion_2_u_a_r_t_autotoc_md13}
 Aqui solante se trata de cargar el dato a TXREG1 que lo pasara paralelamente a TSR (Transmit Shift Register). El cual pasara los datos hacia el pin de forma serial. ~\newline
- Si bien no esta especificado en las instrucciones anteriores se agregara una pequeña funcion con el registro TRMT. Este estara en 0 mientras aun haya datos pendientes en TSR.\doxysubsection{Configuración de Recepción Asincrónica}\label{md_documentacion_2_u_a_r_t_autotoc_md14}
+ Si bien no esta especificado en las instrucciones anteriores se agregara una pequeña funcion con el registro TRMT. Este estara en 0 mientras aun haya datos pendientes en TSR.\hypertarget{md_documentacion_2_u_a_r_t_autotoc_md14}{}\doxysubsection{\texorpdfstring{Configuración de Recepción Asincrónica}{Configuración de Recepción Asincrónica}}\label{md_documentacion_2_u_a_r_t_autotoc_md14}
 Segun el propio datasheet. Estos son los pasos para realizar una recepcion asincrona\+:
 
 \begin{quote}
@@ -164,7 +165,7 @@ Segun el propio datasheet. Estos son los pasos para realizar una recepcion asinc
 \item Si ocurrió un desbordamiento, borre la bandera OERR desactivando el bit de habilitación del receptor CREN. ~\newline
  
 \end{DoxyEnumerate}\end{quote}
-Como se ve, hasta el paso 6 es lo mismo para la transmision, asi que lo obviaremos.\doxysubsubsection{7 -\/ Habilitar recepcion}\label{md_documentacion_2_u_a_r_t_autotoc_md15}
+Como se ve, hasta el paso 6 es lo mismo para la transmision, asi que lo obviaremos.\hypertarget{md_documentacion_2_u_a_r_t_autotoc_md15}{}\doxysubsubsection{\texorpdfstring{7 -\/ Habilitar recepcion}{7 -\/ Habilitar recepcion}}\label{md_documentacion_2_u_a_r_t_autotoc_md15}
 
 \begin{DoxyItemize}
 \item RCSTA\+: ~\newline
@@ -175,7 +176,7 @@ Como se ve, hasta el paso 6 es lo mismo para la transmision, asi que lo obviarem
  0 = Recepcion deshabilitada ~\newline
 
 \end{DoxyItemize}
-\end{DoxyItemize}\doxysubsubsection{8 -\/ Revisar bandera}\label{md_documentacion_2_u_a_r_t_autotoc_md16}
+\end{DoxyItemize}\hypertarget{md_documentacion_2_u_a_r_t_autotoc_md16}{}\doxysubsubsection{\texorpdfstring{8 -\/ Revisar bandera}{8 -\/ Revisar bandera}}\label{md_documentacion_2_u_a_r_t_autotoc_md16}
 
 \begin{DoxyItemize}
 \item PIR1\+: ~\newline
@@ -187,7 +188,7 @@ Como se ve, hasta el paso 6 es lo mismo para la transmision, asi que lo obviarem
 \end{DoxyItemize}
 \end{DoxyItemize}
 
-Se va a leer el registro, cuando este tenga 1 significa que hay un dato esperando a ser leido.\doxysubsubsection{9 -\/ Leer errores}\label{md_documentacion_2_u_a_r_t_autotoc_md17}
+Se va a leer el registro, cuando este tenga 1 significa que hay un dato esperando a ser leido.\hypertarget{md_documentacion_2_u_a_r_t_autotoc_md17}{}\doxysubsubsection{\texorpdfstring{9 -\/ Leer errores}{9 -\/ Leer errores}}\label{md_documentacion_2_u_a_r_t_autotoc_md17}
 
 \begin{DoxyItemize}
 \item RCSTA\+: ~\newline
@@ -206,6 +207,6 @@ Se va a leer el registro, cuando este tenga 1 significa que hay un dato esperand
 \item Este error es ocacionado cuando se llena el buffer de datos y no se leyeron antes de llegar mas
 \end{DoxyItemize}
 \end{DoxyItemize}
-\end{DoxyItemize}\doxysubsubsection{10 -\/ Leer dato}\label{md_documentacion_2_u_a_r_t_autotoc_md18}
-Para obtener el dato siemplemente hay que leer el registro RCREG1\doxysubsubsection{11 -\/ Borrar error de desbordamiento}\label{md_documentacion_2_u_a_r_t_autotoc_md19}
+\end{DoxyItemize}\hypertarget{md_documentacion_2_u_a_r_t_autotoc_md18}{}\doxysubsubsection{\texorpdfstring{10 -\/ Leer dato}{10 -\/ Leer dato}}\label{md_documentacion_2_u_a_r_t_autotoc_md18}
+Para obtener el dato siemplemente hay que leer el registro RCREG1\hypertarget{md_documentacion_2_u_a_r_t_autotoc_md19}{}\doxysubsubsection{\texorpdfstring{11 -\/ Borrar error de desbordamiento}{11 -\/ Borrar error de desbordamiento}}\label{md_documentacion_2_u_a_r_t_autotoc_md19}
 Para borrar el registro de OERR hay que dehabilitar y volver a habilitar CREN 

@@ -168,8 +168,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7551
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 7551: extern volatile unsigned char TXREG1 __attribute__((address(0xFAD)));
 [v _TXREG1 `Vuc ~T0 @X0 0 e@4013 ]
-"88 src/librerias/UART.c
-[; ;src/librerias/UART.c: 88: UART_ERROR_CODE UART_Rx_OVERFLOW(){
+"89 src/librerias/UART.c
+[; ;src/librerias/UART.c: 89: UART_ERROR_CODE UART_Rx_OVERFLOW(){
 [c E5188 0 1 2 3 .. ]
 [n E5188 . ERROR_CODE_UART_OK ERROR_CODE_UART_OVERFLOW ERROR_CODE_UART_FRAMING ERROR_CODE_UART_CONFIG  ]
 "7594 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
@@ -851,162 +851,165 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;src/librerias/UART.c: 25:     (CREN) ? printf("Habilitado \r\n"):printf("Deshabilitado \r\n");
 [e ? _CREN : ( _printf :s 17C ( _printf :s 18C ]
 "26
-[; ;src/librerias/UART.c: 26: }
+[; ;src/librerias/UART.c: 26:     printf("\r\n\r\n");
+[e ( _printf :s 19C ]
+"27
+[; ;src/librerias/UART.c: 27: }
 [e :UE 638 ]
 }
-"28
-[; ;src/librerias/UART.c: 28: void UART_Init(uint32_t baudrate){
+"29
+[; ;src/librerias/UART.c: 29: void UART_Init(uint32_t baudrate){
 [v _UART_Init `(v ~T0 @X0 1 ef1`ul ]
 {
 [e :U _UART_Init ]
 [v _baudrate `ul ~T0 @X0 1 r1 ]
 [f ]
-"29
-[; ;src/librerias/UART.c: 29:     TXSTA1bits.SYNC1 = 0;
-[e = . . _TXSTA1bits 5 1 -> -> 0 `i `uc ]
 "30
-[; ;src/librerias/UART.c: 30:     TXSTA1bits.BRGH1 = 1;
-[e = . . _TXSTA1bits 2 1 -> -> 1 `i `uc ]
+[; ;src/librerias/UART.c: 30:     TXSTA1bits.SYNC1 = 0;
+[e = . . _TXSTA1bits 5 1 -> -> 0 `i `uc ]
 "31
-[; ;src/librerias/UART.c: 31:     BAUDCON1 = 0x4A;
-[e = _BAUDCON1 -> -> 74 `i `uc ]
+[; ;src/librerias/UART.c: 31:     TXSTA1bits.BRGH1 = 1;
+[e = . . _TXSTA1bits 2 1 -> -> 1 `i `uc ]
 "32
-[; ;src/librerias/UART.c: 32:     UART_select_baud(baudrate);
-[e ( _UART_select_baud (1 _baudrate ]
+[; ;src/librerias/UART.c: 32:     BAUDCON1 = 0x4A;
+[e = _BAUDCON1 -> -> 74 `i `uc ]
 "33
-[; ;src/librerias/UART.c: 33:     TRISC6 = 1;
-[e = _TRISC6 -> -> 1 `i `b ]
+[; ;src/librerias/UART.c: 33:     UART_select_baud(baudrate);
+[e ( _UART_select_baud (1 _baudrate ]
 "34
-[; ;src/librerias/UART.c: 34:     TRISC7 = 1;
-[e = _TRISC7 -> -> 1 `i `b ]
+[; ;src/librerias/UART.c: 34:     TRISC6 = 1;
+[e = _TRISC6 -> -> 1 `i `b ]
 "35
-[; ;src/librerias/UART.c: 35:     RCSTAbits.SPEN = 1;
-[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
+[; ;src/librerias/UART.c: 35:     TRISC7 = 1;
+[e = _TRISC7 -> -> 1 `i `b ]
 "36
-[; ;src/librerias/UART.c: 36:     TXSTAbits.TXEN1 = 1;
-[e = . . _TXSTAbits 9 1 -> -> 1 `i `uc ]
+[; ;src/librerias/UART.c: 36:     RCSTAbits.SPEN = 1;
+[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
 "37
-[; ;src/librerias/UART.c: 37:     RCSTAbits.CREN = 1;
-[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+[; ;src/librerias/UART.c: 37:     TXSTAbits.TXEN1 = 1;
+[e = . . _TXSTAbits 9 1 -> -> 1 `i `uc ]
 "38
-[; ;src/librerias/UART.c: 38:     UART_config_show();
-[e ( _UART_config_show ..  ]
+[; ;src/librerias/UART.c: 38:     RCSTAbits.CREN = 1;
+[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
 "39
-[; ;src/librerias/UART.c: 39:     ANSELC = 0x0;
-[e = _ANSELC -> -> 0 `i `uc ]
+[; ;src/librerias/UART.c: 39:     UART_config_show();
+[e ( _UART_config_show ..  ]
 "40
-[; ;src/librerias/UART.c: 40: };
+[; ;src/librerias/UART.c: 40:     ANSELC = 0x0;
+[e = _ANSELC -> -> 0 `i `uc ]
+"41
+[; ;src/librerias/UART.c: 41: };
 [e :UE 639 ]
 }
-"42
-[; ;src/librerias/UART.c: 42: void UART_select_baud(uint32_t baudrate){
+"43
+[; ;src/librerias/UART.c: 43: void UART_select_baud(uint32_t baudrate){
 [v _UART_select_baud `(v ~T0 @X0 1 ef1`ul ]
 {
 [e :U _UART_select_baud ]
 [v _baudrate `ul ~T0 @X0 1 r1 ]
 [f ]
-"43
-[; ;src/librerias/UART.c: 43:     switch (baudrate){
+"44
+[; ;src/librerias/UART.c: 44:     switch (baudrate){
 [e $U 642  ]
 {
-"44
-[; ;src/librerias/UART.c: 44:         case 300:
-[e :U 643 ]
 "45
-[; ;src/librerias/UART.c: 45:             SPBRGH = 0x9C;
-[e = _SPBRGH -> -> 156 `i `uc ]
+[; ;src/librerias/UART.c: 45:         case 300:
+[e :U 643 ]
 "46
-[; ;src/librerias/UART.c: 46:             SPBRG = 0x3F;
-[e = _SPBRG -> -> 63 `i `uc ]
+[; ;src/librerias/UART.c: 46:             SPBRGH = 0x9C;
+[e = _SPBRGH -> -> 156 `i `uc ]
 "47
-[; ;src/librerias/UART.c: 47:             break;
-[e $U 641  ]
+[; ;src/librerias/UART.c: 47:             SPBRG = 0x3F;
+[e = _SPBRG -> -> 63 `i `uc ]
 "48
-[; ;src/librerias/UART.c: 48:         case 1200:
-[e :U 644 ]
+[; ;src/librerias/UART.c: 48:             break;
+[e $U 641  ]
 "49
-[; ;src/librerias/UART.c: 49:             SPBRGH = 0x27;
-[e = _SPBRGH -> -> 39 `i `uc ]
+[; ;src/librerias/UART.c: 49:         case 1200:
+[e :U 644 ]
 "50
-[; ;src/librerias/UART.c: 50:             SPBRG = 0x0F;
-[e = _SPBRG -> -> 15 `i `uc ]
+[; ;src/librerias/UART.c: 50:             SPBRGH = 0x27;
+[e = _SPBRGH -> -> 39 `i `uc ]
 "51
-[; ;src/librerias/UART.c: 51:             break;
-[e $U 641  ]
+[; ;src/librerias/UART.c: 51:             SPBRG = 0x0F;
+[e = _SPBRG -> -> 15 `i `uc ]
 "52
-[; ;src/librerias/UART.c: 52:         case 2400:
-[e :U 645 ]
+[; ;src/librerias/UART.c: 52:             break;
+[e $U 641  ]
 "53
-[; ;src/librerias/UART.c: 53:             SPBRGH = 0x13;
-[e = _SPBRGH -> -> 19 `i `uc ]
+[; ;src/librerias/UART.c: 53:         case 2400:
+[e :U 645 ]
 "54
-[; ;src/librerias/UART.c: 54:             SPBRG = 0x87;
-[e = _SPBRG -> -> 135 `i `uc ]
+[; ;src/librerias/UART.c: 54:             SPBRGH = 0x13;
+[e = _SPBRGH -> -> 19 `i `uc ]
 "55
-[; ;src/librerias/UART.c: 55:             break;
-[e $U 641  ]
+[; ;src/librerias/UART.c: 55:             SPBRG = 0x87;
+[e = _SPBRG -> -> 135 `i `uc ]
 "56
-[; ;src/librerias/UART.c: 56:         case 10417:
-[e :U 646 ]
+[; ;src/librerias/UART.c: 56:             break;
+[e $U 641  ]
 "57
-[; ;src/librerias/UART.c: 57:             SPBRGH = 0x04;
-[e = _SPBRGH -> -> 4 `i `uc ]
+[; ;src/librerias/UART.c: 57:         case 10417:
+[e :U 646 ]
 "58
-[; ;src/librerias/UART.c: 58:             SPBRG = 0x7F;
-[e = _SPBRG -> -> 127 `i `uc ]
-"59
-[; ;src/librerias/UART.c: 59:             break;
-[e $U 641  ]
-"60
-[; ;src/librerias/UART.c: 60:         case 19200:
-[e :U 647 ]
-"61
-[; ;src/librerias/UART.c: 61:             SPBRGH = 0x02;
-[e = _SPBRGH -> -> 2 `i `uc ]
-"62
-[; ;src/librerias/UART.c: 62:             SPBRG = 0x70;
-[e = _SPBRG -> -> 112 `i `uc ]
-"63
-[; ;src/librerias/UART.c: 63:             break;
-[e $U 641  ]
-"64
-[; ;src/librerias/UART.c: 64:         case 57600:
-[e :U 648 ]
-"65
-[; ;src/librerias/UART.c: 65:             SPBRGH = 0x00;
-[e = _SPBRGH -> -> 0 `i `uc ]
-"66
-[; ;src/librerias/UART.c: 66:             SPBRG = 0xCF;
-[e = _SPBRG -> -> 207 `i `uc ]
-"67
-[; ;src/librerias/UART.c: 67:             break;
-[e $U 641  ]
-"68
-[; ;src/librerias/UART.c: 68:         case 115200:
-[e :U 649 ]
-"69
-[; ;src/librerias/UART.c: 69:             SPBRGH = 0x00;
-[e = _SPBRGH -> -> 0 `i `uc ]
-"70
-[; ;src/librerias/UART.c: 70:             SPBRG = 0x67;
-[e = _SPBRG -> -> 103 `i `uc ]
-"71
-[; ;src/librerias/UART.c: 71:             break;
-[e $U 641  ]
-"72
-[; ;src/librerias/UART.c: 72:         default:
-[e :U 650 ]
-"73
-[; ;src/librerias/UART.c: 73:             SPBRGH = 0x04;
+[; ;src/librerias/UART.c: 58:             SPBRGH = 0x04;
 [e = _SPBRGH -> -> 4 `i `uc ]
-"74
-[; ;src/librerias/UART.c: 74:             SPBRG = 0xE1;
-[e = _SPBRG -> -> 225 `i `uc ]
-"75
-[; ;src/librerias/UART.c: 75:             break;
+"59
+[; ;src/librerias/UART.c: 59:             SPBRG = 0x7F;
+[e = _SPBRG -> -> 127 `i `uc ]
+"60
+[; ;src/librerias/UART.c: 60:             break;
 [e $U 641  ]
+"61
+[; ;src/librerias/UART.c: 61:         case 19200:
+[e :U 647 ]
+"62
+[; ;src/librerias/UART.c: 62:             SPBRGH = 0x02;
+[e = _SPBRGH -> -> 2 `i `uc ]
+"63
+[; ;src/librerias/UART.c: 63:             SPBRG = 0x70;
+[e = _SPBRG -> -> 112 `i `uc ]
+"64
+[; ;src/librerias/UART.c: 64:             break;
+[e $U 641  ]
+"65
+[; ;src/librerias/UART.c: 65:         case 57600:
+[e :U 648 ]
+"66
+[; ;src/librerias/UART.c: 66:             SPBRGH = 0x00;
+[e = _SPBRGH -> -> 0 `i `uc ]
+"67
+[; ;src/librerias/UART.c: 67:             SPBRG = 0xCF;
+[e = _SPBRG -> -> 207 `i `uc ]
+"68
+[; ;src/librerias/UART.c: 68:             break;
+[e $U 641  ]
+"69
+[; ;src/librerias/UART.c: 69:         case 115200:
+[e :U 649 ]
+"70
+[; ;src/librerias/UART.c: 70:             SPBRGH = 0x00;
+[e = _SPBRGH -> -> 0 `i `uc ]
+"71
+[; ;src/librerias/UART.c: 71:             SPBRG = 0x67;
+[e = _SPBRG -> -> 103 `i `uc ]
+"72
+[; ;src/librerias/UART.c: 72:             break;
+[e $U 641  ]
+"73
+[; ;src/librerias/UART.c: 73:         default:
+[e :U 650 ]
+"74
+[; ;src/librerias/UART.c: 74:             SPBRGH = 0x04;
+[e = _SPBRGH -> -> 4 `i `uc ]
+"75
+[; ;src/librerias/UART.c: 75:             SPBRG = 0xE1;
+[e = _SPBRG -> -> 225 `i `uc ]
 "76
-[; ;src/librerias/UART.c: 76:     }
+[; ;src/librerias/UART.c: 76:             break;
+[e $U 641  ]
+"77
+[; ;src/librerias/UART.c: 77:     }
 }
 [e $U 641  ]
 [e :U 642 ]
@@ -1019,216 +1022,216 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> -> 115200 `l `ul 649
  650 ]
 [e :U 641 ]
-"77
-[; ;src/librerias/UART.c: 77: }
+"78
+[; ;src/librerias/UART.c: 78: }
 [e :UE 640 ]
 }
-"79
-[; ;src/librerias/UART.c: 79: void UART_Tx(uint8_t dato){
+"80
+[; ;src/librerias/UART.c: 80: void UART_Tx(uint8_t dato){
 [v _UART_Tx `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _UART_Tx ]
 [v _dato `uc ~T0 @X0 1 r1 ]
 [f ]
-"80
-[; ;src/librerias/UART.c: 80:     while(TRMT == 0);
+"81
+[; ;src/librerias/UART.c: 81:     while(TRMT == 0);
 [e $U 652  ]
 [e :U 653 ]
 [e :U 652 ]
 [e $ == -> _TRMT `i -> 0 `i 653  ]
 [e :U 654 ]
-"81
-[; ;src/librerias/UART.c: 81:     TXREG1 = dato;
-[e = _TXREG1 _dato ]
 "82
-[; ;src/librerias/UART.c: 82: }
+[; ;src/librerias/UART.c: 82:     TXREG1 = dato;
+[e = _TXREG1 _dato ]
+"83
+[; ;src/librerias/UART.c: 83: }
 [e :UE 651 ]
 }
-"84
-[; ;src/librerias/UART.c: 84: void putch(char data){
+"85
+[; ;src/librerias/UART.c: 85: void putch(char data){
 [v _putch `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _putch ]
 [v _data `uc ~T0 @X0 1 r1 ]
 [f ]
-"85
-[; ;src/librerias/UART.c: 85:     UART_Tx(data);
-[e ( _UART_Tx (1 -> _data `uc ]
 "86
-[; ;src/librerias/UART.c: 86: }
+[; ;src/librerias/UART.c: 86:     UART_Tx(data);
+[e ( _UART_Tx (1 -> _data `uc ]
+"87
+[; ;src/librerias/UART.c: 87: }
 [e :UE 655 ]
 }
-"88
-[; ;src/librerias/UART.c: 88: UART_ERROR_CODE UART_Rx_OVERFLOW(){
+"89
+[; ;src/librerias/UART.c: 89: UART_ERROR_CODE UART_Rx_OVERFLOW(){
 [v _UART_Rx_OVERFLOW `(E5188 ~T0 @X0 1 ef ]
 {
 [e :U _UART_Rx_OVERFLOW ]
 [f ]
-"89
-[; ;src/librerias/UART.c: 89:     if (RCSTAbits.OERR) {
+"90
+[; ;src/librerias/UART.c: 90:     if (RCSTAbits.OERR) {
 [e $ ! != -> . . _RCSTAbits 0 1 `i -> 0 `i 657  ]
 {
-"90
-[; ;src/librerias/UART.c: 90:         RCSTAbits.CREN = 0;
-[e = . . _RCSTAbits 0 4 -> -> 0 `i `uc ]
 "91
-[; ;src/librerias/UART.c: 91:         RCSTAbits.CREN = 1;
-[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+[; ;src/librerias/UART.c: 91:         RCSTAbits.CREN = 0;
+[e = . . _RCSTAbits 0 4 -> -> 0 `i `uc ]
 "92
-[; ;src/librerias/UART.c: 92:         return ERROR_CODE_UART_OVERFLOW;
+[; ;src/librerias/UART.c: 92:         RCSTAbits.CREN = 1;
+[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+"93
+[; ;src/librerias/UART.c: 93:         return ERROR_CODE_UART_OVERFLOW;
 [e ) . `E5188 1 ]
 [e $UE 656  ]
-"93
-[; ;src/librerias/UART.c: 93:     }
+"94
+[; ;src/librerias/UART.c: 94:     }
 }
 [e :U 657 ]
-"94
-[; ;src/librerias/UART.c: 94:     return ERROR_CODE_UART_OK;
+"95
+[; ;src/librerias/UART.c: 95:     return ERROR_CODE_UART_OK;
 [e ) . `E5188 0 ]
 [e $UE 656  ]
-"95
-[; ;src/librerias/UART.c: 95: }
+"96
+[; ;src/librerias/UART.c: 96: }
 [e :UE 656 ]
 }
-"97
-[; ;src/librerias/UART.c: 97: UART_ERROR_CODE UART_Rx_FRAMING(){
+"98
+[; ;src/librerias/UART.c: 98: UART_ERROR_CODE UART_Rx_FRAMING(){
 [v _UART_Rx_FRAMING `(E5188 ~T0 @X0 1 ef ]
 {
 [e :U _UART_Rx_FRAMING ]
 [f ]
-"98
-[; ;src/librerias/UART.c: 98:     if (RCSTAbits.FERR) {
+"99
+[; ;src/librerias/UART.c: 99:     if (RCSTAbits.FERR) {
 [e $ ! != -> . . _RCSTAbits 0 2 `i -> 0 `i 659  ]
 {
-"99
-[; ;src/librerias/UART.c: 99:         char dummy = RCREG;
+"100
+[; ;src/librerias/UART.c: 100:         char dummy = RCREG;
 [v _dummy `uc ~T0 @X0 1 a ]
 [e = _dummy -> _RCREG `uc ]
-"100
-[; ;src/librerias/UART.c: 100:         return ERROR_CODE_UART_FRAMING;
+"101
+[; ;src/librerias/UART.c: 101:         return ERROR_CODE_UART_FRAMING;
 [e ) . `E5188 2 ]
 [e $UE 658  ]
-"101
-[; ;src/librerias/UART.c: 101:     }
+"102
+[; ;src/librerias/UART.c: 102:     }
 }
 [e :U 659 ]
-"102
-[; ;src/librerias/UART.c: 102:     return ERROR_CODE_UART_OK;
+"103
+[; ;src/librerias/UART.c: 103:     return ERROR_CODE_UART_OK;
 [e ) . `E5188 0 ]
 [e $UE 658  ]
-"103
-[; ;src/librerias/UART.c: 103: }
+"104
+[; ;src/librerias/UART.c: 104: }
 [e :UE 658 ]
 }
-"105
-[; ;src/librerias/UART.c: 105: uint8_t UART_Rx(void){
+"106
+[; ;src/librerias/UART.c: 106: uint8_t UART_Rx(void){
 [v _UART_Rx `(uc ~T0 @X0 1 ef ]
 {
 [e :U _UART_Rx ]
 [f ]
-"106
-[; ;src/librerias/UART.c: 106:     UART_ErrorHandler(UART_Rx_OVERFLOW());
-[e ( _UART_ErrorHandler (1 ( _UART_Rx_OVERFLOW ..  ]
 "107
-[; ;src/librerias/UART.c: 107:     UART_ErrorHandler(UART_Rx_FRAMING());
-[e ( _UART_ErrorHandler (1 ( _UART_Rx_FRAMING ..  ]
+[; ;src/librerias/UART.c: 107:     UART_ErrorHandler(UART_Rx_OVERFLOW());
+[e ( _UART_ErrorHandler (1 ( _UART_Rx_OVERFLOW ..  ]
 "108
-[; ;src/librerias/UART.c: 108:     return RCREG1;
+[; ;src/librerias/UART.c: 108:     UART_ErrorHandler(UART_Rx_FRAMING());
+[e ( _UART_ErrorHandler (1 ( _UART_Rx_FRAMING ..  ]
+"109
+[; ;src/librerias/UART.c: 109:     return RCREG1;
 [e ) _RCREG1 ]
 [e $UE 660  ]
-"109
-[; ;src/librerias/UART.c: 109: }
+"110
+[; ;src/librerias/UART.c: 110: }
 [e :UE 660 ]
 }
-"111
-[; ;src/librerias/UART.c: 111: _Bool UART_RxAvailable(){
+"112
+[; ;src/librerias/UART.c: 112: _Bool UART_RxAvailable(){
 [v _UART_RxAvailable `(a ~T0 @X0 1 ef ]
 {
 [e :U _UART_RxAvailable ]
 [f ]
-"112
-[; ;src/librerias/UART.c: 112:     if (!RCSTAbits.SPEN || !RCSTAbits.CREN){
+"113
+[; ;src/librerias/UART.c: 113:     if (!RCSTAbits.SPEN || !RCSTAbits.CREN){
 [e $ ! || ! != -> . . _RCSTAbits 0 7 `i -> 0 `i ! != -> . . _RCSTAbits 0 4 `i -> 0 `i 662  ]
 {
-"113
-[; ;src/librerias/UART.c: 113:         UART_ErrorHandler(ERROR_CODE_UART_CONFIG);
-[e ( _UART_ErrorHandler (1 . `E5188 3 ]
 "114
-[; ;src/librerias/UART.c: 114:         return 0;
+[; ;src/librerias/UART.c: 114:         UART_ErrorHandler(ERROR_CODE_UART_CONFIG);
+[e ( _UART_ErrorHandler (1 . `E5188 3 ]
+"115
+[; ;src/librerias/UART.c: 115:         return 0;
 [e ) -> -> 0 `i `a ]
 [e $UE 661  ]
-"115
-[; ;src/librerias/UART.c: 115:     }
+"116
+[; ;src/librerias/UART.c: 116:     }
 }
 [e :U 662 ]
-"116
-[; ;src/librerias/UART.c: 116:     if (!RC1IF){
+"117
+[; ;src/librerias/UART.c: 117:     if (!RC1IF){
 [e $ ! ! _RC1IF 663  ]
 {
-"117
-[; ;src/librerias/UART.c: 117:         return 0;
+"118
+[; ;src/librerias/UART.c: 118:         return 0;
 [e ) -> -> 0 `i `a ]
 [e $UE 661  ]
-"118
-[; ;src/librerias/UART.c: 118:     }
+"119
+[; ;src/librerias/UART.c: 119:     }
 }
 [e :U 663 ]
-"119
-[; ;src/librerias/UART.c: 119:     return 1;
+"120
+[; ;src/librerias/UART.c: 120:     return 1;
 [e ) -> -> 1 `i `a ]
 [e $UE 661  ]
-"120
-[; ;src/librerias/UART.c: 120: }
+"121
+[; ;src/librerias/UART.c: 121: }
 [e :UE 661 ]
 }
-"122
-[; ;src/librerias/UART.c: 122: void UART_ErrorHandler(UART_ERROR_CODE errorCode){
+"123
+[; ;src/librerias/UART.c: 123: void UART_ErrorHandler(UART_ERROR_CODE errorCode){
 [v _UART_ErrorHandler `(v ~T0 @X0 1 ef1`E5188 ]
 {
 [e :U _UART_ErrorHandler ]
 [v _errorCode `E5188 ~T0 @X0 1 r1 ]
 [f ]
-"123
-[; ;src/librerias/UART.c: 123:     if(errorCode == ERROR_CODE_UART_OK) return;
+"124
+[; ;src/librerias/UART.c: 124:     if(errorCode == ERROR_CODE_UART_OK) return;
 [e $ ! == -> _errorCode `ui -> . `E5188 0 `ui 665  ]
 [e $UE 664  ]
 [e :U 665 ]
-"124
-[; ;src/librerias/UART.c: 124:     printf("Error: ");
-[e ( _printf :s 19C ]
 "125
-[; ;src/librerias/UART.c: 125:     switch(errorCode){
+[; ;src/librerias/UART.c: 125:     printf("Error: ");
+[e ( _printf :s 20C ]
+"126
+[; ;src/librerias/UART.c: 126:     switch(errorCode){
 [e $U 667  ]
 {
-"126
-[; ;src/librerias/UART.c: 126:         case ERROR_CODE_UART_OVERFLOW:
-[e :U 668 ]
 "127
-[; ;src/librerias/UART.c: 127:             printf("ERROR_CODE_UART_OVERFLOW\r\n");
-[e ( _printf :s 20C ]
+[; ;src/librerias/UART.c: 127:         case ERROR_CODE_UART_OVERFLOW:
+[e :U 668 ]
 "128
-[; ;src/librerias/UART.c: 128:         break;
-[e $U 666  ]
-"129
-[; ;src/librerias/UART.c: 129:         case ERROR_CODE_UART_FRAMING:
-[e :U 669 ]
-"130
-[; ;src/librerias/UART.c: 130:             printf("ERROR_CODE_UART_FRAMING\r\n");
+[; ;src/librerias/UART.c: 128:             printf("ERROR_CODE_UART_OVERFLOW\r\n");
 [e ( _printf :s 21C ]
+"129
+[; ;src/librerias/UART.c: 129:         break;
+[e $U 666  ]
+"130
+[; ;src/librerias/UART.c: 130:         case ERROR_CODE_UART_FRAMING:
+[e :U 669 ]
 "131
-[; ;src/librerias/UART.c: 131:         break;
-[e $U 666  ]
-"132
-[; ;src/librerias/UART.c: 132:         case ERROR_CODE_UART_CONFIG:
-[e :U 670 ]
-"133
-[; ;src/librerias/UART.c: 133:             printf("ERROR_CODE_UART_CONFIG \r\n");
+[; ;src/librerias/UART.c: 131:             printf("ERROR_CODE_UART_FRAMING\r\n");
 [e ( _printf :s 22C ]
-"134
-[; ;src/librerias/UART.c: 134:         break;
+"132
+[; ;src/librerias/UART.c: 132:         break;
 [e $U 666  ]
+"133
+[; ;src/librerias/UART.c: 133:         case ERROR_CODE_UART_CONFIG:
+[e :U 670 ]
+"134
+[; ;src/librerias/UART.c: 134:             printf("ERROR_CODE_UART_CONFIG \r\n");
+[e ( _printf :s 23C ]
 "135
-[; ;src/librerias/UART.c: 135:     }
+[; ;src/librerias/UART.c: 135:         break;
+[e $U 666  ]
+"136
+[; ;src/librerias/UART.c: 136:     }
 }
 [e $U 666  ]
 [e :U 667 ]
@@ -1237,8 +1240,8 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> . `E5188 3 `ui 670
  666 ]
 [e :U 666 ]
-"136
-[; ;src/librerias/UART.c: 136: }
+"137
+[; ;src/librerias/UART.c: 137: }
 [e :UE 664 ]
 }
 [p f _printf 8388608 ]
@@ -1248,12 +1251,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [a 2C 83 105 110 99 114 111 110 111 32 0 ]
 [a 16C 82 101 99 101 112 116 111 114 58 32 0 ]
 [a 13C 84 114 97 110 115 111 114 58 32 0 ]
-[a 19C 69 114 114 111 114 58 32 0 ]
+[a 20C 69 114 114 111 114 58 32 0 ]
 [a 10C 80 117 101 114 116 111 58 32 0 ]
 [a 1C 77 111 100 111 58 32 0 ]
 [a 6C 66 97 117 100 114 97 116 101 58 32 0 ]
-[a 20C 69 82 82 79 82 95 67 79 68 69 95 85 65 82 84 95 79 86 69 82 70 76 79 87 13 10 0 ]
-[a 21C 69 82 82 79 82 95 67 79 68 69 95 85 65 82 84 95 70 82 65 77 73 78 71 13 10 0 ]
+[a 21C 69 82 82 79 82 95 67 79 68 69 95 85 65 82 84 95 79 86 69 82 70 76 79 87 13 10 0 ]
+[a 22C 69 82 82 79 82 95 67 79 68 69 95 85 65 82 84 95 70 82 65 77 73 78 71 13 10 0 ]
 [a 9C 120 32 98 97 117 100 105 111 115 32 13 10 0 ]
 [a 12C 68 101 115 104 97 98 105 108 105 116 97 100 111 32 13 10 0 ]
 [a 15C 68 101 115 104 97 98 105 108 105 116 97 100 111 32 13 10 0 ]
@@ -1263,4 +1266,5 @@ Version 4.0 HI-TECH Software Intermediate Code
 [a 17C 72 97 98 105 108 105 116 97 100 111 32 13 10 0 ]
 [a 4C 97 108 116 97 32 118 101 108 111 99 105 100 97 100 32 13 10 0 ]
 [a 5C 98 97 106 97 32 118 101 108 111 99 105 100 97 100 32 13 10 0 ]
-[a 22C 69 82 82 79 82 95 67 79 68 69 95 85 65 82 84 95 67 79 78 70 73 71 32 13 10 0 ]
+[a 23C 69 82 82 79 82 95 67 79 68 69 95 85 65 82 84 95 67 79 78 70 73 71 32 13 10 0 ]
+[a 19C 13 10 13 10 0 ]

@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "multiherramienta", "index.html", [
+  [ "Multiherramienta", "index.html", [
     [ "UART", "md_documentacion_2_u_a_r_t.html", [
       [ "Que es y como funciona", "md_documentacion_2_u_a_r_t.html#autotoc_md1", null ],
       [ "Impliementación en PIC18F45K50", "md_documentacion_2_u_a_r_t.html#autotoc_md2", [
@@ -58,8 +58,7 @@ var NAVTREE =
       [ "Globals", "globals.html", [
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
-        [ "Enumerations", "globals_enum.html", null ],
-        [ "Enumerator", "globals_eval.html", null ],
+        [ "Variables", "globals_vars.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
@@ -68,7 +67,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_u_a_r_t_8c.html"
+"_c_l_handler_8c.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

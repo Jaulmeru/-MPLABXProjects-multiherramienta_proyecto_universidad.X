@@ -10,7 +10,7 @@
 <programlisting linenumbering="unnumbered">#include &lt;xc.h&gt;<?linebreak?>#include &quot;config.h&quot;<?linebreak?>#include &quot;librerias/clock.h&quot;<?linebreak?>#include &quot;librerias/UART.h&quot;<?linebreak?></programlisting><simplesect>
     <title>Functions    </title>
         <itemizedlist>
-            <listitem><para>int <link linkend="_echo__char_8c_1a840291bc02cba5474a4cb46a9b9566fe">main</link> (void)</para>
+            <listitem><para><anchor xml:id="_echo__char_8c_1a840291bc02cba5474a4cb46a9b9566fe"/>int <emphasis role="strong">main</emphasis> (void)</para>
 </listitem>
         </itemizedlist>
 </simplesect>
@@ -32,13 +32,5 @@
 <para>1.0 </para>
 </formalpara>
 </para>
-</section>
-<section>
-<title>Function Documentation</title>
-<anchor xml:id="_echo__char_8c_1a840291bc02cba5474a4cb46a9b9566fe"/><section>
-    <title>main()</title>
-<indexterm><primary>main</primary><secondary>echo_char.c</secondary></indexterm>
-<indexterm><primary>echo_char.c</primary><secondary>main</secondary></indexterm>
-<para><computeroutput>int main (void )</computeroutput></para></section>
 </section>
 </section>

@@ -8433,17 +8433,101 @@ _Bool UART_RxAvailable(void);
 void UART_ErrorHandler(UART_ERROR_CODE);
 # 13 "src/main.c" 2
 
+# 1 "src/librerias/commandLine.h" 1
+# 25 "src/librerias/commandLine.h"
+const uint8_t charStop = 0x0A;
+
+uint8_t buffCount = 0;
+uint8_t charBuff[100];
+_Bool commandLineEnable = 0;
+_Bool flagCommandReady = 0;
+uint8_t command[16];
+uint8_t param[5][16];
+
+typedef enum{
+    EC_CL_OK,
+    EC_CL_BUFFOVER,
+    EC_CL_NOWORDS,
+    EC_CL_WORDOVER,
+    EC_CL_MAXNUMPARAMS,
+    EC_CL_WRONGNUMPARAMS,
+    EC_CL_WRONGCOMMAND,
+}CL_ERROR_CODE;
+
+
+
+
+void commandLineInit();
+
+
+
+
+void commandLineDeinit();
+
+
+
+
+void commandLineReset();
+# 66 "src/librerias/commandLine.h"
+void addToBuffer(char newchar);
+
+
+
+
+void clearBuff();
+
+
+
+
+void clearCharInLine();
+
+
+
+
+
+
+void clearArray(uint8_t* array, uint8_t len);
+
+
+
+
+
+CL_ERROR_CODE commandProcess();
+
+
+
+
+
+uint8_t countWords(void);
+
+
+
+
+
+
+
+_Bool getWord(uint8_t wordNum, uint8_t* pWord);
+
+
+
+
+
+void CL_ErrorHandler(CL_ERROR_CODE);
+# 14 "src/main.c" 2
+
+
 
 int main(void)
 {
     Clock_Init(16000);
     UART_Init(9600);
+    commandLineInit();
 
     while(1)
     {
         if(UART_RxAvailable()){
-            uint8_t x = UART_Rx();
-            UART_Tx(x);
+            addToBuffer(UART_Rx());
         }
+        CL_ErrorHandler(commandProcess());
     }
 }

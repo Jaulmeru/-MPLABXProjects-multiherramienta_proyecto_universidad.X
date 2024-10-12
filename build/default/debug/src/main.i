@@ -8371,54 +8371,163 @@ CLK_ERROR_CODE Clock_Init(int16_t s16Timeout);
 # 12 "src/main.c" 2
 
 # 1 "src/librerias/UART.h" 1
+# 19 "src/librerias/UART.h"
+typedef enum{
+    ERROR_CODE_UART_OK,
+    ERROR_CODE_UART_OVERFLOW,
+    ERROR_CODE_UART_FRAMING,
+    ERROR_CODE_UART_CONFIG,
+}UART_ERROR_CODE;
+
+
+
+
+void UART_config_show();
+
+
+
+
+
+void UART_Init(uint32_t);
+# 44 "src/librerias/UART.h"
+void UART_select_baud(uint32_t);
 
 
 
 
 
 
+UART_ERROR_CODE UART_Rx_FRAMING();
 
-# 1 "src/librerias/UART_variables.h" 1
-# 21 "src/librerias/UART_variables.h"
-    typedef enum{
-        ERROR_CODE_UART_OK,
-        ERROR_CODE_UART_OVERFLOW,
-        ERROR_CODE_UART_FRAMING,
-        ERROR_CODE_UART_CONFIG,
-    }UART_ERROR_CODE;
+
+
+
+
+
+UART_ERROR_CODE UART_Rx_OVERFLOW();
+
+
+
+
+
+void UART_Tx(uint8_t);
+
+
+
+
+
+
+uint8_t UART_Rx(void);
+
+
+
+
+
+
+_Bool UART_RxAvailable(void);
+
+
+
+
 
 void UART_ErrorHandler(UART_ERROR_CODE);
-# 8 "src/librerias/UART.h" 2
-# 18 "src/librerias/UART.h"
-void UART_config_show();
-void UART_Init(uint32_t);
-void UART_select_baud(uint32_t);
-UART_ERROR_CODE UART_Rx_FRAMING();
-UART_ERROR_CODE UART_Rx_OVERFLOW();
-void UART_Tx(char);
-char UART_Rx(void);
-_Bool UART_Available(void);
 # 13 "src/main.c" 2
 
+# 1 "src/librerias/commandLine.h" 1
+# 26 "src/librerias/commandLine.h"
+const uint8_t charStop = 0x0A;
+
+uint8_t buffCount = 0;
+uint8_t charBuff[100];
+_Bool commandLineEnable = 0;
+_Bool flagCommandReady = 0;
+uint8_t command[16];
+uint8_t param[5][16];
+
+typedef enum{
+    EC_CL_OK,
+    EC_CL_BUFFOVER,
+    EC_CL_NOWORDS,
+    EC_CL_WORDOVER,
+    EC_CL_MAXNUMPARAMS,
+    EC_CL_WRONGNUMPARAMS,
+    EC_CL_WRONGCOMMAND,
+}CL_ERROR_CODE;
 
 
 
 
-static uint8_t readMessage;
+void commandLineInit();
+
+
+
+
+void commandLineDeinit();
+
+
+
+
+void commandLineReset();
+# 67 "src/librerias/commandLine.h"
+void addToBuffer(char newchar);
+
+
+
+
+void clearBuff();
+
+
+
+
+void clearCharInLine();
+
+
+
+
+
+
+void clearArray(uint8_t* array, uint8_t len);
+
+
+
+
+
+CL_ERROR_CODE commandProcess();
+
+
+
+
+
+uint8_t countWords(void);
+
+
+
+
+
+
+
+_Bool getWord(uint8_t wordNum, uint8_t* pWord);
+
+
+
+
+
+void CL_ErrorHandler(CL_ERROR_CODE);
+# 14 "src/main.c" 2
+
+
 
 int main(void)
 {
     Clock_Init(16000);
     UART_Init(9600);
-
-    TRISAbits.RA1 = 0;
+    commandLineInit();
 
     while(1)
     {
-        if(PIR1bits.RC1IF){
-            readMessage = UART_Rx();
-            if(readMessage == '1') do { LATAbits.LATA1 = 1; } while(0);
-            if(readMessage == '0') do { LATAbits.LATA1 = 0; } while(0);
+        if(UART_RxAvailable()){
+            addToBuffer(UART_Rx());
         }
+        CL_ErrorHandler(commandProcess());
     }
 }

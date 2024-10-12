@@ -2,7 +2,7 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_clock_8h_source" xml:lang="en-US">
 <title>clock.h</title>
 <indexterm><primary>src/librerias/clock.h</primary></indexterm>
-Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*&#32;</emphasis>
+<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*&#32;</emphasis>
 2 <emphasis role="comment">&#32;*&#32;File:&#32;&#32;&#32;clock.h</emphasis>
 3 <emphasis role="comment">&#32;*&#32;Author:&#32;admin</emphasis>
 4 <emphasis role="comment">&#32;*</emphasis>
@@ -12,7 +12,7 @@ Go to the documentation of this file.<programlisting linenumbering="unnumbered">
 8 <emphasis role="preprocessor">#ifndef&#32;CLOCK_H</emphasis>
 9 <emphasis role="preprocessor">#define&#32;CLOCK_H</emphasis>
 10 
-11 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_clk__variables_8h">clk_variables.h</link>&quot;</emphasis>
+11 <emphasis role="preprocessor">#include&#32;&quot;clk_variables.h&quot;</emphasis>
 12 
 13 <emphasis role="preprocessor">#ifdef&#32;&#32;__cplusplus</emphasis>
 14 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
@@ -20,7 +20,7 @@ Go to the documentation of this file.<programlisting linenumbering="unnumbered">
 16 
 17 <emphasis role="preprocessor">#define&#32;_XTAL_FREQ&#32;48000000</emphasis>
 18 &#32;&#32;&#32;&#32;
-19 <link linkend="_clk__variables_8h_1a7b794d701f534bfb8b48dfe9274b6d08">CLK_ERROR_CODE</link>&#32;<link linkend="_clock_8h_1afa69e1fb2b263f5e89502e3d6c103423">Clock_Init</link>(int16_t&#32;s16Timeout);
+19 CLK_ERROR_CODE&#32;Clock_Init(int16_t&#32;s16Timeout);
 20 
 21 
 22 <emphasis role="preprocessor">#ifdef&#32;&#32;__cplusplus</emphasis>

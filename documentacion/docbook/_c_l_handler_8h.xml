@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__c_l_handler_8h" xml:lang="en-US">
+<title>src/CLHandler.h File Reference</title>
+<indexterm><primary>src/CLHandler.h</primary></indexterm>
+<para>
+
+<para>Definicion de comandos y su numero de parametros. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &quot;librerias/commandLine.h&quot;<?linebreak?></programlisting><simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="__c_l_handler_8h_1a980a185e394e08268e48cb65f99e3db0"/>#define <emphasis role="strong">NUMCOMMANDS</emphasis>&#160;&#160;&#160;3</para>
+
+<para>Cantidad de comandos programados. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="__c_l_handler_8h_1afbefc1c14584a1dbc4d06b34fed4da0e"/>CL_ERROR_CODE <emphasis role="strong">CL_CommandHandler</emphasis> (uint8_t numParams)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__c_l_handler_8h_1ac333de22a063259ce4f7be70dbe34db5"/>void <emphasis role="strong">cliHelp</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>const char * <link linkend="__c_l_handler_8h_1aadd03b120d1c0c680d929d8536baaa89">comandos</link> []</para>
+</listitem>
+            <listitem><para>const uint8_t <link linkend="__c_l_handler_8h_1a919f10c5ab785821cc41c84e658d8c78">cantParams</link> []</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Definicion de comandos y su numero de parametros. </para>
+
+<para><formalpara><title>Author</title>
+
+<para>Javier Mendoza (<link xlink:href="mailto:javierulisesmruiz@gmail.com">javierulisesmruiz@gmail.com</link>) </para>
+</formalpara>
+<formalpara><title>Date</title>
+
+<para>11/10/2024 </para>
+</formalpara>
+<formalpara><title>Version</title>
+
+<para>0.1 </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="__c_l_handler_8h_1a919f10c5ab785821cc41c84e658d8c78"/><section>
+    <title>cantParams</title>
+<indexterm><primary>cantParams</primary><secondary>CLHandler.h</secondary></indexterm>
+<indexterm><primary>CLHandler.h</primary><secondary>cantParams</secondary></indexterm>
+<para><computeroutput>const uint8_t cantParams[]</computeroutput></para><emphasis role="strong">Initial value:</emphasis><programlisting linenumbering="unnumbered">=&#32;{
+&#32;&#32;&#32;&#32;0,&#32;
+&#32;&#32;&#32;&#32;0,&#32;
+&#32;&#32;&#32;&#32;3&#32;&#32;
+}
+</programlisting></section>
+<anchor xml:id="__c_l_handler_8h_1aadd03b120d1c0c680d929d8536baaa89"/><section>
+    <title>comandos</title>
+<indexterm><primary>comandos</primary><secondary>CLHandler.h</secondary></indexterm>
+<indexterm><primary>CLHandler.h</primary><secondary>comandos</secondary></indexterm>
+<para><computeroutput>const char* comandos[]</computeroutput></para><emphasis role="strong">Initial value:</emphasis><programlisting linenumbering="unnumbered">=&#32;{
+&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;cliDeinit&quot;</emphasis>,&#32;
+&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;help&quot;</emphasis>,&#32;
+&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;comando3&quot;</emphasis>&#32;&#32;
+}
+</programlisting></section>
+</section>
+</section>

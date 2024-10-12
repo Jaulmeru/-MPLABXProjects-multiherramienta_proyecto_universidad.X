@@ -10,10 +10,10 @@
 <programlisting linenumbering="unnumbered">#include &lt;stdint.h&gt;<?linebreak?>#include &lt;stdbool.h&gt;<?linebreak?>#include &lt;float.h&gt;<?linebreak?>#include &lt;stdio.h&gt;<?linebreak?>#include &lt;xc.h&gt;<?linebreak?></programlisting><simplesect>
     <title>Enumerations    </title>
         <itemizedlist>
-            <listitem><para>enum <link linkend="__u_a_r_t_8h_1aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</link> { <link linkend="__u_a_r_t_8h_1aca500773c32b84185c333e06093935f9a07b9d1cbf461564178f329f946e993c5">ERROR_CODE_UART_OK</link>
-, <link linkend="__u_a_r_t_8h_1aca500773c32b84185c333e06093935f9a8c497290b3a34c2f37ee32def1a8b602">ERROR_CODE_UART_OVERFLOW</link>
-, <link linkend="__u_a_r_t_8h_1aca500773c32b84185c333e06093935f9ac793cb3d2563e92c7cf2ac3216f4bc18">ERROR_CODE_UART_FRAMING</link>
-, <link linkend="__u_a_r_t_8h_1aca500773c32b84185c333e06093935f9a39999153cc782e1aa417e141117f4432">ERROR_CODE_UART_CONFIG</link>
+            <listitem><para><anchor xml:id="__u_a_r_t_8h_1aca500773c32b84185c333e06093935f9"/>enum <emphasis role="strong">UART_ERROR_CODE</emphasis> { <emphasis role="strong">ERROR_CODE_UART_OK</emphasis>
+, <emphasis role="strong">ERROR_CODE_UART_OVERFLOW</emphasis>
+, <emphasis role="strong">ERROR_CODE_UART_FRAMING</emphasis>
+, <emphasis role="strong">ERROR_CODE_UART_CONFIG</emphasis>
  }</para>
 </listitem>
         </itemizedlist>
@@ -21,7 +21,7 @@
 <simplesect>
     <title>Functions    </title>
         <itemizedlist>
-            <listitem><para>void <link linkend="__u_a_r_t_8h_1ae6fd997937744f54a3b2f5245e0ee6c5">UART_config_show</link> ()</para>
+            <listitem><para><anchor xml:id="__u_a_r_t_8h_1ae6fd997937744f54a3b2f5245e0ee6c5"/>void <emphasis role="strong">UART_config_show</emphasis> ()</para>
 
 <para>Muestra por puerto serial la configuracion actual del modulo EUSART. </para>
 </listitem>
@@ -33,11 +33,11 @@
 
 <para>Configura SPBRGH y SPBRG para el baudrate ingresado. </para>
 </listitem>
-            <listitem><para><link linkend="__u_a_r_t_8h_1aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</link> <link linkend="__u_a_r_t_8h_1afc34c227cd3b9153f8a1dd4c7da43f79">UART_Rx_FRAMING</link> ()</para>
+            <listitem><para>UART_ERROR_CODE <link linkend="__u_a_r_t_8h_1afc34c227cd3b9153f8a1dd4c7da43f79">UART_Rx_FRAMING</link> ()</para>
 
 <para>Revisa el registro FERR y limpia el error. </para>
 </listitem>
-            <listitem><para><link linkend="__u_a_r_t_8h_1aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</link> <link linkend="__u_a_r_t_8h_1ae9defbf2097bafc184289367f362245e">UART_Rx_OVERFLOW</link> ()</para>
+            <listitem><para>UART_ERROR_CODE <link linkend="__u_a_r_t_8h_1ae9defbf2097bafc184289367f362245e">UART_Rx_OVERFLOW</link> ()</para>
 
 <para>Revisa el registro OERR y limpia el error. </para>
 </listitem>
@@ -53,7 +53,7 @@
 
 <para>Valida si esta habilitada la recepcion y si el buffer esta lleno. </para>
 </listitem>
-            <listitem><para>void <link linkend="__u_a_r_t_8h_1add06d286319043f8df9aa9766cfd5c08">UART_ErrorHandler</link> (<link linkend="__u_a_r_t_8h_1aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</link>)</para>
+            <listitem><para>void <link linkend="__u_a_r_t_8h_1add06d286319043f8df9aa9766cfd5c08">UART_ErrorHandler</link> (UART_ERROR_CODE)</para>
 
 <para>Manejador de errores UART. </para>
 </listitem>
@@ -79,46 +79,12 @@
 </para>
 </section>
 <section>
-<title>Enumeration Type Documentation</title>
-<anchor xml:id="__u_a_r_t_8h_1aca500773c32b84185c333e06093935f9"/><section>
-    <title>UART_ERROR_CODE</title>
-<indexterm><primary>UART_ERROR_CODE</primary><secondary>UART.h</secondary></indexterm>
-<indexterm><primary>UART.h</primary><secondary>UART_ERROR_CODE</secondary></indexterm>
-<para><computeroutput>enum <link linkend="__u_a_r_t_8h_1aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</link></computeroutput></para><informaltable frame="all">
-<title>Enumerator</title>
-    <tgroup cols="2" align="left" colsep="1" rowsep="1">
-      <colspec colname='c1'/>
-      <colspec colname='c2'/>
-<tbody>
-<row><entry><indexterm><primary>ERROR_CODE_UART_OK</primary><secondary>UART.h</secondary></indexterm>
-<indexterm><primary>UART.h</primary><secondary>ERROR_CODE_UART_OK</secondary></indexterm>
-<anchor xml:id="__u_a_r_t_8h_1aca500773c32b84185c333e06093935f9a07b9d1cbf461564178f329f946e993c5"/>ERROR_CODE_UART_OK</entry><entry></entry></row><row><entry><indexterm><primary>ERROR_CODE_UART_OVERFLOW</primary><secondary>UART.h</secondary></indexterm>
-<indexterm><primary>UART.h</primary><secondary>ERROR_CODE_UART_OVERFLOW</secondary></indexterm>
-<anchor xml:id="__u_a_r_t_8h_1aca500773c32b84185c333e06093935f9a8c497290b3a34c2f37ee32def1a8b602"/>ERROR_CODE_UART_OVERFLOW</entry><entry></entry></row><row><entry><indexterm><primary>ERROR_CODE_UART_FRAMING</primary><secondary>UART.h</secondary></indexterm>
-<indexterm><primary>UART.h</primary><secondary>ERROR_CODE_UART_FRAMING</secondary></indexterm>
-<anchor xml:id="__u_a_r_t_8h_1aca500773c32b84185c333e06093935f9ac793cb3d2563e92c7cf2ac3216f4bc18"/>ERROR_CODE_UART_FRAMING</entry><entry></entry></row><row><entry><indexterm><primary>ERROR_CODE_UART_CONFIG</primary><secondary>UART.h</secondary></indexterm>
-<indexterm><primary>UART.h</primary><secondary>ERROR_CODE_UART_CONFIG</secondary></indexterm>
-<anchor xml:id="__u_a_r_t_8h_1aca500773c32b84185c333e06093935f9a39999153cc782e1aa417e141117f4432"/>ERROR_CODE_UART_CONFIG</entry><entry></entry></row>    </tbody>
-    </tgroup>
-</informaltable>
-</section>
-</section>
-<section>
 <title>Function Documentation</title>
-<anchor xml:id="__u_a_r_t_8h_1ae6fd997937744f54a3b2f5245e0ee6c5"/><section>
-    <title>UART_config_show()</title>
-<indexterm><primary>UART_config_show</primary><secondary>UART.h</secondary></indexterm>
-<indexterm><primary>UART.h</primary><secondary>UART_config_show</secondary></indexterm>
-<para><computeroutput>void UART_config_show ( )</computeroutput></para><para>
-
-<para>Muestra por puerto serial la configuracion actual del modulo EUSART. </para>
-</para>
-</section>
 <anchor xml:id="__u_a_r_t_8h_1add06d286319043f8df9aa9766cfd5c08"/><section>
     <title>UART_ErrorHandler()</title>
 <indexterm><primary>UART_ErrorHandler</primary><secondary>UART.h</secondary></indexterm>
 <indexterm><primary>UART.h</primary><secondary>UART_ErrorHandler</secondary></indexterm>
-<para><computeroutput>void UART_ErrorHandler (<link linkend="__u_a_r_t_8h_1aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</link> errorCode)</computeroutput></para><para>
+<para><computeroutput>void UART_ErrorHandler (UART_ERROR_CODE errorCode)</computeroutput></para><para>
 
 <para>Manejador de errores UART. </para>
 </para>
@@ -195,7 +161,7 @@ Parameters</title>
     <title>UART_Rx_FRAMING()</title>
 <indexterm><primary>UART_Rx_FRAMING</primary><secondary>UART.h</secondary></indexterm>
 <indexterm><primary>UART.h</primary><secondary>UART_Rx_FRAMING</secondary></indexterm>
-<para><computeroutput><link linkend="__u_a_r_t_8h_1aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</link> UART_Rx_FRAMING ( )</computeroutput></para><para>
+<para><computeroutput>UART_ERROR_CODE UART_Rx_FRAMING ( )</computeroutput></para><para>
 
 <para>Revisa el registro FERR y limpia el error. </para>
 </para>
@@ -212,7 +178,7 @@ Parameters</title>
     <title>UART_Rx_OVERFLOW()</title>
 <indexterm><primary>UART_Rx_OVERFLOW</primary><secondary>UART.h</secondary></indexterm>
 <indexterm><primary>UART.h</primary><secondary>UART_Rx_OVERFLOW</secondary></indexterm>
-<para><computeroutput><link linkend="__u_a_r_t_8h_1aca500773c32b84185c333e06093935f9">UART_ERROR_CODE</link> UART_Rx_OVERFLOW ( )</computeroutput></para><para>
+<para><computeroutput>UART_ERROR_CODE UART_Rx_OVERFLOW ( )</computeroutput></para><para>
 
 <para>Revisa el registro OERR y limpia el error. </para>
 </para>

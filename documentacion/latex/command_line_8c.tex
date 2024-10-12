@@ -1,0 +1,154 @@
+\doxysection{src/librerias/command\+Line.c File Reference}
+\hypertarget{command_line_8c}{}\label{command_line_8c}\index{src/librerias/commandLine.c@{src/librerias/commandLine.c}}
+
+
+Linea de comandos lista para utilizar funciones de forma sencilla en tiempo de ejecucion.  
+
+
+{\ttfamily \#include "{}command\+Line.\+h"{}}\newline
+{\ttfamily \#include "{}../\+CLHandler.\+h"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{command_line_8c_a932feaebabe26a26a8f2924cbc1e5e48}\label{command_line_8c_a932feaebabe26a26a8f2924cbc1e5e48} 
+void {\bfseries command\+Line\+Init} ()
+\begin{DoxyCompactList}\small\item\em Muestra las instrucciones y habilita la linea de comandos. \end{DoxyCompactList}\item 
+\Hypertarget{command_line_8c_a609649d55b8396e5505f9a6ebb163d54}\label{command_line_8c_a609649d55b8396e5505f9a6ebb163d54} 
+void {\bfseries command\+Line\+Deinit} ()
+\begin{DoxyCompactList}\small\item\em Deshabilita la linea de comandos. \end{DoxyCompactList}\item 
+\Hypertarget{command_line_8c_ad90dbb9078381cd647817382b7b23741}\label{command_line_8c_ad90dbb9078381cd647817382b7b23741} 
+void {\bfseries command\+Line\+Reset} ()
+\begin{DoxyCompactList}\small\item\em Deja la linea de comando lista para volver a usarse de cero. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{command_line_8c_a3ba8cde82d6778724d4e4ed17b637c35}{add\+To\+Buffer}} (char newchar)
+\begin{DoxyCompactList}\small\item\em Toma un caracter para integrarlo al buffer o arrancar una accion especial. \end{DoxyCompactList}\item 
+\Hypertarget{command_line_8c_acf97ff06c423170a6e7e360528df9a94}\label{command_line_8c_acf97ff06c423170a6e7e360528df9a94} 
+void {\bfseries clear\+Buff} ()
+\begin{DoxyCompactList}\small\item\em Deja en 0 el char\+Buff y el buff\+Count. \end{DoxyCompactList}\item 
+\Hypertarget{command_line_8c_a5713e92e29fc7e6586e725b5c414480a}\label{command_line_8c_a5713e92e29fc7e6586e725b5c414480a} 
+void {\bfseries clear\+Char\+In\+Line} ()
+\begin{DoxyCompactList}\small\item\em Limpia el ultimo caracter en el buffer y en la linea de comando. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{command_line_8c_ad46b683755e4d2790dae77c124678243}{clear\+Array}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}array, uint8\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Deja en 0x00 len posiciones de array. \end{DoxyCompactList}\item 
+CL\+\_\+\+ERROR\+\_\+\+CODE \mbox{\hyperlink{command_line_8c_a04dfd02542a769b653ddb50c49de0108}{command\+Process}} ()
+\begin{DoxyCompactList}\small\item\em Toma el buffer, separa el comando y los parametros y los ejecuta. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{command_line_8c_afc5e796dbd318e73265dd65649f5df0e}{count\+Words}} (void)
+\begin{DoxyCompactList}\small\item\em Cantidad de palabras en el buffer. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{command_line_8c_aa4a8a2b8c0f63010d5561dfdc72be946}{get\+Word}} (uint8\+\_\+t word\+Num, uint8\+\_\+t \texorpdfstring{$\ast$}{*}p\+Word)
+\begin{DoxyCompactList}\small\item\em Guarda la palabra en la posicion word\+Num del buffer en donde apunta p\+Word. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{command_line_8c_ad7ac231f428432791ee851d584fb127b}{CL\+\_\+\+Error\+Handler}} (CL\+\_\+\+ERROR\+\_\+\+CODE error\+Code)
+\begin{DoxyCompactList}\small\item\em Manejador de errores de la linea de comandos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Linea de comandos lista para utilizar funciones de forma sencilla en tiempo de ejecucion. 
+
+\begin{DoxyAuthor}{Author}
+Javier Mendoza (\href{mailto:javierulisesmruiz@gmail.com}{\texttt{ javierulisesmruiz@gmail.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+06/10/2024 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{command_line_8c_a3ba8cde82d6778724d4e4ed17b637c35}\index{commandLine.c@{commandLine.c}!addToBuffer@{addToBuffer}}
+\index{addToBuffer@{addToBuffer}!commandLine.c@{commandLine.c}}
+\doxysubsubsection{\texorpdfstring{addToBuffer()}{addToBuffer()}}
+{\footnotesize\ttfamily \label{command_line_8c_a3ba8cde82d6778724d4e4ed17b637c35} 
+void add\+To\+Buffer (\begin{DoxyParamCaption}\item[{char}]{newchar}{}\end{DoxyParamCaption})}
+
+
+
+Toma un caracter para integrarlo al buffer o arrancar una accion especial. 
+
+0x0D \mbox{[}Enter\mbox{]} =\texorpdfstring{$>$}{>} Termina el comando y se comienza a procesar
+
+0x7F \mbox{[}Back\+Space\mbox{]} =\texorpdfstring{$>$}{>} Borra el ultimo caracter
+
+0x1B \mbox{[}Escape\mbox{]} =\texorpdfstring{$>$}{>} Borra todo lo escrito 
+\begin{DoxyParams}{Parameters}
+{\em newchar} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{command_line_8c_ad7ac231f428432791ee851d584fb127b}\index{commandLine.c@{commandLine.c}!CL\_ErrorHandler@{CL\_ErrorHandler}}
+\index{CL\_ErrorHandler@{CL\_ErrorHandler}!commandLine.c@{commandLine.c}}
+\doxysubsubsection{\texorpdfstring{CL\_ErrorHandler()}{CL\_ErrorHandler()}}
+{\footnotesize\ttfamily \label{command_line_8c_ad7ac231f428432791ee851d584fb127b} 
+void CL\+\_\+\+Error\+Handler (\begin{DoxyParamCaption}\item[{CL\+\_\+\+ERROR\+\_\+\+CODE}]{error\+Code}{}\end{DoxyParamCaption})}
+
+
+
+Manejador de errores de la linea de comandos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error\+Code} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{command_line_8c_ad46b683755e4d2790dae77c124678243}\index{commandLine.c@{commandLine.c}!clearArray@{clearArray}}
+\index{clearArray@{clearArray}!commandLine.c@{commandLine.c}}
+\doxysubsubsection{\texorpdfstring{clearArray()}{clearArray()}}
+{\footnotesize\ttfamily \label{command_line_8c_ad46b683755e4d2790dae77c124678243} 
+void clear\+Array (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{array}{, }\item[{uint8\+\_\+t}]{len}{}\end{DoxyParamCaption})}
+
+
+
+Deja en 0x00 len posiciones de array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & \\
+\hline
+{\em len} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{command_line_8c_a04dfd02542a769b653ddb50c49de0108}\index{commandLine.c@{commandLine.c}!commandProcess@{commandProcess}}
+\index{commandProcess@{commandProcess}!commandLine.c@{commandLine.c}}
+\doxysubsubsection{\texorpdfstring{commandProcess()}{commandProcess()}}
+{\footnotesize\ttfamily \label{command_line_8c_a04dfd02542a769b653ddb50c49de0108} 
+CL\+\_\+\+ERROR\+\_\+\+CODE command\+Process (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Toma el buffer, separa el comando y los parametros y los ejecuta. 
+
+\begin{DoxyReturn}{Returns}
+Error 
+\end{DoxyReturn}
+\Hypertarget{command_line_8c_afc5e796dbd318e73265dd65649f5df0e}\index{commandLine.c@{commandLine.c}!countWords@{countWords}}
+\index{countWords@{countWords}!commandLine.c@{commandLine.c}}
+\doxysubsubsection{\texorpdfstring{countWords()}{countWords()}}
+{\footnotesize\ttfamily \label{command_line_8c_afc5e796dbd318e73265dd65649f5df0e} 
+uint8\+\_\+t count\+Words (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Cantidad de palabras en el buffer. 
+
+\begin{DoxyReturn}{Returns}
+palabras = comando + parametros 
+\end{DoxyReturn}
+\Hypertarget{command_line_8c_aa4a8a2b8c0f63010d5561dfdc72be946}\index{commandLine.c@{commandLine.c}!getWord@{getWord}}
+\index{getWord@{getWord}!commandLine.c@{commandLine.c}}
+\doxysubsubsection{\texorpdfstring{getWord()}{getWord()}}
+{\footnotesize\ttfamily \label{command_line_8c_aa4a8a2b8c0f63010d5561dfdc72be946} 
+bool get\+Word (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{word\+Num}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+Word}{}\end{DoxyParamCaption})}
+
+
+
+Guarda la palabra en la posicion word\+Num del buffer en donde apunta p\+Word. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em word\+Num} & \\
+\hline
+{\em p\+Word} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}

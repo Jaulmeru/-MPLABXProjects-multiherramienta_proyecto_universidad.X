@@ -7,6 +7,7 @@
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "src/librerias/UART.c" 2
+# 10 "src/librerias/UART.c"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -8111,27 +8112,18 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
-# 1 "src/librerias/UART.c" 2
-
+# 10 "src/librerias/UART.c" 2
 
 # 1 "src/librerias/UART.h" 1
-
-
-
-
-
-
-
-# 1 "src/librerias/UART_variables.h" 1
-# 12 "src/librerias/UART_variables.h"
+# 14 "src/librerias/UART.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdbool.h" 1 3
-# 12 "src/librerias/UART_variables.h" 2
+# 14 "src/librerias/UART.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\float.h" 1 3
 # 45 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\float.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/float.h" 1 3
 # 46 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\float.h" 2 3
-# 13 "src/librerias/UART_variables.h" 2
+# 15 "src/librerias/UART.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 3
@@ -8285,33 +8277,70 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 14 "src/librerias/UART_variables.h" 2
+# 16 "src/librerias/UART.h" 2
+
+
+
+typedef enum{
+    ERROR_CODE_UART_OK,
+    ERROR_CODE_UART_OVERFLOW,
+    ERROR_CODE_UART_FRAMING,
+    ERROR_CODE_UART_CONFIG,
+}UART_ERROR_CODE;
+
+
+
+
+void UART_config_show();
+
+
+
+
+
+void UART_Init(uint32_t);
+# 44 "src/librerias/UART.h"
+void UART_select_baud(uint32_t);
 
 
 
 
 
 
+UART_ERROR_CODE UART_Rx_FRAMING();
 
-    typedef enum{
-        ERROR_CODE_UART_OK,
-        ERROR_CODE_UART_OVERFLOW,
-        ERROR_CODE_UART_FRAMING,
-        ERROR_CODE_UART_CONFIG,
-    }UART_ERROR_CODE;
+
+
+
+
+
+UART_ERROR_CODE UART_Rx_OVERFLOW();
+
+
+
+
+
+void UART_Tx(uint8_t);
+
+
+
+
+
+
+uint8_t UART_Rx(void);
+
+
+
+
+
+
+_Bool UART_RxAvailable(void);
+
+
+
+
 
 void UART_ErrorHandler(UART_ERROR_CODE);
-# 8 "src/librerias/UART.h" 2
-# 18 "src/librerias/UART.h"
-void UART_config_show();
-void UART_Init(uint32_t);
-void UART_select_baud(uint32_t);
-UART_ERROR_CODE UART_Rx_FRAMING();
-UART_ERROR_CODE UART_Rx_OVERFLOW();
-void UART_Tx(char);
-char UART_Rx(void);
-_Bool UART_Available(void);
-# 3 "src/librerias/UART.c" 2
+# 11 "src/librerias/UART.c" 2
 
 
 void UART_config_show(){
@@ -8327,6 +8356,7 @@ void UART_config_show(){
     (TXEN1) ? printf("Habilitado \r\n"):printf("Deshabilitado \r\n");
     printf("Receptor: ");
     (CREN) ? printf("Habilitado \r\n"):printf("Deshabilitado \r\n");
+    printf("\r\n\r\n");
 }
 
 void UART_Init(uint32_t baudrate){
@@ -8339,9 +8369,8 @@ void UART_Init(uint32_t baudrate){
     RCSTAbits.SPEN = 1;
     TXSTAbits.TXEN1 = 1;
     RCSTAbits.CREN = 1;
+    UART_config_show();
     ANSELC = 0x0;
-
-
 };
 
 void UART_select_baud(uint32_t baudrate){
@@ -8381,7 +8410,7 @@ void UART_select_baud(uint32_t baudrate){
     }
 }
 
-void UART_Tx(char dato){
+void UART_Tx(uint8_t dato){
     while(TRMT == 0);
     TXREG1 = dato;
 }
@@ -8407,8 +8436,35 @@ UART_ERROR_CODE UART_Rx_FRAMING(){
     return ERROR_CODE_UART_OK;
 }
 
-char UART_Rx(void){
-
-
+uint8_t UART_Rx(void){
+    UART_ErrorHandler(UART_Rx_OVERFLOW());
+    UART_ErrorHandler(UART_Rx_FRAMING());
     return RCREG1;
+}
+
+_Bool UART_RxAvailable(){
+    if (!RCSTAbits.SPEN || !RCSTAbits.CREN){
+        UART_ErrorHandler(ERROR_CODE_UART_CONFIG);
+        return 0;
+    }
+    if (!RC1IF){
+        return 0;
+    }
+    return 1;
+}
+
+void UART_ErrorHandler(UART_ERROR_CODE errorCode){
+    if(errorCode == ERROR_CODE_UART_OK) return;
+    printf("Error: ");
+    switch(errorCode){
+        case ERROR_CODE_UART_OVERFLOW:
+            printf("ERROR_CODE_UART_OVERFLOW\r\n");
+        break;
+        case ERROR_CODE_UART_FRAMING:
+            printf("ERROR_CODE_UART_FRAMING\r\n");
+        break;
+        case ERROR_CODE_UART_CONFIG:
+            printf("ERROR_CODE_UART_CONFIG \r\n");
+        break;
+    }
 }

@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__c_l_handler_8c" xml:lang="en-US">
+<title>src/CLHandler.c File Reference</title>
+<indexterm><primary>src/CLHandler.c</primary></indexterm>
+<para>
+
+<para>Definicion de funciones para ejecutar en la linea de comandos. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &quot;CLHandler.h&quot;<?linebreak?></programlisting><simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="__c_l_handler_8c_1afbefc1c14584a1dbc4d06b34fed4da0e"/>CL_ERROR_CODE <emphasis role="strong">CL_CommandHandler</emphasis> (uint8_t numParams)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__c_l_handler_8c_1ac333de22a063259ce4f7be70dbe34db5"/>void <emphasis role="strong">cliHelp</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Definicion de funciones para ejecutar en la linea de comandos. </para>
+
+<para><formalpara><title>Author</title>
+
+<para>Javier Mendoza (<link xlink:href="mailto:javierulisesmruiz@gmail.com">javierulisesmruiz@gmail.com</link>) </para>
+</formalpara>
+<formalpara><title>Date</title>
+
+<para>11/10/2024 </para>
+</formalpara>
+<formalpara><title>Version</title>
+
+<para>0.1 </para>
+</formalpara>
+</para>
+</section>
+</section>

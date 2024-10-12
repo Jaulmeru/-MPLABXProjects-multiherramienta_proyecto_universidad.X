@@ -19,7 +19,7 @@
 <simplesect>
     <title>Functions    </title>
         <itemizedlist>
-            <listitem><para>int <link linkend="_command__led_8c_1a840291bc02cba5474a4cb46a9b9566fe">main</link> (void)</para>
+            <listitem><para><anchor xml:id="_command__led_8c_1a840291bc02cba5474a4cb46a9b9566fe"/>int <emphasis role="strong">main</emphasis> (void)</para>
 </listitem>
         </itemizedlist>
 </simplesect>
@@ -56,13 +56,5 @@
 <indexterm><primary>command_led.c</primary><secondary>LED_ON</secondary></indexterm>
 <para><computeroutput>#define LED_ON( )</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered"><emphasis role="keywordflow">do</emphasis>&#32;{&#32;LATAbits.LATA1&#32;=&#32;1;&#32;}&#32;<emphasis role="keywordflow">while</emphasis>(0)
 </programlisting></section>
-</section>
-<section>
-<title>Function Documentation</title>
-<anchor xml:id="_command__led_8c_1a840291bc02cba5474a4cb46a9b9566fe"/><section>
-    <title>main()</title>
-<indexterm><primary>main</primary><secondary>command_led.c</secondary></indexterm>
-<indexterm><primary>command_led.c</primary><secondary>main</secondary></indexterm>
-<para><computeroutput>int main (void )</computeroutput></para></section>
 </section>
 </section>

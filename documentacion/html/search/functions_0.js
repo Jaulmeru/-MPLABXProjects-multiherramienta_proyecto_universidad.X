@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['clock_5finit_0',['Clock_Init',['../clock_8c.html#afa69e1fb2b263f5e89502e3d6c103423',1,'Clock_Init(int16_t s16Timeout):&#160;clock.c'],['../clock_8h.html#afa69e1fb2b263f5e89502e3d6c103423',1,'Clock_Init(int16_t s16Timeout):&#160;clock.c']]]
+  ['addtobuffer_0',['addToBuffer',['../command_line_8c.html#a3ba8cde82d6778724d4e4ed17b637c35',1,'addToBuffer(char newchar):&#160;commandLine.c'],['../command_line_8h.html#a3ba8cde82d6778724d4e4ed17b637c35',1,'addToBuffer(char newchar):&#160;commandLine.c']]]
 ];

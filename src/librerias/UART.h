@@ -22,7 +22,7 @@ typedef enum{
     ERROR_CODE_UART_FRAMING,        
     ERROR_CODE_UART_CONFIG,        
 }UART_ERROR_CODE;
-    
+  
 /**
  * @brief Muestra por puerto serial la configuracion actual del modulo EUSART
  */
@@ -82,6 +82,5 @@ bool UART_RxAvailable(void);
  * @param errorCode
  */
 void UART_ErrorHandler(UART_ERROR_CODE);
-    
-#endif	/* UART_TX_H */
 
+#endif	/* UART_TX_H */

@@ -11,6 +11,10 @@
 </listitem>
             <listitem><para>file <link linkend="_clock_8h">clock.h</link></para>
 </listitem>
+            <listitem><para>file <link linkend="_command_line_8c">commandLine.c</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_command_line_8h">commandLine.h</link></para>
+</listitem>
             <listitem><para>file <link linkend="__u_a_r_t_8c">UART.c</link></para>
 
 <para>Funciones para manejo de modulo EUSART del PIC18F45K50. </para>

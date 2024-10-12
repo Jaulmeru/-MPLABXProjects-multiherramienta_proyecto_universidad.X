@@ -1,7 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"17 src/main.c
-[; ;src/main.c: 17:     Clock_Init(16000);
+"19 src/main.c
+[; ;src/main.c: 19:     Clock_Init(16000);
 [c E5188 0 1 .. ]
 [n E5188 . ERROR_CODE_OK ERROR_CODE_TIMEOUT  ]
 "19 src/librerias/clock.h
@@ -10,15 +10,28 @@ Version 4.0 HI-TECH Software Intermediate Code
 "35 src/librerias/UART.h
 [; ;src/librerias/UART.h: 35: void UART_Init(uint32_t);
 [v _UART_Init `(v ~T0 @X0 0 ef1`ul ]
-"78
+"47 src/librerias/commandLine.h
+[; ;src/librerias/commandLine.h: 47: void commandLineInit();
+[v _commandLineInit `(v ~T0 @X0 0 e? ]
+"78 src/librerias/UART.h
 [; ;src/librerias/UART.h: 78: _Bool UART_RxAvailable(void);
 [v _UART_RxAvailable `(a ~T0 @X0 0 ef ]
-"71
+"66 src/librerias/commandLine.h
+[; ;src/librerias/commandLine.h: 66: void addToBuffer(char newchar);
+[v _addToBuffer `(v ~T0 @X0 0 ef1`uc ]
+"71 src/librerias/UART.h
 [; ;src/librerias/UART.h: 71: uint8_t UART_Rx(void);
 [v _UART_Rx `(uc ~T0 @X0 0 ef ]
-"64
-[; ;src/librerias/UART.h: 64: void UART_Tx(uint8_t);
-[v _UART_Tx `(v ~T0 @X0 0 ef1`uc ]
+"28 src/main.c
+[; ;src/main.c: 28:         CL_ErrorHandler(commandProcess());
+[c E5221 0 1 2 3 4 5 6 .. ]
+[n E5221 . EC_CL_OK EC_CL_BUFFOVER EC_CL_NOWORDS EC_CL_WORDOVER EC_CL_MAXNUMPARAMS EC_CL_WRONGNUMPARAMS EC_CL_WRONGCOMMAND  ]
+"109 src/librerias/commandLine.h
+[; ;src/librerias/commandLine.h: 109: void CL_ErrorHandler(CL_ERROR_CODE);
+[v _CL_ErrorHandler `(v ~T0 @X0 0 ef1`E5221 ]
+"89
+[; ;src/librerias/commandLine.h: 89: CL_ERROR_CODE commandProcess();
+[v _commandProcess `(E5221 ~T0 @X0 0 e? ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f45k50.h: 54: __asm("SRCON1 equ 0F57h");
 [; <" SRCON1 equ 0F57h ;# ">
@@ -725,49 +738,85 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x EBTR3  =  OFF       ]
 "83
 [p x EBTRB  =  OFF       ]
+"25 src/librerias/commandLine.h
+[; ;src/librerias/commandLine.h: 25: const uint8_t charStop = 0x0A;
+[v _charStop `Cuc ~T0 @X0 1 e ]
+[i _charStop
+-> -> 10 `i `uc
+]
+"27
+[; ;src/librerias/commandLine.h: 27: uint8_t buffCount = 0;
+[v _buffCount `uc ~T0 @X0 1 e ]
+[i _buffCount
+-> -> 0 `i `uc
+]
+"28
+[; ;src/librerias/commandLine.h: 28: uint8_t charBuff[100];
+[v _charBuff `uc ~T0 @X0 -> 100 `i e ]
+"29
+[; ;src/librerias/commandLine.h: 29: _Bool commandLineEnable = 0;
+[v _commandLineEnable `a ~T0 @X0 1 e ]
+[i _commandLineEnable
+-> -> 0 `i `a
+]
+"30
+[; ;src/librerias/commandLine.h: 30: _Bool flagCommandReady = 0;
+[v _flagCommandReady `a ~T0 @X0 1 e ]
+[i _flagCommandReady
+-> -> 0 `i `a
+]
+"31
+[; ;src/librerias/commandLine.h: 31: uint8_t command[16];
+[v _command `uc ~T0 @X0 -> 16 `i e ]
+[v F5220 `uc ~T0 @X0 -> 16 `i t ]
+"32
+[; ;src/librerias/commandLine.h: 32: uint8_t param[5][16];
+[v _param `F5220 ~T0 @X0 -> 5 `i e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"15 src/main.c
-[; ;src/main.c: 15: int main(void)
+"17 src/main.c
+[; ;src/main.c: 17: int main(void)
 [v _main `(i ~T0 @X0 1 ef ]
-"16
-[; ;src/main.c: 16: {
+"18
+[; ;src/main.c: 18: {
 {
 [e :U _main ]
 [f ]
-"17
-[; ;src/main.c: 17:     Clock_Init(16000);
+"19
+[; ;src/main.c: 19:     Clock_Init(16000);
 [e ( _Clock_Init (1 -> -> 16000 `i `s ]
-"18
-[; ;src/main.c: 18:     UART_Init(9600);
-[e ( _UART_Init (1 -> -> -> 9600 `i `l `ul ]
 "20
-[; ;src/main.c: 20:     while(1)
-[e :U 640 ]
+[; ;src/main.c: 20:     UART_Init(9600);
+[e ( _UART_Init (1 -> -> -> 9600 `i `l `ul ]
 "21
-[; ;src/main.c: 21:     {
+[; ;src/main.c: 21:     commandLineInit();
+[e ( _commandLineInit ..  ]
+"23
+[; ;src/main.c: 23:     while(1)
+[e :U 640 ]
+"24
+[; ;src/main.c: 24:     {
 {
-"22
-[; ;src/main.c: 22:         if(UART_RxAvailable()){
+"25
+[; ;src/main.c: 25:         if(UART_RxAvailable()){
 [e $ ! != -> ( _UART_RxAvailable ..  `i -> 0 `i 642  ]
 {
-"23
-[; ;src/main.c: 23:             uint8_t x = UART_Rx();
-[v _x `uc ~T0 @X0 1 a ]
-[e = _x ( _UART_Rx ..  ]
-"24
-[; ;src/main.c: 24:             UART_Tx(x);
-[e ( _UART_Tx (1 _x ]
-"25
-[; ;src/main.c: 25:         }
+"26
+[; ;src/main.c: 26:             addToBuffer(UART_Rx());
+[e ( _addToBuffer (1 -> ( _UART_Rx ..  `uc ]
+"27
+[; ;src/main.c: 27:         }
 }
 [e :U 642 ]
-"26
-[; ;src/main.c: 26:     }
+"28
+[; ;src/main.c: 28:         CL_ErrorHandler(commandProcess());
+[e ( _CL_ErrorHandler (1 ( _commandProcess ..  ]
+"29
+[; ;src/main.c: 29:     }
 }
 [e :U 639 ]
 [e $U 640  ]
 [e :U 641 ]
-"27
-[; ;src/main.c: 27: }
+"30
+[; ;src/main.c: 30: }
 [e :UE 638 ]
 }

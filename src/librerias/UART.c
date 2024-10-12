@@ -23,6 +23,7 @@ void UART_config_show(){
     (TXEN1) ? printf("Habilitado \r\n"):printf("Deshabilitado \r\n");
     printf("Receptor: ");
     (CREN) ? printf("Habilitado \r\n"):printf("Deshabilitado \r\n");
+    printf("\r\n\r\n");
 }
 
 void UART_Init(uint32_t baudrate){

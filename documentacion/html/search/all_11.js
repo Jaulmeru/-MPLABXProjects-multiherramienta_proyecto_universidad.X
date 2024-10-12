@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['habilitacion_20del_20puerto_20serie_0',['3 - Habilitacion del puerto serie',['../md_documentacion_2_u_a_r_t.html#autotoc_md7',1,'']]],
-  ['habilitar_20recepcion_1',['7 - Habilitar recepcion',['../md_documentacion_2_u_a_r_t.html#autotoc_md15',1,'']]],
-  ['habilitar_20transmision_2',['6 - Habilitar transmision',['../md_documentacion_2_u_a_r_t.html#autotoc_md10',1,'']]],
-  ['hardware_3',['Requisitos de hardware',['../md__r_e_a_d_m_e.html#autotoc_md22',1,'']]],
-  ['hardware_20y_20herramientas_20seleccionadas_4',['Hardware y herramientas seleccionadas',['../md__r_e_a_d_m_e.html#autotoc_md23',1,'']]],
-  ['herramientas_20seleccionadas_5',['Hardware y herramientas seleccionadas',['../md__r_e_a_d_m_e.html#autotoc_md23',1,'']]]
+  ['idea_20general_0',['Idea general',['../md__r_e_a_d_m_e.html',1,'']]],
+  ['impliementación_20en_20pic18f45k50_1',['Impliementación en PIC18F45K50',['../md_documentacion_2_u_a_r_t.html#autotoc_md2',1,'']]],
+  ['init_5fcommand_5fline_2ec_2',['init_command_line.c',['../init__command__line_8c.html',1,'']]],
+  ['interrupcciones_3',['7 - Interrupcciones',['../md_documentacion_2_u_a_r_t.html#autotoc_md11',1,'']]],
+  ['inversion_20de_20polaridad_4',['5 - Inversion de polaridad',['../md_documentacion_2_u_a_r_t.html#autotoc_md9',1,'']]]
 ];

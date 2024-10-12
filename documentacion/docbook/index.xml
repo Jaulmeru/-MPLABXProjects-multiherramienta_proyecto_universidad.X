@@ -1,28 +1,28 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <book xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_index" xml:lang="en-US">
     <info>
-    <title>multiherramienta</title>
+    <title>Multiherramienta</title>
     </info>
     <xi:include href="md_documentacion_2_u_a_r_t.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="md__r_e_a_d_m_e.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 <chapter>
     <title>File Documentation</title>
-    <xi:include href="_u_a_r_t_8md.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="command__led_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="echo__char_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="init__command__line_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="print__ascii_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="_r_e_a_d_m_e_8md.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="config_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_c_l_handler_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_c_l_handler_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_c_l_handler_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="config_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="clk__variables_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="clk__variables_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="clock_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="clock_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="clock_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="command_line_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="command_line_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="command_line_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="_u_a_r_t_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="_u_a_r_t_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="_u_a_r_t_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="main_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 </chapter>
 <index/>
 </book>
