@@ -5,7 +5,9 @@
  * Created on September 9, 2024, 1:50 PM
  */
 
-#include "variables.h"
+
+#ifndef SPI_H
+#define	SPI_H
 
 #define SPI_clk_idle_high() do{ SSPCON1bits.CKP = 1; }while(0)
 #define SPI_clk_idle_low() do{ SSPCON1bits.CKP = 0; }while(0)
@@ -16,14 +18,25 @@
 #define SPI_sample_end() do{SSPSTATbits.SMP = 1;}while(0)
 #define SPI_sample_mid() do{SSPSTATbits.SMP = 0;}while(0)
 
+#include <stdint.h>
+#include <stdbool.h>
+#include <float.h>
+#include <stdio.h>
+#include <xc.h>
+#include "clock.h"
+#include <inttypes.h>
 
+typedef enum{
+    EC_SPI_OK,   
+    EC_SPI_BR_OVERRANGE,    
+    EC_SPI_COLLISION,    
+}SPI_ERROR_CODE;
 
-#ifndef SPI_H
-#define	SPI_H
-
-#ifdef	__cplusplus
-extern "C" {
-#endif
+typedef enum{
+    SLAVE1,   
+    SLAVE2,    
+    SLAVE3,    
+}SPI_SLAVE;
     
 void SPI_config_show();
 void SPI_master_init();
@@ -36,9 +49,8 @@ int32_t SPI_actual_frec();
 
 uint8_t SPI1_ByteExchange(uint8_t);
 
-#ifdef	__cplusplus
-}
-#endif
+void SPI_ErrorHandler(SPI_ERROR_CODE);
+void SPI_select_Slave(SPI_SLAVE);
+
 
 #endif	/* SPI_H */
-

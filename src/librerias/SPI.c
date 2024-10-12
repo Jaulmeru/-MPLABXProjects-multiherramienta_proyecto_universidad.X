@@ -101,3 +101,33 @@ uint8_t SPI1_ByteExchange(uint8_t byteData)
     PIR1bits.SSP1IF = 0;
     return SSP1BUF;
 }
+
+void SPI_ErrorHandler(SPI_ERROR_CODE errorCode){
+    if(errorCode != EC_SPI_OK) return;
+    printf("Error: ");
+    switch(errorCode){
+        case EC_SPI_OK:
+            
+        break;
+        case EC_SPI_BR_OVERRANGE:
+            printf("ERROR_CODE_SPI_BR_OVERRANGE");
+        break;
+        case EC_SPI_COLLISION:
+            printf("ERROR_CODE_SPI_COLLISION");
+        break;
+    }
+}
+
+void SPI_select_Slave(SPI_SLAVE slave){
+    switch(slave){
+        case SLAVE1:
+            
+            break;
+        case SLAVE2:
+            
+            break;
+        case SLAVE3:
+            
+            break;
+    }
+}
