@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c librerias/UART.c librerias/clock.c librerias/SPI.c librerias/variables.c
+SOURCEFILES_QUOTED_IF_SPACED=src/main.c src/librerias/UART.c src/librerias/clock.c src/librerias/commandLine.c src/CLHandler.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.p1 ${OBJECTDIR}/librerias/UART.p1 ${OBJECTDIR}/librerias/clock.p1 ${OBJECTDIR}/librerias/SPI.p1 ${OBJECTDIR}/librerias/variables.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.p1.d ${OBJECTDIR}/librerias/UART.p1.d ${OBJECTDIR}/librerias/clock.p1.d ${OBJECTDIR}/librerias/SPI.p1.d ${OBJECTDIR}/librerias/variables.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/src/main.p1 ${OBJECTDIR}/src/librerias/UART.p1 ${OBJECTDIR}/src/librerias/clock.p1 ${OBJECTDIR}/src/librerias/commandLine.p1 ${OBJECTDIR}/src/CLHandler.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/src/main.p1.d ${OBJECTDIR}/src/librerias/UART.p1.d ${OBJECTDIR}/src/librerias/clock.p1.d ${OBJECTDIR}/src/librerias/commandLine.p1.d ${OBJECTDIR}/src/CLHandler.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.p1 ${OBJECTDIR}/librerias/UART.p1 ${OBJECTDIR}/librerias/clock.p1 ${OBJECTDIR}/librerias/SPI.p1 ${OBJECTDIR}/librerias/variables.p1
+OBJECTFILES=${OBJECTDIR}/src/main.p1 ${OBJECTDIR}/src/librerias/UART.p1 ${OBJECTDIR}/src/librerias/clock.p1 ${OBJECTDIR}/src/librerias/commandLine.p1 ${OBJECTDIR}/src/CLHandler.p1
 
 # Source Files
-SOURCEFILES=main.c librerias/UART.c librerias/clock.c librerias/SPI.c librerias/variables.c
+SOURCEFILES=src/main.c src/librerias/UART.c src/librerias/clock.c src/librerias/commandLine.c src/CLHandler.c
 
 
 
@@ -88,86 +88,86 @@ MP_PROCESSOR_OPTION=18F45K50
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/main.p1.d 
-	@${RM} ${OBJECTDIR}/main.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=pickit3   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/main.p1 main.c 
-	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/src/main.p1: src/main.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/src" 
+	@${RM} ${OBJECTDIR}/src/main.p1.d 
+	@${RM} ${OBJECTDIR}/src/main.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=pickit3   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/src/main.p1 src/main.c 
+	@-${MV} ${OBJECTDIR}/src/main.d ${OBJECTDIR}/src/main.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/src/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/librerias/UART.p1: librerias/UART.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/librerias" 
-	@${RM} ${OBJECTDIR}/librerias/UART.p1.d 
-	@${RM} ${OBJECTDIR}/librerias/UART.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=pickit3   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/librerias/UART.p1 librerias/UART.c 
-	@-${MV} ${OBJECTDIR}/librerias/UART.d ${OBJECTDIR}/librerias/UART.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/librerias/UART.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/src/librerias/UART.p1: src/librerias/UART.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/src/librerias" 
+	@${RM} ${OBJECTDIR}/src/librerias/UART.p1.d 
+	@${RM} ${OBJECTDIR}/src/librerias/UART.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=pickit3   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/src/librerias/UART.p1 src/librerias/UART.c 
+	@-${MV} ${OBJECTDIR}/src/librerias/UART.d ${OBJECTDIR}/src/librerias/UART.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/src/librerias/UART.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/librerias/clock.p1: librerias/clock.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/librerias" 
-	@${RM} ${OBJECTDIR}/librerias/clock.p1.d 
-	@${RM} ${OBJECTDIR}/librerias/clock.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=pickit3   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/librerias/clock.p1 librerias/clock.c 
-	@-${MV} ${OBJECTDIR}/librerias/clock.d ${OBJECTDIR}/librerias/clock.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/librerias/clock.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/src/librerias/clock.p1: src/librerias/clock.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/src/librerias" 
+	@${RM} ${OBJECTDIR}/src/librerias/clock.p1.d 
+	@${RM} ${OBJECTDIR}/src/librerias/clock.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=pickit3   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/src/librerias/clock.p1 src/librerias/clock.c 
+	@-${MV} ${OBJECTDIR}/src/librerias/clock.d ${OBJECTDIR}/src/librerias/clock.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/src/librerias/clock.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/librerias/SPI.p1: librerias/SPI.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/librerias" 
-	@${RM} ${OBJECTDIR}/librerias/SPI.p1.d 
-	@${RM} ${OBJECTDIR}/librerias/SPI.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=pickit3   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/librerias/SPI.p1 librerias/SPI.c 
-	@-${MV} ${OBJECTDIR}/librerias/SPI.d ${OBJECTDIR}/librerias/SPI.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/librerias/SPI.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/src/librerias/commandLine.p1: src/librerias/commandLine.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/src/librerias" 
+	@${RM} ${OBJECTDIR}/src/librerias/commandLine.p1.d 
+	@${RM} ${OBJECTDIR}/src/librerias/commandLine.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=pickit3   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/src/librerias/commandLine.p1 src/librerias/commandLine.c 
+	@-${MV} ${OBJECTDIR}/src/librerias/commandLine.d ${OBJECTDIR}/src/librerias/commandLine.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/src/librerias/commandLine.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/librerias/variables.p1: librerias/variables.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/librerias" 
-	@${RM} ${OBJECTDIR}/librerias/variables.p1.d 
-	@${RM} ${OBJECTDIR}/librerias/variables.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=pickit3   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/librerias/variables.p1 librerias/variables.c 
-	@-${MV} ${OBJECTDIR}/librerias/variables.d ${OBJECTDIR}/librerias/variables.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/librerias/variables.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/src/CLHandler.p1: src/CLHandler.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/src" 
+	@${RM} ${OBJECTDIR}/src/CLHandler.p1.d 
+	@${RM} ${OBJECTDIR}/src/CLHandler.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=pickit3   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/src/CLHandler.p1 src/CLHandler.c 
+	@-${MV} ${OBJECTDIR}/src/CLHandler.d ${OBJECTDIR}/src/CLHandler.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/src/CLHandler.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
-${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/main.p1.d 
-	@${RM} ${OBJECTDIR}/main.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/main.p1 main.c 
-	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/src/main.p1: src/main.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/src" 
+	@${RM} ${OBJECTDIR}/src/main.p1.d 
+	@${RM} ${OBJECTDIR}/src/main.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/src/main.p1 src/main.c 
+	@-${MV} ${OBJECTDIR}/src/main.d ${OBJECTDIR}/src/main.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/src/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/librerias/UART.p1: librerias/UART.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/librerias" 
-	@${RM} ${OBJECTDIR}/librerias/UART.p1.d 
-	@${RM} ${OBJECTDIR}/librerias/UART.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/librerias/UART.p1 librerias/UART.c 
-	@-${MV} ${OBJECTDIR}/librerias/UART.d ${OBJECTDIR}/librerias/UART.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/librerias/UART.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/src/librerias/UART.p1: src/librerias/UART.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/src/librerias" 
+	@${RM} ${OBJECTDIR}/src/librerias/UART.p1.d 
+	@${RM} ${OBJECTDIR}/src/librerias/UART.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/src/librerias/UART.p1 src/librerias/UART.c 
+	@-${MV} ${OBJECTDIR}/src/librerias/UART.d ${OBJECTDIR}/src/librerias/UART.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/src/librerias/UART.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/librerias/clock.p1: librerias/clock.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/librerias" 
-	@${RM} ${OBJECTDIR}/librerias/clock.p1.d 
-	@${RM} ${OBJECTDIR}/librerias/clock.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/librerias/clock.p1 librerias/clock.c 
-	@-${MV} ${OBJECTDIR}/librerias/clock.d ${OBJECTDIR}/librerias/clock.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/librerias/clock.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/src/librerias/clock.p1: src/librerias/clock.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/src/librerias" 
+	@${RM} ${OBJECTDIR}/src/librerias/clock.p1.d 
+	@${RM} ${OBJECTDIR}/src/librerias/clock.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/src/librerias/clock.p1 src/librerias/clock.c 
+	@-${MV} ${OBJECTDIR}/src/librerias/clock.d ${OBJECTDIR}/src/librerias/clock.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/src/librerias/clock.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/librerias/SPI.p1: librerias/SPI.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/librerias" 
-	@${RM} ${OBJECTDIR}/librerias/SPI.p1.d 
-	@${RM} ${OBJECTDIR}/librerias/SPI.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/librerias/SPI.p1 librerias/SPI.c 
-	@-${MV} ${OBJECTDIR}/librerias/SPI.d ${OBJECTDIR}/librerias/SPI.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/librerias/SPI.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/src/librerias/commandLine.p1: src/librerias/commandLine.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/src/librerias" 
+	@${RM} ${OBJECTDIR}/src/librerias/commandLine.p1.d 
+	@${RM} ${OBJECTDIR}/src/librerias/commandLine.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/src/librerias/commandLine.p1 src/librerias/commandLine.c 
+	@-${MV} ${OBJECTDIR}/src/librerias/commandLine.d ${OBJECTDIR}/src/librerias/commandLine.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/src/librerias/commandLine.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/librerias/variables.p1: librerias/variables.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/librerias" 
-	@${RM} ${OBJECTDIR}/librerias/variables.p1.d 
-	@${RM} ${OBJECTDIR}/librerias/variables.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/librerias/variables.p1 librerias/variables.c 
-	@-${MV} ${OBJECTDIR}/librerias/variables.d ${OBJECTDIR}/librerias/variables.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/librerias/variables.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/src/CLHandler.p1: src/CLHandler.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/src" 
+	@${RM} ${OBJECTDIR}/src/CLHandler.p1.d 
+	@${RM} ${OBJECTDIR}/src/CLHandler.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/src/CLHandler.p1 src/CLHandler.c 
+	@-${MV} ${OBJECTDIR}/src/CLHandler.d ${OBJECTDIR}/src/CLHandler.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/src/CLHandler.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

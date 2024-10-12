@@ -1,0 +1,356 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_md_documentacion_2_u_a_r_t" xml:lang="en-US">
+<title>UART</title>
+<indexterm><primary>UART</primary></indexterm>
+
+<para><anchor xml:id="_md_documentacion_2_u_a_r_t_1autotoc_md0"/></para>
+<section xml:id="_md_documentacion_2_u_a_r_t_1autotoc_md1">
+<title>Que es y como funciona</title>
+<para>[WIP] Explicacion y base teorica sobre UART</para>
+</section>
+<section xml:id="_md_documentacion_2_u_a_r_t_1autotoc_md2">
+<title>Impliementación en PIC18F45K50</title>
+<para>El PIC seleccionado cuenta con un modulo EUSART (Enhanced Universal Synchronous Asynchronous Receiver Transmitter) por lo que se podra trabajar en modo asincrono o sincrono.</para>
+
+<para>La operacion del modulo EUSART es controlada por 3 registros <?linebreak?></para>
+
+<para><itemizedlist>
+<listitem>
+<para>Transmit Status and Control (TXSTAx)</para>
+</listitem><listitem>
+<para>Receive Status and Control (RCSTAx)</para>
+</listitem><listitem>
+<para>Baud Rate Control (BAUDCONx) <?linebreak?></para>
+</listitem></itemizedlist>
+</para>
+
+<para><informaltable frame='bottom'><tgroup cols='1'><colspec align='center'/><tbody><row><entry align='center'>
+</entry></row></tbody></tgroup></informaltable>
+</para>
+<section xml:id="_md_documentacion_2_u_a_r_t_1autotoc_md4">
+<title>Configuracion de transmision Asincrona</title>
+<para>Segun el propio datasheet. Estos son los pasos para realizar una transmision asincrona:</para>
+
+<para><blockquote>
+<para>&#8205;1. Inicialice el par de registros SPBRGHx:SPBRGx y los bits BRGH y BRG16 para lograr la tasa de baudios deseada.<orderedlist>
+<listitem>
+<para>Establezca los controles TRIS RX/DT y TX/CK en &apos;1&apos;.</para>
+</listitem><listitem>
+<para>Habilite el puerto serie asíncrono borrando el bit SYNC y configurando el bit SPEN.</para>
+</listitem><listitem>
+<para>Si se desea una transmisión de 9 bits, establezca el bit de control TX9. Un noveno bit de datos establecido indicará que los ocho bits de datos menos significativos son una dirección cuando el receptor esté configurado para la detección de direcciones.</para>
+</listitem><listitem>
+<para>Establezca el bit de control TXCKP si se desea una polaridad de datos de transmisión invertida.</para>
+</listitem><listitem>
+<para>Habilite la transmisión configurando el bit de control TXEN. Esto hará que se active el bit de interrupción TXIF.</para>
+</listitem><listitem>
+<para>Si se desean interrupciones, establezca el bit de habilitación de interrupción TXIE. Se producirá una interrupción de inmediato siempre que los bits GIE/GIEH y PEIE/GIEL del registro INTCON también estén configurados.</para>
+</listitem><listitem>
+<para>Si se selecciona la transmisión de 9 bits, el noveno bit debe ser cargado en el bit de datos TX9D.</para>
+</listitem><listitem>
+<para>Cargue datos de 8 bits en el registro TXREGx. Esto iniciará la transmisión. <?linebreak?> </para>
+</listitem></orderedlist>
+</para>
+</blockquote></para>
+<section xml:id="_md_documentacion_2_u_a_r_t_1autotoc_md5">
+<title>1 - Configurar los baudios</title>
+<para>Los registros que se usaran son:</para>
+
+<para><itemizedlist>
+<listitem>
+<para>TXSTA1: <?linebreak?><itemizedlist>
+<listitem>
+<para>SYNC: Selecciona el modo del EUSART <?linebreak?> 1 = Sincrono <?linebreak?> <emphasis><emphasis role="bold">0 = Asincrono</emphasis></emphasis> <?linebreak?><itemizedlist>
+<listitem>
+<para>Por ahora solo lo haremos asincrono</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem>
+<para>BRGH: Selecciona si sera un rango alto de baudios. Solo con asincrono <?linebreak?> <emphasis><emphasis role="bold">1 = High speed</emphasis></emphasis> <?linebreak?> 0 = Low speed <?linebreak?><itemizedlist>
+<listitem>
+<para>Se selecciona alta velocidad para mejorar el funcionamiento con el reloj de 48MHz <?linebreak?></para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem>
+<para>BAUDCON1:<itemizedlist>
+<listitem>
+<para>BRG16: Selecciona si el generador de baudrate usara 8 o 16 bits <?linebreak?> <emphasis><emphasis role="bold">1 = 16-bit Baud Rate Generator is used (SPBRGHx:SPBRGx)</emphasis></emphasis> <?linebreak?> 0 = 8-bit Baud Rate Generator is used (SPBRGx)<itemizedlist>
+<listitem>
+<para>Se seleccionaran 16bits para disminuir el error <?linebreak?></para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+
+<para>Con esta configuracion podemos configurar los baudios entre los mas utilizados cambiando el valor de SPBRGHx:SPBRGx segun la siguiente tabla</para>
+
+<para><informaltable frame="all">
+    <tgroup cols="4" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+      <colspec colname='c4'/>
+<thead>
+      <row  class='markdownTableHead'>
+<entry>
+<para>BR esperado   </para>
+</entry><entry>
+<para>BR Real   </para>
+</entry><entry>
+<para>% Error   </para>
+</entry><entry>
+<para>SPBRGHx:SPBRGx    </para>
+</entry></row>
+</thead><tbody>
+      <row  class='markdownTableRowOdd'>
+<entry>
+<para>300   </para>
+</entry><entry>
+<para>300   </para>
+</entry><entry>
+<para>0.00   </para>
+</entry><entry>
+<para>39999    </para>
+</entry></row>
+      <row  class='markdownTableRowEven'>
+<entry>
+<para>1200   </para>
+</entry><entry>
+<para>1200   </para>
+</entry><entry>
+<para>0.00   </para>
+</entry><entry>
+<para>9999    </para>
+</entry></row>
+      <row  class='markdownTableRowOdd'>
+<entry>
+<para>2400   </para>
+</entry><entry>
+<para>2400   </para>
+</entry><entry>
+<para>0.00   </para>
+</entry><entry>
+<para>4999    </para>
+</entry></row>
+      <row  class='markdownTableRowEven'>
+<entry>
+<para>9600   </para>
+</entry><entry>
+<para>9600   </para>
+</entry><entry>
+<para>0.00   </para>
+</entry><entry>
+<para>1249    </para>
+</entry></row>
+      <row  class='markdownTableRowOdd'>
+<entry>
+<para>10417   </para>
+</entry><entry>
+<para>10417   </para>
+</entry><entry>
+<para>0.00   </para>
+</entry><entry>
+<para>1151    </para>
+</entry></row>
+      <row  class='markdownTableRowEven'>
+<entry>
+<para>19.2k   </para>
+</entry><entry>
+<para>19.2k   </para>
+</entry><entry>
+<para>0.00   </para>
+</entry><entry>
+<para>624    </para>
+</entry></row>
+      <row  class='markdownTableRowOdd'>
+<entry>
+<para>57.6k   </para>
+</entry><entry>
+<para>57.69k   </para>
+</entry><entry>
+<para>0.16   </para>
+</entry><entry>
+<para>207    </para>
+</entry></row>
+      <row  class='markdownTableRowEven'>
+<entry>
+<para>115.2k   </para>
+</entry><entry>
+<para>115.39k   </para>
+</entry><entry>
+<para>0.16   </para>
+</entry><entry>
+<para>103   </para>
+</entry></row>
+    </tbody>
+    </tgroup>
+</informaltable>
+</para>
+</section>
+<section xml:id="_md_documentacion_2_u_a_r_t_1autotoc_md6">
+<title>2 - Configurar pines como tri-estado</title>
+<para>Simplemente se aplican a los correspondientes registros TRIS un 1 <?linebreak?></para>
+
+<para><itemizedlist>
+<listitem>
+<para>TRISC: <?linebreak?><itemizedlist>
+<listitem>
+<para>R6: PORTC Tri-State Control bit <?linebreak?> <emphasis><emphasis role="bold">1 = PORTx pin configured as an input (tri-stated)</emphasis></emphasis> <?linebreak?> 0 = PORTx pin configured as an output<itemizedlist>
+<listitem>
+<para>Se coloca como tri estado para el pin Tx</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem>
+<para>R7: PORTC Tri-State Control bit <?linebreak?> <emphasis><emphasis role="bold">1 = PORTx pin configured as an input (tri-stated)</emphasis></emphasis> <?linebreak?> 0 = PORTx pin configured as an output<itemizedlist>
+<listitem>
+<para>Se coloca como tri estado para el pin Rx</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</section>
+<section xml:id="_md_documentacion_2_u_a_r_t_1autotoc_md7">
+<title>3 - Habilitacion del puerto serie</title>
+<para>El registro SYNC ya fue ajustado en el paso 1. <?linebreak?></para>
+
+<para><itemizedlist>
+<listitem>
+<para>RCSTA: <?linebreak?><itemizedlist>
+<listitem>
+<para>SPEN: Bit de habilitacion de puerto serial <?linebreak?> <emphasis><emphasis role="bold">1 = Puesto serial es habilitado</emphasis></emphasis> <?linebreak?> 0 = Puesto serial es deshabilitado<itemizedlist>
+<listitem>
+<para>Los pines RX/DT y TX/CK seran usados como pines seriales <?linebreak?></para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</section>
+<section xml:id="_md_documentacion_2_u_a_r_t_1autotoc_md8">
+<title>4 - 9bits</title>
+<para>Estas funcion si bien podemos agregarla en un futuro. Por el momento no sera inplementada.</para>
+</section>
+<section xml:id="_md_documentacion_2_u_a_r_t_1autotoc_md9">
+<title>5 - Inversion de polaridad</title>
+<para>No implementada <?linebreak?></para>
+</section>
+<section xml:id="_md_documentacion_2_u_a_r_t_1autotoc_md10">
+<title>6 - Habilitar transmision</title>
+<para><itemizedlist>
+<listitem>
+<para>TXSTA: <?linebreak?><itemizedlist>
+<listitem>
+<para>TXEN: Bit de habilitacion transmision <?linebreak?> <emphasis><emphasis role="bold">1 = Transmision habilitada</emphasis></emphasis> <?linebreak?> 0 = Transmision deshabilitada</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</section>
+<section xml:id="_md_documentacion_2_u_a_r_t_1autotoc_md11">
+<title>7 - Interrupcciones</title>
+<para>No implementado</para>
+</section>
+<section xml:id="_md_documentacion_2_u_a_r_t_1autotoc_md12">
+<title>8 - Carga bit 9</title>
+<para>No implementado</para>
+</section>
+<section xml:id="_md_documentacion_2_u_a_r_t_1autotoc_md13">
+<title>9 - Carga de dato</title>
+<para>Aqui solante se trata de cargar el dato a TXREG1 que lo pasara paralelamente a TSR (Transmit Shift Register). El cual pasara los datos hacia el pin de forma serial. <?linebreak?> Si bien no esta especificado en las instrucciones anteriores se agregara una pequeña funcion con el registro TRMT. Este estara en 0 mientras aun haya datos pendientes en TSR.</para>
+</section>
+</section>
+<section xml:id="_md_documentacion_2_u_a_r_t_1autotoc_md14">
+<title>Configuración de Recepción Asincrónica</title>
+<para>Segun el propio datasheet. Estos son los pasos para realizar una recepcion asincrona:</para>
+
+<para><blockquote>
+<para>&#8205;1. Inicialice el par de registros SPBRGHx:SPBRGx y los bits BRGH y BRG16 para lograr la tasa de baudios deseada.<orderedlist>
+<listitem>
+<para>Establezca los controles TRIS de RX/DT y TX/CK en &apos;1&apos;.</para>
+</listitem><listitem>
+<para>Habilite el puerto serie configurando el bit SPEN y el bit TRIS del pin RX/DT. El bit SYNC debe estar en cero para el funcionamiento asíncrono.</para>
+</listitem><listitem>
+<para>Si se desean interrupciones, configure el bit de habilitación de interrupciones RCIE y ajuste los bits GIE/GIEH y PEIE/GIEL del registro INTCON.</para>
+</listitem><listitem>
+<para>Si se desea recepción de 9 bits, configure el bit RX9.</para>
+</listitem><listitem>
+<para>Establezca el RXDTP si se desea polaridad de recepción invertida.</para>
+</listitem><listitem>
+<para>Habilite la recepción configurando el bit CREN.</para>
+</listitem><listitem>
+<para>El bit de bandera de interrupción RCIF se establecerá cuando un carácter se transfiera del RSR al búfer de recepción. Se generará una interrupción si también se ha activado el bit de habilitación de interrupción RCIE.</para>
+</listitem><listitem>
+<para>Lea el registro RCSTAx para obtener las banderas de error y, si la recepción de datos de 9 bits está habilitada, el noveno bit de datos.</para>
+</listitem><listitem>
+<para>Obtenga los ocho bits de datos menos significativos recibidos del búfer de recepción leyendo el registro RCREGx.</para>
+</listitem><listitem>
+<para>Si ocurrió un desbordamiento, borre la bandera OERR desactivando el bit de habilitación del receptor CREN. <?linebreak?> </para>
+</listitem></orderedlist>
+</para>
+</blockquote>Como se ve, hasta el paso 6 es lo mismo para la transmision, asi que lo obviaremos.</para>
+<section xml:id="_md_documentacion_2_u_a_r_t_1autotoc_md15">
+<title>7 - Habilitar recepcion</title>
+<para><itemizedlist>
+<listitem>
+<para>RCSTA: <?linebreak?><itemizedlist>
+<listitem>
+<para>CREN: Bit de habilitacion recepcion continua <?linebreak?> <emphasis><emphasis role="bold">1 = Recepcion habilitada</emphasis></emphasis> <?linebreak?> 0 = Recepcion deshabilitada <?linebreak?></para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</section>
+<section xml:id="_md_documentacion_2_u_a_r_t_1autotoc_md16">
+<title>8 - Revisar bandera</title>
+<para><itemizedlist>
+<listitem>
+<para>PIR1: <?linebreak?><itemizedlist>
+<listitem>
+<para>RCIF: EUSART Receive Interrupt Flag bit <?linebreak?> 1 = The EUSART receive buffer, RCREG1, is full (cleared when RCREG1 is read) <?linebreak?> 0 = The EUSART receive buffer is empty bit 4 TXIF: EUSART Transmit Interrupt Flag bit</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+
+<para>Se va a leer el registro, cuando este tenga 1 significa que hay un dato esperando a ser leido.</para>
+</section>
+<section xml:id="_md_documentacion_2_u_a_r_t_1autotoc_md17">
+<title>9 - Leer errores</title>
+<para><itemizedlist>
+<listitem>
+<para>RCSTA: <?linebreak?><itemizedlist>
+<listitem>
+<para>FERR: Framing Error bit <?linebreak?> 1 = Framing error (can be updated by reading RCREGx register and receive next valid byte) <?linebreak?> 0 = No framing error<itemizedlist>
+<listitem>
+<para>Este error es ocacionado cuando no se detecta correctamente el bit de parada, lo que significa un descordinamiento.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem>
+<para>OERR: Overrun Error bit <?linebreak?> 1 = Overrun error (can be cleared by clearing bit CREN) <?linebreak?> 0 = No overrun error<itemizedlist>
+<listitem>
+<para>Este error es ocacionado cuando se llena el buffer de datos y no se leyeron antes de llegar mas</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</section>
+<section xml:id="_md_documentacion_2_u_a_r_t_1autotoc_md18">
+<title>10 - Leer dato</title>
+<para>Para obtener el dato siemplemente hay que leer el registro RCREG1</para>
+</section>
+<section xml:id="_md_documentacion_2_u_a_r_t_1autotoc_md19">
+<title>11 - Borrar error de desbordamiento</title>
+<para>Para borrar el registro de OERR hay que dehabilitar y volver a habilitar CREN </para>
+</section>
+</section>
+</section>
+</section>

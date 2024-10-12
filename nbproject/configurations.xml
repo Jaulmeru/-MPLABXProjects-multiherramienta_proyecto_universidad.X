@@ -4,11 +4,11 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>librerias/UART.h</itemPath>
-      <itemPath>librerias/clock.h</itemPath>
-      <itemPath>config.h</itemPath>
-      <itemPath>librerias/SPI.h</itemPath>
-      <itemPath>librerias/variables.h</itemPath>
+      <itemPath>src/librerias/UART.h</itemPath>
+      <itemPath>src/librerias/clock.h</itemPath>
+      <itemPath>src/librerias/commandLine.h</itemPath>
+      <itemPath>src/CLHandler.h</itemPath>
+      <itemPath>src/librerias/SPI.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -22,15 +22,18 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>main.c</itemPath>
-      <itemPath>librerias/UART.c</itemPath>
-      <itemPath>librerias/clock.c</itemPath>
-      <itemPath>librerias/SPI.c</itemPath>
-      <itemPath>librerias/variables.c</itemPath>
+      <itemPath>src/main.c</itemPath>
+      <itemPath>src/librerias/UART.c</itemPath>
+      <itemPath>src/librerias/clock.c</itemPath>
+      <itemPath>src/librerias/commandLine.c</itemPath>
+      <itemPath>src/CLHandler.c</itemPath>
+      <itemPath>src/librerias/SPI.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
     <Elem>.</Elem>
+    <Elem>src</Elem>
+    <Elem>src/librerias</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -169,6 +172,7 @@
         <property key="event.recorder.debugger.behavior" value="Running"/>
         <property key="event.recorder.enabled" value="false"/>
         <property key="event.recorder.scvd.files" value=""/>
+        <property key="firmware.download.all" value="false"/>
         <property key="hwtoolclock.frcindebug" value="false"/>
         <property key="lastid" value=""/>
         <property key="memories.aux" value="false"/>
@@ -695,6 +699,7 @@
         <property key="event.recorder.debugger.behavior" value="Running"/>
         <property key="event.recorder.enabled" value="false"/>
         <property key="event.recorder.scvd.files" value=""/>
+        <property key="firmware.download.all" value="false"/>
         <property key="hwtoolclock.frcindebug" value="false"/>
         <property key="lastid" value=""/>
         <property key="memories.aux" value="false"/>

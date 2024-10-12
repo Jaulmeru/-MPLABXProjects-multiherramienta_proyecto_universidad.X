@@ -1,0 +1,42 @@
+\doxysection{UART.\+h}
+\hypertarget{_u_a_r_t_8h_source}{}\label{_u_a_r_t_8h_source}\index{src/librerias/UART.h@{src/librerias/UART.h}}
+\mbox{\hyperlink{_u_a_r_t_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ UART\_TX\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ UART\_TX\_H}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <float.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <xc.h>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\{}
+\DoxyCodeLine{00020\ \ \ \ \ ERROR\_CODE\_UART\_OK,\ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ ERROR\_CODE\_UART\_OVERFLOW,\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ ERROR\_CODE\_UART\_FRAMING,\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00023\ \ \ \ \ ERROR\_CODE\_UART\_CONFIG,\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00024\ \}UART\_ERROR\_CODE;}
+\DoxyCodeLine{00025\ \ \ }
+\DoxyCodeLine{00029\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_u_a_r_t_8h_ae6fd997937744f54a3b2f5245e0ee6c5}{UART\_config\_show}}();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_u_a_r_t_8h_ac7551a5df228b6c29eb13e2a83a31650}{UART\_Init}}(uint32\_t);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00044\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_u_a_r_t_8h_ae7956c92520def8e4cf6046a92310184}{UART\_select\_baud}}(uint32\_t);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00051\ UART\_ERROR\_CODE\ \mbox{\hyperlink{_u_a_r_t_8h_afc34c227cd3b9153f8a1dd4c7da43f79}{UART\_Rx\_FRAMING}}();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00058\ UART\_ERROR\_CODE\ \mbox{\hyperlink{_u_a_r_t_8h_ae9defbf2097bafc184289367f362245e}{UART\_Rx\_OVERFLOW}}();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00064\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_u_a_r_t_8h_a913b851613b566d8607917b201b96104}{UART\_Tx}}(uint8\_t);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00071\ uint8\_t\ \mbox{\hyperlink{_u_a_r_t_8h_a104e40e6d18cf161ca4ee7ebdc0e62b8}{UART\_Rx}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00078\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_u_a_r_t_8h_adfc83db24bb6c7d34f3a8b9160e14e87}{UART\_RxAvailable}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00084\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_u_a_r_t_8h_add06d286319043f8df9aa9766cfd5c08}{UART\_ErrorHandler}}(UART\_ERROR\_CODE);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{/*\ UART\_TX\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

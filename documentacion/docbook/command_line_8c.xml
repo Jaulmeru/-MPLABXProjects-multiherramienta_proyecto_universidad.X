@@ -1,0 +1,253 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_command_line_8c" xml:lang="en-US">
+<title>src/librerias/commandLine.c File Reference</title>
+<indexterm><primary>src/librerias/commandLine.c</primary></indexterm>
+<para>
+
+<para>Linea de comandos lista para utilizar funciones de forma sencilla en tiempo de ejecucion. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &quot;commandLine.h&quot;<?linebreak?>#include &quot;../CLHandler.h&quot;<?linebreak?>#include &lt;string.h&gt;<?linebreak?></programlisting><simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_command_line_8c_1a932feaebabe26a26a8f2924cbc1e5e48"/>void <emphasis role="strong">commandLineInit</emphasis> ()</para>
+
+<para>Muestra las instrucciones y habilita la linea de comandos. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_command_line_8c_1a609649d55b8396e5505f9a6ebb163d54"/>void <emphasis role="strong">commandLineDeinit</emphasis> ()</para>
+
+<para>Deshabilita la linea de comandos. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_command_line_8c_1ad90dbb9078381cd647817382b7b23741"/>void <emphasis role="strong">commandLineReset</emphasis> ()</para>
+
+<para>Deja la linea de comando lista para volver a usarse de cero. </para>
+</listitem>
+            <listitem><para>void <link linkend="_command_line_8c_1a3ba8cde82d6778724d4e4ed17b637c35">addToBuffer</link> (char newchar)</para>
+
+<para>Toma un caracter para integrarlo al buffer o arrancar una accion especial. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_command_line_8c_1acf97ff06c423170a6e7e360528df9a94"/>void <emphasis role="strong">clearBuff</emphasis> ()</para>
+
+<para>Deja en 0 el charBuff y el buffCount. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_command_line_8c_1a5713e92e29fc7e6586e725b5c414480a"/>void <emphasis role="strong">clearCharInLine</emphasis> ()</para>
+
+<para>Limpia el ultimo caracter en el buffer y en la linea de comando. </para>
+</listitem>
+            <listitem><para>void <link linkend="_command_line_8c_1ad46b683755e4d2790dae77c124678243">clearArray</link> (uint8_t *array, uint8_t len)</para>
+
+<para>Deja en 0x00 len posiciones de array. </para>
+</listitem>
+            <listitem><para>CL_ERROR_CODE <link linkend="_command_line_8c_1a04dfd02542a769b653ddb50c49de0108">commandProcess</link> ()</para>
+
+<para>Toma el buffer, separa el comando y los parametros y los ejecuta. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_command_line_8c_1afc5e796dbd318e73265dd65649f5df0e">countWords</link> (void)</para>
+
+<para>Cantidad de palabras en el buffer. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_command_line_8c_1aa4a8a2b8c0f63010d5561dfdc72be946">getWord</link> (uint8_t wordNum, uint8_t *pWord)</para>
+
+<para>Guarda la palabra en la posicion wordNum del buffer en donde apunta pWord. </para>
+</listitem>
+            <listitem><para>void <link linkend="_command_line_8c_1ad7ac231f428432791ee851d584fb127b">CL_ErrorHandler</link> (CL_ERROR_CODE errorCode)</para>
+
+<para>Manejador de errores de la linea de comandos. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Linea de comandos lista para utilizar funciones de forma sencilla en tiempo de ejecucion. </para>
+
+<para><formalpara><title>Author</title>
+
+<para>Javier Mendoza (<link xlink:href="mailto:javierulisesmruiz@gmail.com">javierulisesmruiz@gmail.com</link>) </para>
+</formalpara>
+<formalpara><title>Date</title>
+
+<para>06/10/2024 </para>
+</formalpara>
+<formalpara><title>Version</title>
+
+<para>1.0 </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_command_line_8c_1a3ba8cde82d6778724d4e4ed17b637c35"/><section>
+    <title>addToBuffer()</title>
+<indexterm><primary>addToBuffer</primary><secondary>commandLine.c</secondary></indexterm>
+<indexterm><primary>commandLine.c</primary><secondary>addToBuffer</secondary></indexterm>
+<para><computeroutput>void addToBuffer (char newchar)</computeroutput></para><para>
+
+<para>Toma un caracter para integrarlo al buffer o arrancar una accion especial. </para>
+</para>
+
+<para>0x0D [Enter] =&gt; Termina el comando y se comienza a procesar</para>
+
+<para>0x7F [BackSpace] =&gt; Borra el ultimo caracter</para>
+
+<para>0x1B [Escape] =&gt; Borra todo lo escrito 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>newchar</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_command_line_8c_1ad7ac231f428432791ee851d584fb127b"/><section>
+    <title>CL_ErrorHandler()</title>
+<indexterm><primary>CL_ErrorHandler</primary><secondary>commandLine.c</secondary></indexterm>
+<indexterm><primary>commandLine.c</primary><secondary>CL_ErrorHandler</secondary></indexterm>
+<para><computeroutput>void CL_ErrorHandler (CL_ERROR_CODE errorCode)</computeroutput></para><para>
+
+<para>Manejador de errores de la linea de comandos. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>errorCode</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_command_line_8c_1ad46b683755e4d2790dae77c124678243"/><section>
+    <title>clearArray()</title>
+<indexterm><primary>clearArray</primary><secondary>commandLine.c</secondary></indexterm>
+<indexterm><primary>commandLine.c</primary><secondary>clearArray</secondary></indexterm>
+<para><computeroutput>void clearArray (uint8_t * array, uint8_t len)</computeroutput></para><para>
+
+<para>Deja en 0x00 len posiciones de array. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>array</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>len</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_command_line_8c_1a04dfd02542a769b653ddb50c49de0108"/><section>
+    <title>commandProcess()</title>
+<indexterm><primary>commandProcess</primary><secondary>commandLine.c</secondary></indexterm>
+<indexterm><primary>commandLine.c</primary><secondary>commandProcess</secondary></indexterm>
+<para><computeroutput>CL_ERROR_CODE commandProcess ( )</computeroutput></para><para>
+
+<para>Toma el buffer, separa el comando y los parametros y los ejecuta. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Error </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_command_line_8c_1afc5e796dbd318e73265dd65649f5df0e"/><section>
+    <title>countWords()</title>
+<indexterm><primary>countWords</primary><secondary>commandLine.c</secondary></indexterm>
+<indexterm><primary>commandLine.c</primary><secondary>countWords</secondary></indexterm>
+<para><computeroutput>uint8_t countWords (void )</computeroutput></para><para>
+
+<para>Cantidad de palabras en el buffer. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>palabras = comando + parametros </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_command_line_8c_1aa4a8a2b8c0f63010d5561dfdc72be946"/><section>
+    <title>getWord()</title>
+<indexterm><primary>getWord</primary><secondary>commandLine.c</secondary></indexterm>
+<indexterm><primary>commandLine.c</primary><secondary>getWord</secondary></indexterm>
+<para><computeroutput>bool getWord (uint8_t wordNum, uint8_t * pWord)</computeroutput></para><para>
+
+<para>Guarda la palabra en la posicion wordNum del buffer en donde apunta pWord. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>wordNum</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>pWord</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para></para>
+</formalpara>
+</para>
+</section>
+</section>
+</section>

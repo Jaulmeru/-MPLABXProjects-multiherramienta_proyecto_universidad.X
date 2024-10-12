@@ -1,0 +1,16 @@
+# Ignora archivos de MPLABX
+/build
+/debug
+/dist
+*.o
+*.elf
+*.hex
+*.bin
+*.map
+*.dep
+
+# Ignorar archivos de proyecto específicos del usuario
+nbproject/private/
+
+# Ignorar makefiles generados
+nbproject/Makefile-*

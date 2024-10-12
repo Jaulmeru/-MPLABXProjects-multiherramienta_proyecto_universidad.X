@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__c_l_handler_8h_source" xml:lang="en-US">
+<title>CLHandler.h</title>
+<indexterm><primary>src/CLHandler.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 
+10 <emphasis role="preprocessor">#ifndef&#32;CLHANDLER_H</emphasis>
+11 <emphasis role="preprocessor">#define&#32;CLHANDLER_H</emphasis>
+12 
+13 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_command_line_8h">librerias/commandLine.h</link>&quot;</emphasis>
+14 
+15 <emphasis role="preprocessor">#define&#32;NUMCOMMANDS&#32;3&#32;</emphasis>
+16 
+17 <emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*comandos[]&#32;=&#32;{
+18 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;cliDeinit&quot;</emphasis>,&#32;<emphasis role="comment">//1</emphasis>
+19 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;help&quot;</emphasis>,&#32;<emphasis role="comment">//2</emphasis>
+20 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;comando3&quot;</emphasis>&#32;&#32;<emphasis role="comment">//3</emphasis>
+21 };
+22 <emphasis role="keyword">const</emphasis>&#32;uint8_t&#32;cantParams[]&#32;=&#32;{
+23 &#32;&#32;&#32;&#32;0,&#32;<emphasis role="comment">//1</emphasis>
+24 &#32;&#32;&#32;&#32;0,&#32;<emphasis role="comment">//2</emphasis>
+25 &#32;&#32;&#32;&#32;3&#32;&#32;<emphasis role="comment">//3</emphasis>
+26 };
+27 
+28 
+29 CL_ERROR_CODE&#32;CL_CommandHandler(uint8_t&#32;numParams);
+30 
+31 <emphasis role="keywordtype">void</emphasis>&#32;cliHelp();
+32 
+33 <emphasis role="preprocessor">#endif&#32;&#32;</emphasis><emphasis role="comment">/*&#32;CLHANDLER_H&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+34 
+</programlisting></section>

@@ -1,0 +1,101 @@
+\doxysection{config.\+h}
+\hypertarget{config_8h_source}{}\label{config_8h_source}\index{src/config.h@{src/config.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ }}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ File:\ \ \ config.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Author:\ Javier\ Mendoza}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Created\ on\ 1\ de\ septiembre\ de\ 2024,\ 07:28\ PM}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ CONFIG\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ CONFIG\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ PIC18F45K50\ Configuration\ Bit\ Settings}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ 'C'\ source\ line\ config\ statements}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ CONFIG1L}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#pragma\ config\ PLLSEL\ =\ PLL3X\ \ \ }\textcolor{comment}{//\ PLL\ Selection\ (4x\ clock\ multiplier)}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#pragma\ config\ CFGPLLEN\ =\ ON\ \ \ }\textcolor{comment}{//\ PLL\ Enable\ Configuration\ bit\ (PLL\ Disabled\ (firmware\ controlled))}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#pragma\ config\ CPUDIV\ =\ NOCLKDIV}\textcolor{comment}{//\ CPU\ System\ Clock\ Postscaler\ (CPU\ uses\ system\ clock\ (no\ divide))}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#pragma\ config\ LS48MHZ\ =\ SYS48X8}\textcolor{comment}{//\ Low\ Speed\ USB\ mode\ with\ 48\ MHz\ system\ clock\ (System\ clock\ at\ 48\ MHz,\ USB\ clock\ divider\ is\ set\ to\ 8)}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{comment}{//\ CONFIG1H}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#pragma\ config\ FOSC\ =\ INTOSCCLKO}\textcolor{comment}{//\ Oscillator\ Selection\ (Internal\ oscillator,\ clock\ output\ on\ OSC2)}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#pragma\ config\ PCLKEN\ =\ OFF\ \ \ \ \ }\textcolor{comment}{//\ Primary\ Oscillator\ Shutdown\ (Primary\ oscillator\ shutdown\ firmware\ controlled)}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#pragma\ config\ FCMEN\ =\ OFF\ \ \ \ \ \ }\textcolor{comment}{//\ Fail-\/Safe\ Clock\ Monitor\ (Fail-\/Safe\ Clock\ Monitor\ disabled)}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#pragma\ config\ IESO\ =\ OFF\ \ \ \ \ \ \ }\textcolor{comment}{//\ Internal/External\ Oscillator\ Switchover\ (Oscillator\ Switchover\ mode\ disabled)}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{comment}{//\ CONFIG2L}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#pragma\ config\ nPWRTEN\ =\ OFF\ \ \ \ }\textcolor{comment}{//\ Power-\/up\ Timer\ Enable\ (Power\ up\ timer\ disabled)}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#pragma\ config\ BOREN\ =\ SBORDIS\ \ }\textcolor{comment}{//\ Brown-\/out\ Reset\ Enable\ (BOR\ enabled\ in\ hardware\ (SBOREN\ is\ ignored))}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#pragma\ config\ BORV\ =\ 190\ \ \ \ \ \ \ }\textcolor{comment}{//\ Brown-\/out\ Reset\ Voltage\ (BOR\ set\ to\ 1.9V\ nominal)}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#pragma\ config\ nLPBOR\ =\ OFF\ \ \ \ \ }\textcolor{comment}{//\ Low-\/Power\ Brown-\/out\ Reset\ (Low-\/Power\ Brown-\/out\ Reset\ disabled)}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{//\ CONFIG2H}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#pragma\ config\ WDTEN\ =\ OFF\ \ \ \ \ \ \ }\textcolor{comment}{//\ Watchdog\ Timer\ Enable\ bits\ (WDT\ enabled\ in\ hardware\ (SWDTEN\ ignored))}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#pragma\ config\ WDTPS\ =\ 32768\ \ \ \ }\textcolor{comment}{//\ Watchdog\ Timer\ Postscaler\ (1:32768)}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{comment}{//\ CONFIG3H}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#pragma\ config\ CCP2MX\ =\ RC1\ \ \ \ \ }\textcolor{comment}{//\ CCP2\ MUX\ bit\ (CCP2\ input/output\ is\ multiplexed\ with\ RC1)}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#pragma\ config\ PBADEN\ =\ ON\ \ \ \ \ \ }\textcolor{comment}{//\ PORTB\ A/D\ Enable\ bit\ (PORTB<5:0>\ pins\ are\ configured\ as\ analog\ input\ channels\ on\ Reset)}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#pragma\ config\ T3CMX\ =\ RC0\ \ \ \ \ \ }\textcolor{comment}{//\ Timer3\ Clock\ Input\ MUX\ bit\ (T3CKI\ function\ is\ on\ RC0)}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#pragma\ config\ SDOMX\ =\ RB3\ \ \ \ \ \ }\textcolor{comment}{//\ SDO\ Output\ MUX\ bit\ (SDO\ function\ is\ on\ RB3)}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#pragma\ config\ MCLRE\ =\ ON\ \ \ \ \ \ \ }\textcolor{comment}{//\ Master\ Clear\ Reset\ Pin\ Enable\ (MCLR\ pin\ enabled;\ RE3\ input\ disabled)}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{comment}{//\ CONFIG4L}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#pragma\ config\ STVREN\ =\ ON\ \ \ \ \ \ }\textcolor{comment}{//\ Stack\ Full/Underflow\ Reset\ (Stack\ full/underflow\ will\ cause\ Reset)}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#pragma\ config\ LVP\ =\ ON\ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Single-\/Supply\ ICSP\ Enable\ bit\ (Single-\/Supply\ ICSP\ enabled\ if\ MCLRE\ is\ also\ 1)}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#pragma\ config\ ICPRT\ =\ OFF\ \ \ \ \ \ }\textcolor{comment}{//\ Dedicated\ In-\/Circuit\ Debug/Programming\ Port\ Enable\ (ICPORT\ disabled)}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#pragma\ config\ XINST\ =\ OFF\ \ \ \ \ \ }\textcolor{comment}{//\ Extended\ Instruction\ Set\ Enable\ bit\ (Instruction\ set\ extension\ and\ Indexed\ Addressing\ mode\ disabled)}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{comment}{//\ CONFIG5L}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#pragma\ config\ CP0\ =\ OFF\ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Block\ 0\ Code\ Protect\ (Block\ 0\ is\ not\ code-\/protected)}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#pragma\ config\ CP1\ =\ OFF\ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Block\ 1\ Code\ Protect\ (Block\ 1\ is\ not\ code-\/protected)}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#pragma\ config\ CP2\ =\ OFF\ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Block\ 2\ Code\ Protect\ (Block\ 2\ is\ not\ code-\/protected)}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#pragma\ config\ CP3\ =\ OFF\ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Block\ 3\ Code\ Protect\ (Block\ 3\ is\ not\ code-\/protected)}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{comment}{//\ CONFIG5H}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#pragma\ config\ CPB\ =\ OFF\ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Boot\ Block\ Code\ Protect\ (Boot\ block\ is\ not\ code-\/protected)}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#pragma\ config\ CPD\ =\ OFF\ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Data\ EEPROM\ Code\ Protect\ (Data\ EEPROM\ is\ not\ code-\/protected)}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{comment}{//\ CONFIG6L}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#pragma\ config\ WRT0\ =\ OFF\ \ \ \ \ \ \ }\textcolor{comment}{//\ Block\ 0\ Write\ Protect\ (Block\ 0\ (0800-\/1FFFh)\ is\ not\ write-\/protected)}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#pragma\ config\ WRT1\ =\ OFF\ \ \ \ \ \ \ }\textcolor{comment}{//\ Block\ 1\ Write\ Protect\ (Block\ 1\ (2000-\/3FFFh)\ is\ not\ write-\/protected)}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#pragma\ config\ WRT2\ =\ OFF\ \ \ \ \ \ \ }\textcolor{comment}{//\ Block\ 2\ Write\ Protect\ (Block\ 2\ (04000-\/5FFFh)\ is\ not\ write-\/protected)}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#pragma\ config\ WRT3\ =\ OFF\ \ \ \ \ \ \ }\textcolor{comment}{//\ Block\ 3\ Write\ Protect\ (Block\ 3\ (06000-\/7FFFh)\ is\ not\ write-\/protected)}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{comment}{//\ CONFIG6H}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#pragma\ config\ WRTC\ =\ OFF\ \ \ \ \ \ \ }\textcolor{comment}{//\ Configuration\ Registers\ Write\ Protect\ (Configuration\ registers\ (300000-\/3000FFh)\ are\ not\ write-\/protected)}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#pragma\ config\ WRTB\ =\ OFF\ \ \ \ \ \ \ }\textcolor{comment}{//\ Boot\ Block\ Write\ Protect\ (Boot\ block\ (0000-\/7FFh)\ is\ not\ write-\/protected)}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#pragma\ config\ WRTD\ =\ OFF\ \ \ \ \ \ \ }\textcolor{comment}{//\ Data\ EEPROM\ Write\ Protect\ (Data\ EEPROM\ is\ not\ write-\/protected)}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{comment}{//\ CONFIG7L}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#pragma\ config\ EBTR0\ =\ OFF\ \ \ \ \ \ }\textcolor{comment}{//\ Block\ 0\ Table\ Read\ Protect\ (Block\ 0\ is\ not\ protected\ from\ table\ reads\ executed\ in\ other\ blocks)}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#pragma\ config\ EBTR1\ =\ OFF\ \ \ \ \ \ }\textcolor{comment}{//\ Block\ 1\ Table\ Read\ Protect\ (Block\ 1\ is\ not\ protected\ from\ table\ reads\ executed\ in\ other\ blocks)}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#pragma\ config\ EBTR2\ =\ OFF\ \ \ \ \ \ }\textcolor{comment}{//\ Block\ 2\ Table\ Read\ Protect\ (Block\ 2\ is\ not\ protected\ from\ table\ reads\ executed\ in\ other\ blocks)}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#pragma\ config\ EBTR3\ =\ OFF\ \ \ \ \ \ }\textcolor{comment}{//\ Block\ 3\ Table\ Read\ Protect\ (Block\ 3\ is\ not\ protected\ from\ table\ reads\ executed\ in\ other\ blocks)}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{comment}{//\ CONFIG7H}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#pragma\ config\ EBTRB\ =\ OFF\ \ \ \ \ \ }\textcolor{comment}{//\ Boot\ Block\ Table\ Read\ Protect\ (Boot\ block\ is\ not\ protected\ from\ table\ reads\ executed\ in\ other\ blocks)}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{comment}{//\ \#pragma\ config\ statements\ should\ precede\ project\ file\ includes.}}
+\DoxyCodeLine{00086\ \textcolor{comment}{//\ Use\ project\ enums\ instead\ of\ \#define\ for\ ON\ and\ OFF.}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00091\ \}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{/*\ CONFIG\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00095\ }
+
+\end{DoxyCode}

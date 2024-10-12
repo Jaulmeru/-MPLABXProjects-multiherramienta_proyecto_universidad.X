@@ -1,5 +1,13 @@
-#include <xc.h>
+/**
+ * @file UART.c
+ * @brief Funciones para manejo de modulo EUSART del PIC18F45K50
+ *  
+ * @author Javier Mendoza (javierulisesmruiz@gmail.com)
+ * @date 03/10/2024
+ * @version 0.1
+ */
 
+#include <xc.h>
 #include "UART.h"
 
 void UART_config_show(){
@@ -15,12 +23,13 @@ void UART_config_show(){
     (TXEN1) ? printf("Habilitado \r\n"):printf("Deshabilitado \r\n");
     printf("Receptor: ");
     (CREN) ? printf("Habilitado \r\n"):printf("Deshabilitado \r\n");
+    printf("\r\n\r\n");
 }
 
 void UART_Init(uint32_t baudrate){
     TXSTA1bits.SYNC1 = 0;        // Modo asincrono
     TXSTA1bits.BRGH1 = 1;        // Modo de alta velocidad
-    BAUDCON1bits.BRG161 = 1;     // Se habilitan 16bits en el generador de Baud Rate
+    BAUDCON1 = 0x4A;             // WUE = Receiver is waiting for a falling edge, 16bits EN, RCIDL = Receiver idle
     UART_select_baud(baudrate);     // Se configura por defecto a 9600
     TRISC6 = 1;                 // Pin Tx -> Tri estado (Input)
     TRISC7 = 1;                 // Pin Rx -> Tri estado (Input)
@@ -28,6 +37,7 @@ void UART_Init(uint32_t baudrate){
     TXSTAbits.TXEN1 = 1;         // Transmision -> Habilitada
     RCSTAbits.CREN = 1;         // Recepcion -> Habiltada
     UART_config_show();
+    ANSELC = 0x0;
 };
 
 void UART_select_baud(uint32_t baudrate){
@@ -67,7 +77,7 @@ void UART_select_baud(uint32_t baudrate){
     }
 }
 
-void UART_Tx(char dato){
+void UART_Tx(uint8_t dato){
     while(TRMT == 0);
     TXREG1 = dato;
 }
@@ -77,8 +87,8 @@ void putch(char data){
 }
 
 UART_ERROR_CODE UART_Rx_OVERFLOW(){
-    if (RCSTAbits.OERR) {  // Error de sobrecarga
-        RCSTAbits.CREN = 0;  // Desactiva y vuelve a activar la recepci�n
+    if (RCSTAbits.OERR) {  
+        RCSTAbits.CREN = 0;  
         RCSTAbits.CREN = 1;
         return ERROR_CODE_UART_OVERFLOW;
     }
@@ -93,13 +103,13 @@ UART_ERROR_CODE UART_Rx_FRAMING(){
     return ERROR_CODE_UART_OK;
 }
 
-char UART_Rx(void){
+uint8_t UART_Rx(void){
     UART_ErrorHandler(UART_Rx_OVERFLOW());
     UART_ErrorHandler(UART_Rx_FRAMING());
     return RCREG1;
 }
 
-bool UART_Available(){
+bool UART_RxAvailable(){
     if (!RCSTAbits.SPEN || !RCSTAbits.CREN){
         UART_ErrorHandler(ERROR_CODE_UART_CONFIG);
         return 0;
@@ -108,4 +118,20 @@ bool UART_Available(){
         return 0;
     }
     return 1;
+}
+
+void UART_ErrorHandler(UART_ERROR_CODE errorCode){
+    if(errorCode == ERROR_CODE_UART_OK) return;
+    printf("Error: ");
+    switch(errorCode){
+        case ERROR_CODE_UART_OVERFLOW:
+            printf("ERROR_CODE_UART_OVERFLOW\r\n");
+        break;
+        case ERROR_CODE_UART_FRAMING:
+            printf("ERROR_CODE_UART_FRAMING\r\n");
+        break;
+        case ERROR_CODE_UART_CONFIG:
+            printf("ERROR_CODE_UART_CONFIG \r\n");
+        break;
+    }
 }

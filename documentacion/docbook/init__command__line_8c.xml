@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_init__command__line_8c" xml:lang="en-US">
+<title>examples/UART/init_command_line.c File Reference</title>
+<indexterm><primary>examples/UART/init_command_line.c</primary></indexterm>
+<para>
+
+<para>Codigo de ejemplo Arranca la linea de comandos. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;xc.h&gt;<?linebreak?>#include &quot;config.h&quot;<?linebreak?>#include &quot;librerias/clock.h&quot;<?linebreak?>#include &quot;librerias/UART.h&quot;<?linebreak?>#include &quot;librerias/commandLine.h&quot;<?linebreak?></programlisting><simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_init__command__line_8c_1a840291bc02cba5474a4cb46a9b9566fe"/>int <emphasis role="strong">main</emphasis> (void)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Codigo de ejemplo Arranca la linea de comandos. </para>
+
+<para><formalpara><title>Author</title>
+
+<para>Javier Mendoza (<link xlink:href="mailto:javierulisesmruiz@gmail.com">javierulisesmruiz@gmail.com</link>) </para>
+</formalpara>
+<formalpara><title>Date</title>
+
+<para>11/10/2024 </para>
+</formalpara>
+<formalpara><title>Version</title>
+
+<para>1.0 </para>
+</formalpara>
+</para>
+</section>
+</section>

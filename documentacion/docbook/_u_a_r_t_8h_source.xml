@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__u_a_r_t_8h_source" xml:lang="en-US">
+<title>UART.h</title>
+<indexterm><primary>src/librerias/UART.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 
+10 <emphasis role="preprocessor">#ifndef&#32;UART_TX_H</emphasis>
+11 <emphasis role="preprocessor">#define&#32;UART_TX_H</emphasis>
+12 
+13 <emphasis role="preprocessor">#include&#32;&lt;stdint.h&gt;</emphasis>
+14 <emphasis role="preprocessor">#include&#32;&lt;stdbool.h&gt;</emphasis>
+15 <emphasis role="preprocessor">#include&#32;&lt;float.h&gt;</emphasis>
+16 <emphasis role="preprocessor">#include&#32;&lt;stdio.h&gt;</emphasis>
+17 <emphasis role="preprocessor">#include&#32;&lt;xc.h&gt;</emphasis>
+18 
+19 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>{
+20 &#32;&#32;&#32;&#32;ERROR_CODE_UART_OK,&#32;&#32;&#32;
+21 &#32;&#32;&#32;&#32;ERROR_CODE_UART_OVERFLOW,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+22 &#32;&#32;&#32;&#32;ERROR_CODE_UART_FRAMING,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+23 &#32;&#32;&#32;&#32;ERROR_CODE_UART_CONFIG,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+24 }UART_ERROR_CODE;
+25 &#32;&#32;
+29 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__u_a_r_t_8h_1ae6fd997937744f54a3b2f5245e0ee6c5">UART_config_show</link>();
+30 
+35 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__u_a_r_t_8h_1ac7551a5df228b6c29eb13e2a83a31650">UART_Init</link>(uint32_t);
+36 
+44 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__u_a_r_t_8h_1ae7956c92520def8e4cf6046a92310184">UART_select_baud</link>(uint32_t);
+45 
+51 UART_ERROR_CODE&#32;<link linkend="__u_a_r_t_8h_1afc34c227cd3b9153f8a1dd4c7da43f79">UART_Rx_FRAMING</link>();
+52 
+58 UART_ERROR_CODE&#32;<link linkend="__u_a_r_t_8h_1ae9defbf2097bafc184289367f362245e">UART_Rx_OVERFLOW</link>();
+59 
+64 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__u_a_r_t_8h_1a913b851613b566d8607917b201b96104">UART_Tx</link>(uint8_t);
+65 
+71 uint8_t&#32;<link linkend="__u_a_r_t_8h_1a104e40e6d18cf161ca4ee7ebdc0e62b8">UART_Rx</link>(<emphasis role="keywordtype">void</emphasis>);
+72 
+78 <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="__u_a_r_t_8h_1adfc83db24bb6c7d34f3a8b9160e14e87">UART_RxAvailable</link>(<emphasis role="keywordtype">void</emphasis>);
+79 
+84 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__u_a_r_t_8h_1add06d286319043f8df9aa9766cfd5c08">UART_ErrorHandler</link>(UART_ERROR_CODE);
+85 
+86 <emphasis role="preprocessor">#endif&#32;&#32;</emphasis><emphasis role="comment">/*&#32;UART_TX_H&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+</programlisting></section>

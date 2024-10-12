@@ -1,0 +1,182 @@
+\doxysection{src/librerias/\+UART.h File Reference}
+\hypertarget{_u_a_r_t_8h}{}\label{_u_a_r_t_8h}\index{src/librerias/UART.h@{src/librerias/UART.h}}
+
+
+Libreria para manejo de modulo EUSART del PIC18\+F45\+K50.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$float.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$xc.\+h$>$}\newline
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_u_a_r_t_8h_aca500773c32b84185c333e06093935f9}\label{_u_a_r_t_8h_aca500773c32b84185c333e06093935f9} 
+enum {\bfseries UART\+\_\+\+ERROR\+\_\+\+CODE} \{ {\bfseries ERROR\+\_\+\+CODE\+\_\+\+UART\+\_\+\+OK}
+, {\bfseries ERROR\+\_\+\+CODE\+\_\+\+UART\+\_\+\+OVERFLOW}
+, {\bfseries ERROR\+\_\+\+CODE\+\_\+\+UART\+\_\+\+FRAMING}
+, {\bfseries ERROR\+\_\+\+CODE\+\_\+\+UART\+\_\+\+CONFIG}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_u_a_r_t_8h_ae6fd997937744f54a3b2f5245e0ee6c5}\label{_u_a_r_t_8h_ae6fd997937744f54a3b2f5245e0ee6c5} 
+void {\bfseries UART\+\_\+config\+\_\+show} ()
+\begin{DoxyCompactList}\small\item\em Muestra por puerto serial la configuracion actual del modulo EUSART. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_u_a_r_t_8h_ac7551a5df228b6c29eb13e2a83a31650}{UART\+\_\+\+Init}} (uint32\+\_\+t)
+\begin{DoxyCompactList}\small\item\em Configura los registros basicos para comunicacion y llama a \doxylink{_u_a_r_t_8h_ae6fd997937744f54a3b2f5245e0ee6c5}{UART\+\_\+config\+\_\+show()} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_u_a_r_t_8h_ae7956c92520def8e4cf6046a92310184}{UART\+\_\+select\+\_\+baud}} (uint32\+\_\+t)
+\begin{DoxyCompactList}\small\item\em Configura SPBRGH y SPBRG para el baudrate ingresado. \end{DoxyCompactList}\item 
+UART\+\_\+\+ERROR\+\_\+\+CODE \mbox{\hyperlink{_u_a_r_t_8h_afc34c227cd3b9153f8a1dd4c7da43f79}{UART\+\_\+\+Rx\+\_\+\+FRAMING}} ()
+\begin{DoxyCompactList}\small\item\em Revisa el registro FERR y limpia el error. \end{DoxyCompactList}\item 
+UART\+\_\+\+ERROR\+\_\+\+CODE \mbox{\hyperlink{_u_a_r_t_8h_ae9defbf2097bafc184289367f362245e}{UART\+\_\+\+Rx\+\_\+\+OVERFLOW}} ()
+\begin{DoxyCompactList}\small\item\em Revisa el registro OERR y limpia el error. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_u_a_r_t_8h_a913b851613b566d8607917b201b96104}{UART\+\_\+\+Tx}} (uint8\+\_\+t)
+\begin{DoxyCompactList}\small\item\em Envia el dato si ya esta vacio TSR. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_u_a_r_t_8h_a104e40e6d18cf161ca4ee7ebdc0e62b8}{UART\+\_\+\+Rx}} (void)
+\begin{DoxyCompactList}\small\item\em Lee el ultimo dato recibido. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_u_a_r_t_8h_adfc83db24bb6c7d34f3a8b9160e14e87}{UART\+\_\+\+Rx\+Available}} (void)
+\begin{DoxyCompactList}\small\item\em Valida si esta habilitada la recepcion y si el buffer esta lleno. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_u_a_r_t_8h_add06d286319043f8df9aa9766cfd5c08}{UART\+\_\+\+Error\+Handler}} (UART\+\_\+\+ERROR\+\_\+\+CODE)
+\begin{DoxyCompactList}\small\item\em Manejador de errores UART. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Libreria para manejo de modulo EUSART del PIC18\+F45\+K50. 
+
+\begin{DoxyAuthor}{Author}
+Javier Mendoza (\href{mailto:javierulisesmruiz@gmail.com}{\texttt{ javierulisesmruiz@gmail.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+03/10/2024 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_u_a_r_t_8h_add06d286319043f8df9aa9766cfd5c08}\index{UART.h@{UART.h}!UART\_ErrorHandler@{UART\_ErrorHandler}}
+\index{UART\_ErrorHandler@{UART\_ErrorHandler}!UART.h@{UART.h}}
+\doxysubsubsection{\texorpdfstring{UART\_ErrorHandler()}{UART\_ErrorHandler()}}
+{\footnotesize\ttfamily \label{_u_a_r_t_8h_add06d286319043f8df9aa9766cfd5c08} 
+void UART\+\_\+\+Error\+Handler (\begin{DoxyParamCaption}\item[{UART\+\_\+\+ERROR\+\_\+\+CODE}]{error\+Code}{}\end{DoxyParamCaption})}
+
+
+
+Manejador de errores UART. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error\+Code} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_u_a_r_t_8h_ac7551a5df228b6c29eb13e2a83a31650}\index{UART.h@{UART.h}!UART\_Init@{UART\_Init}}
+\index{UART\_Init@{UART\_Init}!UART.h@{UART.h}}
+\doxysubsubsection{\texorpdfstring{UART\_Init()}{UART\_Init()}}
+{\footnotesize\ttfamily \label{_u_a_r_t_8h_ac7551a5df228b6c29eb13e2a83a31650} 
+void UART\+\_\+\+Init (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{baudrate}{}\end{DoxyParamCaption})}
+
+
+
+Configura los registros basicos para comunicacion y llama a \doxylink{_u_a_r_t_8h_ae6fd997937744f54a3b2f5245e0ee6c5}{UART\+\_\+config\+\_\+show()} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Baudrate} & Llamando a \doxylink{_u_a_r_t_8h_ae7956c92520def8e4cf6046a92310184}{UART\+\_\+select\+\_\+baud()} \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_u_a_r_t_8h_a104e40e6d18cf161ca4ee7ebdc0e62b8}\index{UART.h@{UART.h}!UART\_Rx@{UART\_Rx}}
+\index{UART\_Rx@{UART\_Rx}!UART.h@{UART.h}}
+\doxysubsubsection{\texorpdfstring{UART\_Rx()}{UART\_Rx()}}
+{\footnotesize\ttfamily \label{_u_a_r_t_8h_a104e40e6d18cf161ca4ee7ebdc0e62b8} 
+uint8\+\_\+t UART\+\_\+\+Rx (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Lee el ultimo dato recibido. 
+
+Valida los errores Framming y Overflow \begin{DoxyReturn}{Returns}
+RCREG1 
+\end{DoxyReturn}
+\Hypertarget{_u_a_r_t_8h_afc34c227cd3b9153f8a1dd4c7da43f79}\index{UART.h@{UART.h}!UART\_Rx\_FRAMING@{UART\_Rx\_FRAMING}}
+\index{UART\_Rx\_FRAMING@{UART\_Rx\_FRAMING}!UART.h@{UART.h}}
+\doxysubsubsection{\texorpdfstring{UART\_Rx\_FRAMING()}{UART\_Rx\_FRAMING()}}
+{\footnotesize\ttfamily \label{_u_a_r_t_8h_afc34c227cd3b9153f8a1dd4c7da43f79} 
+UART\+\_\+\+ERROR\+\_\+\+CODE UART\+\_\+\+Rx\+\_\+\+FRAMING (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Revisa el registro FERR y limpia el error. 
+
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+CODE\+\_\+\+UART\+\_\+\+FRAMING 
+
+ERROR\+\_\+\+CODE\+\_\+\+UART\+\_\+\+OK 
+\end{DoxyReturn}
+\Hypertarget{_u_a_r_t_8h_ae9defbf2097bafc184289367f362245e}\index{UART.h@{UART.h}!UART\_Rx\_OVERFLOW@{UART\_Rx\_OVERFLOW}}
+\index{UART\_Rx\_OVERFLOW@{UART\_Rx\_OVERFLOW}!UART.h@{UART.h}}
+\doxysubsubsection{\texorpdfstring{UART\_Rx\_OVERFLOW()}{UART\_Rx\_OVERFLOW()}}
+{\footnotesize\ttfamily \label{_u_a_r_t_8h_ae9defbf2097bafc184289367f362245e} 
+UART\+\_\+\+ERROR\+\_\+\+CODE UART\+\_\+\+Rx\+\_\+\+OVERFLOW (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Revisa el registro OERR y limpia el error. 
+
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+CODE\+\_\+\+UART\+\_\+\+OVERFLOW 
+
+ERROR\+\_\+\+CODE\+\_\+\+UART\+\_\+\+OK 
+\end{DoxyReturn}
+\Hypertarget{_u_a_r_t_8h_adfc83db24bb6c7d34f3a8b9160e14e87}\index{UART.h@{UART.h}!UART\_RxAvailable@{UART\_RxAvailable}}
+\index{UART\_RxAvailable@{UART\_RxAvailable}!UART.h@{UART.h}}
+\doxysubsubsection{\texorpdfstring{UART\_RxAvailable()}{UART\_RxAvailable()}}
+{\footnotesize\ttfamily \label{_u_a_r_t_8h_adfc83db24bb6c7d34f3a8b9160e14e87} 
+bool UART\+\_\+\+Rx\+Available (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Valida si esta habilitada la recepcion y si el buffer esta lleno. 
+
+\begin{DoxyReturn}{Returns}
+0 No listo para leer 
+
+1 Listo para leer 
+\end{DoxyReturn}
+\Hypertarget{_u_a_r_t_8h_ae7956c92520def8e4cf6046a92310184}\index{UART.h@{UART.h}!UART\_select\_baud@{UART\_select\_baud}}
+\index{UART\_select\_baud@{UART\_select\_baud}!UART.h@{UART.h}}
+\doxysubsubsection{\texorpdfstring{UART\_select\_baud()}{UART\_select\_baud()}}
+{\footnotesize\ttfamily \label{_u_a_r_t_8h_ae7956c92520def8e4cf6046a92310184} 
+void UART\+\_\+select\+\_\+baud (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{baudrate}{}\end{DoxyParamCaption})}
+
+
+
+Configura SPBRGH y SPBRG para el baudrate ingresado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Baudrate} & Admite 300, 1200, 2400, 9600, 10417, 19200, 57600, 115200. En caso de ingresar otro valor, se configura por defecto a 9600. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Se planea cambiar a una funcion que realice el calculo al momento 
+\end{DoxyNote}
+\Hypertarget{_u_a_r_t_8h_a913b851613b566d8607917b201b96104}\index{UART.h@{UART.h}!UART\_Tx@{UART\_Tx}}
+\index{UART\_Tx@{UART\_Tx}!UART.h@{UART.h}}
+\doxysubsubsection{\texorpdfstring{UART\_Tx()}{UART\_Tx()}}
+{\footnotesize\ttfamily \label{_u_a_r_t_8h_a913b851613b566d8607917b201b96104} 
+void UART\+\_\+\+Tx (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{dato}{}\end{DoxyParamCaption})}
+
+
+
+Envia el dato si ya esta vacio TSR. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dato} & \\
+\hline
+\end{DoxyParams}

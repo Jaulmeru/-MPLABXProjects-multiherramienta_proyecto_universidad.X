@@ -1,0 +1,63 @@
+\doxysection{command\+Line.\+h}
+\hypertarget{command_line_8h_source}{}\label{command_line_8h_source}\index{src/librerias/commandLine.h@{src/librerias/commandLine.h}}
+\mbox{\hyperlink{command_line_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ COMMANDLINE\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ COMMANDLINE\_H}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_u_a_r_t_8h}{UART.h}}"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ BUFFLEN\ 100\ }}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ DELIMITER\ 0x20\ }}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ NUMPARAMS\ 5\ }}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ PARAMLEN\ 16\ }}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{//\ \ \ Variables\ para\ buffer\ \ \ //}}
+\DoxyCodeLine{00025\ \textcolor{keyword}{const}\ uint8\_t\ \mbox{\hyperlink{command_line_8h_a2f072df6df9d0696acb935163cf1972b}{charStop}}\ =\ 0x0A;\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ uint8\_t\ \mbox{\hyperlink{command_line_8h_a584861e94011273bba5aa1dd60b18b62}{buffCount}}\ =\ 0;\ }
+\DoxyCodeLine{00028\ uint8\_t\ \mbox{\hyperlink{command_line_8h_abc696dcb12b7d2f85630e3bba6cbb713}{charBuff}}[\mbox{\hyperlink{command_line_8h_a65314ede9be8799048771161a9589f2b}{BUFFLEN}}];\ }
+\DoxyCodeLine{00029\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{command_line_8h_abb6917a36df399c7d9c9c8b77bcd8637}{commandLineEnable}}\ =\ 0;\ }
+\DoxyCodeLine{00030\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{command_line_8h_a4303802408628fd9e888379ee4045b4d}{flagCommandReady}}\ =\ 0;\ }
+\DoxyCodeLine{00031\ uint8\_t\ \mbox{\hyperlink{command_line_8h_a3c84e45b27f785327ff247b6d8fc0675}{command}}[\mbox{\hyperlink{command_line_8h_a901c276061eeee06a506a1a9df66b6c2}{PARAMLEN}}];\ }
+\DoxyCodeLine{00032\ uint8\_t\ \mbox{\hyperlink{command_line_8h_ad4747b84edfa58246387789f97c0f43b}{param}}[\mbox{\hyperlink{command_line_8h_acfdf7bea7a8b97969917559576655291}{NUMPARAMS}}][\mbox{\hyperlink{command_line_8h_a901c276061eeee06a506a1a9df66b6c2}{PARAMLEN}}];\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\{}
+\DoxyCodeLine{00035\ \ \ \ \ EC\_CL\_OK,}
+\DoxyCodeLine{00036\ \ \ \ \ EC\_CL\_BUFFOVER,}
+\DoxyCodeLine{00037\ \ \ \ \ EC\_CL\_NOWORDS,}
+\DoxyCodeLine{00038\ \ \ \ \ EC\_CL\_WORDOVER,}
+\DoxyCodeLine{00039\ \ \ \ \ EC\_CL\_MAXNUMPARAMS,}
+\DoxyCodeLine{00040\ \ \ \ \ EC\_CL\_WRONGNUMPARAMS,}
+\DoxyCodeLine{00041\ \ \ \ \ EC\_CL\_WRONGCOMMAND,}
+\DoxyCodeLine{00042\ \}CL\_ERROR\_CODE;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00047\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{command_line_8h_a932feaebabe26a26a8f2924cbc1e5e48}{commandLineInit}}();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{command_line_8h_a609649d55b8396e5505f9a6ebb163d54}{commandLineDeinit}}();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00057\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{command_line_8h_ad90dbb9078381cd647817382b7b23741}{commandLineReset}}();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00066\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{command_line_8h_a3ba8cde82d6778724d4e4ed17b637c35}{addToBuffer}}(\textcolor{keywordtype}{char}\ newchar);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00071\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{command_line_8h_acf97ff06c423170a6e7e360528df9a94}{clearBuff}}();}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00076\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{command_line_8h_a5713e92e29fc7e6586e725b5c414480a}{clearCharInLine}}();}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00083\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{command_line_8h_ad46b683755e4d2790dae77c124678243}{clearArray}}(uint8\_t*\ array,\ uint8\_t\ len);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00089\ CL\_ERROR\_CODE\ \mbox{\hyperlink{command_line_8h_a04dfd02542a769b653ddb50c49de0108}{commandProcess}}();}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00095\ uint8\_t\ \mbox{\hyperlink{command_line_8h_afc5e796dbd318e73265dd65649f5df0e}{countWords}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00103\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{command_line_8h_aa4a8a2b8c0f63010d5561dfdc72be946}{getWord}}(uint8\_t\ wordNum,\ uint8\_t*\ pWord);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00109\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{command_line_8h_ae0b7bcb3acc02e6a1df0f4e08e3ac3c3}{CL\_ErrorHandler}}(CL\_ERROR\_CODE);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{/*\ COMMANDLINE\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00112\ }
+
+\end{DoxyCode}
