@@ -1,15 +1,16 @@
-/* 
- * File:   SPI.h
- * Author: admin
- *
- * Created on September 9, 2024, 1:50 PM
+/**
+ * @file SPI.h
+ * @brief Libreria para manejo de modulo MSSP para SPI maestro
+ *  
+ * @author Javier Mendoza (javierulisesmruiz@gmail.com)
+ * @date 11/10/2024
+ * @version 0.1
  */
-
 
 #ifndef SPI_H
 #define	SPI_H
 
-#define SPI_clk_idle_high() do{ SSPCON1bits.CKP = 1; }while(0)
+#define SPI_clk_idle_high() do{ SSPCON1bits.CKP = 1; }while(0) //!< sdas dsdsa
 #define SPI_clk_idle_low() do{ SSPCON1bits.CKP = 0; }while(0)
 #define SPI_clk_idle_active() do{ SSPSTATbits.CKE = 0; }while(0)
 #define SPI_clk_active_idle() do{ SSPSTATbits.CKE = 1; }while(0)

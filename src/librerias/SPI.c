@@ -1,3 +1,12 @@
+/**
+ * @file SPI.c
+ * @brief Funciones para manejo de modulo MSSP para SPI maestro
+ *  
+ * @author Javier Mendoza (javierulisesmruiz@gmail.com)
+ * @date 11/10/2024
+ * @version 0.1
+ */
+
 #include "SPI.h"
 
 void SPI_config_show(){
