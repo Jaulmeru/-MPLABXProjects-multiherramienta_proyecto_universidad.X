@@ -12,17 +12,21 @@
 
 #include "librerias/commandLine.h"
 
-#define NUMCOMMANDS 3 //!< Cantidad de comandos programados
+#define NUMCOMMANDS 4 //!< Cantidad de comandos programados
+
+int global_x = 0;
 
 const char *comandos[] = {
     "cliDeinit", //1
     "help", //2
-    "comando3"  //3
+    "spiconfig",  //3
+    "changevar"  //4
 };
 const uint8_t cantParams[] = {
     0, //1
     0, //2
-    3  //3
+    2,  //3
+    2  //4
 };
 
 

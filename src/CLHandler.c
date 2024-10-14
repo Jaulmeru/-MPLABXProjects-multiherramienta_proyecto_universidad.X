@@ -21,7 +21,20 @@ CL_ERROR_CODE CL_CommandHandler(uint8_t numParams){
                     cliHelp();
                     break;
                 case 2:
-                    printf("comand 3\r\n");
+                    if(strcmp(param[0],"CKE")){
+                        if(strcmp(param[1],"itoa")) SSPSTATbits.CKE = 0;
+                        if(strcmp(param[1],"atoi")) SSPSTATbits.CKE = 1;
+                    }
+                    if(strcmp(param[0],"CKP")){
+                        if(strcmp(param[1],"high")) SSPCONbits.CKP = 1;
+                        if(strcmp(param[1],"low")) SSPCON1bits.CKP = 0;
+                    }
+                    break;
+                case 3:
+                    if(strcmp(param[0],'x')){
+                        global_x = atoi(param[1]);
+                        printf("x ahora vale %d\r\n",global_x);
+                    }
                     break;
             }
             return EC_CL_OK;
