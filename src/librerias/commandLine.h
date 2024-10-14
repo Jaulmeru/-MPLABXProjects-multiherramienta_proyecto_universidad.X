@@ -17,7 +17,7 @@
 #define BUFFLEN 100 //!< Longitud maxima del comando a recibir 
 #define DELIMITER 0x20 //!< Valor que se utilizara para separar comandos y parametros
 #define NUMPARAMS 5 //!< Maximo de parametros que tendra un comando
-#define PARAMLEN 16 //!< Longitud maxima de los parametros
+#define WORDLEN 17 //!< Longitud maxima de los parametros + 1
 
 ///////////////////////////////
 //   Variables para buffer   //
@@ -28,8 +28,8 @@ uint8_t buffCount = 0; //!< Contador de los caractares guardados en buffer
 uint8_t charBuff[BUFFLEN]; //!< Buffer de caracteres recibidos
 bool commandLineEnable = 0; //!< Si no se activa este valor, los datos recibidos no se envian al buffer
 bool flagCommandReady = 0; //!< Bandera que indica si el comando esta listo para ejecutarse
-uint8_t command[PARAMLEN]; //!< Comando extraido del buffer
-uint8_t param[NUMPARAMS][PARAMLEN]; //!< Parametros extraidos del buffers
+uint8_t command[WORDLEN]; //!< Comando extraido del buffer
+uint8_t param[NUMPARAMS][WORDLEN]; //!< Parametros extraidos del buffers
 
 typedef enum{
     EC_CL_OK,

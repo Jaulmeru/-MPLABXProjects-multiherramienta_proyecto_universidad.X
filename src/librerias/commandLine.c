@@ -31,8 +31,8 @@ void commandLineDeinit(){
 
 void commandLineReset(){
     clearBuff();
-    clearArray(&command[0],PARAMLEN);
-    clearArray(&param[0][0],PARAMLEN * NUMPARAMS);
+    clearArray(&command[0],WORDLEN);
+    clearArray(&param[0][0],WORDLEN * NUMPARAMS);
     printf("\r\n> ");
 }
 
@@ -137,7 +137,7 @@ uint8_t countWords(void){
 
 bool getWord(uint8_t wordNum, uint8_t* pWord){
  
-   uint8_t tmpWord[PARAMLEN];
+   uint8_t tmpWord[WORDLEN] = {0};
    uint8_t delimitCount = 0;
    bool active = 0;
    uint8_t buffId;
@@ -158,13 +158,13 @@ bool getWord(uint8_t wordNum, uint8_t* pWord){
        }
    }
    
-    if(wordId > PARAMLEN){
+    if(wordId >= WORDLEN){
         return 1;
     }
-    for(int i = 0; i < PARAMLEN; i++){
+    for(int i = 0; i < WORDLEN; i++){
         *(pWord + i) = tmpWord[i];
     }
-   return 0;
+    return 0;
 }
 
 void CL_ErrorHandler(CL_ERROR_CODE errorCode){
