@@ -11,10 +11,11 @@
 #define	CLHANDLER_H
 
 #include "librerias/commandLine.h"
+#include "librerias/SPI.h"
 
 #define NUMCOMMANDS 4 //!< Cantidad de comandos programados
 
-int global_x = 0;
+int global_x = 85;
 
 const char *comandos[] = {
     "cliDeinit", //1

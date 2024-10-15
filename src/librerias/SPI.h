@@ -43,6 +43,7 @@ void SPI_config_show();
 void SPI_master_init();
 void SPI_BaudRateGen(int32_t);
 void SPI_master_reset();
+void SPIClockMode(uint8_t mode);
 void SPI_write(uint8_t);
 uint8_t SPI_read();
 const char* SPI_print(const char*);

@@ -21,13 +21,17 @@ CL_ERROR_CODE CL_CommandHandler(uint8_t numParams){
                     cliHelp();
                     break;
                 case 2:
-                    if(strcmp(param[0],"CKE")){
+                    if(!strcmp(param[0],"CKE")){
                         if(strcmp(param[1],"itoa")) SSPSTATbits.CKE = 0;
                         if(strcmp(param[1],"atoi")) SSPSTATbits.CKE = 1;
                     }
-                    if(strcmp(param[0],"CKP")){
+                    if(!strcmp(param[0],"CKP")){
                         if(strcmp(param[1],"high")) SSPCONbits.CKP = 1;
                         if(strcmp(param[1],"low")) SSPCON1bits.CKP = 0;
+                    }
+                    if(!strcmp(param[0],"clkMode")){
+                        SPIClockMode(atoi(param[1]));
+                        printf("Nueva configuracion\r\nCKP: %d   CKE: %d\r\n",CKP,CKE);
                     }
                     break;
                 case 3:

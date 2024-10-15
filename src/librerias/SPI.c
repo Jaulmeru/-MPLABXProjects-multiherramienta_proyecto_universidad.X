@@ -45,7 +45,10 @@ void SPI_master_init(){
     SPI_enable();           // Serial Port -> Habilitado
     SPI_clk_idle_low();     // Polaridad reloj
     SPI_clk_idle_active();  // Se envian datos en flanco de subida
-    SPI_sample_end();       // Muestra de datos de entrada al final 
+    SPI_sample_mid();       // Muestra de datos de entrada al final 
+    
+    ANSELA = 0x0;
+    ANSELB = 0x0;
     
     LATAbits.LA5 = 1;
     SPI_config_show();
@@ -65,6 +68,11 @@ void SPI_master_reset(){
     SPI_master_init();  // Vuelve a iniciar puerto
 }
 
+void SPIClockMode(uint8_t mode){
+    CKP = (mode & 1);
+    CKE = (mode & 2) >> 1;
+}
+
 void SPI_write(uint8_t dato){
     LATAbits.LA5 = 0;
     SSPBUF = dato;      // Escribe para iniciar la transmision
@@ -74,8 +82,8 @@ void SPI_write(uint8_t dato){
     if(WCOL) SPI_ErrorHandler(EC_SPI_COLLISION); // Valida si habia un dato anterior en SSPBUF
     LATAbits.LA5 = 1;
 }
-uint8_t SPI_read(){
-    if(BF) LATAbits.LATA1 = 1; 
+uint8_t SPI_read(){ 
+    while (!SSPSTATbits.BF);
     return SSP1BUF;
 }
 
