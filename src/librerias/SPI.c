@@ -45,7 +45,7 @@ void SPI_master_init(){
     SPI_enable();           // Serial Port -> Habilitado
     SPI_clk_idle_low();     // Polaridad reloj
     SPI_clk_idle_active();  // Se envian datos en flanco de subida
-    SPI_sample_mid();       // Muestra de datos de entrada al final 
+    SPI_sample_mid();       // Muestra de datos de entrada a la mitad
     
     ANSELA = 0x0;
     ANSELB = 0x0;
