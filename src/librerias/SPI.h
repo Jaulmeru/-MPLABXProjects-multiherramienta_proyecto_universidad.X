@@ -14,8 +14,8 @@
 #define SPI_clk_idle_low() do{ SSPCON1bits.CKP = 0; }while(0)
 #define SPI_clk_idle_active() do{ SSPSTATbits.CKE = 0; }while(0)
 #define SPI_clk_active_idle() do{ SSPSTATbits.CKE = 1; }while(0)
-#define SPI_enable() do{SSPEN = 1;}while(0)
-#define SPI_disenable() do{SSPEN = 0;}while(0)
+#define SPI_enable() do{SSPCON1bits.SSPEN = 1;}while(0)
+#define SPI_disenable() do{SSPCON1bits.SSPEN = 0;}while(0)
 #define SPI_sample_end() do{SSPSTATbits.SMP = 1;}while(0)
 #define SPI_sample_mid() do{SSPSTATbits.SMP = 0;}while(0)
 
@@ -27,17 +27,35 @@
 #include "clock.h"
 #include <inttypes.h>
 
+#define PIN_TFT &LATBbits.LATB2
+#define PIN_TOUCH &LATBbits.LATB4
+#define PIN_SD &LATDbits.LATD7
+#define PIN_SS1 &LATBbits.LATB5
+#define PIN_SS2 &LATBbits.LATB6
+#define PIN_SS3 &LATBbits.LATB7
+
 typedef enum{
     EC_SPI_OK,   
     EC_SPI_BR_OVERRANGE,    
     EC_SPI_COLLISION,    
 }SPI_ERROR_CODE;
 
-typedef enum{
-    SLAVE1,   
-    SLAVE2,    
-    SLAVE3,    
-}SPI_SLAVE;
+typedef struct{
+    volatile unsigned char *ss_pin;
+    uint8_t SSPCON1;
+    uint8_t SSPCON3;
+    uint8_t SSPSTAT;
+    uint32_t baudRate;
+}spiSlave;
+
+spiSlave slaves[]{
+    {PIN_TFT,0x2A,0x10,0x00,60000},
+    {PIN_TOUCH,0x2A,0x10,0x00,60000},
+    {PIN_SD,0x2A,0x10,0x00,60000},
+    {PIN_SS1,0x2A,0x10,0x00,60000},
+    {PIN_SS2,0x2A,0x10,0x00,60000},
+    {PIN_SS3,0x2A,0x10,0x00,60000}
+};
     
 void SPI_config_show();
 void SPI_master_init();

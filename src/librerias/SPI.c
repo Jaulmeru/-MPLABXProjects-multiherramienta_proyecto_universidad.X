@@ -34,21 +34,19 @@ void SPI_config_show(){
     (SSPSTATbits.SMP) ? printf("al final\r\n"):printf("en medio\r\n");
 }
 
-void SPI_master_init(){
-    SPI_BaudRateGen(60000);
+void SPI_master_init(spiSlave *slave){
     TRISAbits.RA5 = 0;      // SS -> Ouput
     TRISBbits.RB0 = 1;      // SDI -> Input
     TRISBbits.RB1 = 0;      // SCK -> Output
     TRISBbits.RB3 = 0;      // SDO -> Output
-    SSPCON1bits.SSPM = 0xA;  // Modo -> SPI con (FOSC / (FClock * 4)) - 1
-    BOEN = 1; //-----------------------------------
-    SPI_enable();           // Serial Port -> Habilitado
-    SPI_clk_idle_low();     // Polaridad reloj
-    SPI_clk_idle_active();  // Se envian datos en flanco de subida
-    SPI_sample_mid();       // Muestra de datos de entrada a la mitad
     
-    ANSELA = 0x0;
-    ANSELB = 0x0;
+    SPI_BaudRateGen(slave->baudRate);
+    SSPCON1 = slave->SSPCON1;
+    SSPCON3 = slave->SSPCON3;
+    SSPSTAT = slave->SSPSTAT;
+                
+    ANSELA = 0x0;   //!< @todo Deshabilitar analogos en funcion para pines
+    ANSELB = 0x0;   //!< @todo Deshabilitar analogos en funcion para pines
     
     LATAbits.LA5 = 1;
     SPI_config_show();

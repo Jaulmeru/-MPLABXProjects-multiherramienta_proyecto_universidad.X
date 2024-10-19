@@ -9,6 +9,7 @@
       <itemPath>src/librerias/commandLine.h</itemPath>
       <itemPath>src/CLHandler.h</itemPath>
       <itemPath>src/librerias/SPI.h</itemPath>
+      <itemPath>src/pinConfig.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -28,6 +29,7 @@
       <itemPath>src/librerias/commandLine.c</itemPath>
       <itemPath>src/CLHandler.c</itemPath>
       <itemPath>src/librerias/SPI.c</itemPath>
+      <itemPath>src/pinConfig.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
