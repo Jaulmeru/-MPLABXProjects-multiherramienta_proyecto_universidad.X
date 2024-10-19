@@ -13,6 +13,7 @@
 #include <xc.h>
 
 // SPI
+#define SPISLAVES 6
 #define PIN_TFT &LATBbits.LATB2 
 #define PIN_TOUCH &LATBbits.LATB4
 #define PIN_SD &LATDbits.LATD7

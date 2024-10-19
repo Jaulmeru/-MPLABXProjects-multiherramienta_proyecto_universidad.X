@@ -34,21 +34,14 @@ void SPI_config_show(){
     (SSPSTATbits.SMP) ? printf("al final\r\n"):printf("en medio\r\n");
 }
 
-void SPI_master_init(spiSlave *slave){
-    TRISAbits.RA5 = 0;      // SS -> Ouput
-    TRISBbits.RB0 = 1;      // SDI -> Input
-    TRISBbits.RB1 = 0;      // SCK -> Output
-    TRISBbits.RB3 = 0;      // SDO -> Output
-    
-    SPI_BaudRateGen(slave->baudRate);
-    SSPCON1 = slave->SSPCON1;
-    SSPCON3 = slave->SSPCON3;
-    SSPSTAT = slave->SSPSTAT;
-                
-    ANSELA = 0x0;   //!< @todo Deshabilitar analogos en funcion para pines
-    ANSELB = 0x0;   //!< @todo Deshabilitar analogos en funcion para pines
-    
+void SPI_master_init(){    
+    SPI_BaudRateGen(slaves[0].baudRate);
+    SSPCON1 = slaves[0].SSPCON1;
+    SSPCON3 = slaves[0].SSPCON3;
+    SSPSTAT = slaves[0].SSPSTAT;
+                    
     LATAbits.LA5 = 1;
+    
     SPI_config_show();
 }   
 
@@ -59,6 +52,12 @@ void SPI_BaudRateGen(int32_t FClock){ // Recibe un valor de frecuencia esperada 
         return;
     }
     SSP1ADD = baudReg;
+}
+
+void disenableSlaves(){
+    for(uint8_t i = 0; i < SPISLAVES; i++){
+        slaves[i] = 1;
+    }
 }
 
 void SPI_master_reset(){
@@ -130,19 +129,5 @@ void SPI_ErrorHandler(SPI_ERROR_CODE errorCode){
         case EC_SPI_COLLISION:
             printf("ERROR_CODE_SPI_COLLISION");
         break;
-    }
-}
-
-void SPI_select_Slave(SPI_SLAVE slave){
-    switch(slave){
-        case SLAVE1:
-            
-            break;
-        case SLAVE2:
-            
-            break;
-        case SLAVE3:
-            
-            break;
     }
 }

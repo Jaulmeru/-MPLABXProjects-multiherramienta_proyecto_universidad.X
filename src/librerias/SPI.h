@@ -25,14 +25,8 @@
 #include <stdio.h>
 #include <xc.h>
 #include "clock.h"
+#include "../pinConfig.h"
 #include <inttypes.h>
-
-#define PIN_TFT &LATBbits.LATB2
-#define PIN_TOUCH &LATBbits.LATB4
-#define PIN_SD &LATDbits.LATD7
-#define PIN_SS1 &LATBbits.LATB5
-#define PIN_SS2 &LATBbits.LATB6
-#define PIN_SS3 &LATBbits.LATB7
 
 typedef enum{
     EC_SPI_OK,   
