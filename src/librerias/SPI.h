@@ -54,6 +54,7 @@ spiSlave slaves[]{
 void SPI_config_show();
 void SPI_master_init();
 void SPI_BaudRateGen(int32_t);
+void disenableSlaves();
 void SPI_master_reset();
 void SPIClockMode(uint8_t mode);
 void SPI_write(uint8_t);
@@ -64,7 +65,6 @@ int32_t SPI_actual_frec();
 uint8_t SPI1_ByteExchange(uint8_t);
 
 void SPI_ErrorHandler(SPI_ERROR_CODE);
-void SPI_select_Slave(SPI_SLAVE);
 
 
 #endif	/* SPI_H */

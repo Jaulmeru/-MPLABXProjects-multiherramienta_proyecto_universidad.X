@@ -39,9 +39,7 @@ void SPI_master_init(){
     SSPCON1 = slaves[0].SSPCON1;
     SSPCON3 = slaves[0].SSPCON3;
     SSPSTAT = slaves[0].SSPSTAT;
-                    
-    LATAbits.LA5 = 1;
-    
+    disenableSlaves();
     SPI_config_show();
 }   
 
