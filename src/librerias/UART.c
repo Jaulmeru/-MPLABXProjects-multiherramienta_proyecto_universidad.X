@@ -31,13 +31,10 @@ void UART_Init(uint32_t baudrate){
     TXSTA1bits.BRGH1 = 1;        // Modo de alta velocidad
     BAUDCON1 = 0x4A;             // WUE = Receiver is waiting for a falling edge, 16bits EN, RCIDL = Receiver idle
     UART_select_baud(baudrate);     // Se configura por defecto a 9600
-    TRISC6 = 1;                 // Pin Tx -> Tri estado (Input)
-    TRISC7 = 1;                 // Pin Rx -> Tri estado (Input)
     RCSTAbits.SPEN = 1;         // Serial Port -> Habilitado
     TXSTAbits.TXEN1 = 1;         // Transmision -> Habilitada
     RCSTAbits.CREN = 1;         // Recepcion -> Habiltada
     UART_config_show();
-    ANSELC = 0x0;
 };
 
 void UART_select_baud(uint32_t baudrate){
