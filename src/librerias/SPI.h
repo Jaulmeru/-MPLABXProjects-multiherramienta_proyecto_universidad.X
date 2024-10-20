@@ -36,13 +36,14 @@ typedef enum{
 
 typedef struct{
     volatile unsigned char *ss_pin;
+    uint8_t mask;
     uint8_t SSPCON1;
     uint8_t SSPCON3;
     uint8_t SSPSTAT;
-    uint32_t baudRate;
+    int32_t baudRate;
 }spiSlave;
 
-spiSlave slaves[]{
+spiSlave slaves[] = {
     {PIN_TFT,0x2A,0x10,0x00,60000},
     {PIN_TOUCH,0x2A,0x10,0x00,60000},
     {PIN_SD,0x2A,0x10,0x00,60000},
@@ -59,10 +60,9 @@ void SPI_master_reset();
 void SPIClockMode(uint8_t mode);
 void SPI_write(uint8_t);
 uint8_t SPI_read();
-const char* SPI_print(const char*);
 int32_t SPI_actual_frec();
 
-uint8_t SPI1_ByteExchange(uint8_t);
+uint8_t SPI_ByteExchange(uint8_t);
 
 void SPI_ErrorHandler(SPI_ERROR_CODE);
 

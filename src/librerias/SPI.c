@@ -54,7 +54,7 @@ void SPI_BaudRateGen(int32_t FClock){ // Recibe un valor de frecuencia esperada 
 
 void disenableSlaves(){
     for(uint8_t i = 0; i < SPISLAVES; i++){
-        slaves[i] = 1;
+        *(slaves[i].ss_pin) |= slaves[i].mask;
     }
 }
 
@@ -69,49 +69,29 @@ void SPIClockMode(uint8_t mode){
 }
 
 void SPI_write(uint8_t dato){
-    LATAbits.LA5 = 0;
     SSPBUF = dato;      // Escribe para iniciar la transmision
     while(!BF);         // Espera a que se haya completado la recepccion
     while(!SSPIF);         // Espera a que se haya completado la recepccion
     SSPIF = 0;
     if(WCOL) SPI_ErrorHandler(EC_SPI_COLLISION); // Valida si habia un dato anterior en SSPBUF
-    LATAbits.LA5 = 1;
 }
 uint8_t SPI_read(){ 
     while (!SSPSTATbits.BF);
     return SSP1BUF;
 }
 
-
-/*const char* SPI_print(const char *dataT){
-    static char dataR[];
-    int i = 0;
-    LATAbits.LA5 = 0;
-    while(*dataT){
-        dataR[i] = SPI_write(*dataT);
-        *dataT++;
-        i++;
-    }
-    LATAbits.LA5 = 1;
-    return dataR;
-}*/
-
 int32_t SPI_actual_frec(){
     int32_t baud = _XTAL_FREQ/((SSP1ADD+1)*4);
     return baud;
 }
 
-
-
-uint8_t SPI1_ByteExchange(uint8_t byteData)
-{
-    SSP1BUF = byteData;
-    while (!PIR1bits.SSP1IF)
-    {
-        // Wait for flag to get set
-    }
-    PIR1bits.SSP1IF = 0;
-    return SSP1BUF;
+uint8_t SPI_ByteExchange(uint8_t dato){
+    SSPBUF = dato;      
+    while(!BF);         
+    while(!SSPIF);      
+    SSPIF = 0;
+    if(WCOL) SPI_ErrorHandler(EC_SPI_COLLISION);
+    return SSP1BUF; 
 }
 
 void SPI_ErrorHandler(SPI_ERROR_CODE errorCode){
