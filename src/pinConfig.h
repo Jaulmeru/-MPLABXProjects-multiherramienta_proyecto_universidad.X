@@ -21,6 +21,9 @@
 #define PIN_SS2     &LATB,_LATB_LATB6_MASK
 #define PIN_SS3     &LATB,_LATB_LATB7_MASK
 
+#define PIN_DCX     &LATD
+#define PIN_DCX_MASK _LATD_LATB6_MASK
+
 void pinInit();
 
 #endif	/* PINCONFIG_H */

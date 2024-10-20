@@ -46,7 +46,7 @@ void pinInit(){
     TRISDbits.RD3 = 0;
     TRISDbits.RD4 = 0;
     TRISDbits.RD5 = 0;
-    TRISDbits.RD6 = 0;
+    TRISDbits.RD6 = 0;  //!< TFT - DCX
     TRISDbits.RD7 = 0;  //!< SPI - SS_SD
         
     TRISEbits.RE0 = 0;
