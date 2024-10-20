@@ -58,6 +58,8 @@ void SPI_BaudRateGen(int32_t);
 void disenableSlaves();
 void SPI_master_reset();
 void SPIClockMode(uint8_t mode);
+void SPI_OpenCom(spiSlave *slave);
+void SPI_CloseCom(spiSlave *slave);
 void SPI_write(uint8_t);
 uint8_t SPI_read();
 int32_t SPI_actual_frec();

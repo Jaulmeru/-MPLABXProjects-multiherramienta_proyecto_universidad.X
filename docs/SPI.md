@@ -19,6 +19,7 @@ SSPxADD = (FOSC / (FClock * 4)) - 1
 Siendo FOSC la frecuencia de trabajo del PIC y FClock la frecuencia buscada
 
 Haciendo el calculo para nuestra frecuencia de 48MHz, hay que considerar que solo podremos generar frecuencias dentro de un rango.  
+
 | SSPxADD | FClock |
 | -- | -- |
 | 0x00 | 12MHz |
@@ -61,3 +62,52 @@ In SPI mode:
     SPI Master mode:  
     - 1 = Input data sampled at end of data output time
     - 0 = Input data sampled at middle of data output time
+
+### Esclavos
+
+En la tabla siguiente se muestran los esclavos que se utilizaran. 0 - 2 son usados para dispisitivos internos del producto y 3 - 5 son disponibles para el usuario.
+
+| Nombre | Dispositivo | Pin SS | Nodo PCB | Nota |
+| -- | -- | -- | -- | -- |
+| SLAVE0 | Display TFT | RB2 | SS_TFT | Requiere un pin extra DC |
+| SLAVE1 | Display Touch | RB4 | SS_Touch |  |
+| SLAVE2 | SD card | RD7 | SS_SD |  |
+| SLAVE3 | User SPI 1 | RB5 | SS_1 |  |
+| SLAVE4 | User SPI 2 | RB6 | SS_2 |  |
+| SLAVE5 | User SPI 3 | RB7 | SS_3 |  |
+
+### Configuracion de los esclavos
+
+Cada dispositivo puede tener una configuracion diferente. Para los habilitados para el usuario, esta configuracion sera variable.
+
+#### SLAVE0 - Display TFT
+
+| Registro | Bit 7 | Bit 6 | Bit 5 | Bit 4 | Bit 3 | Bit 2 | Bit 1 | Bit 0 | HEX |
+| -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
+| SSPCON1 | 0 | 0 | 1 | 0 | 1 | 0 | 1 | 0 | 0x2A |
+| SSPCON3 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0x10 |
+| SSPSTAT | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0x00 |
+
+#### SLAVE1 - Display Touch
+
+| Registro | Bit 7 | Bit 6 | Bit 5 | Bit 4 | Bit 3 | Bit 2 | Bit 1 | Bit 0 | HEX |
+| -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
+| SSPCON1 | 0 | 0 | 1 | 0 | 1 | 0 | 1 | 0 | 0x2A |
+| SSPCON3 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0x10 |
+| SSPSTAT | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0x00 |
+
+#### SLAVE2 - SD Card
+
+| Registro | Bit 7 | Bit 6 | Bit 5 | Bit 4 | Bit 3 | Bit 2 | Bit 1 | Bit 0 | HEX |
+| -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
+| SSPCON1 | 0 | 0 | 1 | 0 | 1 | 0 | 1 | 0 | 0x2A |
+| SSPCON3 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0x10 |
+| SSPSTAT | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0x00 |
+
+#### SLAVE3 a SLAVE5 - USER SPI
+
+| Registro | Bit 7 | Bit 6 | Bit 5 | Bit 4 | Bit 3 | Bit 2 | Bit 1 | Bit 0 | HEX |
+| -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
+| SSPCON1 | 0 | 0 | 1 | 0 | 1 | 0 | 1 | 0 | 0x2A |
+| SSPCON3 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0x10 |
+| SSPSTAT | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0x00 |

@@ -68,12 +68,24 @@ void SPIClockMode(uint8_t mode){
     CKE = (mode & 2) >> 1;
 }
 
+void SPI_OpenCom(spiSlave *slave){
+    SPI_BaudRateGen(slave->baudRate);
+    SSPCON1 = slave->SSPCON1;
+    SSPCON3 = slave->SSPCON3;
+    SSPSTAT = slave->SSPSTAT;
+    *(slave->ss_pin) &= ~(slave->mask);
+}
+
+void SPI_CloseCom(spiSlave *slave){
+    *(slave->ss_pin) |= slave->mask;
+}
+
 void SPI_write(uint8_t dato){
-    SSPBUF = dato;      // Escribe para iniciar la transmision
-    while(!BF);         // Espera a que se haya completado la recepccion
-    while(!SSPIF);         // Espera a que se haya completado la recepccion
+    SSPBUF = dato;      
+    while(!BF);       
+    while(!SSPIF);       
     SSPIF = 0;
-    if(WCOL) SPI_ErrorHandler(EC_SPI_COLLISION); // Valida si habia un dato anterior en SSPBUF
+    if(WCOL) SPI_ErrorHandler(EC_SPI_COLLISION); 
 }
 uint8_t SPI_read(){ 
     while (!SSPSTATbits.BF);

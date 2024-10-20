@@ -29,7 +29,9 @@ int main(void)
             addToBuffer(UART_Rx());
         }
         CL_ErrorHandler(commandProcess());
-        SPI_write(global_x);
+        SPI_OpenCom(&slaves[0]);
+            SPI_write(global_x);    
+        SPI_CloseCom(&slaves[0]);        
         __delay_ms(2);
     }
 }
