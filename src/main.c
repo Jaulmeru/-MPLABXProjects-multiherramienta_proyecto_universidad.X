@@ -14,6 +14,7 @@
 #include "librerias/commandLine.h"
 #include "CLHandler.h"
 #include "pinConfig.h"
+#include "librerias/ST7789.h"
 
 int main(void)
 {

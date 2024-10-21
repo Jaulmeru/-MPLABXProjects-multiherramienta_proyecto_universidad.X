@@ -31,7 +31,7 @@
       <itemPath>src/CLHandler.c</itemPath>
       <itemPath>src/librerias/SPI.c</itemPath>
       <itemPath>src/pinConfig.c</itemPath>
-      <itemPath>ST7789.c</itemPath>
+      <itemPath>src/librerias/ST7789.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
