@@ -10,6 +10,7 @@
 
 #include "clk_variables.h"
 
+
 #ifdef	__cplusplus
 extern "C" {
 #endif

@@ -11,15 +11,21 @@
 #define	PINCONFIG_H
 
 #include <xc.h>
+#include <stdint.h>
 
 // SPI
-#define PIN_TFT &LATBbits.LATB2 
-#define PIN_TOUCH &LATBbits.LATB4
-#define PIN_SD &LATDbits.LATD7
-#define PIN_SS1 &LATBbits.LATB5
-#define PIN_SS2 &LATBbits.LATB6
-#define PIN_SS3 &LATBbits.LATB7
+#define SPISLAVES 6
+#define PIN_TFT     &LATB,_LATB_LATB2_MASK
+#define PIN_TOUCH   &LATB,_LATB_LATB4_MASK
+#define PIN_SD      &LATD,_LATD_LATD7_MASK
+#define PIN_SS1     &LATB,_LATB_LATB5_MASK
+#define PIN_SS2     &LATB,_LATB_LATB6_MASK
+#define PIN_SS3     &LATB,_LATB_LATB7_MASK
 
+#define PIN_DCX     &LATD
+#define PIN_DCX_MASK _LATD_LATD6_MASK
+
+void pinInit();
 
 #define LED_REG LATAbits
 #define LED_MASK _LATA_LATA1_MASK 
