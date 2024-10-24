@@ -31,10 +31,8 @@ Estos son los pines que se utilizan para la comunicacion SPI y su configuracion 
 | Señal | Abreviatura | I/O | PIN | TRIS |
 | -- | -- | -- | -- | -- |
 | Serial Clock (Master) | SCK | RB1 | 34 | 0 |
-| Serial Clock (Slave) | SCK | RB1 | 34 | 1 |
-| Serial Data Out | SDO | RB3 | 36 | 0 |
-| Serial Data In | SDI | RB0 | 33 | 1 |
-| Slave Select | SS | RA5 | 7 | 1 |
+| Serial Data Out | SDO (MOSI) | RB3 | 36 | 0 |
+| Serial Data In | SDI (MISO) | RB0 | 33 | 1 |
 
 Ya que estan configurados estos pines se debe habilitar el puerto con SSPEN
 

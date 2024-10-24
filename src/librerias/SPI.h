@@ -44,7 +44,7 @@ typedef struct{
 }spiSlave;
 
 spiSlave slaves[] = {
-    {PIN_TFT,0x2A,0x10,0x00,60000},
+    {PIN_TFT,0x2A,0x10,0x00,50000},
     {PIN_TOUCH,0x2A,0x10,0x00,60000},
     {PIN_SD,0x2A,0x10,0x00,60000},
     {PIN_SS1,0x2A,0x10,0x00,60000},
@@ -64,7 +64,7 @@ void SPI_write(uint8_t);
 uint8_t SPI_read();
 int32_t SPI_actual_frec();
 
-uint8_t SPI_ByteExchange(uint8_t);
+uint8_t SPI_ByteExchange(uint8_t slave,uint8_t data);
 
 void SPI_ErrorHandler(SPI_ERROR_CODE);
 

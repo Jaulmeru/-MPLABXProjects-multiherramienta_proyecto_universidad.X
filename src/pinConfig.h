@@ -11,6 +11,7 @@
 #define	PINCONFIG_H
 
 #include <xc.h>
+#include <stdint.h>
 
 // SPI
 #define SPISLAVES 6
@@ -21,7 +22,12 @@
 #define PIN_SS2     &LATB,_LATB_LATB6_MASK
 #define PIN_SS3     &LATB,_LATB_LATB7_MASK
 
+#define PIN_DCX     &LATD
+#define PIN_DCX_MASK _LATD_LATD6_MASK
+
 void pinInit();
 
+#define LED_REG LATAbits
+#define LED_MASK _LATA_LATA1_MASK 
 #endif	/* PINCONFIG_H */
 

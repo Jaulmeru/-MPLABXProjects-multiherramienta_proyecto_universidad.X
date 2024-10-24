@@ -17,7 +17,7 @@ void pinInit(){
     ANSELE = 0;
         
     TRISAbits.RA0 = 0;
-    TRISAbits.RA1 = 0;
+    TRISAbits.RA1 = 0; //!< LED indicador
     TRISAbits.RA2 = 0;
     TRISAbits.RA3 = 0;
     TRISAbits.RA4 = 0;
@@ -46,7 +46,7 @@ void pinInit(){
     TRISDbits.RD3 = 0;
     TRISDbits.RD4 = 0;
     TRISDbits.RD5 = 0;
-    TRISDbits.RD6 = 0;
+    TRISDbits.RD6 = 0;  //!< TFT - DCX
     TRISDbits.RD7 = 0;  //!< SPI - SS_SD
         
     TRISEbits.RE0 = 0;

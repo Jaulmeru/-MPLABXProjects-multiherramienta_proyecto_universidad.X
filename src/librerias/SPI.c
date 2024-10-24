@@ -97,12 +97,14 @@ int32_t SPI_actual_frec(){
     return baud;
 }
 
-uint8_t SPI_ByteExchange(uint8_t dato){
+uint8_t SPI_ByteExchange(uint8_t slave,uint8_t dato){
+    SPI_OpenCom(&slaves[slave]);
     SSPBUF = dato;      
     while(!BF);         
     while(!SSPIF);      
     SSPIF = 0;
     if(WCOL) SPI_ErrorHandler(EC_SPI_COLLISION);
+    SPI_CloseCom(&slaves[slave]);
     return SSP1BUF; 
 }
 
