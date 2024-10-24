@@ -2,7 +2,49 @@
 
 ## Que es y como funciona  
 
-[WIP] Explicacion y base teorica sobre UART
+UART (Universal Asynchronous Transmitter Receiver) Es un protocolo que permiten que dos o más microcontroladores se comuniquen entre sí y transmitan información. Diseñado para realizar una comunicación asíncrona. Este dispositivo envía y recibe datos de un sistema a otro.  El UART tiene 2 líneas de datos entre el transmisor y receptor para transmitir y recibir en ambas direcciones.
+
+La comunicación UART involucra dos componentes principales: un transmisor (Tx) y un receptor (Rx). La función para la transmisión es convertir los datos paralelos a serie mientras la recepción convierte los datos serie a paralelos.
+
+![UART1](imgs/UART1.png)
+
+Para implementar la comunicación en serie, se requieren un origen y un destino. También se les conoce como emisor y receptor. Se pueden emplear varios tipos de comunicación serie y se designan como Simplex, Half Duplex y Full Duplex.
+
+- El método Simplex implementa la transmisión de datos unidireccional. Solo el origen o el destino están activos en un momento dado.
+- Modo Half Duplex permite que el origen y el destino estén activos, pero no simultáneamente. La transmisión solo ocurre en una dirección a la vez.
+- odo Full Duplex es la forma de comunicación serie más utilizada en el mundo. El origen y el destino están activos y pueden enviar y recibir datos simultáneamente.
+
+### Interfaz serie sincrónica
+
+Una interfaz serie sincrónica utiliza un solo bus de CPU que comparte la señal del reloj y la transmisión de datos.
+
+### Interfaz serie asincrónica
+
+Una interfaz serie asíncrona funciona sin una señal de reloj externa.
+
+Una de las grandes ventajas del UART es que es asíncrono: el transmisor y el receptor no comparten una señal de reloj común. Dado que no comparten un reloj, ambos terminales deben transmitir a la misma velocidad preestablecida para que tengan la misma sincronización de bits.
+
+- Baudios: Periodo de comunicación.
+- Bps: bits por segundo.
+- 1 baudio = 1 bit por segundo.  
+
+Las velocidades de baudios del UART más comunes que se utilizan en estos días son:
+
+- 2,400
+- 9,600
+- 19,200
+- 38,400
+- 57,600
+- 115,200
+
+### Bits de inicio y parada
+
+La comunicación UART emplea bits de inicio y parada. La trama de datos generalmente consta de un bit de inicio, bits de datos (generalmente 8 bits), un bit de paridad opcional para la verificación de errores y uno o más bits de parada.
+
+Durante la transmisión de datos, el bit de inicio señala el comienzo de una trama de datos y el receptor se sincroniza con esta señal. Los bits de datos llevan la información real que se va a transmitir, y el bit de paridad opcional ayuda en la detección de errores. Finalmente, el bit o bits de parada señalan el final de la trama de datos. 
+Cuando el bit de paridad coincide con los datos, el UART sabe que la transmisión estuvo libre de errores. Pero si el bit de paridad es un 0 y el total es impar, o el bit de paridad es un 1 y el total es par, el UART sabe que los bits en el paquete de datos han cambiado.
+
+![UART2](imgs/UART2.png)
 
 ## Impliementación en PIC18F45K50  
 
