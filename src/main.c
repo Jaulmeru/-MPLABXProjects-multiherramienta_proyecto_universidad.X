@@ -19,11 +19,11 @@
 void fillScreen(uint8_t hi,uint8_t lo){
   uint32_t pixel = 240*240;
   *(slaves[0].ss_pin) &= ~(slaves[0].mask);
-  *(PIN_DCX) &= ~(PIN_DCX_MASK);
+  *(DCX_PIN) &= ~(DCX_MASK);
   __delay_us(15);
   SPI_ByteExchange(0,0x2C);
   __delay_us(5);
-  *(PIN_DCX) |= PIN_DCX_MASK;
+  *(DCX_PIN) |= DCX_MASK;
   __delay_us(5);
   while(pixel--){
     SPI_ByteExchange(0,hi);

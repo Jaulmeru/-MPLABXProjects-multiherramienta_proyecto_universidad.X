@@ -11,12 +11,12 @@
 
 void DCXcommand(){
     __delay_us(5);
-    *(PIN_DCX) &= ~(PIN_DCX_MASK);
+    *(DCX_PIN) &= ~(DCX_MASK);
     __delay_us(5);
 }
 void DCXparam(){
     __delay_us(5);
-    *(PIN_DCX) |= PIN_DCX_MASK;
+    *(DCX_PIN) |= DCX_MASK;
     __delay_us(5);
 }
 

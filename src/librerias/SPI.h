@@ -10,7 +10,7 @@
 #ifndef SPI_H
 #define	SPI_H
 
-#define SPI_clk_idle_high() do{ SSPCON1bits.CKP = 1; }while(0) //!< sdas dsdsa
+#define SPI_clk_idle_high() do{ SSPCON1bits.CKP = 1; }while(0) 
 #define SPI_clk_idle_low() do{ SSPCON1bits.CKP = 0; }while(0)
 #define SPI_clk_idle_active() do{ SSPSTATbits.CKE = 0; }while(0)
 #define SPI_clk_active_idle() do{ SSPSTATbits.CKE = 1; }while(0)
@@ -44,12 +44,12 @@ typedef struct{
 }spiSlave;
 
 spiSlave slaves[] = {
-    {PIN_TFT,0x2A,0x10,0x00,50000},
-    {PIN_TOUCH,0x2A,0x10,0x00,60000},
-    {PIN_SD,0x2A,0x10,0x00,60000},
-    {PIN_SS1,0x2A,0x10,0x00,60000},
-    {PIN_SS2,0x2A,0x10,0x00,60000},
-    {PIN_SS3,0x2A,0x10,0x00,60000}
+    {TFT_PIN,   TFT_MASK,   0x2A,0x10,0x00,50000},
+    {TOUCH_PIN, TOUCH_MASK, 0x2A,0x10,0x00,60000},
+    {SD_PIN,    SD_MASK,    0x2A,0x10,0x00,60000},
+    {SS1_PIN,   SS1_MASK,   0x2A,0x10,0x00,60000},
+    {SS2_PIN,   SS2_MASK,   0x2A,0x10,0x00,60000},
+    {SS3_PIN,   SS3_MASK,   0x2A,0x10,0x00,60000}
 };
     
 void SPI_config_show();

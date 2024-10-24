@@ -67,12 +67,12 @@ En la tabla siguiente se muestran los esclavos que se utilizaran. 0 - 2 son usad
 
 | Nombre | Dispositivo | Pin SS | Nodo PCB | Nota |
 | -- | -- | -- | -- | -- |
-| SLAVE0 | Display TFT | RB2 | SS_TFT | Requiere un pin extra DC |
-| SLAVE1 | Display Touch | RB4 | SS_Touch |  |
-| SLAVE2 | SD card | RD7 | SS_SD |  |
-| SLAVE3 | User SPI 1 | RB5 | SS_1 |  |
-| SLAVE4 | User SPI 2 | RB6 | SS_2 |  |
-| SLAVE5 | User SPI 3 | RB7 | SS_3 |  |
+| SLAVE0 | Display TFT | RB2 | SS_TFT | Requiere dos pines de salida extra DCX y RST |
+| SLAVE1 | Display Touch | RB4 | CS_Touch | Requiere un pin de entrada extra IRQ |
+| SLAVE2 | SD card | RD7 | CS_SD |  |
+| SLAVE3 | User SPI 1 | RD4 | SS1 |  |
+| SLAVE4 | User SPI 2 | RD3 | SS2 |  |
+| SLAVE5 | User SPI 3 | RD2 | SS3 |  |
 
 ### Configuracion de los esclavos
 
