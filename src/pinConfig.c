@@ -17,7 +17,7 @@ void pinInit(){
     ANSELE = 0;
         
     TRISAbits.RA0 = 0;
-    TRISAbits.RA1 = 0;
+    TRISAbits.RA1 = 0; //!< LED indicador
     TRISAbits.RA2 = 0;
     TRISAbits.RA3 = 0;
     TRISAbits.RA4 = 0;

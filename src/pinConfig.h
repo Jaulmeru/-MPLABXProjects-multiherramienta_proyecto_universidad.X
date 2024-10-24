@@ -21,5 +21,7 @@
 #define PIN_SS3 &LATBbits.LATB7
 
 
+#define LED_REG LATAbits
+#define LED_MASK _LATA_LATA1_MASK 
 #endif	/* PINCONFIG_H */
 
