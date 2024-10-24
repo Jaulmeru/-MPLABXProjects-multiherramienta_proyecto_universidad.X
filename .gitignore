@@ -17,3 +17,4 @@ nbproject/Makefile-*
 
 # Ignorar la dovumentacion de doxygen
 /docs/html
+/docs/rtf
