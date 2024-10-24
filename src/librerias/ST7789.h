@@ -13,7 +13,8 @@
 #include "../pinConfig.h"
 #include "SPI.h"
 
-#define ST7789_send(x) SPI_ByteExchange(x)
+#define ST7789_SLAVE 0
+#define ST7789_send(x,y) SPI_ByteExchange(x,y)
 
 #define DISP_WIDTH 320
 #define DISP_HEIGHT 240

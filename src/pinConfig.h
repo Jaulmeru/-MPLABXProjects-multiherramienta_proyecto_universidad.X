@@ -11,6 +11,7 @@
 #define	PINCONFIG_H
 
 #include <xc.h>
+#include <stdint.h>
 
 // SPI
 #define SPISLAVES 6
