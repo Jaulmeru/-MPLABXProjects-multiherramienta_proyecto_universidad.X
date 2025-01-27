@@ -30,9 +30,9 @@ void pinInit(){
     TRISBbits.RB2 = 0;  //!< SPI - SS_TFT
     TRISBbits.RB3 = 0;  //!< SPI - SDO (MOSI)
     TRISBbits.RB4 = 0;  //!< SPI - SS_TOUCH
-    TRISBbits.RB5 = 0;  //!< SPI - SS_1
-    TRISBbits.RB6 = 0;  //!< SPI - SS_2
-    TRISBbits.RB7 = 0;  //!< SPI - SS_3
+    TRISBbits.RB5 = 0;  //!< Touch - IRQ
+    TRISBbits.RB6 = 0;  //!< ICSP - PGC
+    TRISBbits.RB7 = 0;  //!< ICSP - PGD
         
     TRISCbits.RC0 = 0;  
     TRISCbits.RC1 = 0;
@@ -42,10 +42,11 @@ void pinInit(){
         
     TRISDbits.RD0 = 0;
     TRISDbits.RD1 = 0;
-    TRISDbits.RD2 = 0;
-    TRISDbits.RD3 = 0;
-    TRISDbits.RD4 = 0;
-    TRISDbits.RD5 = 0;
+    TRISDbits.RD2 = 0;  //!< SPI - SS_3
+    TRISDbits.RD3 = 0;  //!< SPI - SS_2
+    TRISDbits.RD4 = 0;  //!< SPI - SS_1
+    //** @todo Agregar reset a ST7789
+    TRISDbits.RD5 = 0;  //!< TFT - RESET
     TRISDbits.RD6 = 0;  //!< TFT - DCX
     TRISDbits.RD7 = 0;  //!< SPI - SS_SD
         
