@@ -21,6 +21,7 @@ void DCXparam(){
 }
 
 void ST7789Init(){
+    HWRESET();
     SWRESET();
     SLPOUT();
     COLMOD(0x55);
@@ -122,4 +123,10 @@ void COLMOD(uint8_t config){
     ST7789_send(ST7789_SLAVE,0x3A);
     DCXparam();
     ST7789_send(ST7789_SLAVE,config);
+}
+
+void HWRESET(){
+    *(PIN_TFT_RST) &= ~(PIN_TFT_RST_MASK);
+    __delay_ms(50);
+    *(PIN_TFT_RST) |= PIN_TFT_RST_MASK;
 }

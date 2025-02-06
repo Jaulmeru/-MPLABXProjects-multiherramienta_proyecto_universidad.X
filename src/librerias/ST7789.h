@@ -45,6 +45,7 @@ void RAMRD();
 void MADCTL(uint8_t config);
 void COLMOD(uint8_t config);
 
+void HWRESET();
 
 #endif	/* ST7789_H */
 

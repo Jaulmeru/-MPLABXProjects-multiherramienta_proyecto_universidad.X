@@ -24,6 +24,8 @@
 
 #define PIN_DCX     &LATD
 #define PIN_DCX_MASK _LATD_LATD6_MASK
+#define PIN_TFT_RST &LATD
+#define PIN_TFT_RST_MASK _LATD_LATD5_MASK
 
 void pinInit();
 
