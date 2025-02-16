@@ -8,6 +8,8 @@
 *.bin
 *.map
 *.dep
+*.properties
+*.mk
 
 # Ignorar archivos de proyecto específicos del usuario
 nbproject/private/
