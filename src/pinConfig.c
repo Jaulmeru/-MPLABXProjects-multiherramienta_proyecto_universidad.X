@@ -42,12 +42,13 @@ void pinInit(){
         
     TRISDbits.RD0 = 0;
     TRISDbits.RD1 = 0;
-    TRISDbits.RD2 = 0;  //!RD2 < SPI - SS_3
-    TRISDbits.RD3 = 0;  //!RD3 < SPI - SS_2
-    TRISDbits.RD4 = 0;  //!RD4 < SPI - SS_1
-    TRISDbits.RD5 = 0;  //!RD5 < TFT - RST
-    TRISDbits.RD6 = 0;  //!RD6 < TFT - DCX
-    TRISDbits.RD7 = 0;  //!RD7 < SPI - SS_SD
+    TRISDbits.RD2 = 0;  //!< SPI - SS_3
+    TRISDbits.RD3 = 0;  //!< SPI - SS_2
+    TRISDbits.RD4 = 0;  //!< SPI - SS_1
+    //** @todo Agregar reset a ST7789
+    TRISDbits.RD5 = 0;  //!< TFT - RESET
+    TRISDbits.RD6 = 0;  //!< TFT - DCX
+    TRISDbits.RD7 = 0;  //!< SPI - SS_SD
         
     TRISEbits.RE0 = 0;
     TRISEbits.RE1 = 0;
